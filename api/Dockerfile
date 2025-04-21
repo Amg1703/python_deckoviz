@@ -16,6 +16,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# Copy the rest of the application
+COPY . .
+
 # Expose the necessary port
 EXPOSE 8080
 

@@ -5,7 +5,7 @@ from pathlib import Path
 import uvicorn
 import os
 from routers import image_search,websocket
-from databases.configs import get_db, get_redis_client
+from databases.configs import get_redis_client
 
 # Initialize the application
 app = FastAPI()
@@ -31,7 +31,5 @@ app.include_router(image_search.router)
 
 @app.get("/", dependencies=[Depends(get_redis_client)])
 async def root():
-    return {"message": "Welcome to the Image API. Use /images/{room_id} to list images or /images/{room_id}/{image_name} to get an image."}
+    return {"message": "Welcome to the Deckoviz Image API. Use /images/{room_id} to list images or /images/{room_id}/{image_name} to get an image."}
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)

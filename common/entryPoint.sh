@@ -1,3 +1,4 @@
 #!/bin/bash
 
-python3 manage.py runserver
+docker compose up -d
+docker logs -f common

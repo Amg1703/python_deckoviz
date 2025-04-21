@@ -13,10 +13,12 @@ fi
 python3 manage.py migrate
 
 
-
 #collect static files
-# python manage.py collectstatic
+# python manage.py collectstatic -y
 
+# Create a superuser only if it doesn't exist (adjust according to your script)
+#common
+python3 manage.py create_super_user
  
 # Run the development server (you can customize this for production)
 python3 manage.py runserver 0.0.0.0:8000

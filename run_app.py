@@ -37,7 +37,7 @@ def start_django_backend():
                 "-c",
                 """
                 # Start service and wait for container to be created
-                docker compose up -d decoviz_common
+                docker compose up -d 
                 
                 # Wait max 30 seconds for container to enter running state
                 timeout 30 bash -c "while ! docker compose ps --status running | grep -q decoviz_common; do sleep 1; done"
@@ -55,17 +55,17 @@ def start_django_backend():
 def start_backend():
     """Start the FastAPI backend server"""
     print("Starting backend server...")
-    return subprocess.Popen(["uvicorn", "backend.api.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"])
+    return subprocess.Popen(["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"])
 
 
 def start_frontends():
     """Start Streamlit frontends"""
     print("Starting Streamlit frontends...")
-    user_matching = subprocess.Popen(["streamlit", "run", "backend/streamlit_frontend/user_matching.py", "--server.port", "8501"])
+    user_matching = subprocess.Popen(["streamlit", "run", "api/frontend/user_matching.py", "--server.port", "8501"])
     image_recommendation = subprocess.Popen(
-        ["streamlit", "run", "backend/streamlit_frontend/image_recommendation.py", "--server.port", "8502"]
+        ["streamlit", "run", "api/frontend/image_recommendation.py", "--server.port", "8502"]
     )
-    product_search = subprocess.Popen(["streamlit", "run", "backend/streamlit_frontend/product_search.py", "--server.port", "8503"])
+    product_search = subprocess.Popen(["streamlit", "run", "api/frontend/product_search.py", "--server.port", "8503"])
     return user_matching, image_recommendation, product_search
 
 
