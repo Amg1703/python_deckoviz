@@ -1,0 +1,26 @@
+At a minimum by tomorrow, since 
+we have a couple of engineers come over to help us set the android, 
+we need to set up enough functionality to test out:
+the TV app running on the tv that displays the collections, the basic mobile app, 
+and data transfer protocol between the two.
+
+
+For launching a minimum v1, do away with everything but profile creation, 
+user authentication, display algorithm, deploying on cloud, deploying on app 
+store, collection creation, database, personal painter through chat text mode, 
+transform images to gif or video functionality, style transfer images to any art
+style, upload personal images and add them to personal DB, basic recommendation
+engine. Here is what we need for that. The rest of the modules/user stories in v1,
+we can do only once these are done, and we have an app up and running and 
+satisfying all these basic conditions.And yeah, of course, data transfer from
+app to app. This is most urgent, since we have the embedded engineer come over 
+to test this thing.
+
+
+For the modules like db, personal painter …, I would recommend working with 
+windsurf - its really good at holding a large amount of context, and so giving
+it a high level overview of the project makes it really effective. You might 
+not even need to write a ton of code for many of these.
+
+
+https://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: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@github.com/Deckoviz/python_deckoviz.git
