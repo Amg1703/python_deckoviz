@@ -1,30 +1,30 @@
 
-services:
+# services:
 
-  api:
-    container_name: api
-    build: .
-    env_file:
-      - .env
-    environment:
-      - APP_ENV=production
-      - PYTHONUNBUFFERED=1
-    volumes:
-      - .:/app:cached
-    ports:
-      - "8080:8080" 
-    networks:
-      - decoviz_common_default
-    command: sh -c "uvicorn main:app --host 0.0.0.0 --port 8080 --reload --workers 4"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+#   api:
+#     container_name: api
+#     build: .
+#     env_file:
+#       - .env
+#     environment:
+#       - APP_ENV=production
+#       - PYTHONUNBUFFERED=1
+#     volumes:
+#       - .:/app:cached
+#     ports:
+#       - "8080:8080" 
+#     networks:
+#       - decoviz_common_default
+#     command: sh -c "uvicorn main:app --host 0.0.0.0 --port 8080 --reload --workers 4"
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
 
-networks:
-  decoviz_common_default: 
-    driver: bridge
+# networks:
+#   decoviz_common_default: 
+#     driver: bridge
 
-volumes:
-  qdrant_data:
+# volumes:
+#   qdrant_data:

@@ -6,7 +6,6 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 ARG CACHE_BUSTER=1
  
-
 # Install system dependencies required for Pillow and other packages
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -20,7 +19,6 @@ RUN apt-get update && apt-get install -y \
     tk-dev \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
 
 # Create a non-root user called appuser
 RUN useradd -m -d /home/appuser -s /bin/bash appuser
@@ -41,8 +39,7 @@ RUN pip install -r requirements.txt
 
 # Copy the configs folder even if it's in .gitignore
 COPY configs/ /app/configs/
+COPY . .
 
 # Expose the necessary port
 EXPOSE 8000
-
-

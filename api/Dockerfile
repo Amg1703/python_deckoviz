@@ -13,13 +13,12 @@ RUN useradd -m -d /home/appuser -s /bin/bash appuser
 WORKDIR /app
 
 # Copy requirements and install dependencies
-COPY requirements.txt .
+COPY api/requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
+# Copy API code and deckoviz_ai package
+COPY api/ ./
+COPY deckoviz_ai/ ./deckoviz_ai/
 
 # Expose the necessary port
 EXPOSE 8080
-
-
