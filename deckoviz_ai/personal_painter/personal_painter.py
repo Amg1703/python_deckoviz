@@ -9,12 +9,8 @@ analyzes user's emotional states and creates personalized visual art experiences
 import os
 import json
 import logging
-from typing import Dict, List, Optional, Tuple, Union
-import asyncio
+from typing import Dict, List, Optional
 from datetime import datetime
-import base64
-from PIL import Image
-from io import BytesIO
 
 # Image generation imports
 import requests
@@ -23,9 +19,11 @@ import requests
 from dotenv import load_dotenv
 load_dotenv()  # Load .env file from the current or parent directories
 
-# Set up logging
-logging.basicConfig(level=logging.INFO)
+# Set up logging: only warnings and above
+import logging
+logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)
 
 # Constants
 DEFAULT_STYLE_PRESETS = [
@@ -189,14 +187,14 @@ class PersonalPainter:
         # Select style based on emotion
         style = self._select_style(emotion_data["primary_emotion"])
         
-        image_path = None
+        image_bytes, filename = None, None
         error_message: Optional[str] = None
         
         try:
             if use_stable_diffusion and self.api_key:
                 logger.info("Starting image generation with Stability API")
-                image_path = await self._call_image_generation_api(prompt, style)
-                logger.info(f"Image generation complete, path: {image_path}")
+                image_bytes, filename = await self._call_image_generation_api(prompt, style)
+                logger.info(f"Image generation complete, filename: {filename}")
             else:
                 # Mock image generation for development
                 logger.info(f"API key missing or mock mode enabled. Would generate image with prompt: {prompt}, style: {style}")
@@ -206,11 +204,12 @@ class PersonalPainter:
             logger.error(f"Unexpected error in generate_art: {e}")
             logger.error(error_message)
          
-         # Return result
+        # Return result
         result = {
             "prompt": prompt,
             "style": style,
-            "image_path": image_path,
+            "image_bytes": image_bytes,
+            "filename": filename,
             "emotion": emotion_data["primary_emotion"],
             "timestamp": datetime.now().isoformat()
         }
@@ -218,7 +217,11 @@ class PersonalPainter:
         if error_message:
             result["error"] = error_message
          
-        logger.info(f"Generated art result: {result}")
+        # Log summary without raw bytes
+        logger.info(
+            f"Generated art result: prompt={result.get('prompt')}, "
+            f"filename={result.get('filename')}, emotion={result.get('emotion')}"
+        )
         return result
     
     async def _create_art_prompt(self, emotion_data: Dict, user_input: str) -> str:
@@ -286,7 +289,7 @@ class PersonalPainter:
         style_options = EMOTION_TO_STYLE_MAP.get(emotion, DEFAULT_STYLE_PRESETS)
         return random.choice(style_options)
     
-    async def _call_image_generation_api(self, prompt: str, style: str) -> Optional[str]:
+    async def _call_image_generation_api(self, prompt: str, style: str) -> Optional[tuple[bytes, str]]:
         """
         Call image generation API (Stable Diffusion or similar).
         
@@ -295,7 +298,7 @@ class PersonalPainter:
             style: Style preset to use
             
         Returns:
-            Path to the saved image or None if generation failed
+            Tuple of image bytes and filename or None if generation failed
         """
         if not self.api_key:
             logger.error("Cannot call Stability API: No API key provided")
@@ -349,31 +352,15 @@ class PersonalPainter:
                     logger.info(f"Received {len(data['artifacts'])} artifacts")
                     image_b64 = data["artifacts"][0]["base64"]
                     
-                    # Convert base64 to image
-                    logger.info("Converting base64 to image")
-                    image_data = base64.b64decode(image_b64)
-                    image = Image.open(BytesIO(image_data))
-                    
-                    # Save image
+                    # Decode and return image bytes and filename
+                    image_bytes = base64.b64decode(image_b64)
+                    # Generate filename
                     try:
-                        emotion = "unknown"
-                        if "evoking feelings of" in prompt:
-                            emotion = prompt.split("evoking feelings of")[1].split(".")[0].strip()
+                        emotion = prompt.split("evoking feelings of")[1].split(".")[0].strip()
                     except:
                         emotion = "emotion"
-                        
                     filename = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{emotion}.png"
-                    filepath = os.path.join(self.image_dir, filename)
-                    logger.info(f"Saving image to: {filepath}")
-                    
-                    try:
-                        # Save image with explicit format
-                        image.save(filepath, format="PNG")
-                        logger.info(f"Image saved successfully to {filepath}")
-                        return filepath
-                    except Exception as e:
-                        logger.error(f"Error saving image: {e}")
-                        return None
+                    return image_bytes, filename
                 else:
                     logger.error("No artifacts found in the API response")
             else:
@@ -437,10 +424,11 @@ async def personal_painter_callback(session, user_input: str, **kwargs) -> Dict:
     result = await process_emotion_and_generate_art(session.personal_painter, user_input)
     
     # If there's an image path, prepare it for display
-    if result["art"]["image_path"]:
+    if result["art"]["image_bytes"]:
         # Return data for the agent to use
         return {
-            "image_path": result["art"]["image_path"],
+            "image_bytes": result["art"]["image_bytes"],
+            "filename": result["art"]["filename"],
             "prompt": result["art"]["prompt"],
             "emotion": result["art"]["emotion"]
         }
@@ -467,16 +455,3 @@ When interacting with the user:
 Remember that art is a powerful tool for emotional expression and healing.
 Your primary role is to help users explore and process their emotions through visual art.
 """
-
-if __name__ == "__main__":
-    # Example usage
-    async def test():
-        painter = PersonalPainter()
-        result = await process_emotion_and_generate_art(
-            painter, 
-            "I'm feeling really sad today because I lost something important to me."
-        )
-        print(json.dumps(result, indent=2))
-    
-    # Run the test
-    asyncio.run(test())

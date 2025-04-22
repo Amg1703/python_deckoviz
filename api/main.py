@@ -1,16 +1,20 @@
 # app.py
 from fastapi import FastAPI, Depends
+import logging
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 import uvicorn
 import os
 import sys
 
+# Ensure debug logs for all modules (including WebSocket router)
+logging.basicConfig(level=logging.DEBUG)
+
 # Ensure project root is on PYTHONPATH so sibling packages are importable
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
-from routers import image_search,websocket, image_generator
+from routers import image_search,websocket, image_generator, collections
 from databases.configs import get_redis_client
 
 # Initialize the application
@@ -32,10 +36,12 @@ if not BASE_DIR.exists():
     os.makedirs(BASE_DIR)
 
 # Include routers
-app.include_router(websocket.router)
 app.include_router(image_search.router)
 app.include_router(image_generator.router)
+app.include_router(collections.router)
+app.include_router(websocket.router)
+
 
 @app.get("/", dependencies=[Depends(get_redis_client)])
 async def root():
-    return {"message": "Welcome to the Deckoviz Image API. Use /images/{room_id} to list images or /images/{room_id}/{image_name} to get an image."}
+    return {"message": "Welcome to the Deckoviz API."}

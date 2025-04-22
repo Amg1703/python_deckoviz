@@ -110,7 +110,7 @@ async def list_images(room_id: str):
                 "name": f.name,
                 "timestamp": stats.st_mtime * 1000  # Convert to milliseconds for JS
             })
-    
+
     # Sort images by timestamp, newest first
     images.sort(key=lambda x: x["timestamp"], reverse=True)
     return {"images": images}

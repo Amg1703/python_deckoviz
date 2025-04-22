@@ -4,7 +4,7 @@ import os
 from deckoviz_ai.personal_painter.personal_painter import PersonalPainter
 from deckoviz_ai.personal_painter.personal_painter import process_emotion_and_generate_art
 from dotenv import load_dotenv
-from utils.storage import upload_to_gcs
+from utils.storage import upload_bytes_to_gcs
 
 load_dotenv()
 
@@ -26,20 +26,20 @@ async def generate_image(req: GenerateRequest):
     api_key = os.getenv("STABILITY_API_KEY")
     if not api_key:
         raise HTTPException(status_code=500, detail="STABILITY_API_KEY is not set")
-    # Local output directory
+    # # Local output directory
     output_dir = os.path.join(os.getcwd(), "output", "personal_painter")
     os.makedirs(output_dir, exist_ok=True)
     painter = PersonalPainter(api_key=api_key, image_dir=output_dir)
 
-    # Generate art
+    # Generate art and get image bytes
     result = await process_emotion_and_generate_art(painter, req.user_input)
-    image_path = result.get("art", {}).get("image_path")
-    prompt = result.get("art", {}).get("prompt")
-    print(image_path)
-    if not image_path:
+    art = result.get("art", {})
+    image_bytes = art.get("image_bytes")
+    filename = art.get("filename")
+    prompt = art.get("prompt")
+    if not image_bytes or not filename:
         raise HTTPException(status_code=400, detail="Image generation failed")
 
-    # Upload generated image and get public URL
-    url = upload_to_gcs(image_path, "personal_painter")
-
+    # Upload bytes directly to GCS
+    url = upload_bytes_to_gcs(image_bytes, filename, "personal_painter")
     return GenerateResponse(url=url, prompt=prompt)

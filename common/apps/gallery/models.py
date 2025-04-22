@@ -5,7 +5,6 @@ from apps.utils import INTERACTION_TYPES
 
 User = get_user_model()
 
-
 class Image(BaseModel):
     file = models.ImageField(upload_to='images/')
     uploaded_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='uploaded_images')

@@ -1,5 +1,5 @@
 # Backend dependencies for FastAPI
-fastapi>=0.68.0
+fastapi[standard]
 uvicorn>=0.15.0
 qdrant-client>=1.1.1
 python-dotenv>=0.19.0
@@ -7,6 +7,7 @@ redis>=4.0.1
 pydantic>=2.5.1
 sqlalchemy>=1.4.48
 psycopg2-binary>=2.9.5
+websockets
 
 # Utility dependencies
 streamlit>=1.28.2
