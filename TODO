@@ -23,6 +23,7 @@ For the modules like db, personal painter …, I would recommend working with
 windsurf - its really good at holding a large amount of context, and so giving
 it a high level overview of the project makes it really effective. You might 
 not even need to write a ton of code for many of these.
+ 
 
-
-https://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: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@github.com/Deckoviz/python_deckoviz.git
+# Delete old images
+docker rmi python_deckoviz-common python_deckoviz-api
