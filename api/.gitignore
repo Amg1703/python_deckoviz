@@ -46,3 +46,7 @@ data/images/*
 # Environment variables
 .env 
 test.ipynb
+
+# Output files
+output/
+

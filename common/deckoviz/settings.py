@@ -207,7 +207,7 @@ STORAGES = {
     "default": {
         "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
         "OPTIONS": {
-            "bucket_name": "decoviz-medias",
+            "bucket_name": config('GCS_BUCKET_NAME'),
             "location": "",
             "default_acl": None, 
         },
@@ -227,7 +227,7 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(GS_CREDEN
 # 🔥 Make sure GCS SDK can also see the credentials
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = GS_CREDENTIALS_FILE
 
-GS_BUCKET_NAME = 'decoviz-medias'
+GS_BUCKET_NAME = config('GCS_BUCKET_NAME')
 GS_DEFAULT_ACL = 'publicRead'
 GS_QUERYSTRING_AUTH=False
 

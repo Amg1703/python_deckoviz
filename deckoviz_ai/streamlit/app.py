@@ -14,19 +14,21 @@ from datetime import datetime
 import base64
 from io import BytesIO
 import requests
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
+import pathlib
+
+# Load environment variables from nearest .env file
+dotenv_path = find_dotenv()
+if dotenv_path:
+    load_dotenv(dotenv_path)
+    print(f"Loaded .env from {dotenv_path}")
 
 # Import Personal Painter
 import sys, os
 # Fix import issue by adding project root to path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.insert(0, project_root)
-dotenv_path = os.path.join(project_root, '.env')
-if os.path.exists(dotenv_path):
-    load_dotenv(dotenv_path)
-    print(f"Loaded .env from {dotenv_path}")
-else:
-    print(f"No .env found at {dotenv_path}")
+
 # Now use absolute imports
 from deckoviz_ai.personal_painter.personal_painter import (
     PersonalPainter, 
@@ -65,7 +67,8 @@ st.markdown("""
     .prompt-box {
         padding: 1rem;
         border-radius: 0.5rem;
-        background-color: #f0f2f6;
+        background-color: #000;
+        color: #fff;
         margin: 1rem 0;
         font-style: italic;
     }
