@@ -15,7 +15,7 @@ We take the security of Forofuse seriously. If you believe you have found a secu
 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
-Instead, please report them via email to [INSERT SECURITY EMAIL]. You should receive a response within 48 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
+Instead, please report them via email to security@forofuselabs.com. You should receive a response within 48 hours. If for some reason you do not, please follow up via email to ensure we received your original message.
 
 Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
 
@@ -30,7 +30,6 @@ Please include the requested information listed below (as much as you can provid
 This information will help us triage your report more quickly.
 
 ## Preferred Languages
-
 We prefer all communications to be in English.
 
 ## Policy

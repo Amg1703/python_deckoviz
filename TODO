@@ -4,13 +4,15 @@ we need to set up enough functionality to test out:
 the TV app running on the tv that displays the collections, the basic mobile app, 
 and data transfer protocol between the two.
 
-
+V1 Launch:
 For launching a minimum v1, do away with everything but profile creation, 
 user authentication, display algorithm, deploying on cloud, deploying on app 
 store, collection creation, database, personal painter through chat text mode, 
 transform images to gif or video functionality, style transfer images to any art
 style, upload personal images and add them to personal DB, basic recommendation
 engine. Here is what we need for that. The rest of the modules/user stories in v1,
+
+After V1 Launch:
 we can do only once these are done, and we have an app up and running and 
 satisfying all these basic conditions.And yeah, of course, data transfer from
 app to app. This is most urgent, since we have the embedded engineer come over 
