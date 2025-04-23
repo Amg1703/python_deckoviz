@@ -44,7 +44,7 @@ services:
       - .env
     ports:
       - "8000:8000"
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - redis
       - qdrant
@@ -72,15 +72,14 @@ services:
 
   deckoviz_ai:
     build:
-      context: ./deckoviz_ai
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: deckoviz_ai/Dockerfile
     image: deckoviz_ai:latest
     env_file:
-      - .env
+      - ./deckoviz_ai/.env
     container_name: deckoviz_ai
     ports:
       - "8501:8501"
-    command: streamlit run streamlit/app.py --server.address=0.0.0.0
     depends_on:
       - redis
       - qdrant

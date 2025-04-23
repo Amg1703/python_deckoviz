@@ -27,13 +27,14 @@ if dotenv_path:
 import sys, os
 # Fix import issue by adding project root to path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+
 sys.path.insert(0, project_root)
 
 # Now use absolute imports
 from deckoviz_ai.personal_painter.personal_painter import (
     PersonalPainter, 
     process_emotion_and_generate_art,
-    EMOTION_TO_COLOR_MAP
+    EMOTION_TO_COLOR_MAP,
 )
 
 # Set page configuration
@@ -147,16 +148,16 @@ async def async_process_input(user_input):
     """Process user input asynchronously"""
     # Initialize the Personal Painter
     # Create output directory in a location Streamlit can access
-    output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "output", "personal_painter")
-    output_dir = os.path.abspath(output_dir)
-    os.makedirs(output_dir, exist_ok=True)
-    print(f"Setting output directory to: {output_dir}")
+    # output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "output", "personal_painter")
+    # output_dir = os.path.abspath(output_dir)
+    # os.makedirs(output_dir, exist_ok=True)
+    # print(f"Setting output directory to: {output_dir}")
     
     # Use session API key or fallback to env var
     key = st.session_state.stability_api_key or os.getenv("STABILITY_API_KEY", "")
     painter = PersonalPainter(
         api_key=key,
-        image_dir=output_dir
+        image_dir="/app/output/personal_painter"
     )
     
     # Process the input and generate art
