@@ -1,20 +1,28 @@
 from django.db import models
 from apps.authentication.models import BaseModel
 from django.contrib.auth import get_user_model
-from apps.utils import INTERACTION_TYPES
+from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES
+from apps.utils.user_directory import user_image_path,user_music_path
 
 User = get_user_model()
 
+
 class Image(BaseModel):
-    file = models.ImageField(upload_to='images/')
-    uploaded_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='uploaded_images')
+    file = models.ImageField(upload_to=user_image_path, blank=True, null=True)
+    external_url = models.URLField(blank=True, null=True)
+    music = models.FileField(upload_to=user_music_path, blank=True, null=True)
+    uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_images')
+    view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')
     is_active = models.BooleanField(default=True)
     
     class Meta:
+        db_table = 'images'
+        verbose_name = 'Image'
+        verbose_name_plural = 'Images'
         indexes = [
             models.Index(fields=['uploaded_by']),
         ]
-
+    
     def __str__(self):
         return f"Image {self.id}"
     
@@ -22,12 +30,17 @@ class Image(BaseModel):
 class Collection(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collections')
     name = models.CharField(max_length=255)
+    music = models.FileField(upload_to=user_music_path, blank=True, null=True)
+    view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')  
     display_time = models.IntegerField(default=10, help_text="Time in seconds to display each image")
     music_preference = models.CharField(max_length=255, blank=True)
     meta_notes = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
     
     class Meta:
+        db_table = 'collections'
+        verbose_name = 'Collection'
+        verbose_name_plural = 'Collections'
         indexes = [
             models.Index(fields=['user']),
         ]
@@ -39,8 +52,11 @@ class CollectionImage(BaseModel):
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE, related_name='collection_images')
     image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='image_collections')
     order = models.PositiveIntegerField(default=0)
-    
+    view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')  
     class Meta:
+        db_table = 'collection_images'
+        verbose_name = 'Collection Image'
+        verbose_name_plural = 'Collection Images'
         ordering = ['order']
         unique_together = ['collection', 'image']
         
@@ -53,6 +69,9 @@ class ImageInteraction(BaseModel):
     interaction_type = models.CharField(max_length=10, choices=INTERACTION_TYPES)
 
     class Meta:
+        db_table = 'image_interactions'
+        verbose_name = 'Image Interaction'
+        verbose_name_plural = 'Image Interactions'
         indexes = [
             models.Index(fields=['user']),
             models.Index(fields=['image']),
@@ -77,11 +96,10 @@ class ImageInteraction(BaseModel):
                 name='either_internal_or_external_image'
             )
         ]
-
+        
     def __str__(self):
         image_identifier = self.image.id if self.image else self.external_image_id
         return f"{self.user.username} - {self.interaction_type} - {image_identifier}"
-
 
  
 class MetaComment(BaseModel):
@@ -93,6 +111,9 @@ class MetaComment(BaseModel):
     is_active = models.BooleanField(default=True)
 
     class Meta:
+        db_table = 'meta_comments'
+        verbose_name = 'Meta Comment'
+        verbose_name_plural = 'Meta Comments'
         indexes = [
             models.Index(fields=['user']),
             models.Index(fields=['image']),

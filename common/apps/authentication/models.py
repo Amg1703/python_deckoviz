@@ -2,7 +2,8 @@ from django.db import models
 import uuid
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxLengthValidator
-
+from apps.utils.choices import ADDRESS_TYPES
+from .managers import AddressManager
 
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -30,3 +31,36 @@ class User(AbstractUser,BaseModel):
 
     def __str__(self):
         return self.username
+    
+    class Meta:
+        db_table = 'users'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+        indexes = [
+            models.Index(fields=['email']),
+            models.Index(fields=['username']),
+            models.Index(fields=['first_name']),
+            models.Index(fields=['last_name']),
+            models.Index(fields=['is_active']),
+        ]
+        
+class Address(BaseModel):
+    user = models.ForeignKey('User', on_delete=models.CASCADE, related_name='addresses')
+    address_type = models.CharField(max_length=255, choices=ADDRESS_TYPES, default='billing')
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    state = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
+    zip_code = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return f"{self.address}, {self.city}, {self.state}, {self.country}, {self.zip_code}"
+    
+    objects = AddressManager()
+    class Meta:
+        db_table = 'addresses'
+        verbose_name = 'Address'
+        verbose_name_plural = 'Addresses'
+        indexes = [
+            models.Index(fields=['user']),
+        ]

@@ -27,3 +27,6 @@ not even need to write a ton of code for many of these.
 
 # Delete old images
 docker rmi python_deckoviz-common python_deckoviz-api
+
+
+ 

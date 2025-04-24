@@ -15,6 +15,9 @@ EXPOSE 8501
 
 # Create non-root user
 RUN useradd -m -d /home/appuser -s /bin/bash appuser
+
+# Create output directory and grant ownership
+RUN mkdir -p /app/output && chown appuser:appuser /app/output
 USER appuser
 
 # Launch Streamlit app

@@ -43,6 +43,15 @@ urlpatterns = [
     
     # gallery api
     path('gallery/', include('apps.gallery.urls')), 
+    
+    #marketplace api
+    path('marketplace/', include('apps.marketplace.urls')),
+    
+    #orders api
+    path('orders/', include('apps.orders.urls')),
+    
+    #payments api
+    path('payments/', include('apps.payments.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

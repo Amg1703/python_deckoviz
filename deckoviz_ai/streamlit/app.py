@@ -147,18 +147,13 @@ def create_color_image(emotion):
 async def async_process_input(user_input):
     """Process user input asynchronously"""
     # Initialize the Personal Painter
-    # Create output directory in a location Streamlit can access
-    # output_dir = os.path.join(os.path.dirname(__file__), "..", "..", "output", "personal_painter")
-    # output_dir = os.path.abspath(output_dir)
-    # os.makedirs(output_dir, exist_ok=True)
-    # print(f"Setting output directory to: {output_dir}")
+    # Determine output directory relative to project root
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    output_dir = os.path.join(project_root, "output", "personal_painter")
     
     # Use session API key or fallback to env var
     key = st.session_state.stability_api_key or os.getenv("STABILITY_API_KEY", "")
-    painter = PersonalPainter(
-        api_key=key,
-        image_dir="/app/output/personal_painter"
-    )
+    painter = PersonalPainter(api_key=key, image_dir=output_dir)
     
     # Process the input and generate art
     result = await process_emotion_and_generate_art(painter, user_input)
@@ -205,6 +200,10 @@ with col1:
             # Process the input
             result = run_async(async_process_input(user_input))
             
+            # Raw JSON debug in an expander
+            with st.expander("Show raw art JSON"):
+                st.json(result["art"])
+            
             # Add to history
             st.session_state.history.append({
                 "input": user_input,
@@ -235,35 +234,18 @@ with col1:
             st.markdown("<h2 class='sub-header'>Art Prompt</h2>", unsafe_allow_html=True)
             st.markdown(f"<div class='prompt-box'>{art_data['prompt']}</div>", unsafe_allow_html=True)
             
-            # Display the generated image or a placeholder if generation failed
+            # Display the generated image or a placeholder
             st.markdown("<h2 class='sub-header'>Visual Representation</h2>", unsafe_allow_html=True)
             
-            image_path = art_data.get('image_path')
-            # Log image path for debugging
-            if image_path:
-                st.write(f"Debug - Image path: {image_path}")
-                st.write(f"Path exists: {os.path.exists(image_path) if image_path else False}")
-            
-            if image_path and os.path.exists(image_path):
-                try:
-                    with open(image_path, "rb") as img_file:
-                        image_bytes = img_file.read()
-                    
-                    st.image(image_bytes, caption=f"Generated art: {art_data['prompt']}", use_container_width=True)
-                except Exception as e:
-                    st.error(f"Error displaying image: {e}")
-                    # Fall back to placeholder
-                    img = create_color_image(primary_emotion)
-                    st.image(img, caption=f"Placeholder for: {art_data['prompt']}", use_container_width=True)
+            image_bytes = art_data.get('image_bytes')
+            if image_bytes:
+                st.image(image_bytes, caption=f"Generated art: {art_data['prompt']}", use_container_width=True)
             else:
-                st.warning(
-                    "Image generation wasn't successful. This could be due to API limits, "
-                    "connection issues, or missing API key. Showing a placeholder instead."
-                )
-                
-                # Create and display placeholder image
-                img = create_color_image(primary_emotion)
-                st.image(img, caption=f"Placeholder for: {art_data['prompt']}", use_container_width=True)
+                error_message = art_data.get('error', '')
+                if error_message:
+                    st.error(f"Image generation error: {error_message}")
+                else:
+                    st.error("Image generation wasn't successful.")
 
 with col2:
     # History/sidebar section
@@ -337,7 +319,7 @@ with col2:
             st.success("API key updated for this session!")
     
     # Clear history button
-    if st.button("Clear History"):
+    if st.button("Clear History", type="secondary"):
         st.session_state.history = []
         st.success("History cleared!")
 

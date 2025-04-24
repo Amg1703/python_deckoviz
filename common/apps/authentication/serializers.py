@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from .models import Address
+
 
 User = get_user_model() 
 
@@ -46,3 +48,28 @@ class UserSerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at', 
         ]
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Address
+        fields = [
+            'id',
+            'address_type',
+            'address',
+            'city',
+            'state',
+            'country',
+            'zip_code',
+            'created_at',
+            'updated_at',
+        ]
+        read_only_fields = [
+            'id',
+            'created_at',
+            'updated_at',
+        ]
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)

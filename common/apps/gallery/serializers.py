@@ -1,12 +1,41 @@
 from rest_framework import serializers
 from .models import Image, Collection, CollectionImage
-from django.contrib.auth.models import User
 from apps.authentication.serializers import UserSerializer
+from apps.marketplace.serializers import PriceSerializer
 
 class ImageSerializer(serializers.ModelSerializer):
+    price = PriceSerializer(read_only=True)
+    uploaded_by = UserSerializer(read_only=True)
+    
     class Meta:
         model = Image
-        fields = ['id', 'file', 'uploaded_by', 'is_active', 'created_at', 'updated_at']
+        fields = [
+            'id', 
+            'file', 
+            'music',
+            'external_url', 
+            'uploaded_by', 
+            'view', 
+            'price',
+            'is_active', 
+            'created_at', 
+            'updated_at'
+        ]
+        
+        read_only_fields = [
+            'id', 
+            'uploaded_by', 
+            'view', 
+            'price',
+            'is_active', 
+            'created_at', 
+            'updated_at'
+        ]
+        
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['price'] = PriceSerializer(instance.prices.first()).data
+        return data 
 
 class CollectionImageSerializer(serializers.ModelSerializer):
     image = ImageSerializer(read_only=True)
@@ -32,7 +61,20 @@ class CollectionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Collection
-        fields = ['id', 'user', 'name', 'display_time', 'music_preference', 'meta_notes', 'is_active', 'collection_images', 'created_at', 'updated_at']
+        fields = [
+            'id', 
+            'user', 
+            'name', 
+            'display_time', 
+            'music_preference', 
+            'meta_notes', 
+            'is_active', 
+            'collection_images', 
+            'created_at', 
+            'updated_at',
+            'music',
+            'view'
+        ]
 
 
 class CollectionDetailSerializer(CollectionSerializer):

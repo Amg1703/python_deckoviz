@@ -1,10 +1,11 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response 
 from rest_framework import status 
-from .serializers import RegisterSerializer, UserSerializer
+from .serializers import RegisterSerializer, UserSerializer,AddressSerializer
 from rest_framework import mixins,viewsets
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import get_user_model
+from .models import Address
 
 User = get_user_model()
 
@@ -28,4 +29,14 @@ class UserView(
     def get_queryset(self):
         return super().get_queryset().filter(id=self.request.user.id)
     
+class AddressView(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+    permission_classes = [IsAuthenticated]
     
+    def get_queryset(self):
+        # use manager directly since QuerySet lacks for_user
+        return Address.objects.for_user(self.request.user)
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)

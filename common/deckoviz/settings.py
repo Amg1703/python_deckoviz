@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'apps.notifications',
     'apps.chats',
     'apps.utils',
-    'apps.ai_features',
+    'apps.marketplace',
+    'apps.orders',
+    'apps.payments',
     
     # third party apps  
     'rest_framework',
