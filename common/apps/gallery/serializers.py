@@ -2,9 +2,12 @@ from rest_framework import serializers
 from .models import Image, Collection, CollectionImage
 from apps.authentication.serializers import UserSerializer
 from apps.marketplace.serializers import PriceSerializer
+from apps.marketplace.models import Price
+from django.db import transaction
 
 class ImageSerializer(serializers.ModelSerializer):
     price = PriceSerializer(read_only=True)
+    buy_price = serializers.DecimalField(max_digits=10, decimal_places=2, write_only=True)
     uploaded_by = UserSerializer(read_only=True)
     
     class Meta:
@@ -15,6 +18,7 @@ class ImageSerializer(serializers.ModelSerializer):
             'music',
             'external_url', 
             'uploaded_by', 
+            'buy_price',
             'view', 
             'price',
             'is_active', 
@@ -32,14 +36,24 @@ class ImageSerializer(serializers.ModelSerializer):
             'updated_at'
         ]
         
+    def create(self,validated_data):
+        user = self.context['request'].user
+        validated_data['uploaded_by'] = user
+        buy_price = validated_data.pop('buy_price')
+        image = super().create(validated_data)
+        
+        # Create image and price in a transaction
+        with transaction.atomic():
+            Price.objects.create(image=image, final_price=buy_price, is_active=True)
+        return image
+    
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        data['price'] = PriceSerializer(instance.prices.first()).data
+        data['price'] = PriceSerializer(Price.objects.get(image=instance)).data
         return data 
 
 class CollectionImageSerializer(serializers.ModelSerializer):
     image = ImageSerializer(read_only=True)
-    # image_id = serializers.PrimaryKeyRelatedField(queryset=Image.objects.all(), source='image', write_only=True)
 
     class Meta:
         model = CollectionImage

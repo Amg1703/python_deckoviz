@@ -8,4 +8,4 @@ class OrderManager(models.Manager):
         return self.get_queryset().filter(is_active=True)
 
     def for_user(self, user):
-        return self.get_queryset().filter(user=user)
+        return self.get_queryset().filter(user=user,is_active=True)

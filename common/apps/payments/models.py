@@ -5,10 +5,11 @@ from .managers import TransactionManager
 
 class Transaction(BaseModel):
     user = models.ForeignKey('authentication.User', on_delete=models.CASCADE, related_name='transactions')
-    order = models.ForeignKey('orders.Order', on_delete=models.CASCADE, related_name='transactions')
+    order = models.OneToOneField('orders.Order', on_delete=models.CASCADE, related_name='transactions',null=True,blank=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     payment_method = models.CharField(max_length=255,choices=PAYMENT_METHOD_CHOICES,default='stripe')
     ref_id = models.CharField(max_length=255,blank=True,null=True)
+    signature = models.CharField(max_length=255,blank=True,null=True)
     status = models.CharField(max_length=255,default='pending',choices=PAYMENT_STATUS_CHOICES)
     
     def __str__(self):

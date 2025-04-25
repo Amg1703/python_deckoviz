@@ -3,7 +3,7 @@ from apps.authentication.models import BaseModel
 from .managers import PriceManager
 
 class Price(BaseModel):
-    image = models.ForeignKey('gallery.Image', on_delete=models.CASCADE, related_name='prices')
+    image = models.OneToOneField('gallery.Image', on_delete=models.CASCADE, related_name='prices',unique=True)
     final_price = models.DecimalField(max_digits=10, decimal_places=2)
     is_active = models.BooleanField(default=True)
     

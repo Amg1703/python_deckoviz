@@ -8,8 +8,7 @@ class OrderView(
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
     viewsets.GenericViewSet,
-):
-    queryset = Order.objects.all()
+): 
     
     def get_serializer_class(self):
         if self.request.method in ['POST','PUT']:
@@ -17,4 +16,4 @@ class OrderView(
         return OrderSerializer   
     
     def get_queryset(self):
-        return self.get_queryset().for_user(self.request.user)
+        return Order.objects.for_user(user=self.request.user)
