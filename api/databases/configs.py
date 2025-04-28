@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
-import redis
+from redis import Redis
 
 # Load environment variables
 load_dotenv()
@@ -40,16 +40,14 @@ def get_client():
 
 # Redis client dependency
 def get_redis_client():
-    redis_client = redis.Redis(
-        host=REDIS_HOST, 
+    """
+    Redis client dependency. Returns a synchronous Redis client.
+    """
+    client = Redis(
+        host=REDIS_HOST,
         port=REDIS_PORT,
         db=REDIS_DB,
         password=REDIS_PASSWORD,
-        decode_responses=False  # Keep as bytes to avoid encoding issues
+        decode_responses=False,
     )
-    try:
-        yield redis_client
-    finally:
-        redis_client.close()
-        
-        
+    return client

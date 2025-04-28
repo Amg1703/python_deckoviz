@@ -65,7 +65,7 @@ services:
       - "8080:8080"
     environment:
       - PYTHONPATH=/app
-    command: uvicorn main:app --host 0.0.0.0 --port 8080
+    command: uvicorn main:app --host 0.0.0.0 --port 8080 --reload
     depends_on:
       - redis
       - qdrant
@@ -73,6 +73,7 @@ services:
       - decoviz_common_default
     volumes:
       - ./api:/app
+      - ./deckoviz_ai:/app/deckoviz_ai
 
   deckoviz_ai:
     build:
@@ -81,6 +82,7 @@ services:
     image: deckoviz_ai:latest
     env_file:
       - ./deckoviz_ai/.env
+    command: streamlit run streamlit/app.py
     container_name: deckoviz_ai
     ports:
       - "8501:8501"

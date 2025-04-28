@@ -10,11 +10,11 @@ import sys
 # Ensure debug logs for all modules (including WebSocket router)
 logging.basicConfig(level=logging.DEBUG)
 
-# Ensure project root is on PYTHONPATH so sibling packages are importable
+# Ensure project root (parent of api) is on PYTHONPATH so deckoviz_ai is importable
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
-from routers import image_search,websocket, image_generator, collections
+from routers import image_search,websocket, collections,image_generator,google_genai,rooms
 from databases.configs import get_redis_client
 
 # Initialize the application
@@ -29,17 +29,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BASE_DIR = Path("output")  # Base directory for images
-
-# if the directory does not exist, create it
-if not BASE_DIR.exists():
-    os.makedirs(BASE_DIR)
-
 # Include routers
 app.include_router(image_search.router)
 app.include_router(image_generator.router)
 app.include_router(collections.router)
 app.include_router(websocket.router)
+app.include_router(google_genai.router)
+app.include_router(rooms.router)
 
 
 @app.get("/", dependencies=[Depends(get_redis_client)])

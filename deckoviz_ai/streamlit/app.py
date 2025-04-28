@@ -16,26 +16,17 @@ from io import BytesIO
 import requests
 from dotenv import load_dotenv, find_dotenv
 import pathlib
+import sys
+
+# Ensure deckoviz_ai package is on sys.path
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
+sys.path.insert(0, project_root)
 
 # Load environment variables from nearest .env file
 dotenv_path = find_dotenv()
 if dotenv_path:
     load_dotenv(dotenv_path)
-    print(f"Loaded .env from {dotenv_path}")
-
-# Import Personal Painter
-import sys, os
-# Fix import issue by adding project root to path
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
-
-sys.path.insert(0, project_root)
-
-# Now use absolute imports
-from deckoviz_ai.personal_painter.personal_painter import (
-    PersonalPainter, 
-    process_emotion_and_generate_art,
-    EMOTION_TO_COLOR_MAP,
-)
+    # print(f"Loaded .env from {dotenv_path}")
 
 # Set page configuration
 st.set_page_config(
@@ -148,7 +139,7 @@ async def async_process_input(user_input):
     """Process user input asynchronously"""
     # Initialize the Personal Painter
     # Determine output directory relative to project root
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
     output_dir = os.path.join(project_root, "output", "personal_painter")
     
     # Use session API key or fallback to env var
@@ -167,6 +158,12 @@ def run_async(coroutine):
     loop.close()
     return result
 
+# Mode selection
+mode = st.sidebar.selectbox(
+    "Select Mode",
+    ["Text to Image", "Text to Video", "Style Transfer"]
+)
+
 # Initialize session state for history and API key
 if 'history' not in st.session_state:
     st.session_state.history = []
@@ -184,68 +181,100 @@ st.markdown(
 col1, col2 = st.columns([3, 2])
 
 with col1:
-    # User input section
-    st.markdown("<h2 class='sub-header'>Express Yourself</h2>", unsafe_allow_html=True)
-    user_input = st.text_area(
-        "Share your thoughts, feelings, or experiences...",
-        height=150,
-        placeholder="For example: I'm feeling really excited about my upcoming vacation to the mountains..."
-    )
-    
-    submit_button = st.button("Generate Art", type="primary")
-    
-    # Process input when button is clicked
-    if submit_button and user_input:
-        with st.spinner("Analyzing your emotions and creating art..."):
-            # Process the input
-            result = run_async(async_process_input(user_input))
-            
-            # Raw JSON debug in an expander
-            with st.expander("Show raw art JSON"):
-                st.json(result["art"])
-            
-            # Add to history
-            st.session_state.history.append({
-                "input": user_input,
-                "result": result,
-                "timestamp": datetime.now().isoformat()
-            })
-            
-            # Display results
-            emotion_data = result["processed"]["emotion"]
-            art_data = result["art"]
-            
-            # Emotion analysis results
-            primary_emotion = emotion_data["primary_emotion"]
-            confidence = emotion_data["confidence"]
-            emotion_color = get_emotion_color(primary_emotion)
-            emotion_emoji = get_emotion_emoji(primary_emotion)
-            
-            st.markdown(f"<h2 class='sub-header'>Emotional Analysis</h2>", unsafe_allow_html=True)
-            st.markdown(
-                f"<div class='emotion-box' style='background-color: {emotion_color}; color: white;'>"
-                f"<h3>{emotion_emoji} {primary_emotion.capitalize()}</h3>"
-                f"<p>Confidence: {confidence:.2f}</p>"
-                "</div>",
-                unsafe_allow_html=True
-            )
-            
-            # Art prompt
-            st.markdown("<h2 class='sub-header'>Art Prompt</h2>", unsafe_allow_html=True)
-            st.markdown(f"<div class='prompt-box'>{art_data['prompt']}</div>", unsafe_allow_html=True)
-            
-            # Display the generated image or a placeholder
-            st.markdown("<h2 class='sub-header'>Visual Representation</h2>", unsafe_allow_html=True)
-            
-            image_bytes = art_data.get('image_bytes')
-            if image_bytes:
-                st.image(image_bytes, caption=f"Generated art: {art_data['prompt']}", use_container_width=True)
-            else:
-                error_message = art_data.get('error', '')
-                if error_message:
-                    st.error(f"Image generation error: {error_message}")
+    if mode == "Text to Image":
+        # User input section
+        st.markdown("<h2 class='sub-header'>Express Yourself</h2>", unsafe_allow_html=True)
+        user_input = st.text_area(
+            "Share your thoughts, feelings, or experiences...",
+            height=150,
+            placeholder="For example: I'm feeling really excited about my upcoming vacation to the mountains..."
+        )
+        
+        submit_button = st.button("Generate Art", type="primary")
+        
+        # Process input when button is clicked
+        if submit_button and user_input:
+            with st.spinner("Analyzing your emotions and creating art..."):
+                # Process the input
+                result = run_async(async_process_input(user_input))
+                
+                # Raw JSON debug in an expander
+                with st.expander("Show raw art JSON"):
+                    st.json(result["art"])
+                
+                # Add to history
+                st.session_state.history.append({
+                    "input": user_input,
+                    "result": result,
+                    "timestamp": datetime.now().isoformat()
+                })
+                
+                # Display results
+                emotion_data = result["processed"]["emotion"]
+                art_data = result["art"]
+                
+                # Emotion analysis results
+                primary_emotion = emotion_data["primary_emotion"]
+                confidence = emotion_data["confidence"]
+                emotion_color = get_emotion_color(primary_emotion)
+                emotion_emoji = get_emotion_emoji(primary_emotion)
+                
+                st.markdown(f"<h2 class='sub-header'>Emotional Analysis</h2>", unsafe_allow_html=True)
+                st.markdown(
+                    f"<div class='emotion-box' style='background-color: {emotion_color}; color: white;'>"
+                    f"<h3>{emotion_emoji} {primary_emotion.capitalize()}</h3>"
+                    f"<p>Confidence: {confidence:.2f}</p>"
+                    "</div>",
+                    unsafe_allow_html=True
+                )
+                
+                # Art prompt
+                st.markdown("<h2 class='sub-header'>Art Prompt</h2>", unsafe_allow_html=True)
+                st.markdown(f"<div class='prompt-box'>{art_data['prompt']}</div>", unsafe_allow_html=True)
+                
+                # Display the generated image or a placeholder
+                st.markdown("<h2 class='sub-header'>Visual Representation</h2>", unsafe_allow_html=True)
+                
+                image_bytes = art_data.get('image_bytes')
+                if image_bytes:
+                    st.image(image_bytes, caption=f"Generated art: {art_data['prompt']}", use_container_width=True)
                 else:
-                    st.error("Image generation wasn't successful.")
+                    error_message = art_data.get('error', '')
+                    if error_message:
+                        st.error(f"Image generation error: {error_message}")
+                    else:
+                        st.error("Image generation wasn't successful.")
+    elif mode == "Text to Video":
+        st.markdown("<h2 class='sub-header'>Text to Video Generation</h2>", unsafe_allow_html=True)
+        video_prompt = st.text_area(
+            "Enter a prompt for video generation...",
+            height=150,
+            placeholder="For example: A calm beach at sunset with gentle waves"
+        )
+        if st.button("Generate Video", type="primary"):
+            with st.spinner("Generating video..."):
+                if not st.session_state.stability_api_key:
+                    st.error("Please enter your Stability API key.")
+                    # return
+                video_bytes, error = video_generator.generate_video(video_prompt)
+                if error:
+                    st.error(f"Video generation error: {error}")
+                else:
+                    st.video(video_bytes, format="video/mp4", start_time=0)
+    elif mode == "Style Transfer":
+        st.markdown("<h2 class='sub-header'>Image Style Transfer</h2>", unsafe_allow_html=True)
+        source_img = st.file_uploader("Upload source image", type=["png", "jpg", "jpeg"])
+        style_img = st.file_uploader("Upload style reference image", type=["png", "jpg", "jpeg"])
+        if st.button("Transfer Style", type="primary"):
+            if source_img and style_img:
+                with st.spinner("Transferring style..."):
+                    img_bytes, error = st_transfer.style_transfer(source_img, style_img)
+                    if error:
+                        st.error(f"Style transfer error: {error}")
+                    else:
+                        st.image(img_bytes, caption="Stylized image", use_container_width=True)
+            else:
+                st.warning("Please upload both source and style images.")
 
 with col2:
     # History/sidebar section
@@ -328,4 +357,11 @@ st.markdown("---")
 st.markdown(
     "Deckoviz Personal Painter | AI-powered Smart Art Frame | "
     " 2025 Deckoviz"
+)
+
+from deckoviz_ai.personal_painter import st_transfer, video_generator
+from deckoviz_ai.personal_painter.personal_painter import (
+    PersonalPainter,
+    process_emotion_and_generate_art,
+    EMOTION_TO_COLOR_MAP,
 )

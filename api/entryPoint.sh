@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # source venv/bin/activate
-# uvicorn main:app --host 0.0.0.0 --port 8080 --reload --log-level debug
+uvicorn main:app --host 0.0.0.0 --port 8080 --reload --log-level debug
 
-docker compose up -d
-docker logs -f api
+# docker compose up -d
+# docker logs -f api

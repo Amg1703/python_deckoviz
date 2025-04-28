@@ -1,32 +1,20 @@
-At a minimum by tomorrow, since 
-we have a couple of engineers come over to help us set the android, 
-we need to set up enough functionality to test out:
-the TV app running on the tv that displays the collections, the basic mobile app, 
-and data transfer protocol between the two.
+V1 Remainings
+1. transform images to gif or video functionality, 
+2. ⁠style transfer images to any art style 
+3. ⁠Basic Recommendation engine
+4. ⁠Queue mechanism
 
-V1 Launch:
-For launching a minimum v1, do away with everything but profile creation, 
-user authentication, display algorithm, deploying on cloud, deploying on app 
-store, collection creation, database, personal painter through chat text mode, 
-transform images to gif or video functionality, style transfer images to any art
-style, upload personal images and add them to personal DB, basic recommendation
-engine. Here is what we need for that. The rest of the modules/user stories in v1,
-
-After V1 Launch:
-we can do only once these are done, and we have an app up and running and 
-satisfying all these basic conditions.And yeah, of course, data transfer from
-app to app. This is most urgent, since we have the embedded engineer come over 
-to test this thing.
-
-
-For the modules like db, personal painter …, I would recommend working with 
-windsurf - its really good at holding a large amount of context, and so giving
-it a high level overview of the project makes it really effective. You might 
-not even need to write a ton of code for many of these.
- 
-
-# Delete old images
-docker rmi python_deckoviz-common python_deckoviz-api
-
-
- 
+Queue Mechanism
+Daily TV app collection updates routine: How to set up the display and collections 
+system 
+Queue mechanism 
+The user can add 20 collections in a queue at any time. 
+A certain amount of space is reserved on the TV to store one or of these collections
+- lets say x gb. Our system calculates how many of the collections, 
+starting from the first one, can be sent to the TV. (eg. if x is 2 gb, and
+say col. 1 is 800 mb, collection 2. is 600 mb, collection 3 is 800 mb, 
+then only the first 2 are sent.)
+Once each of these collections have been displayed, then the TV app sends a 
+note to the mobile app asking to send the next batch. If the mobile phone is not
+ in the vicinity (communication failed), then it keeps on trying every 10 minutes. 
+ This loop keeps on repeating.
