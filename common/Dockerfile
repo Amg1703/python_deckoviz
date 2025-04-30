@@ -38,7 +38,9 @@ COPY common/scripts.sh scripts.sh
 RUN chmod +x /app/scripts.sh
 
 # Create necessary directories inside the container
-RUN mkdir -p /app/logs/redis
+RUN mkdir -p /app/logs/redis /app/logs/supervisor /app/logs/django /app/logs/celery /app/logs/flower
+# Set proper permissions for log directories
+RUN chmod -R 777 /app/logs
 
 # Copy requirements and install dependencies
 COPY common/requirements.txt .

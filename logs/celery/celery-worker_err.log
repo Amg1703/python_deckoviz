@@ -1,0 +1,191 @@
+/usr/local/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+[2025-04-30 12:06:04,044: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 2.00 seconds... (1/100)
+
+[2025-04-30 12:06:06,055: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 4.00 seconds... (2/100)
+
+[2025-04-30 12:06:10,063: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 6.00 seconds... (3/100)
+
+[2025-04-30 12:06:16,145: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 8.00 seconds... (4/100)
+
+[2025-04-30 12:06:24,167: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 10.00 seconds... (5/100)
+
+[2025-04-30 12:06:34,222: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 12.00 seconds... (6/100)
+
+[2025-04-30 12:06:46,281: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 14.00 seconds... (7/100)
+
+[2025-04-30 12:07:00,336: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 16.00 seconds... (8/100)
+
+[2025-04-30 12:07:16,367: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 18.00 seconds... (9/100)
+
+
+worker: Warm shutdown (MainProcess)
+/usr/local/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+[2025-04-30 12:08:26,247: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 2.00 seconds... (1/100)
+
+[2025-04-30 12:08:28,262: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 4.00 seconds... (2/100)
+
+[2025-04-30 12:08:32,286: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 6.00 seconds... (3/100)
+
+[2025-04-30 12:08:38,317: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 8.00 seconds... (4/100)
+
+[2025-04-30 12:08:46,346: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 10.00 seconds... (5/100)
+
+[2025-04-30 12:08:56,380: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 12.00 seconds... (6/100)
+
+[2025-04-30 12:09:08,404: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 14.00 seconds... (7/100)
+
+[2025-04-30 12:09:22,448: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 16.00 seconds... (8/100)
+
+[2025-04-30 12:09:38,502: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 18.00 seconds... (9/100)
+
+[2025-04-30 12:09:56,563: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 20.00 seconds... (10/100)
+
+[2025-04-30 12:10:16,617: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 22.00 seconds... (11/100)
+
+[2025-04-30 12:10:38,693: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 24.00 seconds... (12/100)
+
+[2025-04-30 12:11:02,761: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Authentication required..
+Trying again in 26.00 seconds... (13/100)
+
+
+worker: Warm shutdown (MainProcess)
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+Usage: celery worker [OPTIONS]
+Try 'celery worker --help' for help.
+
+Error: No such option: --broker
+/usr/local/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+[2025-04-30 12:15:40,743: INFO/MainProcess] Connected to redis://:**@redis:6379/0
+[2025-04-30 12:15:40,752: INFO/MainProcess] mingle: searching for neighbors
+[2025-04-30 12:15:41,786: INFO/MainProcess] mingle: all alone
+[2025-04-30 12:15:41,799: INFO/MainProcess] celery@e157a09cf1bd ready.
+[2025-04-30 12:15:41,803: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5c8b8a01-d156-4244-84ca-951d1dc85b8e] received
+[2025-04-30 12:15:41,806: WARNING/ForkPoolWorker-4] Fetching audios to process
+[2025-04-30 12:15:43,437: WARNING/ForkPoolWorker-4] Found 1 audios to process
+[2025-04-30 12:15:43,644: INFO/ForkPoolWorker-4] Initialized AI client with base URL: http://deckoviz_ai:8001
+[2025-04-30 12:15:43,651: INFO/ForkPoolWorker-4] Sending transcription request for URL: https://storage.googleapis.com/decoviz-medias/audios/153b167e-6048-45c7-85de-14583d87442e/hello.mp3
+[2025-04-30 12:15:48,440: INFO/ForkPoolWorker-4] Successfully transcribed audio - ID: None
+[2025-04-30 12:15:48,442: WARNING/ForkPoolWorker-4] Transcribing audio c2df37a1-f041-49a8-9cfa-da96780d9810: {'success': True, 'transcript': 'Hey, how is it going? How are you?', 'id': None, 'status': 'completed'}
+[2025-04-30 12:15:49,874: INFO/MainProcess] Task apps.gallery.tasks.process_audio[66df53b5-e0e1-447e-9834-8641c1c6f7b2] received
+[2025-04-30 12:15:49,894: WARNING/ForkPoolWorker-2] Fetching audios to process
+[2025-04-30 12:15:51,269: WARNING/ForkPoolWorker-4] Transcript uploaded to https://storage.googleapis.com/decoviz-medias/transcripts/c2df37a1-f041-49a8-9cfa-da96780d9810/transcript.txt
+[2025-04-30 12:15:51,499: WARNING/ForkPoolWorker-2] Found 0 audios to process
+[2025-04-30 12:15:51,524: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[5c8b8a01-d156-4244-84ca-951d1dc85b8e] succeeded in 9.718745870006387s: None
+[2025-04-30 12:15:51,862: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[66df53b5-e0e1-447e-9834-8641c1c6f7b2] succeeded in 1.9754614179983037s: None
+[2025-04-30 12:15:59,876: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a949c068-8445-41dc-ad69-ac3debb716be] received
+[2025-04-30 12:15:59,890: WARNING/ForkPoolWorker-4] Fetching audios to process
+[2025-04-30 12:16:01,511: WARNING/ForkPoolWorker-4] Found 0 audios to process
+[2025-04-30 12:16:01,722: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[a949c068-8445-41dc-ad69-ac3debb716be] succeeded in 1.8334438510064501s: None
+[2025-04-30 12:16:09,878: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3dd0f8c0-03bd-4cb3-b10f-8c618df2e8fc] received
+[2025-04-30 12:16:09,890: WARNING/ForkPoolWorker-4] Fetching audios to process
+[2025-04-30 12:16:11,461: WARNING/ForkPoolWorker-4] Found 0 audios to process
+[2025-04-30 12:16:11,671: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[3dd0f8c0-03bd-4cb3-b10f-8c618df2e8fc] succeeded in 1.7829040590004297s: None
+[2025-04-30 12:16:19,875: INFO/MainProcess] Task apps.gallery.tasks.process_audio[386fe0c0-8b8f-4e7f-b0fa-7d13cd77b0b0] received
+[2025-04-30 12:16:19,887: WARNING/ForkPoolWorker-4] Fetching audios to process
+[2025-04-30 12:16:21,429: WARNING/ForkPoolWorker-4] Found 0 audios to process
+[2025-04-30 12:16:21,630: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[386fe0c0-8b8f-4e7f-b0fa-7d13cd77b0b0] succeeded in 1.7484970379882725s: None
+[2025-04-30 12:16:29,870: INFO/MainProcess] Task apps.gallery.tasks.process_audio[45b03835-6790-49d9-abc7-a937bf3b7089] received
+[2025-04-30 12:16:29,878: WARNING/ForkPoolWorker-4] Fetching audios to process
+[2025-04-30 12:16:31,422: WARNING/ForkPoolWorker-4] Found 0 audios to process
+[2025-04-30 12:16:31,621: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[45b03835-6790-49d9-abc7-a937bf3b7089] succeeded in 1.7451526110089617s: None

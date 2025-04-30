@@ -1,0 +1,57 @@
+ 
+ -------------- celery@323656f512b8 v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-04-30 12:06:03
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xf26128075f70
+- ** ---------- .> transport:   redis://redis:6379/0
+- ** ---------- .> results:     redis://redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.process_audio
+
+ 
+ -------------- celery@1c9fa5cc05a8 v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-04-30 12:08:25
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xf5bb59c23a10
+- ** ---------- .> transport:   redis://redis:6379/0
+- ** ---------- .> results:     redis://redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.process_audio
+
+ 
+ -------------- celery@e157a09cf1bd v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-04-30 12:15:38
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xed290997f3b0
+- ** ---------- .> transport:   redis://:**@redis:6379/0
+- ** ---------- .> results:     redis://:**@redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.process_audio
+

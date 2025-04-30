@@ -236,9 +236,9 @@ GS_QUERYSTRING_AUTH=False
 # Set media URL (e.g., for serving images from GCS)
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
 
-# Celery 
-CELERY_BROKER_URL = 'redis://redis:6379/0'
-CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+# Celery Configuration
+CELERY_BROKER_URL = config('REDIS_URL')
+CELERY_RESULT_BACKEND = config('REDIS_URL')
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 

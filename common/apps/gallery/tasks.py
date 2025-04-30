@@ -1,7 +1,7 @@
 from celery import shared_task 
 from .models import Audio
-from .ai_client import AIClient
-from .storage import Storage
+from apps.utils.decoviz_ai import AIClient
+from apps.utils.storage import Storage
 import logging
 
 logger = logging.getLogger(__name__)
