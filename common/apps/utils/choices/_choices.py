@@ -24,6 +24,12 @@ ORDER_STATUS_CHOICES = (
         ('cancelled', 'Cancelled'), 
 )
 
+TRANSCRIPTION_STATUS = [
+        ('processing', 'Processing'),
+        ('completed', 'Completed')
+]
+
+
 VIEW_TYPES = [
         ('private', 'Private'),
         ('public', 'Public')

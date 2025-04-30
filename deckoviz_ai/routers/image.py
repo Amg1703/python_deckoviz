@@ -1,34 +1,21 @@
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
 import os
-from deckoviz_ai.personal_painter.personal_painter import PersonalPainter, process_emotion_and_generate_art
+from schemas.image import GenerateRequest, GenerateResponse
+from  genai.personal_painter import process_emotion_and_generate_art, PersonalPainter
 from dotenv import load_dotenv
-from utils.storage import upload_bytes_to_gcs
 
 load_dotenv()
 
-router = APIRouter(
-    prefix="/image-generator",
-    tags=["image_generation"]
-)
+router = APIRouter(prefix="")
 
-class GenerateRequest(BaseModel):
-    user_input: str
 
-class GenerateResponse(BaseModel):
-    url: str
-    prompt: str
-
-@router.post("/", response_model=GenerateResponse)
+@router.post("/create-art", response_model=GenerateResponse)
 async def generate_image(req: GenerateRequest):
     # Initialize Personal Painter
     api_key = os.getenv("STABILITY_API_KEY")
     if not api_key:
         raise HTTPException(status_code=500, detail="STABILITY_API_KEY is not set")
-    # # Local output directory
-    # output_dir = os.path.join(os.getcwd(), "output", "personal_painter")
-    # os.makedirs(output_dir, exist_ok=True)
-    # painter = PersonalPainter(api_key=api_key, image_dir=output_dir)
+    painter = PersonalPainter(api_key=api_key)
 
     # Generate art and get image bytes
     result = await process_emotion_and_generate_art(painter, req.user_input)

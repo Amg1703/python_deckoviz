@@ -1,11 +1,31 @@
 from django.db import models
 from apps.authentication.models import BaseModel
 from django.contrib.auth import get_user_model
-from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES
-from apps.utils.user_directory import user_image_path,user_music_path
+from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS
+from apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
 
 User = get_user_model()
 
+
+class Audio(BaseModel):
+    transcript = models.TextField(blank=True, null=True)
+    transcript_url = models.URLField(blank=True, null=True)
+    transcript_status = models.CharField(max_length=255, blank=True, null=True,choices=TRANSCRIPTION_STATUS,default='processing')
+    audio = models.FileField(upload_to=user_audio_path, blank=True, null=True)
+    uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_audios')
+    view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')
+    is_active = models.BooleanField(default=True)
+    
+    class Meta:
+        db_table = 'audios'
+        verbose_name = 'Audio'
+        verbose_name_plural = 'Audios'
+        indexes = [
+            models.Index(fields=['uploaded_by']),
+        ]
+    
+    def __str__(self):
+        return f"Audio {self.id}"
 
 class Image(BaseModel):
     file = models.ImageField(upload_to=user_image_path, blank=True, null=True)

@@ -17,3 +17,15 @@ def user_image_path(instance, filename):
 def user_music_path(instance, filename):
     user_id = _get_user_id(instance)
     return posixpath.join('music', user_id, filename)
+
+def user_audio_path(instance, filename):
+    user_id = _get_user_id(instance)
+    return posixpath.join('audios', user_id, filename)
+
+def user_video_path(instance, filename):
+    user_id = _get_user_id(instance)
+    return posixpath.join('videos', user_id, filename)
+
+def user_transcript_path(instance, filename):
+    user_id = _get_user_id(instance)
+    return posixpath.join('transcripts', user_id, filename)

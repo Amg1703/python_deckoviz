@@ -235,3 +235,12 @@ GS_QUERYSTRING_AUTH=False
 
 # Set media URL (e.g., for serving images from GCS)
 MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+
+# Celery 
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# deckoviz_ai service settings
+DECKOVIZ_AI_URL = os.getenv('DECKOVIZ_AI_URL', 'http://deckoviz_ai:8001')

@@ -16,10 +16,46 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+      
+  flower:
+    container_name: flower
+    image: mher/flower
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - FLOWER_BASIC_AUTH=${FLOWER_USERNAME}:${FLOWER_PASSWORD} 
+    ports:
+      - "5555:5555"
+    networks:
+      - decoviz_common_default
+    depends_on:
+      - redis
+      - celery_worker
+    command: celery -A decoviz flower --port=5555 --broker=redis://redis:6379/0
+
+  celery_worker:
+    container_name: celery_worker
+    build:
+      context: .
+      dockerfile: common/Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./deckoviz_ai:/app/deckoviz_ai
+      - ./logs/celery:/app/logs/celery 
+    networks:
+      - decoviz_common_default
+    depends_on:
+      - redis
+      - deckoviz_ai
+    command: ["/usr/bin/supervisord"]
 
   qdrant:
     image: qdrant/qdrant
     container_name: qdrant
+    env_file:
+      - .env
     ports:
       - "6333:6333"
       - "6334:6334"
@@ -36,22 +72,23 @@ services:
 
   common:
     build:
-      context: ./common
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: common/Dockerfile
     image: common:latest
     container_name: common
     env_file:
       - .env
     ports:
       - "8000:8000"
+    volumes:
+      - ./common:/app
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - redis
       - qdrant
+      - deckoviz_ai
     networks:
       - decoviz_common_default
-    volumes:
-      - ./common:/app
 
   api:
     build:
@@ -73,26 +110,37 @@ services:
       - decoviz_common_default
     volumes:
       - ./api:/app
-      - ./deckoviz_ai:/app/deckoviz_ai
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/" , "||" , "exit", "1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
 
   deckoviz_ai:
     build:
       context: .
       dockerfile: deckoviz_ai/Dockerfile
     image: deckoviz_ai:latest
-    env_file:
-      - ./deckoviz_ai/.env
-    command: streamlit run streamlit/app.py
     container_name: deckoviz_ai
     ports:
-      - "8501:8501"
-    depends_on:
-      - redis
-      - qdrant
+      - "8001:8001"
+    environment:
+      - PYTHONPATH=/app
+    env_file:
+      - ./deckoviz_ai/.env
     networks:
       - decoviz_common_default
     volumes:
       - ./deckoviz_ai:/app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/" , "||" , "exit", "1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+
 
 volumes:
   redis_data:

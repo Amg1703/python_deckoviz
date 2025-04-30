@@ -6,6 +6,6 @@ setup(
     packages=find_packages(),
     install_requires=[],
     description="Deckoviz AI core package",
-    author="",
-    author_email="",
+    author="Dharmendra",
+    author_email="dharmendramehta622@gmail.com",
 )

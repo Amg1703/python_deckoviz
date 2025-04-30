@@ -20,26 +20,32 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install supervisor
+RUN apt-get update && apt-get install -y supervisor && rm -rf /var/lib/apt/lists/*
+
 # Create a non-root user called appuser
 RUN useradd -m -d /home/appuser -s /bin/bash appuser
  
 # Set working directory
 WORKDIR /app
 
+# Copy application code and supervisor config
+COPY common/ ./
+COPY common/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 # Copy script and set executable permission
-COPY scripts.sh scripts.sh
+COPY common/scripts.sh scripts.sh
 RUN chmod +x /app/scripts.sh
 
 # Create necessary directories inside the container
 RUN mkdir -p /app/logs/redis
 
 # Copy requirements and install dependencies
-COPY requirements.txt .
+COPY common/requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy the configs folder even if it's in .gitignore
-COPY configs/ /app/configs/
-COPY . .
+COPY common/configs/ /app/configs/
 
 # Expose the necessary port
 EXPOSE 8000

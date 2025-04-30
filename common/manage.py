@@ -3,6 +3,9 @@
 import os
 import sys
 
+# Ensure project root (parent of common) is on PYTHONPATH so deckoviz_ai is importable
+# project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+# sys.path.insert(0, project_root)
 
 def main():
     """Run administrative tasks."""

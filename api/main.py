@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
-from routers import image_search,websocket, collections,image_generator,google_genai,rooms
+from routers import image_search,websocket, collections,google_genai,rooms
 from databases.configs import get_redis_client
 
 # Initialize the application
@@ -31,7 +31,6 @@ app.add_middleware(
 
 # Include routers
 app.include_router(image_search.router)
-app.include_router(image_generator.router)
 app.include_router(collections.router)
 app.include_router(websocket.router)
 app.include_router(google_genai.router)

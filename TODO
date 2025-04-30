@@ -18,3 +18,7 @@ Once each of these collections have been displayed, then the TV app sends a
 note to the mobile app asking to send the next batch. If the mobile phone is not
  in the vicinity (communication failed), then it keeps on trying every 10 minutes. 
  This loop keeps on repeating.
+
+
+Once you are done with this, you can work on this: 
+Voice journal transcription, summarization, and AI insights and feedback

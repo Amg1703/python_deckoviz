@@ -1,9 +1,37 @@
 from rest_framework import serializers
-from .models import Image, Collection, CollectionImage
+from .models import Audio, Image, Collection, CollectionImage
 from apps.authentication.serializers import UserSerializer
 from apps.marketplace.serializers import PriceSerializer
 from apps.marketplace.models import Price
 from django.db import transaction
+
+class AudioSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Audio
+        fields = [
+            'id', 
+            'transcript', 
+            'transcript_url', 
+            'transcript_status', 
+            'audio', 
+            'uploaded_by', 
+            'view', 
+            'is_active', 
+            'created_at', 
+            'updated_at'
+        ]
+        read_only_fields = [
+            'id', 
+            'uploaded_by', 
+            'created_at', 
+            'updated_at'
+        ]
+    
+    def create(self,validated_data):
+        user = self.context['request'].user 
+        validated_data['uploaded_by'] = user
+        return super().create(validated_data)
 
 class ImageSerializer(serializers.ModelSerializer):
     price = PriceSerializer(read_only=True)

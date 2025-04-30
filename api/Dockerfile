@@ -16,9 +16,8 @@ WORKDIR /app
 COPY api/requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
-# Copy API code and deckoviz_ai package
+# Copy API code
 COPY api/ ./
-COPY deckoviz_ai/ ./deckoviz_ai/
 
 # Expose the necessary port
 EXPOSE 8080
