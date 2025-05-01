@@ -64,6 +64,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise for static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -222,7 +223,8 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
         "OPTIONS": {
-            # "location": os.path.join(BASE_DIR, "static"),
+            "location": os.path.join(BASE_DIR, "staticfiles"),
+            "base_url": STATIC_URL,
         },
     },
 }

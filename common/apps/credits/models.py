@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class CreditPackage(BaseModel):
     """Credit packages that users can purchase"""
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True)
     features = ArrayField(models.CharField(max_length=255), blank=True, null=True)
     credits = models.PositiveIntegerField()
@@ -20,6 +20,7 @@ class CreditPackage(BaseModel):
         verbose_name_plural = 'Credit Packages'
         indexes = [
             models.Index(fields=['is_active']),
+            models.Index(fields=['name']),
         ]
 
 class UserCredit(BaseModel):

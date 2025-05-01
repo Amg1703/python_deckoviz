@@ -42,5 +42,6 @@ configs/
 
 # Ignore streamlit app
 /output/
-
-
+/common/rest_framework
+/common/admin
+/common/staticfiles/

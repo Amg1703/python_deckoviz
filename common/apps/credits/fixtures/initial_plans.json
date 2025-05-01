@@ -2,7 +2,6 @@
   {
     "model": "credits.creditpackage",
     "fields": {
-      "id": "11111111-1111-1111-1111-111111111111",
       "name": "Starter",
       "description": "Perfect starter plan for your first smart art experience",
       "features":[
@@ -22,7 +21,6 @@
   {
     "model": "credits.creditpackage",
     "fields": {
-      "id": "22222222-2222-2222-2222-222222222222",
       "name": "Premium",
       "description": "Our most popular option for art enthusiasts",
       "features":[
@@ -43,7 +41,6 @@
   {
     "model": "credits.creditpackage",
     "fields": {
-      "id": "33333333-3333-3333-3333-333333333333",
       "name": "Professional",
       "description": "Gallery-quality display for discerning collectors",
       "features":[
@@ -64,7 +61,6 @@
   {
     "model": "credits.creditpackage",
     "fields": {
-      "id": "44444444-4444-4444-4444-444444444444",
       "name": "Enterprise",
       "description": "Custom solutions for businesses and galleries",
       "features":[

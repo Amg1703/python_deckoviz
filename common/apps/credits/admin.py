@@ -7,7 +7,7 @@ from .models import (CreditPackage, UserCredit, CreditTransaction,
 class CreditPackageAdmin(admin.ModelAdmin):
     list_display = ('name', 'credits', 'price', 'is_active')
     list_filter = ('is_active',)
-    search_fields = ('name', 'description')
+    search_fields = ('name', 'description','features')
 
 @admin.register(UserCredit)
 class UserCreditAdmin(admin.ModelAdmin):
