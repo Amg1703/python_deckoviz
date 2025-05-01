@@ -83,7 +83,7 @@ services:
       - "8000:8000"
     volumes:
       - ./common:/app
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: ["bash", "/app/scripts.sh"]
     depends_on:
       - redis
       - qdrant

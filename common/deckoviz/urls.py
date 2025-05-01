@@ -52,6 +52,12 @@ urlpatterns = [
     
     #payments api
     path('payment/', include('apps.payments.urls')),
+
+    #credits api
+    path('credits/', include('apps.credits.urls')),
+
+    # ai integration api
+    path('ai/', include('apps.ai_integration.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

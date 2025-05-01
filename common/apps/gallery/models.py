@@ -8,13 +8,26 @@ User = get_user_model()
 
 
 class Audio(BaseModel):
-    transcript = models.TextField(blank=True, null=True)
-    transcript_url = models.URLField(blank=True, null=True)
-    transcript_status = models.CharField(max_length=255, blank=True, null=True,choices=TRANSCRIPTION_STATUS,default='processing')
+    # Audio file and basic information
     audio = models.FileField(upload_to=user_audio_path, blank=True, null=True)
     uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_audios')
-    view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')
+    view = models.CharField(max_length=255, blank=True, null=True, choices=VIEW_TYPES, default='private')
     is_active = models.BooleanField(default=True)
+    
+    # Transcription fields
+    transcript = models.TextField(blank=True, null=True)
+    transcript_url = models.URLField(blank=True, null=True)
+    transcript_status = models.CharField(max_length=255, blank=True, null=True, choices=TRANSCRIPTION_STATUS, default='processing')
+    
+    # New transcript analysis fields
+    transcript_insights = models.JSONField(blank=True, null=True, help_text="Full analysis results as JSON")
+    transcript_summary = models.TextField(blank=True, null=True, help_text="Summary of the transcript")
+    transcript_sentiment = models.CharField(max_length=50, blank=True, null=True, help_text="Overall sentiment of the transcript")
+    
+    # Processing metadata
+    processed_at = models.DateTimeField(blank=True, null=True, help_text="When the audio was last processed")
+    error_message = models.TextField(blank=True, null=True, help_text="Error message if processing failed")
+    retry_count = models.PositiveSmallIntegerField(default=0, help_text="Number of retries for failed processing")
     
     class Meta:
         db_table = 'audios'

@@ -14,12 +14,17 @@ python3 manage.py migrate
 
 
 #collect static files
-# python manage.py collectstatic -y
+python manage.py collectstatic --noinput
 
 # Create a superuser only if it doesn't exist (adjust according to your script)
 #common
 python3 manage.py create_super_user
- 
+
+# Load initial credit packages
+echo "Loading initial credit packages..."
+
+python manage.py load_initial_plans
+
 # Run the development server (you can customize this for production)
 python3 manage.py runserver 0.0.0.0:8000
 
