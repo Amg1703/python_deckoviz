@@ -5,6 +5,7 @@ python-dotenv>=0.19.0
 requests>=2.28.0
 asyncio>=3.4.3
 nltk>=3.8.1
+transformers
 # Backend dependencies for FastAPI
 fastapi[standard]
 uvicorn>=0.15.0
