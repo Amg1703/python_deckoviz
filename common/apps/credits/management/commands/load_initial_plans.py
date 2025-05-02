@@ -34,9 +34,8 @@ class Command(BaseCommand):
                     if plan_data['model'] != 'credits.creditpackage':
                         continue
                     
-                    fields = plan_data['fields'] 
-                    print(fields) 
-                     
+                    fields = plan_data['fields']  
+                    
                     package, created = CreditPackage.objects.get_or_create(
                         name=fields['name'],
                         defaults=fields

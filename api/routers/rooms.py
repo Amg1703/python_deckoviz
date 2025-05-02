@@ -11,7 +11,9 @@ import httpx
 import time
 from typing import Dict, Any
 from schemas.rooms import BatchRequest
+from routers.websocket import ConnectionManager
 
+manager = ConnectionManager()
 
 router = APIRouter(
     prefix="/rooms",
