@@ -3,13 +3,16 @@ from rest_framework.response import Response
 from rest_framework import status 
 from .serializers import RegisterSerializer, UserSerializer,AddressSerializer
 from rest_framework import mixins,viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated,AllowAny
 from django.contrib.auth import get_user_model
 from .models import Address
 
 User = get_user_model()
 
 class RegisterView(APIView):
+    permission_classes = [AllowAny]
+    authentication_classes = [] 
+    
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():

@@ -25,7 +25,8 @@ class User(AbstractUser,BaseModel):
     profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
     banner_pictures = models.JSONField(default=list, blank=True)
     bio = models.TextField(validators=[MaxLengthValidator(500)], blank=True) 
-    
+    room = models.UUIDField(default=uuid.uuid4, blank=False, null=False)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username'] 
 
@@ -37,11 +38,7 @@ class User(AbstractUser,BaseModel):
         verbose_name = 'User'
         verbose_name_plural = 'Users'
         indexes = [
-            models.Index(fields=['email']),
-            models.Index(fields=['username']),
-            models.Index(fields=['first_name']),
-            models.Index(fields=['last_name']),
-            models.Index(fields=['is_active']),
+            models.Index(fields=['email', 'username', 'first_name', 'last_name', 'is_active', 'room']),
         ]
         
 class Address(BaseModel):

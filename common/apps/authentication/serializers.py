@@ -38,6 +38,7 @@ class UserSerializer(serializers.ModelSerializer):
             'banner_pictures',
             'bio',
             'is_active',
+            'room',
             'created_at',
             'updated_at',
         ]
@@ -45,6 +46,7 @@ class UserSerializer(serializers.ModelSerializer):
             'id', 
             'username',
             'email',
+            'room',
             'created_at',
             'updated_at', 
         ]
