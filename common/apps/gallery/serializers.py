@@ -107,6 +107,7 @@ class CollectionSerializer(serializers.ModelSerializer):
             'id', 
             'user', 
             'name', 
+            'type',
             'display_time', 
             'music_preference', 
             'meta_notes', 

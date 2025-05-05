@@ -35,6 +35,12 @@ VIEW_TYPES = [
         ('public', 'Public')
 ]
 
+COLLECTION_TYPES = [
+        ('personal', 'Personal'),
+        ('shared', 'Shared'), 
+        ('meta', 'Meta'), 
+]
+
 PAYMENT_STATUS_CHOICES = (
         ('pending', 'Pending'),
         ('completed', 'Completed'),

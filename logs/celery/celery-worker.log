@@ -1,48 +1,10 @@
  
- -------------- celery@323656f512b8 v5.3.1 (emerald-rush)
+ -------------- celery@b849f3dd52f4 v5.3.1 (emerald-rush)
 --- ***** ----- 
--- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-04-30 12:06:03
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-05 14:21:45
 - *** --- * --- 
 - ** ---------- [config]
-- ** ---------- .> app:         deckoviz:0xf26128075f70
-- ** ---------- .> transport:   redis://redis:6379/0
-- ** ---------- .> results:     redis://redis:6379/0
-- *** --- * --- .> concurrency: 4 (prefork)
--- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
---- ***** ----- 
- -------------- [queues]
-                .> celery           exchange=celery(direct) key=celery
-                
-
-[tasks]
-  . apps.gallery.tasks.process_audio
-
- 
- -------------- celery@1c9fa5cc05a8 v5.3.1 (emerald-rush)
---- ***** ----- 
--- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-04-30 12:08:25
-- *** --- * --- 
-- ** ---------- [config]
-- ** ---------- .> app:         deckoviz:0xf5bb59c23a10
-- ** ---------- .> transport:   redis://redis:6379/0
-- ** ---------- .> results:     redis://redis:6379/0
-- *** --- * --- .> concurrency: 4 (prefork)
--- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
---- ***** ----- 
- -------------- [queues]
-                .> celery           exchange=celery(direct) key=celery
-                
-
-[tasks]
-  . apps.gallery.tasks.process_audio
-
- 
- -------------- celery@e157a09cf1bd v5.3.1 (emerald-rush)
---- ***** ----- 
--- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-04-30 12:15:38
-- *** --- * --- 
-- ** ---------- [config]
-- ** ---------- .> app:         deckoviz:0xed290997f3b0
+- ** ---------- .> app:         deckoviz:0xedbb5cf9f110
 - ** ---------- .> transport:   redis://:**@redis:6379/0
 - ** ---------- .> results:     redis://:**@redis:6379/0
 - *** --- * --- .> concurrency: 4 (prefork)
@@ -53,15 +15,18 @@
                 
 
 [tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
   . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
 
  
- -------------- celery@80b0cff556ab v5.3.1 (emerald-rush)
+ -------------- celery@9adee9a77a64 v5.3.1 (emerald-rush)
 --- ***** ----- 
--- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-01 10:20:47
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-05 14:40:32
 - *** --- * --- 
 - ** ---------- [config]
-- ** ---------- .> app:         deckoviz:0xe02dfb648620
+- ** ---------- .> app:         deckoviz:0xeeb46c43df70
 - ** ---------- .> transport:   redis://:**@redis:6379/0
 - ** ---------- .> results:     redis://:**@redis:6379/0
 - *** --- * --- .> concurrency: 4 (prefork)
@@ -72,5 +37,96 @@
                 
 
 [tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
   . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
+
+ 
+ -------------- celery@9adee9a77a64 v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-05 14:49:44
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xea34f1043770
+- ** ---------- .> transport:   redis://:**@redis:6379/0
+- ** ---------- .> results:     redis://:**@redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
+  . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
+
+ 
+ -------------- celery@6a31e2557ba9 v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-05 15:32:28
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xfcae2474b3b0
+- ** ---------- .> transport:   redis://:**@redis:6379/0
+- ** ---------- .> results:     redis://:**@redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
+  . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
+
+ 
+ -------------- celery@a6db2508103c v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-05 16:33:58
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xf6351eb435f0
+- ** ---------- .> transport:   redis://:**@redis:6379/0
+- ** ---------- .> results:     redis://:**@redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
+  . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
+
+ 
+ -------------- celery@dc2fdfd9a06a v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-6.8.0-47-generic-aarch64-with-glibc2.31 2025-05-05 16:45:01
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0xee0f9dc07470
+- ** ---------- .> transport:   redis://:**@redis:6379/0
+- ** ---------- .> results:     redis://:**@redis:6379/0
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
+  . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
 

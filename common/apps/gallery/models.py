@@ -1,7 +1,7 @@
 from django.db import models
 from apps.authentication.models import BaseModel
 from django.contrib.auth import get_user_model
-from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS
+from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS,COLLECTION_TYPES
 from apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
 
 User = get_user_model()
@@ -42,6 +42,7 @@ class Audio(BaseModel):
 
 class Image(BaseModel):
     file = models.ImageField(upload_to=user_image_path, blank=True, null=True)
+    image_id = models.CharField(max_length=255,unique=True)
     external_url = models.URLField(blank=True, null=True)
     music = models.FileField(upload_to=user_music_path, blank=True, null=True)
     uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_images')
@@ -62,13 +63,15 @@ class Image(BaseModel):
     
 class Collection(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collections')
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255,unique=True)
     music = models.FileField(upload_to=user_music_path, blank=True, null=True)
     view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')  
     display_time = models.IntegerField(default=10, help_text="Time in seconds to display each image")
     music_preference = models.CharField(max_length=255, blank=True)
     meta_notes = models.TextField(blank=True)
+    metadata=models.JSONField(blank=True,null=True)
     is_active = models.BooleanField(default=True)
+    type = models.CharField(max_length=255, blank=True, null=True,choices=COLLECTION_TYPES,default='personal')
     
     class Meta:
         db_table = 'collections'
@@ -76,6 +79,7 @@ class Collection(BaseModel):
         verbose_name_plural = 'Collections'
         indexes = [
             models.Index(fields=['user']),
+            models.Index(fields=['name']),
         ]
 
     def __str__(self):

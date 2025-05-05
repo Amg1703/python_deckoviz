@@ -89,7 +89,7 @@ services:
       - qdrant
       - deckoviz_ai
     networks:
-      - decoviz_common_default
+      - decoviz_common_default 
 
   api:
     build:

@@ -3,8 +3,11 @@ import json
 import logging
 from apps.gallery.models import Audio
 from django.utils import timezone
-from common.utils.ai_client import AIClient
-from common.services.storage import Storage
+from apps.utils.decoviz_ai import AIClient
+from apps.utils.storage import Storage
+from apps.utils.unsplash_client import UnsplashClient
+
+search_queries=['nature', 'people', 'food', 'travel', 'architecture', 'animals']
 
 logger = logging.getLogger(__name__)
 
@@ -141,3 +144,10 @@ def analyze_existing_transcripts():
                 logger.error(f"Failed to analyze transcript for audio {audio.id}")
         except Exception as e:
             logger.error(f"Error analyzing transcript for audio {audio.id}: {str(e)}")
+
+
+@shared_task
+def populate_unsplash_images():
+    client = UnsplashClient(search_queries=search_queries)
+    logger.info("Fetching unsplash images to process")
+    client.run()  
