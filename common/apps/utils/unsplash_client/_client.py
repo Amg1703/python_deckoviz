@@ -349,128 +349,12 @@ class UnsplashClient:
         """
         logger.info(f"Starting Unsplash to {self.storage_provider} uploader job at {datetime.now().isoformat()}")
         logger.info(f"Using {len(self.search_queries)} search queries: {', '.join(self.search_queries)}")
-        
-        total_uploaded = 0
-        collections_created = []
+         
          
         for query in self.search_queries:
             collection_name = query.strip().lower().replace(" ", "_") 
 
-            # photo_data = self.fetch_photos(query)
-            photo_data = [
-                    {
-                        "id": "IicyiaPYGGI",
-                        "description": None,
-                        "alt_description": "orange flowers",
-                        "unsplash_url": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHwxfHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/IicyiaPYGGI.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Henry Be",
-                        "photographer_url": "https://unsplash.com/@henry_be",
-                        "tags": []
-                    },
-                    {
-                        "id": "EwKXn5CapA4",
-                        "description": "Finding my roots",
-                        "alt_description": "sun light passing through green leafed tree",
-                        "unsplash_url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHwyfHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/EwKXn5CapA4.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Jeremy Bishop",
-                        "photographer_url": "https://unsplash.com/@jeremybishop",
-                        "tags": []
-                    },
-                    {
-                        "id": "d4feocYfzAM",
-                        "description": None,
-                        "alt_description": "bed of orange flowers",
-                        "unsplash_url": "https://images.unsplash.com/photo-1529419412599-7bb870e11810?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHwzfHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/d4feocYfzAM.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Damiano Baschiera",
-                        "photographer_url": "https://unsplash.com/@damiano_baschiera",
-                        "tags": []
-                    },
-                    {
-                        "id": "1h2Pg97SXfA",
-                        "description": None,
-                        "alt_description": "calm sky during daytime",
-                        "unsplash_url": "https://images.unsplash.com/photo-1530908295418-a12e326966ba?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHw0fHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/1h2Pg97SXfA.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Kenrick Mills",
-                        "photographer_url": "https://unsplash.com/@kenrickmills",
-                        "tags": []
-                    },
-                    {
-                        "id": "Rfflri94rs8",
-                        "description": "Conifer sapling",
-                        "alt_description": "selective photography of green leaf plant",
-                        "unsplash_url": "https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHw1fHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/Rfflri94rs8.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Matthew Smith",
-                        "photographer_url": "https://unsplash.com/@whale",
-                        "tags": []
-                    },
-                    {
-                        "id": "igX2deuD9lc",
-                        "description": "You can help and support me via my description (Paypal) !\n\nInstagram : @clvmentm\nFacebook Page : www.facebook.com/CMReflections/\n\nIf you wish to buy it in full quality, email me on clementmreflections@gmail.com.",
-                        "alt_description": "photo of pine trees",
-                        "unsplash_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHw2fHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/igX2deuD9lc.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Cl\u00e9ment M.",
-                        "photographer_url": "https://unsplash.com/@cmreflections",
-                        "tags": []
-                    },
-                    {
-                        "id": "dXYE1d08BiY",
-                        "description": "Pooling Water",
-                        "alt_description": "green leaf with water drops",
-                        "unsplash_url": "https://images.unsplash.com/photo-1495584816685-4bdbf1b5057e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHw3fHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/dXYE1d08BiY.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Aaron Burden",
-                        "photographer_url": "https://unsplash.com/@aaronburden",
-                        "tags": []
-                    },
-                    {
-                        "id": "FIKD9t5_5zQ",
-                        "description": None,
-                        "alt_description": "white clouds during daytime",
-                        "unsplash_url": "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHw4fHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/FIKD9t5_5zQ.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Dominik Schr\u00f6der",
-                        "photographer_url": "https://unsplash.com/@wirhabenzeit",
-                        "tags": []
-                    },
-                    {
-                        "id": "Kp9z6zcUfGw",
-                        "description": None,
-                        "alt_description": "macro photography of drop of water on top of green plant",
-                        "unsplash_url": "https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHw5fHxuYXR1cmV8ZW58MHx8fHwxNzQ2NDQ0MTk1fDA&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/Kp9z6zcUfGw.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Aaron Burden",
-                        "photographer_url": "https://unsplash.com/@aaronburden",
-                        "tags": []
-                    },
-                    {
-                        "id": "kqJfP-lrl-8",
-                        "description": "I used 5 tiers of glass to create this layered effect and placed cuts of branches in between each layer.",
-                        "alt_description": "white flowering plant artwork",
-                        "unsplash_url": "https://images.unsplash.com/photo-1515096788709-a3cf4ce0a4a6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDcxMzZ8MHwxfHNlYXJjaHwxMHx8bmF0dXJlfGVufDB8fHx8MTc0NjQ0NDE5NXww&ixlib=rb-4.0.3&q=85",
-                        "local_image_path": "images/kqJfP-lrl-8.jpg",
-                        "bunny_cdn_url": None,
-                        "photographer": "Evie S.",
-                        "photographer_url": "https://unsplash.com/@evieshaffer",
-                        "tags": []
-                    }
-              ]
-            
-            print(collection_name)
+            photo_data = self.fetch_photos(query) 
 
             for data in photo_data:
                 id = data.get("id")
@@ -482,11 +366,20 @@ class UnsplashClient:
                 photographer = data.get("photographer")
                 photographer_url = data.get("photographer_url")
                 tags = data.get("tags")
-
-                print(id,description,alt_description,unsplash_url,local_image_path,bunny_cdn_url,photographer,photographer_url,tags)
-                
+ 
                 user = User.objects.get(is_superuser=True)
-                metadata = {"source":"unsplash","query":query,"created_by":"system","created_at":datetime.now().isoformat(),"tags":tags,"photographer":photographer,"photographer_url":photographer_url}
+                metadata = {
+                        "source":"unsplash",
+                        "query":query,"created_by":"system", 
+                        "description":description,
+                        "alt_description":alt_description,
+                        "local_image_path":local_image_path,
+                        "bunny_cdn_url":bunny_cdn_url,
+                        "created_at":datetime.now().isoformat(),
+                        "tags":tags,
+                        "photographer":photographer,
+                        "photographer_url":photographer_url
+                }
                 meta_notes = json.dumps(metadata)
 
                 collections = Collection.objects.filter(name=collection_name)
@@ -503,7 +396,10 @@ class UnsplashClient:
                         is_active=True,
                         metadata=metadata
                     )
-                image = Image.objects.create(
+                if Image.objects.filter(image_id=id).exists():
+                    image = Image.objects.get(image_id=id)
+                else:
+                    image = Image.objects.create(
                     external_url=unsplash_url,
                     music=None,
                     image_id=id,
@@ -511,12 +407,13 @@ class UnsplashClient:
                     view='public',
                     is_active=True
                 )
-                collectionimage = CollectionImage.objects.create(
-                    collection=collection,
-                    image=image, 
-                )
-            print(collectionimage)  
+                if not CollectionImage.objects.filter(image=image,collection=collection).exists():
+                    collectionimage = CollectionImage.objects.create(
+                        collection=collection,
+                        image=image, 
+                    )
+                    logger.info(collectionimage)  
 
             # Add a delay between queries to respect API limits
-            time.sleep(1)
-             
+            time.sleep(5)
+            
