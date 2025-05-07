@@ -15,6 +15,7 @@ from utils.token import get_current_user
 from utils.qr_redis import QRRedisManager
 from databases.configs import get_redis_client
 from utils.websocket_manager import manager
+from utils.json_helpers import safe_parse_json
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -253,7 +254,26 @@ async def websocket_tv_endpoint(websocket: WebSocket):
         
         # Handle messages
         while True:
-            data = await websocket.receive_json()
+            # Get raw message text first
+            raw_data = await websocket.receive_text()
+            
+            # Try to parse the JSON with our helper that handles common format issues
+            data = safe_parse_json(raw_data)
+            
+            if data is None:
+                # Log the error if parsing failed even with our helper
+                logger.error(f"Invalid JSON from TV client in room {room_id}")
+                logger.error(f"Raw data received: {raw_data}")
+                
+                # Send error message back to client
+                await websocket.send_json({
+                    "type": "error",
+                    "message": "Invalid JSON format. Please check for syntax errors."
+                })
+                # Skip processing this message
+                continue
+                
+            # Log the successfully parsed message
             logger.info(f"Received message in room {room_id} from TV: {data}")
             
             # Create message with metadata
@@ -422,7 +442,26 @@ async def websocket_mobile_endpoint(websocket: WebSocket):
         
         # Handle messages
         while True:
-            data = await websocket.receive_json()
+            # Get raw message text first
+            raw_data = await websocket.receive_text()
+            
+            # Try to parse the JSON with our helper that handles common format issues
+            data = safe_parse_json(raw_data)
+            
+            if data is None:
+                # Log the error if parsing failed even with our helper
+                logger.error(f"Invalid JSON from mobile client in room {room_id}")
+                logger.error(f"Raw data received: {raw_data}")
+                
+                # Send error message back to client
+                await websocket.send_json({
+                    "type": "error",
+                    "message": "Invalid JSON format. Please check for syntax errors."
+                })
+                # Skip processing this message
+                continue
+                
+            # Log the successfully parsed message
             logger.info(f"Received message in room {room_id} from mobile: {data}")
             
             # Create message with metadata
