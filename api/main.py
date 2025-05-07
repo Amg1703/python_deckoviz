@@ -2,8 +2,6 @@
 from fastapi import FastAPI, Depends
 import logging
 from fastapi.middleware.cors import CORSMiddleware
-from pathlib import Path
-import uvicorn
 import os
 import sys
 
@@ -14,7 +12,7 @@ logging.basicConfig(level=logging.DEBUG)
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
-from routers import image_search,websocket, collections,google_genai,rooms
+from routers import  websocket, rooms,qr_code_redis
 from databases.configs import get_redis_client
 
 # Initialize the application
@@ -29,12 +27,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
-app.include_router(image_search.router)
-app.include_router(collections.router)
+# Include routers 
 app.include_router(websocket.router)
-app.include_router(google_genai.router)
 app.include_router(rooms.router)
+app.include_router(qr_code_redis.router)
 
 
 @app.get("/", dependencies=[Depends(get_redis_client)])

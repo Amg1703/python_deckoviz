@@ -1,4 +1,4 @@
 #/bin/bash/
 
 docker compose up  -d
-docker logs -f common
+docker logs -f  api

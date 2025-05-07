@@ -1,6 +1,4 @@
 from fastapi import APIRouter, Body, Depends
-from pydantic import BaseModel
-import json
 from routers.websocket import   notify_new_images
 from databases.configs import get_redis_client
 from utils.queue import Queue
@@ -8,32 +6,16 @@ from  core.logger import logger
 import uuid
 import threading
 import httpx
-import time
-from typing import Dict, Any
+import time 
 from schemas.rooms import BatchRequest
-from routers.websocket import ConnectionManager
+from utils.websocket_manager import manager
 
-manager = ConnectionManager()
 
 router = APIRouter(
     prefix="/rooms",
     tags=["rooms"]
 )
-
-
-@router.post("/")
-async def create_room():
-    """
-    Create a new room for WebSocket connections with a generated UUID.
-    
-    Returns:
-        dict: Room ID and status
-    """
-    room_id = str(uuid.uuid4())
-    logger.debug(f"Creating new room {room_id}")
-    manager.active_connections[room_id] = set()
-    return {"room_id": room_id, "status": "created"}
-
+ 
 
 # HTTP endpoint to trigger a broadcast of arbitrary JSON payload to a room
 @router.post("/{room_id}/notify")
