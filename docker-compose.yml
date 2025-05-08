@@ -142,35 +142,35 @@ services:
       start_period: 5s
     command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
 
-  postgres:
-    image: postgres:16
-    container_name: postgres
-    env_file:
-      - .env
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./logs/postgres:/var/log/postgresql
-    networks:
-      - decoviz_common_default
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
+  # postgres:
+  #   image: postgres:16
+  #   container_name: postgres
+  #   env_file:
+  #     - .env
+  #   restart: always
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_USER=${DB_USER}
+  #     - POSTGRES_PASSWORD=${DB_PASSWORD}
+  #     - POSTGRES_DB=${DB_NAME}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #     - ./logs/postgres:/var/log/postgresql
+  #   networks:
+  #     - decoviz_common_default
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U postgres"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+  #     start_period: 5s
 
 
 volumes:
   redis_data:
   qdrant_data:
-  postgres_data:
+  # postgres_data:
 
 networks:
   decoviz_common_default: 
