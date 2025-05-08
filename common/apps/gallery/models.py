@@ -3,6 +3,7 @@ from apps.authentication.models import BaseModel
 from django.contrib.auth import get_user_model
 from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS,COLLECTION_TYPES
 from apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
+import uuid
 
 User = get_user_model()
 
@@ -60,6 +61,10 @@ class Image(BaseModel):
     def __str__(self):
         return f"Image {self.id}"
     
+    def save(self, *args, **kwargs):
+        if not self.image_id:
+            self.image_id = str(uuid.uuid4())
+        super().save(*args, **kwargs)
     
 class Collection(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collections')
