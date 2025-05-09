@@ -11,7 +11,7 @@ from typing import Dict, Any, List, Optional, Set
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, HTTPException, Depends
 from schemas.qr_code import GenerateQRRequest, GenerateQRResponse, PairingRequest, PairingResponse
 from utils.qr_code import TVQRCodeGenerator
-from utils.token import get_current_user
+from utils.token import get_current_user,create_access_token
 from utils.qr_redis import QRRedisManager
 from databases.configs import get_redis_client
 from utils.websocket_manager import manager
@@ -62,7 +62,7 @@ async def generate_pairing_qr(request: GenerateQRRequest, redis_manager: QRRedis
     redis_manager.store_device_data(device_id, device_data)
     redis_manager.update_device_timestamp(device_id)
     
-    logger.info(f"Generated pairing QR for device: {device_id}")
+    logger.debug(f"Generated pairing QR for device: {device_id}")
     
     # Return the QR code information
     return GenerateQRResponse(
@@ -95,7 +95,6 @@ async def pair_device(request: PairingRequest,
     if not room_id:
         room_id = f"room-{str(uuid.uuid4())[:8]}"
     
-    print("user_Id", user_id)
     # Store the room ID for this device
     device_data["room_id"] = room_id
     device_data["updated_at"] = time.time()
@@ -119,7 +118,7 @@ async def pair_device(request: PairingRequest,
     }
     redis_manager.store_room_metadata(room_id, room_metadata)
     
-    logger.info(f"Paired device {request.device_id} with room {room_id}")
+    logger.debug(f"Paired device {request.device_id} with room {room_id}")
     
     return PairingResponse(
         success=True,
@@ -131,6 +130,7 @@ async def get_room_for_device(device_id: str, redis_manager: QRRedisManager = De
     """
     Check if a room ID has been assigned to a device.
     This is polled by the TV app after displaying the QR code.
+
     """
     device_data = redis_manager.get_device_data(device_id)
     
@@ -138,6 +138,7 @@ async def get_room_for_device(device_id: str, redis_manager: QRRedisManager = De
         raise HTTPException(status_code=404, detail="Device ID not found")
     
     room_id = device_data.get("room_id")
+    user_id = device_data.get("user_id")
     
     if room_id is None:
         # No room assigned yet
@@ -152,6 +153,7 @@ async def get_room_for_device(device_id: str, redis_manager: QRRedisManager = De
     return {
         "paired": True,
         "room_id": room_id,
+        "token": create_access_token(user_id),
         "connection_count": redis_manager.get_room_connection_count(room_id),
         "created_at": room_metadata.get("created_at", time.time()),
         "last_activity": room_metadata.get("last_activity", time.time())
@@ -195,7 +197,7 @@ async def websocket_tv_endpoint(websocket: WebSocket):
             
         # If we found a device with this room, update the device ID if needed
         if device_id and device_id != found_device_id:
-            logger.info(f"Device ID mismatch: {device_id} vs {found_device_id}")
+            logger.debug(f"Device ID mismatch: {device_id} vs {found_device_id}")
     
     # Use the ConnectionManager to handle this connection properly
     # Pass is_accepted=True since we manually accepted the connection above
@@ -274,7 +276,7 @@ async def websocket_tv_endpoint(websocket: WebSocket):
                 continue
                 
             # Log the successfully parsed message
-            logger.info(f"Received message in room {room_id} from TV: {data}")
+            logger.debug(f"Received message in room {room_id} from TV: {data}")
             
             # Create message with metadata
             message = {
@@ -327,7 +329,7 @@ async def websocket_tv_endpoint(websocket: WebSocket):
         redis_manager.store_room_metadata(room_id, room_metadata)
         
         # Log disconnection
-        logger.info(f"TV client disconnected from room {room_id}. {count} connections remaining")
+        logger.debug(f"TV client disconnected from room {room_id}. {count} connections remaining")
         
         # Notify other clients about disconnection
         disconnect_message = {
@@ -368,14 +370,14 @@ async def websocket_mobile_endpoint(websocket: WebSocket):
     # Get room ID from query parameter
     room_id = websocket.query_params.get("room")
     if not room_id:
-        logger.info("No room ID provided")
+        logger.debug("No room ID provided")
         await manager.broadcast(room_id, {"error": "No room ID provided"})
         await manager.disconnect(websocket, room_id)
         return
         
     # Verify the room exists in Redis
     if not redis_manager.room_exists(room_id):
-        logger.info("Room does not exist")
+        logger.debug("Room does not exist")
         await manager.broadcast(room_id, {"error": "Room does not exist"})
         await manager.disconnect(websocket, room_id)
         return
@@ -462,7 +464,7 @@ async def websocket_mobile_endpoint(websocket: WebSocket):
                 continue
                 
             # Log the successfully parsed message
-            logger.info(f"Received message in room {room_id} from mobile: {data}")
+            logger.debug(f"Received message in room {room_id} from mobile: {data}")
             
             # Create message with metadata
             message = {
@@ -514,7 +516,7 @@ async def websocket_mobile_endpoint(websocket: WebSocket):
         redis_manager.store_room_metadata(room_id, room_metadata)
         
         # Log disconnection
-        logger.info(f"Mobile client disconnected from room {room_id}. {count} connections remaining")
+        logger.debug(f"Mobile client disconnected from room {room_id}. {count} connections remaining")
         
         # Notify other clients about disconnection
         disconnect_message = {

@@ -13,6 +13,13 @@ def verify_access_token(token:str) -> dict:
     except Exception:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid access token.")
 
+def create_access_token(payload:dict) -> str:
+    try:
+        token = jwt.encode(payload, SECRET_KEY, algorithm=JWT_HASH_ALGORITHM)
+        return token
+    except Exception:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid access token.")
+
 
 async def get_current_user(token: str):
     """Decode JWT, fetch Tenant, and enforce authentication"""
