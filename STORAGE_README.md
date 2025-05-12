@@ -4,7 +4,7 @@ Use this if you want to use Google Cloud Storage
 
 # STORAGES = {
 #     "default": {
-#         "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+#         "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
 #         "OPTIONS": {
 #             "bucket_name": config('AWS_STORAGE_BUCKET_NAME'),
 #             "location": "",
