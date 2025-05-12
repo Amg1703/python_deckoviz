@@ -46,8 +46,5 @@ RUN chmod -R 777 /app/logs
 COPY common/requirements.txt .
 RUN pip install -r requirements.txt
 
-# Copy the configs folder even if it's in .gitignore
-COPY common/configs/ /app/configs/
-
 # Expose the necessary port
 EXPOSE 8000

@@ -18,7 +18,7 @@ from utils.websocket_manager import manager
 from utils.json_helpers import safe_parse_json
 
 # Set up logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("qr_code_redis_router")
 
 router = APIRouter()

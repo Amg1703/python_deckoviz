@@ -210,13 +210,33 @@ AUTH_USER_MODEL = 'authentication.User'
 
 # See Here: https://django-storages.readthedocs.io/en/latest/backends/gcloud.html#
 # File Storages
+AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME') 
+AWS_REGION=os.environ.get('AWS_REGION')
+
+
+# Default file storage
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Remove query parameter authentication from generated urls
+# See: https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+AWS_QUERYSTRING_AUTH = False
+
+# Additional S3 settings
+AWS_S3_REGION_NAME = AWS_REGION
+AWS_S3_ADDRESSING_STYLE = 'virtual'  # Use virtual-hosted style URLs
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+# Define STORAGES dictionary for Django 4.2+ compatibility
 STORAGES = {
     "default": {
-        "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
         "OPTIONS": {
-            "bucket_name": config('GCS_BUCKET_NAME'),
-            "location": "",
-            "default_acl": None, 
+            "bucket_name": AWS_STORAGE_BUCKET_NAME,
+            "region_name": AWS_REGION
         },
     },
     "staticfiles": {
@@ -227,20 +247,7 @@ STORAGES = {
         },
     },
 }
-
-
-GS_CREDENTIALS_FILE = os.path.join(BASE_DIR, config('GOOGLE_APPLICATION_CREDENTIALS'))
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file(GS_CREDENTIALS_FILE)
-
-# 🔥 Make sure GCS SDK can also see the credentials
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = GS_CREDENTIALS_FILE
-
-GS_BUCKET_NAME = config('GCS_BUCKET_NAME')
-GS_DEFAULT_ACL = 'publicRead'
-GS_QUERYSTRING_AUTH=False
-
-# Set media URL (e.g., for serving images from GCS)
-MEDIA_URL = f'https://storage.googleapis.com/{GS_BUCKET_NAME}/'
+ 
 
 # Celery Configuration
 CELERY_BROKER_URL = config('REDIS_URL')
