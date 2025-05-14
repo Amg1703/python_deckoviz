@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Address
+from .models import Address,NewsLetterSubscriber
 
 
 User = get_user_model() 
@@ -75,3 +75,21 @@ class AddressSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data['user'] = self.context['request'].user
         return super().create(validated_data)
+
+
+class NewsLetterSubscriberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NewsLetterSubscriber
+        fields = [
+            'id',
+            'email',
+            'name',
+            'created_at',
+            'updated_at',
+        ]
+        read_only_fields = [
+            'id',
+            'created_at',
+            'updated_at',
+        ]
+    

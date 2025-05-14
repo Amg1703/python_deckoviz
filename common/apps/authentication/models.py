@@ -61,3 +61,20 @@ class Address(BaseModel):
         indexes = [
             models.Index(fields=['user']),
         ]
+
+
+class NewsLetterSubscriber(BaseModel):
+    name = models.CharField(max_length=255,null=True,blank=True)
+    email = models.EmailField(unique=True)
+
+    def __str__(self) -> str:
+        return f'{self.email} subscribed to newsletter.'
+
+    class Meta:
+        db_table = 'newsletters'
+        verbose_name = 'Newsletter'
+        verbose_name_plural = 'Newsletters'
+        indexes = [
+            models.Index(fields=['email']),
+        ]
+    
