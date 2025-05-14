@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 from django.contrib.auth import get_user_model
 from .models import Address,NewsLetterSubscriber
 from apps.utils.google_sheet import GoogleSheet
+from django.views.decorators.csrf import csrf_exempt
 
 User = get_user_model()
 google_sheet = GoogleSheet(sheet_name="Deckoviz-User-Waiting-List")
@@ -54,7 +55,7 @@ class NewsLetterSubscriberView(generics.CreateAPIView):
     @csrf_exempt
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-        
+
     def perform_create(self,serializer):
         instance = serializer.save()
         google_sheet.append_to_google_sheet(instance.name,instance.email)
