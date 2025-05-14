@@ -54,6 +54,7 @@ class NewsLetterSubscriberView(generics.CreateAPIView):
     @csrf_exempt
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
+        
     def perform_create(self,serializer):
         instance = serializer.save()
         google_sheet.append_to_google_sheet(instance.name,instance.email)
