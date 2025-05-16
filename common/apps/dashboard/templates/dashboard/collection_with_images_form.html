@@ -1,0 +1,427 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Create Collection with Images{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Dropzone styles */
+    .dropzone {
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        background-color: #f8f9fc;
+        transition: all 0.3s ease;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .dropzone.highlight {
+        background-color: #e3e6f0;
+        border-color: #2e59d9;
+    }
+    
+    .dropzone-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        color: #6c757d;
+    }
+    
+    .preview-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px 0;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    .preview-item {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    
+    .preview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .preview-remove {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background-color: rgba(255,255,255,0.7);
+        color: #dc3545;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .preview-remove:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    .preview-more-message {
+        width: 100%;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+        color: #6c757d;
+        font-size: 14px;
+    }
+    
+    /* Upload stats */
+    .upload-stats {
+        font-size: 14px;
+        color: #6c757d;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-plus-circle me-2"></i> Create New Collection</h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-10 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Create Collection with Images</h6>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" id="upload-form">
+                    {% csrf_token %}
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="{{ form.name.id_for_label }}" class="form-label">Collection Name</label>
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.name.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.view.id_for_label }}" class="form-label">Visibility</label>
+                                {{ form.view }}
+                                <div class="form-text">
+                                    Public collections can be viewed by anyone. Private collections are only visible to you.
+                                </div>
+                                {% if form.view.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.view.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.display_time.id_for_label }}" class="form-label">Display Time (seconds)</label>
+                                {{ form.display_time }}
+                                <div class="form-text">
+                                    How long each image should be displayed in seconds.
+                                </div>
+                                {% if form.display_time.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.display_time.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="{{ form.music.id_for_label }}" class="form-label">Background Music (optional)</label>
+                                {{ form.music }}
+                                <div class="form-text">
+                                    Upload an audio file to play in the background when viewing the collection.
+                                </div>
+                                {% if form.music.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.music.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.music_preference.id_for_label }}" class="form-label">Music Preference (optional)</label>
+                                {{ form.music_preference }}
+                                <div class="form-text">
+                                    Describe your music preference for this collection.
+                                </div>
+                                {% if form.music_preference.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ form.music_preference.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Collection Images</label>
+                        <div class="dropzone" id="dropzone">
+                            <div class="dropzone-message">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                                <h5>Drag & Drop Images Here</h5>
+                                <p>Or click to browse files</p>
+                                <input type="file" id="file-input" multiple style="display: none;">
+                            </div>
+                            <div class="preview-container" id="preview-container"></div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <div class="upload-stats">
+                                <span id="file-count">0</span> files selected
+                            </div>
+                            <button type="button" id="clear-files" class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-trash me-1"></i> Clear All
+                            </button>
+                        </div>
+                        <div class="form-text mt-2">
+                            You can upload multiple images at once by dragging and dropping them here.
+                            <br>Large batches will be processed in groups automatically.
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'dashboard:collection-list' %}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Back to Collections
+                        </a>
+                        <button type="submit" class="btn btn-primary" id="submit-button">
+                            <i class="fas fa-save me-1"></i> Create Collection
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('file-input');
+        const previewContainer = document.getElementById('preview-container');
+        const fileCountDisplay = document.getElementById('file-count');
+        const clearFilesBtn = document.getElementById('clear-files');
+        const musicInput = document.querySelector('input[name="music"]');
+        const uploadForm = document.getElementById('upload-form');
+        const submitButton = document.getElementById('submit-button');
+        
+        // Array to store all selected files
+        let selectedFiles = [];
+        const MAX_PREVIEW_IMAGES = 500; // Limit preview to avoid browser performance issues
+        
+        // Add event listeners for drag and drop
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        // Add visual feedback for drag events
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, unhighlight, false);
+        });
+        
+        function highlight() {
+            dropzone.classList.add('highlight');
+        }
+        
+        function unhighlight() {
+            dropzone.classList.remove('highlight');
+        }
+        
+        // Handle file drop event
+        dropzone.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            if (dt.files.length > 0) {
+                addFiles(dt.files);
+            }
+        }
+        
+        // Handle click to open file browser
+        dropzone.addEventListener('click', function() {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                addFiles(fileInput.files);
+            }
+        });
+        
+        // Handle clearing all files
+        clearFilesBtn.addEventListener('click', function() {
+            selectedFiles = [];
+            updateFileUI();
+        });
+        
+        // Function to add files to our array and update UI
+        function addFiles(fileList) {
+            const newFiles = Array.from(fileList).filter(file => file.type.startsWith('image/'));
+            selectedFiles = [...selectedFiles, ...newFiles];
+            updateFileUI();
+        }
+        
+        // Update the UI with current file selection
+        function updateFileUI() {
+            // Update file count
+            fileCountDisplay.textContent = selectedFiles.length;
+            
+            // Clear preview container
+            previewContainer.innerHTML = '';
+            
+            // Create preview for a subset of files (to avoid browser performance issues)
+            const filesToPreview = selectedFiles.slice(0, MAX_PREVIEW_IMAGES);
+            
+            // Create and add previews
+            filesToPreview.forEach((file, index) => {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const preview = document.createElement('div');
+                    preview.className = 'preview-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    preview.appendChild(img);
+                    
+                    const removeBtn = document.createElement('div');
+                    removeBtn.className = 'preview-remove';
+                    removeBtn.innerHTML = '×';
+                    removeBtn.dataset.index = index;
+                    removeBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        removeFile(parseInt(this.dataset.index));
+                    });
+                    preview.appendChild(removeBtn);
+                    
+                    previewContainer.appendChild(preview);
+                };
+                
+                reader.readAsDataURL(file);
+            });
+            
+            // If we have more files than we're showing, add a message
+            if (selectedFiles.length > MAX_PREVIEW_IMAGES) {
+                const moreMessage = document.createElement('div');
+                moreMessage.className = 'preview-more-message';
+                moreMessage.innerHTML = `<div class="text-center p-3">+ ${selectedFiles.length - MAX_PREVIEW_IMAGES} more files</div>`;
+                previewContainer.appendChild(moreMessage);
+            }
+            
+            // Enable/disable submit button based on file selection
+            submitButton.disabled = selectedFiles.length === 0;
+        }
+        
+        // Remove file at specific index
+        function removeFile(index) {
+            selectedFiles.splice(index, 1);
+            updateFileUI();
+        }
+        
+        // Add label for music input
+        const musicLabel = document.querySelector('label[for="' + musicInput.id + '"]');
+        if (musicLabel) {
+            musicLabel.addEventListener('click', function(e) {
+                e.preventDefault();
+                musicInput.click();
+            });
+        }
+        
+        // Submit form handling
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (selectedFiles.length === 0) {
+                alert('Please select at least one image to upload');
+                return;
+            }
+            
+            // Create FormData object to submit files
+            const formData = new FormData(uploadForm);
+            
+            // Remove existing files from form data (they might be invalid)
+            if (formData.has('image')) {
+                formData.delete('image');
+            }
+            
+            // Add files to form data
+            selectedFiles.forEach((file, index) => {
+                formData.append('images[]', file);
+            });
+            
+            // Add indicator of multiple files
+            formData.append('multiple_images', 'true');
+            
+            // Show loading indicator
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Uploading...';
+            
+            // Submit the form
+            fetch(uploadForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                }
+            })
+            .then(response => {
+                if (response.redirected) {
+                    window.location.href = response.url;
+                } else {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                if (data && data.error) {
+                    alert('Error: ' + data.error);
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<i class="fas fa-save me-1"></i> Create Collection';
+                } else if (data && data.success) {
+                    window.location.href = data.redirect_url;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while uploading files. Please try again.');
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-save me-1"></i> Create Collection';
+            });
+        });
+    });
+</script>
+{% endblock %}

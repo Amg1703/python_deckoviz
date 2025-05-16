@@ -58,6 +58,9 @@ urlpatterns = [
 
     # ai integration api
     path('ai/', include('apps.ai_integration.urls')),
+    
+    # dashboard app
+    path('dashboard/', include('apps.dashboard.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

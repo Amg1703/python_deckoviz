@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'apps.credits',
     'apps.reviews',
     'apps.ai_integration',
+    'apps.dashboard',
     
     # third party apps  
     'rest_framework',

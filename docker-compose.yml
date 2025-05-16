@@ -150,3 +150,6 @@ volumes:
 networks:
   decoviz_common_default: 
     driver: bridge
+
+
+    

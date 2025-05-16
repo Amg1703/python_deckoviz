@@ -1,0 +1,139 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Add Images to {{ collection.name }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .dropzone {
+        border: 2px dashed #4e73df;
+        border-radius: 5px;
+        padding: 30px;
+        text-align: center;
+        background-color: #f8f9fc;
+        transition: 0.3s;
+        min-height: 200px;
+    }
+    
+    .dropzone.highlight {
+        background-color: #e3e6f0;
+        border-color: #2e59d9;
+    }
+    
+    .dropzone-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .preview-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .preview-item {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .preview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .preview-remove {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header d-flex justify-content-between align-items-center">
+    <h1><i class="fas fa-plus-circle me-2"></i> Add Images</h1>
+    <a href="{% url 'dashboard:collection-detail' collection.id %}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left me-1"></i> Back to Collection
+    </a>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Add Images to "{{ collection.name }}"</h6>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data" id="upload-form">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <div class="card p-3">
+                            <div class="text-center p-4">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                                <h5>Upload Image to Collection</h5>
+                                <p class="text-muted">Select an image file to add to this collection</p>
+                                <div class="mt-3">
+                                    <label for="{{ form.image.id_for_label }}" class="btn btn-primary">
+                                        <i class="fas fa-file-upload me-2"></i> Select Image
+                                    </label>
+                                    <div style="display:none;">{{ form.image }}</div>
+                                </div>
+                                <div id="file-name" class="mt-2 text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-end mt-4">
+                        <button type="submit" class="btn btn-primary" id="upload-button" disabled>
+                            <i class="fas fa-save me-1"></i> Upload Images
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.querySelector('input[type="file"]');
+        const fileNameDisplay = document.getElementById('file-name');
+        const uploadButton = document.getElementById('upload-button');
+        
+        // Handle file selection
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                // Show the selected file name
+                fileNameDisplay.textContent = 'Selected file: ' + fileInput.files[0].name;
+                // Enable the upload button
+                uploadButton.disabled = false;
+            } else {
+                fileNameDisplay.textContent = '';
+                uploadButton.disabled = true;
+            }
+        });
+        
+        // Disable the upload button initially
+        uploadButton.disabled = true;
+    });
+</script>
+{% endblock %}

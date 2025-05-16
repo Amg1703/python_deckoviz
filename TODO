@@ -28,8 +28,19 @@ Voice journal transcription, summarization, and AI insights and feedback
 ssh root@168.231.112.236
 
 
+Need to customize admin panel for now to view collections,add collection images
 
+1. Collection Name
+2. List of images upload
+3. view (private, public)
 
+add collection images page will have following things
+1. Collection Name
+2. List of images upload(drag and drop)
+3. view (private, public)
+4. display time
+5. music
+6. music preference
 
 
 
