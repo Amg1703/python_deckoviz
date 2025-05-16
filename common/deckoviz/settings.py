@@ -43,8 +43,23 @@ for host in ALLOWED_HOSTS:
 CORS_ORIGIN_WHITELIST =CSRF_TRUSTED_ORIGINS
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://\w+\.deckoviz\.com$", 
-    r"^https://\w+\.deckoviz\.com$", 
+    r"^https://\w+\.deckoviz\.com$",
+]
+
+# Allow credentials to be included in CORS requests
+CORS_ALLOW_CREDENTIALS = True
+
+# Allow these headers in requests
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 CORS_ALLOWED_ORIGINS = CSRF_TRUSTED_ORIGINS
@@ -82,11 +97,13 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_spectacular',
     'storages',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Add WhiteNoise for static files
+    'corsheaders.middleware.CorsMiddleware',  # CORS middleware - must come before CommonMiddleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
