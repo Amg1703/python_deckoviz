@@ -30,18 +30,45 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG') or True
 
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
+# Parse ALLOWED_HOSTS from environment - remove ports as they don't belong in ALLOWED_HOSTS
+raw_hosts = os.environ.get('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = []
+for host in raw_hosts:
+    # Strip port numbers if present
+    if ':' in host and ('localhost' in host or '127.0.0.1' in host):
+        host = host.split(':')[0]
+    ALLOWED_HOSTS.append(host)
 
 # Add the proper schemes for CSRF_TRUSTED_ORIGINS
 CSRF_TRUSTED_ORIGINS = []
-for host in ALLOWED_HOSTS:
+for host in raw_hosts:
     if 'localhost' in host or '127.0.0.1' in host:
+        # Include the port if it exists
         CSRF_TRUSTED_ORIGINS.append(f'http://{host}')
     else:
         CSRF_TRUSTED_ORIGINS.append(f'https://{host}')
 
-CORS_ORIGIN_WHITELIST =CSRF_TRUSTED_ORIGINS
+# CORS Settings - Critical for frontend API access
+CORS_ORIGIN_ALLOW_ALL = False
 
+# Explicit CORS allowed origins - include localhost with ports
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:3000',
+    'http://127.0.0.1:5174',
+    'http://127.0.0.1:3000',
+    'https://auth.deckoviz.com', 
+    'https://api.deckoviz.com',
+    'https://deckoviz.com'
+]
+
+# Add all CSRF trusted origins to CORS allowed origins
+for origin in CSRF_TRUSTED_ORIGINS:
+    if origin not in CORS_ALLOWED_ORIGINS:
+        CORS_ALLOWED_ORIGINS.append(origin)
+
+# Add regex patterns for subdomains
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://\w+\.deckoviz\.com$",
 ]
@@ -62,7 +89,8 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-CORS_ALLOWED_ORIGINS = CSRF_TRUSTED_ORIGINS
+# Ensure we don't overwrite our explicit CORS settings
+# CORS_ALLOWED_ORIGINS already configured above
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
