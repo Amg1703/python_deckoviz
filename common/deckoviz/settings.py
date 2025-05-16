@@ -29,7 +29,28 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG') or True
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
+
+# Add the proper schemes for CSRF_TRUSTED_ORIGINS
+CSRF_TRUSTED_ORIGINS = []
+for host in ALLOWED_HOSTS:
+    if 'localhost' in host or '127.0.0.1' in host:
+        CSRF_TRUSTED_ORIGINS.append(f'http://{host}')
+    else:
+        CSRF_TRUSTED_ORIGINS.append(f'https://{host}')
+
+CORS_ORIGIN_WHITELIST =CSRF_TRUSTED_ORIGINS
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://\w+\.deckoviz\.com$", 
+    r"^https://\w+\.deckoviz\.com$", 
+]
+
+CORS_ALLOWED_ORIGINS = CSRF_TRUSTED_ORIGINS
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 
 # Application definition
