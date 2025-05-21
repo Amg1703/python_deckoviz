@@ -12,5 +12,5 @@ router.register(r'collection-images', CollectionImageViewSet,basename='collectio
 
 urlpatterns = [
     path('',include(router.urls)),  
-    path('test/', TestView.as_view(), name='test'),
+    # path('test/', TestView.as_view(), name='test'),
 ]

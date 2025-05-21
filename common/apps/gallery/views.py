@@ -81,7 +81,7 @@ from .models import Audio
 from apps.utils.storage import Storage
 from apps.utils.unsplash_client import UnsplashClient
 
-search_queries=['nature', 'people', 'food', 'travel', 'architecture', 'animals']
+search_queries=['nature', 'people', 'food', 'travel', 'architecture', 'animals', 'technology', 'cities', 'sports', 'abstract']
 client = UnsplashClient(search_queries = search_queries)
 
 class TestView(APIView):
@@ -92,4 +92,4 @@ class TestView(APIView):
             client.run()
             return Response({"message": "Hello World"})
         except Exception as e:
-            return Response({"message": str(e)}) 
+            return Response({"message": str(e)})

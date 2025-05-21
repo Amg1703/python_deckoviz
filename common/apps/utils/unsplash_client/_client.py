@@ -54,7 +54,6 @@ CollectionImage = apps.get_model('gallery', 'CollectionImage')
 Price = apps.get_model('marketplace', 'Price')
 User = get_user_model()
 
-from django.db import transaction
 
 try:
     from google.cloud import storage
@@ -165,86 +164,7 @@ class UnsplashClient:
         except requests.exceptions.RequestException as e:
             print(f"Error fetching photos for query '{query}': {e}")
             return None
-
-    def upload_to_bunny(self, image_data, storage_path):
-        """
-        Uploads image data directly to Bunny.net CDN without saving locally.
-
-        Args:
-            image_data (bytes): The binary image data.
-            storage_path (str): Path where the file should be stored on Bunny.net.
-
-        Returns:
-            tuple: (bool, str) - Success status and CDN URL or error message.
-        """
-        url = f"https://{self.bunny_base_url}/{self.bunny_storage_zone}/{storage_path}"
-        headers = {
-            "AccessKey": self.bunny_access_key,
-            "Content-Type": "application/octet-stream",
-            "accept": "application/json"
-        }
-        
-        try:
-            response = requests.put(url, headers=headers, data=image_data)
-            response.raise_for_status()
-            
-            # Log response for debugging
-            print(f"Bunny.net upload response: {response.status_code}")
-            
-            # Construct the CDN URL
-            cdn_url = f"https://{self.bunny_storage_zone}.b-cdn.net/{storage_path}"
-            return True, cdn_url
-        except Exception as e:
-            return False, str(e)
-
-    def upload_bytes_to_gcs(self, data, filename, remote_prefix):
-        """
-        Uploads in-memory bytes to GCS and makes it public.
-        
-        Args:
-            data (bytes): The binary image data.
-            filename (str): Filename to use in the bucket.
-            remote_prefix (str): Folder path in the bucket.
-            
-        Returns:
-            str: Public URL of the uploaded blob.
-        """
-        try:
-            bucket_name = os.getenv("GCS_BUCKET_NAME")
-            if not bucket_name:
-                raise ValueError("GCS_BUCKET_NAME env var not set.")
-                
-            client = storage.Client()
-            bucket = client.bucket(bucket_name)
-            blob_path = f"{remote_prefix}/{filename}"
-            blob = bucket.blob(blob_path)
-            blob.upload_from_string(data, content_type="image/jpeg")
-            # blob.make_public()  # Uncomment if you want to make the image public
-            
-            return blob.public_url
-        except Exception as e:
-            raise ValueError(f"Error uploading to GCS: {str(e)}")
-            
-    def upload_to_gcs(self, image_data, storage_path):
-        """
-        Uploads image data to Google Cloud Storage without saving locally.
-
-        Args:
-            image_data (bytes): The binary image data.
-            storage_path (str): Path where the file should be stored in GCS.
-
-        Returns:
-            tuple: (bool, str) - Success status and public URL or error message.
-        """
-        try:
-            filename = storage_path.split("/")[-1]
-            remote_prefix = "/".join(storage_path.split("/")[:-1])
-            
-            url = self.upload_bytes_to_gcs(image_data, filename, remote_prefix)
-            return True, url
-        except Exception as e:
-            return False, str(e)
-
+ 
     def process_photo_data(self, photo_data, collection_name):
         """
         Process photo data and upload images from a given collection
@@ -354,20 +274,26 @@ class UnsplashClient:
         for query in self.search_queries:
             collection_name = query.strip().lower().replace(" ", "_") 
 
-            photo_data = self.fetch_photos(query) 
+            photo_data = self.fetch_photos(query)  
+
+            if not photo_data:
+                logger.info(f"No photos found for query '{query}'.")
+                continue 
 
             for data in photo_data:
+
                 id = data.get("id")
                 description = data.get("description")
                 alt_description = data.get("alt_description")
-                unsplash_url = data.get("unsplash_url")
+                unsplash_url = data.get("urls").get('full')
                 local_image_path = data.get("local_image_path")
                 bunny_cdn_url = data.get("bunny_cdn_url")
                 photographer = data.get("photographer")
                 photographer_url = data.get("photographer_url")
-                tags = data.get("tags")
+                tags = data.get("tags") 
  
                 user = User.objects.get(is_superuser=True)
+
                 metadata = {
                         "source":"unsplash",
                         "query":query,"created_by":"system", 
@@ -377,6 +303,7 @@ class UnsplashClient:
                         "bunny_cdn_url":bunny_cdn_url,
                         "created_at":datetime.now().isoformat(),
                         "tags":tags,
+                        "urls":data.get("urls"),
                         "photographer":photographer,
                         "photographer_url":photographer_url
                 }
@@ -396,6 +323,7 @@ class UnsplashClient:
                         is_active=True,
                         metadata=metadata
                     )
+            
                 if Image.objects.filter(image_id=id).exists():
                     image = Image.objects.get(image_id=id)
                 else:
@@ -412,7 +340,7 @@ class UnsplashClient:
                         collection=collection,
                         image=image, 
                     )
-                    logger.info(collectionimage)  
+                    # logger.info(collectionimage)  
 
             # Add a delay between queries to respect API limits
             time.sleep(5)
