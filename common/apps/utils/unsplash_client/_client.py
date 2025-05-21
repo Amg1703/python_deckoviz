@@ -307,6 +307,7 @@ class UnsplashClient:
                         "photographer":photographer,
                         "photographer_url":photographer_url
                 }
+
                 meta_notes = json.dumps(metadata)
 
                 collections = Collection.objects.filter(name=collection_name)
