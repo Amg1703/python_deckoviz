@@ -119,12 +119,14 @@ INSTALLED_APPS = [
     'apps.reviews',
     'apps.ai_integration',
     'apps.dashboard',
+    'apps.blogs',
     
     # third party apps  
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_spectacular',
     'storages',
+    'ckeditor',
     'corsheaders',
 ]
 

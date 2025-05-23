@@ -75,22 +75,22 @@ class CollectionImageViewSet(viewsets.ModelViewSet):
 
 
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from apps.utils.decoviz_ai import AIClient
-from .models import Audio
-from apps.utils.storage import Storage
-from apps.utils.unsplash_client import UnsplashClient
-from apps.utils.unsplash_client import scrape_flickr
+# from rest_framework.response import Response
+# from apps.utils.decoviz_ai import AIClient
+# from .models import Audio
+# from apps.utils.storage import Storage
+# from apps.utils.unsplash_client import UnsplashClient
+# # from apps.utils.unsplash_client import scrape_flickr
 
-search_queries=['nature', 'people', 'food', 'travel', 'architecture', 'animals', 'technology', 'cities', 'sports', 'abstract']
-client = UnsplashClient(search_queries = search_queries)
+# search_queries=['nature', 'people', 'food', 'travel', 'architecture', 'animals', 'technology', 'cities', 'sports', 'abstract']
+# client = UnsplashClient(search_queries = search_queries)
 
 class TestView(APIView):
     permission_classes = [AllowAny]
 
     def get(self, request):
         try:
-            scrape_flickr(search_query=search_queries)
+            # scrape_flickr(search_query=search_queries)
             return Response({"message": "Hello World"})
         except Exception as e:
             return Response({"message": str(e)})

@@ -58,6 +58,9 @@ urlpatterns = [
 
     # ai integration api
     path('ai/', include('apps.ai_integration.urls')),
+
+    #blogs api
+    path('blogs/',include('apps.blogs.urls')),
     
     # dashboard app
     path('dashboard/', include('apps.dashboard.urls')),

@@ -63795,3 +63795,737 @@ ValueError: ClearableFileInput doesn't support uploading multiple files.
 [2025-05-21 12:56:08,450: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
 [2025-05-21 12:56:18,416: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
 [2025-05-21 12:56:18,450: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:05:03,755: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:05:03,816: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:05:03,842: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:05:13,811: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:05:13,842: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:05:23,812: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:05:23,842: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:05:33,813: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:05:33,842: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:06:24,592: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:06:24,624: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:06:24,634: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:06:34,621: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:06:34,641: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:06:44,623: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:06:44,641: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:06:54,623: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:06:54,641: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:12:09,892: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:12:09,925: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:12:09,935: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:12:19,923: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:12:19,935: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:12:29,923: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:12:29,935: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:12:43,251: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:12:43,268: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:12:43,273: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:12:53,266: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:12:53,274: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:13:03,266: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:13:03,280: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:13:13,266: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:13:13,280: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:13:23,267: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:13:23,281: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:13:52,955: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:13:53,145: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:13:53,203: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:14:03,144: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:14:03,204: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:14:13,141: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:14:13,206: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:14:37,282: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:14:37,312: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:14:37,326: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:14:47,310: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:14:47,332: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:14:57,310: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:14:57,332: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:15:07,310: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:15:07,332: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:15:25,658: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:15:25,754: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:15:25,775: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:15:35,747: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:15:35,775: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:15:54,562: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:15:54,610: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:15:54,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:16:04,601: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:16:04,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:16:14,602: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:16:14,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:16:24,602: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:16:24,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:16:34,602: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:16:34,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:16:44,602: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:16:44,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:16:54,602: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:16:54,633: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:17:10,836: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:17:10,852: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:17:10,857: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:17:20,852: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:17:20,875: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:17:30,859: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:17:30,875: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:17:40,860: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:17:40,880: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:17:50,858: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:17:50,880: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:18:00,859: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:18:00,880: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:18:10,859: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:18:10,880: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:18:20,861: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:18:20,880: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:18:30,872: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:18:30,881: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:18:40,873: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:18:40,889: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:18:50,872: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:18:50,889: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:19:00,873: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:19:00,889: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:19:20,880: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:19:20,937: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:19:20,955: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:19:30,936: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:19:30,955: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:19:40,943: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:19:40,956: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:19:50,941: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:19:50,962: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:20:00,941: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:20:00,963: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:20:10,946: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:20:10,988: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:20:20,947: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:20:20,988: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:20:30,947: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:20:30,988: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:20:40,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:20:40,988: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:20:50,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:20:50,991: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:21:00,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:21:00,991: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:21:10,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:21:10,992: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:21:20,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:21:20,992: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:21:30,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:21:30,992: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:21:40,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:21:40,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:21:50,948: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:21:50,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:22:00,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:22:00,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:22:10,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:22:10,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:22:20,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:22:20,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:22:30,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:22:30,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:22:40,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:22:40,994: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:22:50,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:22:50,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:23:00,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:23:00,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:23:10,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:23:10,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:23:20,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:23:20,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:23:30,949: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:23:30,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:23:40,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:23:40,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:23:50,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:23:50,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:24:00,950: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:24:00,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:24:10,950: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:24:10,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:24:20,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:24:20,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:24:30,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:24:30,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:24:40,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:24:40,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:24:50,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:24:50,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:25:00,952: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:25:00,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:25:10,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:25:10,995: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:25:20,951: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:25:20,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:25:30,952: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:25:30,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:25:40,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:25:40,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:25:50,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:25:50,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:26:00,953: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:26:00,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:26:10,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:26:10,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:26:20,953: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:26:20,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:26:30,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:26:30,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:26:40,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:26:40,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:26:50,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:26:50,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:27:00,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:27:00,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:27:10,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:27:10,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:27:20,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:27:20,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:27:30,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:27:30,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:27:40,954: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:27:40,996: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:27:50,959: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:27:50,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:28:00,960: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:28:00,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:28:10,960: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:28:10,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:28:20,960: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:28:20,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:28:30,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:28:30,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:28:40,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:28:40,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:28:50,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:28:50,997: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:29:00,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:29:00,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:29:10,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:29:10,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:29:20,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:29:20,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:29:30,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:29:30,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:29:40,961: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:29:40,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:29:50,963: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:29:50,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:30:00,964: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:30:00,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:30:10,968: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:30:10,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:30:20,964: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:30:20,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:30:30,964: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:30:30,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:30:40,964: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:30:40,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:30:50,965: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:30:50,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:31:00,965: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:31:00,998: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+Traceback (most recent call last):
+  File "/usr/local/bin/celery", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+             ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/celery.py", line 235, in main
+    return celery(auto_envvar_prefix="CELERY")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/base.py", line 134, in caller
+    return f(ctx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/beat.py", line 72, in beat
+    return beat().run()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 82, in run
+    self.init_loader()
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 132, in init_loader
+    self.app.loader.init_worker()
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 110, in init_worker
+    self.import_default_modules()
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 104, in import_default_modules
+    raise response
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 97, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 137, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/deckoviz/urls.py", line 42, in <module>
+    path('auth/',include('apps.authentication.urls')),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/authentication/urls.py", line 4, in <module>
+    from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView
+  File "/app/apps/authentication/views.py", line 12, in <module>
+    google_sheet = GoogleSheet(sheet_name="Deckoviz-User-Waiting-List")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/utils/google_sheet/_gs_client.py", line 23, in __init__
+    self.sheet = self._get_or_create_sheet(sheet_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/utils/google_sheet/_gs_client.py", line 27, in _get_or_create_sheet
+    return self.client.open(sheet_name).sheet1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 80, in sheet1
+    return self.get_worksheet(0)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 248, in get_worksheet
+    sheet_data = self.fetch_sheet_metadata()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [500]: Internal error encountered.
+Traceback (most recent call last):
+  File "/usr/local/bin/celery", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+             ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/celery.py", line 235, in main
+    return celery(auto_envvar_prefix="CELERY")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/base.py", line 134, in caller
+    return f(ctx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/beat.py", line 72, in beat
+    return beat().run()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 82, in run
+    self.init_loader()
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 132, in init_loader
+    self.app.loader.init_worker()
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 110, in init_worker
+    self.import_default_modules()
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 104, in import_default_modules
+    raise response
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 97, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 137, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/deckoviz/urls.py", line 42, in <module>
+    path('auth/',include('apps.authentication.urls')),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/authentication/urls.py", line 4, in <module>
+    from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView
+  File "/app/apps/authentication/views.py", line 12, in <module>
+    google_sheet = GoogleSheet(sheet_name="Deckoviz-User-Waiting-List")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/utils/google_sheet/_gs_client.py", line 23, in __init__
+    self.sheet = self._get_or_create_sheet(sheet_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/utils/google_sheet/_gs_client.py", line 27, in _get_or_create_sheet
+    return self.client.open(sheet_name).sheet1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/client.py", line 144, in open
+    return Spreadsheet(self.http_client, properties)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 29, in __init__
+    metadata = self.fetch_sheet_metadata()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [500]: Internal error encountered.
+[2025-05-23 08:33:15,313: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:33:15,335: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:33:15,344: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:33:25,333: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:33:25,346: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:33:35,334: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:33:35,350: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+Traceback (most recent call last):
+  File "/usr/local/bin/celery", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+             ^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/celery.py", line 235, in main
+    return celery(auto_envvar_prefix="CELERY")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1363, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/base.py", line 134, in caller
+    return f(ctx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/bin/beat.py", line 72, in beat
+    return beat().run()
+           ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 82, in run
+    self.init_loader()
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 132, in init_loader
+    self.app.loader.init_worker()
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 110, in init_worker
+    self.import_default_modules()
+  File "/usr/local/lib/python3.12/site-packages/celery/loaders/base.py", line 104, in import_default_modules
+    raise response
+  File "/usr/local/lib/python3.12/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 97, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.12/site-packages/celery/fixups/django.py", line 137, in validate_models
+    run_checks()
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 531, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/deckoviz/urls.py", line 42, in <module>
+    path('auth/',include('apps.authentication.urls')),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/apps/authentication/urls.py", line 4, in <module>
+    from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView
+  File "/app/apps/authentication/views.py", line 12, in <module>
+    google_sheet = GoogleSheet(sheet_name="Deckoviz-User-Waiting-List")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/utils/google_sheet/_gs_client.py", line 23, in __init__
+    self.sheet = self._get_or_create_sheet(sheet_name)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/utils/google_sheet/_gs_client.py", line 27, in _get_or_create_sheet
+    return self.client.open(sheet_name).sheet1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 80, in sheet1
+    return self.get_worksheet(0)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 248, in get_worksheet
+    sheet_data = self.fetch_sheet_metadata()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/spreadsheet.py", line 230, in fetch_sheet_metadata
+    return self.client.fetch_sheet_metadata(self.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/http_client.py", line 305, in fetch_sheet_metadata
+    r = self.request("get", url, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/gspread/http_client.py", line 128, in request
+    raise APIError(response)
+gspread.exceptions.APIError: APIError: [500]: Internal error encountered.
+[2025-05-23 08:42:33,971: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:42:34,006: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:42:34,025: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:42:44,005: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:42:44,030: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:42:54,002: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:42:54,032: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:43:04,003: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:43:04,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:43:14,004: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:43:14,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:43:24,004: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:43:24,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:43:34,003: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:43:34,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:43:44,004: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:43:44,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:43:54,004: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:43:54,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:44:04,004: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:44:04,034: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:44:14,030: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:44:14,058: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:44:24,030: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:44:24,058: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:44:34,031: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:44:34,060: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:44:44,030: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:44:44,060: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:44:54,032: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:44:54,069: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:45:04,034: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:45:04,069: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:46:02,670: INFO/MainProcess] beat: Starting...
+[2025-05-23 08:46:02,708: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:46:02,724: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:46:12,705: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:46:12,724: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:46:22,705: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:46:22,724: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:46:32,705: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:46:32,724: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:46:42,708: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:46:42,728: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:46:52,708: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:46:52,728: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:47:02,716: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:47:02,729: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:47:12,717: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:47:12,732: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:47:22,717: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:47:22,736: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:47:32,717: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:47:32,736: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:47:42,717: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:47:42,737: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:47:52,717: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:47:52,736: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:48:02,717: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:48:02,739: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:48:12,718: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:48:12,739: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:48:22,718: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:48:22,739: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:48:32,718: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:48:32,739: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:48:42,719: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:48:42,740: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:48:52,720: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:48:52,740: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:49:02,720: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:49:02,760: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:49:12,722: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:49:12,760: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:49:22,766: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:49:22,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:49:32,780: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:49:32,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:49:42,779: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:49:42,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:49:52,779: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:49:52,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:50:02,779: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:50:02,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:50:12,779: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:50:12,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:50:22,779: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:50:22,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:50:32,781: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:50:32,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:50:42,780: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:50:42,798: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:50:52,780: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:50:52,799: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:51:02,780: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:51:02,799: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:51:12,779: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:51:12,799: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:51:22,781: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:51:22,799: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:51:32,780: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:51:32,799: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:51:42,782: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:51:42,799: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:51:52,781: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:51:52,802: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:52:02,786: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:52:02,802: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:52:12,787: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:52:12,802: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:52:22,787: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:52:22,802: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:52:32,788: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:52:32,802: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:52:42,789: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:52:42,806: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)
+[2025-05-23 08:52:52,792: INFO/MainProcess] Scheduler: Sending due task run_process_audio_task (apps.gallery.tasks.process_audio)
+[2025-05-23 08:52:52,814: INFO/MainProcess] Scheduler: Sending due task run_populate_unsplash_images_task (apps.gallery.tasks.populate_unsplash_images)

@@ -9,8 +9,18 @@ from apps.utils.google_sheet import GoogleSheet
 from django.views.decorators.csrf import csrf_exempt
 
 User = get_user_model()
-google_sheet = GoogleSheet(sheet_name="Deckoviz-User-Waiting-List")
+_google_sheet = None
 
+def get_google_sheet():
+    global _google_sheet
+    if _google_sheet is None:
+        try:
+            _google_sheet = GoogleSheet(sheet_name="Deckoviz-User-Waiting-List")
+        except Exception as e:
+            print(f"Warning: Failed to initialize Google Sheets client: {e}")
+            _google_sheet = None
+    return _google_sheet
+    
 class RegisterView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = [] 
@@ -58,5 +68,8 @@ class NewsLetterSubscriberView(generics.CreateAPIView):
 
     def perform_create(self,serializer):
         instance = serializer.save()
-        google_sheet.append_to_google_sheet(instance.name,instance.email)
+        # Try to add to Google Sheet, but don't fail if it doesn't work
+        google_sheet = get_google_sheet()
+        if google_sheet:
+            google_sheet.append_to_google_sheet(instance.name,instance.email)
     
