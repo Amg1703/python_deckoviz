@@ -222137,3 +222137,5 @@ User information: uid=0 euid=0 gid=0 egid=0
 [2025-05-29 07:50:16,240: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-05-29T07:50:16.240700
 [2025-05-29 07:50:16,241: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
 [2025-05-29 07:50:16,257: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[1d192c82-fffb-4b9e-9c23-9cdc98941c94] received
+
+worker: Warm shutdown (MainProcess)

@@ -1,4 +1,4 @@
-from rest_framework import viewsets,mixins,generics
+from rest_framework import viewsets,mixins
 from .models import Order,OrderDetail
 from rest_framework.permissions import IsAuthenticated
 from .serializers import OrderSerializer,OrderCreateSerializer,OrderDetailSerializer
