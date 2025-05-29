@@ -14,7 +14,6 @@ services:
     networks:
       - decoviz_common_default
     depends_on:
-      - redis
       - celery_worker
     command: celery -A decoviz flower --port=5555 --broker=${REDIS_URL}
 
@@ -30,8 +29,6 @@ services:
       - ./logs/celery:/app/logs/celery 
     networks:
       - decoviz_common_default
-    depends_on:
-      - redis
     command: ["/usr/bin/supervisord"]
  
   common:
@@ -47,8 +44,6 @@ services:
     volumes:
       - ./common:/app
     command: ["bash", "/app/scripts.sh"]
-    depends_on:
-      - redis
     networks:
       - decoviz_common_default 
 
@@ -65,8 +60,6 @@ services:
     environment:
       - PYTHONPATH=/app
     command: uvicorn main:app --host 0.0.0.0 --port 8080 --reload
-    depends_on:
-      - redis
     networks:
       - decoviz_common_default
     volumes:
