@@ -7,9 +7,9 @@ from .views import (
 )
 
 router = DefaultRouter()
-router.register(r'models', AIModelViewSet, basename='ai-models')
-router.register(r'operations', AIOperationViewSet, basename='ai-operations')
-router.register(r'callbacks', AICallbackViewSet, basename='ai-callbacks')
+# router.register(r'models', AIModelViewSet, basename='ai-models')
+# router.register(r'operations', AIOperationViewSet, basename='ai-operations')
+# router.register(r'callbacks', AICallbackViewSet, basename='ai-callbacks')
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -17,13 +17,6 @@ ADDRESS_TYPES = [
         ('shipping', 'Shipping')
 ] 
 
-ORDER_STATUS_CHOICES = (
-        ('confirmed', 'Confirmed'),
-        ('pending', 'Pending'),
-        ('completed', 'Completed'),
-        ('cancelled', 'Cancelled'), 
-)
-
 TRANSCRIPTION_STATUS = [
         ('processing', 'Processing'),
         ('completed', 'Completed')

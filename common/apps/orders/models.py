@@ -1,17 +1,18 @@
 from apps.authentication.models import BaseModel
 from django.db import models
 from django.contrib.auth import get_user_model
-from apps.utils.choices import ORDER_STATUS_CHOICES,STATUS_DICT
+from apps.utils.choices import STATUS_DICT
 from .managers import OrderManager, OrderDetailManager
+from apps.utils.generator import gen_uuid
 
 User = get_user_model()
 
-
+ 
 class Order(BaseModel): 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
+    total_amount = models.DecimalField(default=0,max_digits=10, decimal_places=2)
     billing_address = models.JSONField()
     shipping_address = models.JSONField()
-    status = models.CharField(max_length=255, choices=ORDER_STATUS_CHOICES, default='pending')
     
     def __str__(self):
         return f"{self.user.username} - {self.id}"
@@ -24,14 +25,14 @@ class Order(BaseModel):
         verbose_name_plural = 'Orders'
         
 
-class OrderDetail(BaseModel):
+class OrderDetail(models.Model):
+    id = models.UUIDField(primary_key=True, default=gen_uuid)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order_details')
     image = models.ForeignKey('gallery.Image', on_delete=models.PROTECT, related_name='order_details')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     is_active = models.BooleanField(default=True) 
-    status = models.CharField(max_length=255, choices=ORDER_STATUS_CHOICES, default='pending')
     quantity = models.PositiveIntegerField(default=1)
-    overall_status = models.PositiveIntegerField(default=1,null=True,blank=True,choices=STATUS_DICT.keys())
+    status = models.PositiveIntegerField(default=1,null=True,blank=True,choices=STATUS_DICT)
     
     def __str__(self):
         return f"{self.order.user.username} - {self.id}"

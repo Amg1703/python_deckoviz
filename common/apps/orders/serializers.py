@@ -1,42 +1,28 @@
 from apps.payments.models import Transaction
 from rest_framework import serializers
-from .models import Order, OrderDetail
-from apps.marketplace.serializers import PriceSerializer
-from apps.gallery.serializers import ImageSerializer
-from django.db import transaction
 from apps.carts.models import Cart
+from .models import Order,OrderDetail
+from django.db import transaction
+
  
      
 class OrderSerializer(serializers.ModelSerializer):
-
-    image = serializers.SerializerMethodField()
     
     class Meta:
         model = Order
         fields = [
             'id',
             'user',
-            'price',
-            'image',
             'billing_address',
             'shipping_address',
-            'status',
-            'is_active',
             'created_at',
             'updated_at',
         ]
     
-    def get_image(self, obj):
-        return ImageSerializer(obj.price.image).data
-    
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        data['price'] = PriceSerializer(instance.price).data
         return data
-     
       
-            
-
 class OrderCreateSerializer(serializers.ModelSerializer):
     txn_id = serializers.CharField(write_only=True)
     ref_id = serializers.CharField(required=True, write_only=True)
@@ -47,22 +33,17 @@ class OrderCreateSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'user',
-            'price',
             'txn_id',
             'ref_id',
             'signature',
             'billing_address',
             'shipping_address',
-            'status',
-            'is_active',
             'created_at',
             'updated_at',
         ]
         read_only_fields = [
             'id', 
             'user', 
-            'status', 
-            'is_active', 
             'created_at', 
             'updated_at'
         ]
@@ -81,6 +62,10 @@ class OrderCreateSerializer(serializers.ModelSerializer):
         
         # Validate payment data together
         txn_id = data.get('txn_id')
+        cart_total = sum(
+            (item.price.final_price * item.quantity) 
+            for item in Cart.objects.filter(user=user)
+        )
         ref_id = data.get('ref_id')
         signature = data.get('signature')
         
@@ -91,6 +76,8 @@ class OrderCreateSerializer(serializers.ModelSerializer):
             
         try:
             self.transaction_obj = Transaction.objects.get(id=txn_id) 
+            if self.transaction_obj.amount - cart_total != 0:
+                raise serializers.ValidationError("Transaction amount does not match cart total amount.")
             if self.transaction_obj.user != user:
                 raise serializers.ValidationError("Transaction ID does not match user.")
             if self.transaction_obj.status == 'completed':
@@ -114,29 +101,45 @@ class OrderCreateSerializer(serializers.ModelSerializer):
         self.transaction_obj.signature = signature
         self.transaction_obj.status = 'completed'
         self.transaction_obj.save()
-      
-        # Create order
+
         with transaction.atomic():
-            carts = Cart.objects.filter(user=user)
-            order_obj = Order.objects.create(
+            order = Order.objects.create(
                 user=user,
+                total_amount=self.transaction_obj.amount,
                 billing_address=billing_address,
                 shipping_address=shipping_address,
-                status='confirmed'
             )
-            self.transaction_obj.order = order_obj
+            self.transaction_obj.order = order
             self.transaction_obj.save()
-            for cart in carts:
+            
+            cart_items = Cart.objects.filter(user=user)
+            for item in cart_items:
                 OrderDetail.objects.create(
-                    order=order_obj,
-                    image=cart.image,
-                    price=cart.price,
-                    quantity=cart.quantity,
-                    status='confirmed'
+                    order=order,
+                    image=item.image,
+                    price=item.price.final_price,
+                    quantity=item.quantity,
+                    status=1
                 )
-                cart.delete() 
-            return order_obj
+            cart_items.delete()
+            return order
 
     def to_representation(self, instance):
         # Delegate to OrderSerializer to avoid payment fields
         return OrderSerializer(instance, context=self.context).data
+
+
+
+class OrderDetailSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField(source='image.file')
+    
+    class Meta:
+        model = OrderDetail
+        fields = [
+            'id',
+            'order',
+            'image',
+            'price',
+            'quantity',
+            'status',
+        ]

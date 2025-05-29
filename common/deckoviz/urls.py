@@ -44,6 +44,9 @@ urlpatterns = [
     # gallery api
     path('gallery/', include('apps.gallery.urls')), 
     
+    #cart api
+    path('carts/', include('apps.carts.urls')),
+    
     #marketplace api
     path('marketplace/', include('apps.marketplace.urls')),
     

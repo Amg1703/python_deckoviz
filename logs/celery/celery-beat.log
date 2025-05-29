@@ -3746,3 +3746,133 @@ Configuration ->
     . db -> /app/logs/celery/celerybeat-schedule
     . logfile -> [stderr]@%INFO
     . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:24:35
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:31:12
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:33:23
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:39:18
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:40:44
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:41:50
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:54:15
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:56:24
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 05:57:36
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 06:02:20
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 07:17:12
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 07:26:32
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-05-29 07:27:21
+Configuration ->
+    . broker -> redis://:**@redis:6379/0
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)
