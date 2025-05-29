@@ -1,10 +1,10 @@
 from apps.payments.models import Transaction
 from rest_framework import serializers
-from .models import Order
+from .models import Order, OrderDetail
 from apps.marketplace.serializers import PriceSerializer
 from apps.gallery.serializers import ImageSerializer
 from django.db import transaction
-
+from apps.carts.models import Cart
  
      
 class OrderSerializer(serializers.ModelSerializer):
@@ -103,7 +103,6 @@ class OrderCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
 
-        price = validated_data.get('price',None)
         billing_address = validated_data.get('billing_address',None)
         shipping_address = validated_data.get('shipping_address',None)
 
@@ -115,18 +114,28 @@ class OrderCreateSerializer(serializers.ModelSerializer):
         self.transaction_obj.signature = signature
         self.transaction_obj.status = 'completed'
         self.transaction_obj.save()
-
+      
+        # Create order
         with transaction.atomic():
-            order = Order.objects.create(
+            carts = Cart.objects.filter(user=user)
+            order_obj = Order.objects.create(
                 user=user,
-                price=price,
                 billing_address=billing_address,
                 shipping_address=shipping_address,
                 status='confirmed'
             )
-            self.transaction_obj.order = order
+            self.transaction_obj.order = order_obj
             self.transaction_obj.save()
-            return order
+            for cart in carts:
+                OrderDetail.objects.create(
+                    order=order_obj,
+                    image=cart.image,
+                    price=cart.price,
+                    quantity=cart.quantity,
+                    status='confirmed'
+                )
+                cart.delete() 
+            return order_obj
 
     def to_representation(self, instance):
         # Delegate to OrderSerializer to avoid payment fields

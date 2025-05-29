@@ -113,6 +113,7 @@ INSTALLED_APPS = [
     'apps.chats',
     'apps.utils',
     'apps.marketplace',
+    'apps.carts',
     'apps.orders',
     'apps.payments',
     'apps.credits',

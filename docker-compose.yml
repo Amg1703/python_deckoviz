@@ -49,28 +49,8 @@ services:
       - decoviz_common_default
     depends_on:
       - redis
-      - deckoviz_ai
     command: ["/usr/bin/supervisord"]
-
-  qdrant:
-    image: qdrant/qdrant
-    container_name: qdrant
-    env_file:
-      - .env
-    ports:
-      - "6333:6333"
-      - "6334:6334"
-    networks:
-      - decoviz_common_default
-    volumes:
-      - qdrant_data:/qdrant/storage
-      - ./logs/qdrant:/app/logs/qdrant
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
+ 
   common:
     build:
       context: .
@@ -86,8 +66,6 @@ services:
     command: ["bash", "/app/scripts.sh"]
     depends_on:
       - redis
-      - qdrant
-      - deckoviz_ai
     networks:
       - decoviz_common_default 
 
@@ -106,7 +84,6 @@ services:
     command: uvicorn main:app --host 0.0.0.0 --port 8080 --reload
     depends_on:
       - redis
-      - qdrant
     networks:
       - decoviz_common_default
     volumes:
@@ -118,34 +95,10 @@ services:
       retries: 3
       start_period: 5s
 
-  deckoviz_ai:
-    build:
-      context: .
-      dockerfile: deckoviz_ai/Dockerfile
-    image: deckoviz_ai:latest
-    container_name: deckoviz_ai
-    ports:
-      - "8001:8001"
-    environment:
-      - PYTHONPATH=/app
-    env_file:
-      - ./deckoviz_ai/.env
-    networks:
-      - decoviz_common_default
-    volumes:
-      - ./deckoviz_ai:/app
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8001/" , "||" , "exit", "1"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 5s
-    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
-
+ 
  
 volumes:
   redis_data:
-  qdrant_data: 
 
 networks:
   decoviz_common_default: 
