@@ -156,24 +156,3 @@ def populate_unsplash_images():
 
 
 
-@shared_task
-def generate_metadata():
-    images = Image.objects.filter(is_active=True, metadata__isnull=True)[:10]
-    logger.info(f"Found {images.count()} images to process")
-    for image in images:
-        try:
-            logger.info(f"Processing image {image.id}")
-            url = "http://0.0.0.0:8082/metadata/generate-from-url"
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNDk3MjU3LCJpYXQiOjE3NDg5NjEyNTcsImp0aSI6IjhiZDc5YmMzMjMzZTQwNGJhZDQwOWMxMWIwNDIzZGEyIiwidXNlcl9pZCI6ImNiODYxYjVjLWYwYjEtNGQxNy1hOWM2LTE0MTI0YzhhOTdiYiJ9.t9EuZW5nFwTxTAgFT9LoM8BhPgu377FRrHXus8igA7c"
-            }
-            payload = {
-                "image": image.file.url
-            }
-            response = requests.post(url, headers=headers, json=payload, timeout=30)
-            if response.status_code == 200:
-                image.metadata = response.json().get('metadata', None)
-                image.save() 
-        except Exception as e:
-            logger.error(f"Error generating metadata: {str(e)}")

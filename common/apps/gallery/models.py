@@ -49,6 +49,7 @@ class Image(BaseModel):
     uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_images')
     metadata = models.JSONField(blank=True, null=True)
     view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')
+    embedding_id = models.PositiveIntegerField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
     
     class Meta:

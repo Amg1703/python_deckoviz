@@ -224131,3 +224131,66 @@ User information: uid=0 euid=0 gid=0 egid=0
 [2025-06-05 12:59:55,475: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
 [2025-06-05 12:59:56,347: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ef751f6f-9869-4eff-833b-f6e12ea11ce0] received
 [2025-06-05 13:00:32,997: INFO/MainProcess] missed heartbeat from celery@226a665e06df
+/usr/local/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+[2025-06-05 14:33:36,036: INFO/MainProcess] Connected to redis://default:**@168.231.112.236:6379//
+[2025-06-05 14:33:39,298: INFO/MainProcess] mingle: searching for neighbors
+[2025-06-05 14:33:45,018: INFO/MainProcess] mingle: sync with 1 nodes
+[2025-06-05 14:33:45,024: INFO/MainProcess] mingle: sync complete
+[2025-06-05 14:33:51,875: INFO/MainProcess] celery@9056ece59ddf ready.
+[2025-06-05 14:33:52,765: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3e0edfd7-94ea-4151-906b-75e5f6cc5226] received
+[2025-06-05 14:33:52,787: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-06-05 14:33:53,341: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[c225dbba-3759-4cf6-a82f-8a119c723090] received
+[2025-06-05 14:33:53,396: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-06-05 14:33:53,404: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-06-05T14:33:53.404689
+[2025-06-05 14:33:53,404: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-06-05 14:33:53,924: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e7e17b5e-1147-4dc0-b59d-71f22e4f81bf] received
+[2025-06-05 14:33:53,945: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-06-05 14:33:54,800: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9ae97f1a-858f-4d4c-b128-c380605d65b2] received
+[2025-06-05 14:33:54,828: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-06-05 14:33:54,834: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-06-05T14:33:54.834423
+[2025-06-05 14:33:54,836: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-06-05 14:33:54,917: INFO/ForkPoolWorker-4] No audio files to process
+[2025-06-05 14:33:55,380: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2b4ab5f5-3480-450e-8fed-8117c6f0388c] received
+[2025-06-05 14:33:55,946: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9e331725-f383-4dfd-a65d-6269ef41fb80] received
+[2025-06-05 14:33:55,989: INFO/ForkPoolWorker-3] No audio files to process
+[2025-06-05 14:33:56,523: INFO/MainProcess] Task apps.gallery.tasks.process_audio[60eae421-f4e5-4514-955d-7fdb5f6ee5da] received
+[2025-06-05 14:33:56,633: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[3e0edfd7-94ea-4151-906b-75e5f6cc5226] succeeded in 3.852136532019358s: None
+[2025-06-05 14:33:56,812: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-06-05 14:33:57,373: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[f88c779c-3d60-4886-84b2-8ce72241d381] received
+[2025-06-05 14:33:57,690: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[e7e17b5e-1147-4dc0-b59d-71f22e4f81bf] succeeded in 3.75070423699799s: None
+[2025-06-05 14:33:57,934: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e8e9a825-a34e-40ab-abb9-be4361424d28] received
+[2025-06-05 14:33:57,936: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-06-05 14:33:57,936: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-06-05T14:33:57.936635
+[2025-06-05 14:33:57,936: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-06-05 14:33:58,492: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[8f7cc17a-ee74-4743-9e30-f4435fbc8a3b] received
+[2025-06-05 14:33:58,769: INFO/ForkPoolWorker-4] No audio files to process
+[2025-06-05 14:33:59,054: INFO/MainProcess] Task apps.gallery.tasks.process_audio[07d3f12e-1eb3-4cc1-81f1-4fe4f397b355] received
+[2025-06-05 14:33:59,347: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[2b4ab5f5-3480-450e-8fed-8117c6f0388c] succeeded in 2.5351797770126723s: None
+[2025-06-05 14:33:59,377: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-06-05 14:33:59,942: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[83e094b7-04e3-4c06-ba62-187dcf92bda5] received
+[2025-06-05 14:34:00,521: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a3209953-dabd-4e16-a575-d0c73493786b] received
+[2025-06-05 14:34:01,090: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[dcad8fc5-22dc-4364-b62f-c6be9237378d] received
+[2025-06-05 14:34:01,461: INFO/ForkPoolWorker-4] No audio files to process
+[2025-06-05 14:34:01,929: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a445549e-b543-483c-b470-18091d681a17] received
+[2025-06-05 14:34:02,031: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[60eae421-f4e5-4514-955d-7fdb5f6ee5da] succeeded in 2.65659000800224s: None
+[2025-06-05 14:34:02,042: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-06-05 14:34:02,042: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-06-05T14:34:02.042677
+[2025-06-05 14:34:02,043: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-06-05 14:34:02,602: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ab010b36-24a0-432a-8fde-5f6498454a92] received
+[2025-06-05 14:34:03,165: INFO/MainProcess] Task apps.gallery.tasks.process_audio[92ac0c47-ddaf-4624-8b5a-3b376d951500] received
+[2025-06-05 14:34:03,725: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[8cf6ffa2-cadb-4039-ad65-c229d9897c73] received
+[2025-06-05 14:34:04,565: INFO/MainProcess] Task apps.gallery.tasks.process_audio[cd7de1f6-b7b6-41b8-94a5-4579dde94bce] received
+[2025-06-05 14:34:05,144: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a5cbe4b1-2904-4909-b49b-20e55b9e5e82] received
+[2025-06-05 14:34:05,714: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c69e28ad-26a6-4661-8038-dc345cd8bba2] received
+[2025-06-05 14:34:06,279: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[40e0b662-f2d7-4613-ab52-2ff20e5f1996] received
+[2025-06-05 14:34:07,117: INFO/MainProcess] Task apps.gallery.tasks.process_audio[faacb827-d90c-41ef-b070-f309ef629fa1] received
+[2025-06-05 14:34:07,678: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[774606d3-e81c-4383-8796-82d59acff964] received
+
+worker: Warm shutdown (MainProcess)
