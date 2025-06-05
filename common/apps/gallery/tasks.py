@@ -6,6 +6,7 @@ from django.utils import timezone
 from apps.utils.decoviz_ai import AIClient
 from apps.utils.storage import Storage
 from apps.utils.unsplash_client import UnsplashClient
+from .models import Image
 
 search_queries=['nature', 'people', 'food', 'travel', 'architecture', 'animals']
 
@@ -146,8 +147,31 @@ def analyze_existing_transcripts():
             logger.error(f"Error analyzing transcript for audio {audio.id}: {str(e)}")
 
 
+
 @shared_task
 def populate_unsplash_images():
     client = UnsplashClient(search_queries=search_queries)
     logger.info("Fetching unsplash images to process")
     client.run()  
+
+
+
+# @shared_task
+# def generate_metadata():
+#     images = Image.objects.filter(is_active=True,metadata__isnull=True)
+#     logger.info(f"Found {images.count()} images to process")
+    
+#     for image in images:
+#         try:
+#             logger.info(f"Processing image {image.id}")
+#             client = AIClient()
+#             result = client.generate_metadata(image.file.path)
+            
+#             if result['success'] and 'metadata' in result:
+#                 image.metadata = result['metadata']
+#                 image.save()
+#                 logger.info(f"Successfully generated metadata for image {image.id}")
+#             else:
+#                 logger.error(f"Failed to generate metadata for image {image.id}")
+#         except Exception as e:
+#             logger.error(f"Error generating metadata for image {image.id}: {str(e)}")

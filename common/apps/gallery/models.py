@@ -47,6 +47,7 @@ class Image(BaseModel):
     external_url = models.URLField(blank=True, null=True)
     music = models.FileField(upload_to=user_music_path, blank=True, null=True)
     uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_images')
+    metadata = models.JSONField(blank=True, null=True)
     view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')
     is_active = models.BooleanField(default=True)
     
