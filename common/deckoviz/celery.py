@@ -28,6 +28,10 @@ app.conf.beat_schedule = {
         'task': 'apps.gallery.tasks.populate_unsplash_images',
         'schedule': timedelta(seconds=10),  # Run every 10 seconds
     },
+        'run_generate_metadata_task': {
+        'task': 'apps.gallery.tasks.generate_metadata',
+        'schedule': timedelta(minutes=2),  # Run every 10 seconds
+    },
 }
 
 app.autodiscover_tasks()
