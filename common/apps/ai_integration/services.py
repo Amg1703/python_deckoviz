@@ -123,7 +123,7 @@ class AIService:
                 amount=credits_required,
                 operation_type=operation_type,
                 input_data=input_data,
-                ai_operation_id=operation.id
+                operation_id=operation.id
             )
             
             if not success:
