@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS,COLLECTION_TYPES
 from apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
 import uuid
+from django.contrib.postgres.fields import ArrayField
 
 User = get_user_model()
 
@@ -79,6 +80,8 @@ class Collection(BaseModel):
     metadata=models.JSONField(blank=True,null=True)
     is_active = models.BooleanField(default=True)
     type = models.CharField(max_length=255, blank=True, null=True,choices=COLLECTION_TYPES,default='personal')
+    description = models.TextField(blank=True, default="")
+    tags = ArrayField(models.CharField(max_length=100), blank=True, default=list)
     
     class Meta:
         db_table = 'collections'

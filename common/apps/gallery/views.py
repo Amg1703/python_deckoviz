@@ -4,6 +4,8 @@ from rest_framework.permissions import IsAuthenticated,AllowAny
 from .models import Image, Collection, CollectionImage,Audio
 from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer)
 from django.db.models import Q
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 class AudioViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -57,9 +59,27 @@ class CollectionViewSet(viewsets.ModelViewSet):
         """Filter collections for current user"""
         return Collection.objects.filter(user=self.request.user, is_active=True)
     
-
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    def public(self, request):
+        """
+        Get all public collections that are active.
+        This endpoint is accessible without authentication.
+        """
+        public_collections = Collection.objects.filter(
+            view='public',
+            is_active=True
+        ).order_by('-created_at')
+        
+        page = self.paginate_queryset(public_collections)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+            
+        serializer = self.get_serializer(public_collections, many=True)
+        return Response(serializer.data)
 
 
 class CollectionImageViewSet(viewsets.ModelViewSet):

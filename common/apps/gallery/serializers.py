@@ -77,8 +77,12 @@ class ImageSerializer(serializers.ModelSerializer):
     
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        data['price'] = PriceSerializer(Price.objects.get(image=instance)).data
-        return data 
+        try:
+            price = Price.objects.get(image=instance)
+            data['price'] = PriceSerializer(price).data
+        except Price.DoesNotExist:
+            data['price'] = None
+        return data
 
 class CollectionImageSerializer(serializers.ModelSerializer):
     image = ImageSerializer(read_only=True)
@@ -116,7 +120,9 @@ class CollectionSerializer(serializers.ModelSerializer):
             'created_at', 
             'updated_at',
             'music',
-            'view'
+            'view',
+            'description',
+            'tags',
         ]
 
 
