@@ -77,4 +77,23 @@ class NewsLetterSubscriber(BaseModel):
         indexes = [
             models.Index(fields=['email']),
         ]
+
+class UserProfile(models.Model):
+    user = models.OneToOneField('User', on_delete=models.CASCADE, related_name='profile')
+    age = models.PositiveIntegerField(null=True, blank=True)
+    gender = models.CharField(max_length=50, blank=True)
+    location = models.CharField(max_length=255, blank=True)
+    vocation = models.CharField(max_length=255, blank=True)
+    hobbies = models.TextField(blank=True)
+    passions = models.TextField(blank=True)
+    interests = models.TextField(blank=True)
+    desired_states = models.TextField(blank=True)
+    personal_beliefs = models.TextField(blank=True)
+    life_principles = models.TextField(blank=True)
+    core_values = models.TextField(blank=True)
+    secondary_values = models.TextField(blank=True)
+    hopes_and_dreams = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"Profile of {self.user.username}"
     

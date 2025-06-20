@@ -1,11 +1,12 @@
 from django.urls import path,include 
 from rest_framework.routers import DefaultRouter 
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
-from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView,GoogleLoginView,GoogleCallbackView
+from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView,GoogleLoginView,GoogleCallbackView,UserProfileViewSet
 
 router = DefaultRouter()
 router.register('user', UserView, basename='user_profile')
 router.register('address', AddressView, basename='address')
+router.register('user-profile', UserProfileViewSet, basename='user_profile_info')
 
 urlpatterns = [
     path('',include(router.urls)),

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Address,NewsLetterSubscriber
+from .models import Address,NewsLetterSubscriber, UserProfile
 
 
 User = get_user_model() 
@@ -92,4 +92,30 @@ class NewsLetterSubscriberSerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at',
         ]
-    
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField(read_only=True)
+    email = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = UserProfile
+        fields = [
+            'name', 'email',
+            'age', 'gender', 'location', 'vocation', 'hobbies', 'passions', 'interests',
+            'desired_states', 'personal_beliefs', 'life_principles', 'core_values',
+            'secondary_values', 'hopes_and_dreams'
+        ]
+
+    def get_name(self, obj):
+        # Combine first and last name, fallback to username
+        if obj.user.first_name or obj.user.last_name:
+            return f"{obj.user.first_name} {obj.user.last_name}".strip()
+        return obj.user.username
+
+    def get_email(self, obj):
+        return obj.user.email
+
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data) 
