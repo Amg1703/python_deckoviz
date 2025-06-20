@@ -41,16 +41,18 @@ class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
         fields = [
-            'id', 
-            'file', 
+            'id',
+            'title',
+            'description',
+            'file',
             'music',
-            'external_url', 
-            'uploaded_by', 
+            'external_url',
+            'uploaded_by',
             'buy_price',
-            'view', 
+            'view',
             'price',
-            'is_active', 
-            'created_at', 
+            'is_active',
+            'created_at',
             'updated_at'
         ]
         

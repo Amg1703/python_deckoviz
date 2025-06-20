@@ -12,5 +12,6 @@ router.register(r'collection-images', CollectionImageViewSet,basename='collectio
 
 urlpatterns = [
     path('',include(router.urls)),  
-    # path('test/', TestView.as_view(), name='test'),
+    # path('images/backfill-metadata/', BackfillImageMetadataView.as_view(), name='backfill-image-metadata'),
+    path('test/', TestView.as_view(), name='test'),
 ]

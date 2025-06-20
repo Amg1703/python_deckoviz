@@ -43,6 +43,8 @@ class Audio(BaseModel):
         return f"Audio {self.id}"
 
 class Image(BaseModel):
+    title = models.CharField(max_length=255, blank=True, default="")
+    description = models.TextField(blank=True, default="")
     file = models.ImageField(upload_to=user_image_path, blank=True, null=True)
     image_id = models.CharField(max_length=255,unique=True)
     external_url = models.URLField(blank=True, null=True)

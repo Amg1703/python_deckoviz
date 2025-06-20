@@ -1,6 +1,6 @@
 # views.py
 from rest_framework import viewsets, filters,mixins
-from rest_framework.permissions import IsAuthenticated,AllowAny
+from rest_framework.permissions import IsAuthenticated,AllowAny, IsAdminUser
 from .models import Image, Collection, CollectionImage,Audio
 from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer)
 from django.db.models import Q
@@ -114,10 +114,10 @@ class TestView(APIView):
 
     def get(self, request):
         try:
-            images = Image.objects.filter(is_active=True, metadata__isnull=True)[:10]
+            images = Image.objects.filter(is_active=True, metadata__isnull=True)
             for image in images:
                 try:
-                    url = "http://168.231.112.236:8082/metadata/generate-from-url"
+                    url = "https://365b-49-36-171-13.ngrok-free.app/metadata/generate-from-url"
                     headers = {
                         "Content-Type": "application/json",
                         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNDk3MjU3LCJpYXQiOjE3NDg5NjEyNTcsImp0aSI6IjhiZDc5YmMzMjMzZTQwNGJhZDQwOWMxMWIwNDIzZGEyIiwidXNlcl9pZCI6ImNiODYxYjVjLWYwYjEtNGQxNy1hOWM2LTE0MTI0YzhhOTdiYiJ9.t9EuZW5nFwTxTAgFT9LoM8BhPgu377FRrHXus8igA7c"
@@ -125,6 +125,7 @@ class TestView(APIView):
                     payload = {
                         "image": image.file.url
                     }
+                    print(image.file.url)
                     response = requests.post(url, headers=headers, json=payload, timeout=30)
                     if response.status_code == 200:
                         image.metadata = response.json().get('metadata', None)
