@@ -65,6 +65,9 @@ urlpatterns = [
     #blogs api
     path('blogs/',include('apps.blogs.urls')),
     
+    # metacollections api
+    path('metacollections/', include('apps.metacollections.urls')),
+
     # dashboard app
     path('dashboard/', include('apps.dashboard.urls')),
      

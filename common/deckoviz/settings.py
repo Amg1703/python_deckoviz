@@ -121,6 +121,7 @@ INSTALLED_APPS = [
     'apps.ai_integration',
     'apps.dashboard',
     'apps.blogs',
+    'apps.metacollections',
     
     # third party apps  
     'rest_framework',
