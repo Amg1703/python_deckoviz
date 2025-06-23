@@ -68,6 +68,9 @@ urlpatterns = [
     # metacollections api
     path('metacollections/', include('apps.metacollections.urls')),
 
+    # modes api
+    path('modes/', include('apps.modes.urls')),
+
     # dashboard app
     path('dashboard/', include('apps.dashboard.urls')),
      

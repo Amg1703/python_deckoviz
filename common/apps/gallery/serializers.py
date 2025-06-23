@@ -86,6 +86,15 @@ class ImageSerializer(serializers.ModelSerializer):
             data['price'] = None
         return data
 
+class ImageSearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields = [
+            'id',
+            'file',
+            'metadata',
+        ]
+
 class CollectionImageSerializer(serializers.ModelSerializer):
     image = ImageSerializer(read_only=True)
 
