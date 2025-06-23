@@ -17,11 +17,12 @@ class Mode(BaseModel):
         ('serenity', 'Serenity'),
         ('romantic', 'Romantic'),
         ('inspiration', 'Inspiration'),
-        ('focus', 'Focus'),
+        ('dance', 'Dance'),
         ('meditation', 'Meditation'),
     ]
     name = models.CharField(max_length=20, choices=MODES, unique=True)
     admin_collections = models.ManyToManyField(Collection, related_name='admin_modes', blank=True)
+    admin_curations = models.ManyToManyField(Collection, related_name='curated_modes', blank=True)
     admin_music = models.ManyToManyField(Music, related_name='admin_modes', blank=True)
 
     def __str__(self):

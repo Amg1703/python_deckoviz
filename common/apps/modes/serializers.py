@@ -10,11 +10,12 @@ class MusicSerializer(serializers.ModelSerializer):
 
 class ModeSerializer(serializers.ModelSerializer):
     admin_collections = CollectionSerializer(many=True, read_only=True)
+    admin_curations = CollectionSerializer(many=True, read_only=True)
     admin_music = MusicSerializer(many=True, read_only=True)
 
     class Meta:
         model = Mode
-        fields = ('id', 'name', 'admin_collections', 'admin_music')
+        fields = ('id', 'name', 'admin_collections', 'admin_curations', 'admin_music')
 
 class UserModeSerializer(serializers.ModelSerializer):
     user_collections = CollectionSerializer(many=True, read_only=True)
