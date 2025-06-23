@@ -1,11 +1,12 @@
 # views.py
 from rest_framework import viewsets, filters,mixins
 from rest_framework.permissions import IsAuthenticated,AllowAny, IsAdminUser
-from .models import Image, Collection, CollectionImage,Audio
-from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer)
+from .models import Image, Collection, CollectionImage,Audio, DailyCuration
+from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer, DailyCurationSerializer)
 from django.db.models import Q
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
+from datetime import date
 
 class AudioViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -135,3 +136,14 @@ class TestView(APIView):
             return Response({"message": "Metadata generated successfully"})
         except Exception as e:
             return Response({"message": str(e)})
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def today_curation(request):
+    today = date.today()
+    try:
+        curation = DailyCuration.objects.get(date=today)
+        data = DailyCurationSerializer(curation, context={'request': request}).data
+        return Response(data)
+    except DailyCuration.DoesNotExist:
+        return Response({'date': str(today), 'collections': []})

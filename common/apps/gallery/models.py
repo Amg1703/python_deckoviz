@@ -5,6 +5,7 @@ from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS
 from apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
 import uuid
 from django.contrib.postgres.fields import ArrayField
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -182,3 +183,15 @@ class MetaComment(BaseModel):
     def __str__(self):
         image_identifier = self.image.id if self.image else self.external_image_id
         return f"Comment by {self.user.username} on {image_identifier}"
+
+class DailyCuration(models.Model):
+    date = models.DateField(default=timezone.now, unique=True)
+    collections = models.ManyToManyField(Collection, related_name='daily_curations')
+
+    class Meta:
+        verbose_name = 'Daily Curation'
+        verbose_name_plural = 'Daily Curations'
+        ordering = ['-date']
+
+    def __str__(self):
+        return f"Daily Curation for {self.date}"
