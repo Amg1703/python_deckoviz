@@ -154,7 +154,7 @@ class TestView(APIView):
                         if isinstance(md, dict) and set(md.keys()) == {"tags", "title", "mood_tags", "description"}:
                             # Skip images with correct metadata format
                             continue
-                        url = "https://57f9-49-36-171-13.ngrok-free.app/image-meta-gen/generate-from-url"
+                        url = "https://ai.deckoviz.com/image-meta-gen/generate-from-url"
                         headers = {
                             "Content-Type": "application/json",
                             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNDk3MjU3LCJpYXQiOjE3NDg5NjEyNTcsImp0aSI6IjhiZDc5YmMzMjMzZTQwNGJhZDQwOWMxMWIwNDIzZGEyIiwidXNlcl9pZCI6ImNiODYxYjVjLWYwYjEtNGQxNy1hOWM2LTE0MTI0YzhhOTdiYiJ9.t9EuZW5nFwTxTAgFT9LoM8BhPgu377FRrHXus8igA7c"

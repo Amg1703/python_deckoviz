@@ -4,6 +4,10 @@ from apps.authentication.serializers import UserSerializer
 from apps.marketplace.serializers import PriceSerializer
 from apps.marketplace.models import Price
 from django.db import transaction
+import requests
+import logging
+
+logger = logging.getLogger(__name__)
 
 class AudioSerializer(serializers.ModelSerializer):
 
@@ -66,15 +70,42 @@ class ImageSerializer(serializers.ModelSerializer):
             'updated_at'
         ]
         
+    def _generate_metadata(self, image):
+        # TODO: Move URL and token to environment variables
+        url = "https://ai.deckoviz.com/image-meta-gen/generate-from-url"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzgwNDk3MjU3LCJpYXQiOjE3NDg5NjEyNTcsImp0aSI6IjhiZDc5YmMzMjMzZTQwNGJhZDQwOWMxMWIwNDIzZGEyIiwidXNlcl9pZCI6ImNiODYxYjVjLWYwYjEtNGQxNy1hOWM2LTE0MTI0YzhhOTdiYiJ9.t9EuZW5nFwTxTAgFT9LoM8BhPgu377FRrHXus8igA7c"
+        }
+        payload = {
+            "url": image.file.url
+        }
+        try:
+            print(f"Generating metadata for: {image.file.url}")
+            response = requests.post(url, headers=headers, json=payload, timeout=30)
+            if response.status_code == 200:
+                metadata = response.json().get('metadata', {})
+                image.metadata = metadata
+                image.save(update_fields=['metadata'])
+                image_identifier = image.title if image.title else image.id
+                metadata_title = metadata.get('title', 'N/A')
+                logger.info(f"Successfully generated metadata for: {image_identifier} - Title: {metadata_title}")
+            else:
+                logger.error(f"Error generating metadata for {image.file.url}: {response.status_code} - {response.text}")
+        except Exception as e:
+            logger.error(f"Error processing image {image.id}: {str(e)}")
+        
     def create(self,validated_data):
         user = self.context['request'].user
         validated_data['uploaded_by'] = user
         buy_price = validated_data.pop('buy_price')
-        image = super().create(validated_data)
         
         # Create image and price in a transaction
         with transaction.atomic():
+            image = super().create(validated_data)
             Price.objects.create(image=image, final_price=buy_price, is_active=True)
+
+        self._generate_metadata(image)
         return image
     
     def to_representation(self, instance):
