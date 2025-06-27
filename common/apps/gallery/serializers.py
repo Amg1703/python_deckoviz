@@ -42,6 +42,9 @@ class ImageSerializer(serializers.ModelSerializer):
     buy_price = serializers.DecimalField(max_digits=10, decimal_places=2, write_only=True)
     uploaded_by = UserSerializer(read_only=True)
     
+    title = serializers.SerializerMethodField()
+    description = serializers.SerializerMethodField()
+
     class Meta:
         model = Image
         fields = [
@@ -70,6 +73,20 @@ class ImageSerializer(serializers.ModelSerializer):
             'updated_at'
         ]
         
+    def get_title(self, obj):
+        if obj.title:
+            return obj.title
+        if obj.metadata and isinstance(obj.metadata, dict):
+            return obj.metadata.get('title', '') or ''
+        return ''
+
+    def get_description(self, obj):
+        if obj.description:
+            return obj.description
+        if obj.metadata and isinstance(obj.metadata, dict):
+            return obj.metadata.get('description', '') or ''
+        return ''
+
     def _generate_metadata(self, image):
         # TODO: Move URL and token to environment variables
         url = "https://ai.deckoviz.com/image-meta-gen/generate-from-url"
@@ -118,13 +135,29 @@ class ImageSerializer(serializers.ModelSerializer):
         return data
 
 class ImageSearchSerializer(serializers.ModelSerializer):
+    title = serializers.SerializerMethodField()
+    description = serializers.SerializerMethodField()
     class Meta:
         model = Image
         fields = [
             'id',
             'file',
             'metadata',
+            'title',
+            'description',
         ]
+    def get_title(self, obj):
+        if obj.title:
+            return obj.title
+        if obj.metadata and isinstance(obj.metadata, dict):
+            return obj.metadata.get('title', '') or ''
+        return ''
+    def get_description(self, obj):
+        if obj.description:
+            return obj.description
+        if obj.metadata and isinstance(obj.metadata, dict):
+            return obj.metadata.get('description', '') or ''
+        return ''
 
 class CollectionImageSerializer(serializers.ModelSerializer):
     image = ImageSerializer(read_only=True)
@@ -178,6 +211,18 @@ class CollectionDetailSerializer(CollectionSerializer):
     def get_images(self, obj):
         """Return images in the correct order with complete details"""
         collection_images = obj.collection_images.all().select_related('image')
+        def get_title(image):
+            if image.title:
+                return image.title
+            if image.metadata and isinstance(image.metadata, dict):
+                return image.metadata.get('title', '') or ''
+            return ''
+        def get_description(image):
+            if image.description:
+                return image.description
+            if image.metadata and isinstance(image.metadata, dict):
+                return image.metadata.get('description', '') or ''
+            return ''
         return [
             {
                 'id': ci.image.id,
@@ -186,6 +231,8 @@ class CollectionDetailSerializer(CollectionSerializer):
                 'uploaded_by': UserSerializer(ci.image.uploaded_by).data if ci.image.uploaded_by else None,
                 'created_at': ci.image.created_at,
                 'updated_at': ci.image.updated_at,
+                'title': get_title(ci.image),
+                'description': get_description(ci.image),
             }
             for ci in collection_images
         ]
