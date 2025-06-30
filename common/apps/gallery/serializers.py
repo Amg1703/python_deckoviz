@@ -42,8 +42,8 @@ class ImageSerializer(serializers.ModelSerializer):
     buy_price = serializers.DecimalField(max_digits=10, decimal_places=2, write_only=True)
     uploaded_by = UserSerializer(read_only=True)
     
-    title = serializers.SerializerMethodField()
-    description = serializers.SerializerMethodField()
+    title = serializers.CharField(required=False, allow_blank=True)
+    description = serializers.CharField(required=False, allow_blank=True)
 
     class Meta:
         model = Image
@@ -73,20 +73,6 @@ class ImageSerializer(serializers.ModelSerializer):
             'updated_at'
         ]
         
-    def get_title(self, obj):
-        if obj.title:
-            return obj.title
-        if obj.metadata and isinstance(obj.metadata, dict):
-            return obj.metadata.get('title', '') or ''
-        return ''
-
-    def get_description(self, obj):
-        if obj.description:
-            return obj.description
-        if obj.metadata and isinstance(obj.metadata, dict):
-            return obj.metadata.get('description', '') or ''
-        return ''
-
     def _generate_metadata(self, image):
         # TODO: Move URL and token to environment variables
         url = "https://ai.deckoviz.com/image-meta-gen/generate-from-url"
@@ -116,12 +102,10 @@ class ImageSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         validated_data['uploaded_by'] = user
         buy_price = validated_data.pop('buy_price')
-        
-        # Create image and price in a transaction
+        # title and description will be set by super().create(validated_data)
         with transaction.atomic():
             image = super().create(validated_data)
             Price.objects.create(image=image, final_price=buy_price, is_active=True)
-
         self._generate_metadata(image)
         return image
     
