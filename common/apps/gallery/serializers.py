@@ -6,6 +6,8 @@ from apps.marketplace.models import Price
 from django.db import transaction
 import requests
 import logging
+from django.core.files.base import ContentFile
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -44,6 +46,7 @@ class ImageSerializer(serializers.ModelSerializer):
     
     title = serializers.CharField(required=False, allow_blank=True)
     description = serializers.CharField(required=False, allow_blank=True)
+    file_url = serializers.URLField(write_only=True, required=False, allow_blank=True)
 
     class Meta:
         model = Image
@@ -52,6 +55,7 @@ class ImageSerializer(serializers.ModelSerializer):
             'title',
             'description',
             'file',
+            'file_url',
             'music',
             'external_url',
             'uploaded_by',
@@ -98,11 +102,20 @@ class ImageSerializer(serializers.ModelSerializer):
         except Exception as e:
             logger.error(f"Error processing image {image.id}: {str(e)}")
         
-    def create(self,validated_data):
+    def create(self, validated_data):
         user = self.context['request'].user
         validated_data['uploaded_by'] = user
         buy_price = validated_data.pop('buy_price')
-        # title and description will be set by super().create(validated_data)
+        file_url = validated_data.pop('file_url', None)
+        # Download image from URL if file_url is provided
+        if file_url and not validated_data.get('file'):
+            try:
+                response = requests.get(file_url)
+                response.raise_for_status()
+                file_name = os.path.basename(file_url.split('?')[0]) or 'downloaded_image.jpg'
+                validated_data['file'] = ContentFile(response.content, name=file_name)
+            except Exception as e:
+                raise serializers.ValidationError({'file_url': f'Failed to download image: {str(e)}'})
         with transaction.atomic():
             image = super().create(validated_data)
             Price.objects.create(image=image, final_price=buy_price, is_active=True)
