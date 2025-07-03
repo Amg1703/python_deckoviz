@@ -195,3 +195,22 @@ class DailyCuration(models.Model):
 
     def __str__(self):
         return f"Daily Curation for {self.date}"
+
+class Ritual(BaseModel):
+    name = models.CharField(max_length=100)
+    time_of_day = models.TimeField(help_text="Time of day when the ritual is triggered")
+    collections = models.ManyToManyField(Collection, related_name='rituals')
+    is_active = models.BooleanField(default=True)
+    is_global = models.BooleanField(default=False, help_text="True for admin/global rituals, False for user-defined rituals")
+    created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, help_text="Null for global rituals, set for user-defined rituals")
+    
+    class Meta:
+        db_table = 'rituals'
+        verbose_name = 'Ritual'
+        verbose_name_plural = 'Rituals'
+        indexes = [
+            models.Index(fields=['is_global', 'created_by', 'time_of_day']),
+        ]
+
+    def __str__(self):
+        return f"{'Global' if self.is_global else 'User'} Ritual: {self.name} at {self.time_of_day}"

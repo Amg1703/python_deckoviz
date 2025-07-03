@@ -1,8 +1,8 @@
 # views.py
 from rest_framework import viewsets, filters,mixins
 from rest_framework.permissions import IsAuthenticated,AllowAny, IsAdminUser
-from .models import Image, Collection, CollectionImage,Audio, DailyCuration
-from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer, DailyCurationSerializer)
+from .models import Image, Collection, CollectionImage,Audio, DailyCuration, Ritual
+from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer, DailyCurationSerializer, AdminRitualSerializer, UserRitualSerializer)
 from django.db.models import Q
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
@@ -11,6 +11,7 @@ from rest_framework.views import APIView
 import requests
 import json
 import time
+import random
 
 class AudioViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -126,6 +127,22 @@ class CollectionViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(public_collections, many=True)
         return Response(serializer.data)
 
+    @action(detail=True, methods=['post'], permission_classes=[IsAuthenticated], url_path='attach_music')
+    def attach_music(self, request, pk=None):
+        """
+        Attach or replace a music file for a collection. Only the owner can update.
+        """
+        collection = self.get_object()
+        if collection.user != request.user:
+            return Response({'detail': 'Not authorized to modify this collection.'}, status=403)
+        music_file = request.FILES.get('music')
+        if not music_file:
+            return Response({'detail': 'No music file provided.'}, status=400)
+        # Replace the music file
+        collection.music = music_file
+        collection.save(update_fields=['music'])
+        return Response({'detail': 'Music file attached successfully.', 'music_url': collection.music.url})
+
 
 class CollectionImageViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -193,3 +210,62 @@ def today_curation(request):
         return Response(data)
     except DailyCuration.DoesNotExist:
         return Response({'date': str(today), 'collections': []})
+
+class AdminRitualViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAdminUser]
+    serializer_class = AdminRitualSerializer
+    queryset = Ritual.objects.filter(is_global=True)
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['name']
+    ordering_fields = ['time_of_day', 'name']
+    ordering = ['time_of_day']
+
+    @action(detail=False, methods=['get'], url_path='by-time', permission_classes=[IsAdminUser])
+    def by_time(self, request):
+        time_str = request.query_params.get('time')
+        if not time_str:
+            return Response({'detail': 'Missing time parameter.'}, status=400)
+        rituals = Ritual.objects.filter(is_global=True, time_of_day=time_str, is_active=True)
+        data = []
+        for ritual in rituals:
+            collections = list(ritual.collections.all())
+            random.shuffle(collections)
+            data.append({
+                'id': ritual.id,
+                'name': ritual.name,
+                'time_of_day': ritual.time_of_day,
+                'collections': CollectionSerializer(collections, many=True).data
+            })
+        return Response(data)
+
+class UserRitualViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    serializer_class = UserRitualSerializer
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ['name']
+    ordering_fields = ['time_of_day', 'name']
+    ordering = ['time_of_day']
+
+    def get_queryset(self):
+        return Ritual.objects.filter(is_global=False, created_by=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+    @action(detail=False, methods=['get'], url_path='by-time', permission_classes=[IsAuthenticated])
+    def by_time(self, request):
+        time_str = request.query_params.get('time')
+        if not time_str:
+            return Response({'detail': 'Missing time parameter.'}, status=400)
+        rituals = Ritual.objects.filter(is_global=False, created_by=request.user, time_of_day=time_str, is_active=True)
+        data = []
+        for ritual in rituals:
+            collections = list(ritual.collections.all())
+            random.shuffle(collections)
+            data.append({
+                'id': ritual.id,
+                'name': ritual.name,
+                'time_of_day': ritual.time_of_day,
+                'collections': CollectionSerializer(collections, many=True).data
+            })
+        return Response(data)

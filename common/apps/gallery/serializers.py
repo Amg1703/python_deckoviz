@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Audio, Image, Collection, CollectionImage, DailyCuration
+from .models import Audio, Image, Collection, CollectionImage, DailyCuration, Ritual
 from apps.authentication.serializers import UserSerializer
 from apps.marketplace.serializers import PriceSerializer
 from apps.marketplace.models import Price
@@ -240,3 +240,60 @@ class DailyCurationSerializer(serializers.ModelSerializer):
     class Meta:
         model = DailyCuration
         fields = ['date', 'collections']
+
+class AdminRitualSerializer(serializers.ModelSerializer):
+    collections = CollectionSerializer(many=True, read_only=True)
+    collection_ids = serializers.PrimaryKeyRelatedField(
+        queryset=Collection.objects.all(), write_only=True, many=True, source='collections'
+    )
+
+    class Meta:
+        model = Ritual
+        fields = [
+            'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at', 'collections']
+
+    def create(self, validated_data):
+        collections = validated_data.pop('collections', [])
+        ritual = Ritual.objects.create(is_global=True, created_by=None, **validated_data)
+        ritual.collections.set(collections)
+        return ritual
+
+    def update(self, instance, validated_data):
+        collections = validated_data.pop('collections', None)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        if collections is not None:
+            instance.collections.set(collections)
+        return instance
+
+class UserRitualSerializer(serializers.ModelSerializer):
+    collections = CollectionSerializer(many=True, read_only=True)
+    collection_ids = serializers.PrimaryKeyRelatedField(
+        queryset=Collection.objects.all(), write_only=True, many=True, source='collections'
+    )
+
+    class Meta:
+        model = Ritual
+        fields = [
+            'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at', 'collections', 'is_global']
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        collections = validated_data.pop('collections', [])
+        ritual = Ritual.objects.create(is_global=False, created_by=user, **validated_data)
+        ritual.collections.set(collections)
+        return ritual
+
+    def update(self, instance, validated_data):
+        collections = validated_data.pop('collections', None)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        if collections is not None:
+            instance.collections.set(collections)
+        return instance
