@@ -176,6 +176,7 @@ class CollectionImageCreateSerializer(serializers.ModelSerializer):
 class CollectionSerializer(serializers.ModelSerializer):
     collection_images = CollectionImageSerializer(many=True, read_only=True)
     user = serializers.ReadOnlyField(source='user.username')
+    music_url = serializers.CharField(write_only=True, required=False, allow_blank=True)
 
     class Meta:
         model = Collection
@@ -192,11 +193,26 @@ class CollectionSerializer(serializers.ModelSerializer):
             'created_at', 
             'updated_at',
             'music',
+            'music_url',
             'view',
             'description',
             'tags',
         ]
 
+    def create(self, validated_data):
+        music_url = validated_data.pop('music_url', None)
+        music_file = validated_data.get('music', None)
+        if not music_file and music_url:
+            # Set the music field to the S3 URL
+            validated_data['music'] = music_url
+        return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        music_url = validated_data.pop('music_url', None)
+        music_file = validated_data.get('music', None)
+        if not music_file and music_url:
+            validated_data['music'] = music_url
+        return super().update(instance, validated_data)
 
 class CollectionDetailSerializer(CollectionSerializer):
     """Extended serializer with more details for single collection view"""
@@ -254,6 +270,11 @@ class AdminRitualSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'collections']
 
+    def validate_collection_ids(self, value):
+        if len(value) != len(set(value)):
+            raise serializers.ValidationError("Duplicate collections are not allowed in a ritual.")
+        return value
+
     def create(self, validated_data):
         collections = validated_data.pop('collections', [])
         ritual = Ritual.objects.create(is_global=True, created_by=None, **validated_data)
@@ -281,6 +302,26 @@ class UserRitualSerializer(serializers.ModelSerializer):
             'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'collections', 'is_global']
+
+    def validate_collection_ids(self, value):
+        if len(value) != len(set(value)):
+            raise serializers.ValidationError("Duplicate collections are not allowed in a ritual.")
+        return value
+
+    def validate(self, data):
+        request = self.context.get('request')
+        user = request.user if request else None
+        time_of_day = data.get('time_of_day')
+        # For update, exclude self
+        instance = getattr(self, 'instance', None)
+        qs = Ritual.objects.filter(is_global=False, created_by=user, time_of_day=time_of_day)
+        if instance:
+            qs = qs.exclude(pk=instance.pk)
+        if qs.exists():
+            raise serializers.ValidationError({
+                'time_of_day': 'You already have a ritual at this time.'
+            })
+        return data
 
     def create(self, validated_data):
         user = self.context['request'].user

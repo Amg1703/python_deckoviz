@@ -12,7 +12,7 @@ User = get_user_model()
 
 class Audio(BaseModel):
     # Audio file and basic information
-    audio = models.FileField(upload_to=user_audio_path, blank=True, null=True)
+    audio = models.FileField(upload_to=user_audio_path, blank=True, null=True, max_length=500)
     uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_audios')
     view = models.CharField(max_length=255, blank=True, null=True, choices=VIEW_TYPES, default='private')
     is_active = models.BooleanField(default=True)
@@ -75,7 +75,7 @@ class Image(BaseModel):
 class Collection(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collections')
     name = models.CharField(max_length=255,unique=True)
-    music = models.FileField(upload_to=user_music_path, blank=True, null=True)
+    music = models.FileField(upload_to=user_music_path, blank=True, null=True, max_length=500)
     view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')  
     display_time = models.IntegerField(default=10, help_text="Time in seconds to display each image")
     music_preference = models.CharField(max_length=255, blank=True)
