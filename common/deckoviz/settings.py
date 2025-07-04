@@ -122,6 +122,7 @@ INSTALLED_APPS = [
     'apps.dashboard',
     'apps.blogs',
     'apps.metacollections',
+    'apps.metaimages',
     'apps.modes',
     
     # third party apps  

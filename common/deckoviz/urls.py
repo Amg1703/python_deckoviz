@@ -73,6 +73,9 @@ urlpatterns = [
 
     # dashboard app
     path('dashboard/', include('apps.dashboard.urls')),
+
+    # metaimages api
+    path('metaimages/', include('apps.metaimages.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
