@@ -5,11 +5,12 @@ from apps.gallery.serializers import CollectionSerializer
 class MetaCollectionSerializer(serializers.ModelSerializer):
     favourite_collections = CollectionSerializer(many=True, read_only=True)
     starred_collections = CollectionSerializer(many=True, read_only=True)
+    liked_collections = CollectionSerializer(many=True, read_only=True)
     shared_collections = serializers.SerializerMethodField()
 
     class Meta:
         model = MetaCollection
-        fields = ['id', 'user', 'favourite_collections', 'starred_collections', 'shared_collections']
+        fields = ['id', 'user', 'favourite_collections', 'starred_collections', 'liked_collections', 'shared_collections']
 
     def get_shared_collections(self, obj):
         from .models import SharedCollection
@@ -46,4 +47,13 @@ class ShareCollectionSerializer(serializers.Serializer):
             raise serializers.ValidationError("Collection does not exist.")
         if not User.objects.filter(email=data['email']).exists():
             raise serializers.ValidationError("User with this email does not exist.")
-        return data 
+        return data
+
+class AddToLikedCollectionSerializer(serializers.Serializer):
+    collection_id = serializers.UUIDField()
+
+    def validate_collection_id(self, value):
+        from apps.gallery.models import Collection
+        if not Collection.objects.filter(id=value).exists():
+            raise serializers.ValidationError("Collection does not exist.")
+        return value 

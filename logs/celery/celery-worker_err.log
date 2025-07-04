@@ -2312,3 +2312,1953 @@ KeyError: 'apps.gallery.tasks.generate_metadata'
 [2025-07-04 09:22:53,599: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:22:53.599136
 [2025-07-04 09:22:53,599: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
 [2025-07-04 09:22:54,504: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[e267ad83-55ec-4d36-8f2e-6d3cdf73ee12] received
+[2025-07-04 09:23:07,983: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[97c44e23-364c-4932-a3df-ea130662ae04] succeeded in 90.8427014129993s: None
+[2025-07-04 09:23:08,155: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-04 09:23:08,858: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2f04f245-bee0-450d-800d-9c4d6586eed7] received
+[2025-07-04 09:23:09,360: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-04 09:23:09,725: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[36913188-07a9-4617-9dfb-be19b5719203] succeeded in 1.5703106279997883s: None
+[2025-07-04 09:23:09,897: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:23:09,897: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:23:09.897334
+[2025-07-04 09:23:09,897: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:23:10,597: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[19bde879-40ce-493a-aac8-033867e1e9ec] received
+[2025-07-04 09:23:25,970: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[c6140bb4-8523-4991-81f7-e1fc0cc0e8f8] succeeded in 93.96208576700064s: None
+[2025-07-04 09:23:26,141: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:23:26,666: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[4e9b35b8-d48c-4537-9fec-a8e7a6320c80] succeeded in 95.18186109100043s: None
+[2025-07-04 09:23:27,193: INFO/MainProcess] Task apps.gallery.tasks.process_audio[12f8ec01-5b84-458a-9b4a-2fe964bb2d06] received
+[2025-07-04 09:23:27,194: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:23:27,194: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:23:27.194402
+[2025-07-04 09:23:27,194: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:23:27,317: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:23:27,659: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[d09427af-8a6b-447e-905d-b3db5a0b1bc1] succeeded in 1.5183342210002593s: None
+[2025-07-04 09:23:27,934: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:23:28,469: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2d09ac0e-9d75-4a6d-8db1-fde3b8d75577] received
+[2025-07-04 09:23:29,002: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[6cc61c88-9d55-4e78-b18f-48a1ad3bb866] received
+[2025-07-04 09:23:29,095: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:23:29,436: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[b2538197-12fb-40da-a547-4f75d00de93d] succeeded in 1.5024766040005488s: None
+[2025-07-04 09:23:29,608: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:23:29,608: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:23:29.608671
+[2025-07-04 09:23:29,608: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:23:30,327: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a60a5444-217f-45cd-80cb-24c2801a7fc9] received
+[2025-07-04 09:24:28,038: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[a8fbf021-5f88-4717-a2bc-9350900318ba] succeeded in 94.44342735800001s: None
+[2025-07-04 09:24:28,210: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:24:29,268: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[1f8674e6-a194-4131-b676-a261c1cb8839] received
+[2025-07-04 09:24:29,338: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:24:29,658: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[777a048e-8925-4cd8-8a89-c2952b94d1f9] succeeded in 1.447800403000656s: None
+[2025-07-04 09:24:29,829: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:24:29,829: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:24:29.829719
+[2025-07-04 09:24:29,829: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:24:30,722: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '732b9754-8786-400f-80c1-b66bdf9b4664', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '732b9754-8786-400f-80c1-b66bdf9b4664', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 09:24:31,763: INFO/MainProcess] Task apps.gallery.tasks.process_audio[752e90a8-e139-4bd0-a715-003eb7d04612] received
+[2025-07-04 09:24:41,389: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[05e1f7ea-f8f1-4d29-95d2-37b5bdb918f5] succeeded in 91.49604574000023s: None
+[2025-07-04 09:24:41,564: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:24:41,564: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:24:41.564643
+[2025-07-04 09:24:41,564: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:24:42,274: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[96cd5d1a-c2c7-4849-a187-5d9c7aacfc4b] received
+[2025-07-04 09:24:56,564: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[9137eeb7-db8d-413a-8c67-55a2137e3fce] succeeded in 89.37436676099969s: None
+[2025-07-04 09:24:56,735: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:24:57,451: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[fa3fbde4-7411-42e2-904f-dc9c44bbf26e] received
+[2025-07-04 09:24:57,903: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:24:58,233: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[000bf13c-e7a0-4947-ae08-03f7c754b7cd] succeeded in 1.4981599680004365s: None
+[2025-07-04 09:24:58,410: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:24:59,290: INFO/MainProcess] Task apps.gallery.tasks.process_audio[29577f45-2c3e-40b4-b5e6-4c075f4b7a2e] received
+[2025-07-04 09:24:59,700: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:25:00,029: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[30d6eb68-8267-4e62-b484-68581789f26c] succeeded in 1.6189159859995925s: None
+[2025-07-04 09:25:00,202: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:25:00,203: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:25:00.203038
+[2025-07-04 09:25:00,203: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:25:00,916: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ed6eea23-f5c7-48c5-ba18-1ebe1a9a4528] received
+[2025-07-04 09:25:01,635: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[ea6e24e1-83df-4756-b5ac-a28c5a1b54b5] succeeded in 92.03104102900033s: None
+[2025-07-04 09:25:01,808: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:25:02,518: INFO/MainProcess] Task apps.gallery.tasks.process_audio[0fa3e9ed-6610-418e-9f5c-f0dee60c6b4e] received
+[2025-07-04 09:25:02,967: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:25:03,318: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[84b4dcb0-9004-49d6-80e3-7cc72f60a3c5] succeeded in 1.5099408149999363s: None
+[2025-07-04 09:25:03,604: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:25:03,604: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:25:03.604332
+[2025-07-04 09:25:03,604: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:25:04,315: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[c9b3c625-0ad2-4953-ac35-b4f7daea9887] received
+[2025-07-04 09:26:01,042: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[4dc19e09-9bc6-4c32-a96a-7a617153c90f] succeeded in 91.21699681700011s: None
+[2025-07-04 09:26:01,217: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:26:02,284: INFO/MainProcess] Task apps.gallery.tasks.process_audio[076b1147-a87a-48aa-85aa-5a4153c681e5] received
+[2025-07-04 09:26:02,477: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:26:02,794: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[bdc67257-c06c-43f6-8eaa-95f6b9838775] succeeded in 1.5775674599999547s: None
+[2025-07-04 09:26:02,966: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:26:02,967: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:26:02.967039
+[2025-07-04 09:26:02,967: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:26:03,677: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[eff92f49-c698-4f8b-be9b-d3618a2b004f] received
+[2025-07-04 09:26:14,350: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[85da68ce-30be-415f-b2b1-a0a35d936199] succeeded in 92.78925934600011s: None
+[2025-07-04 09:26:14,523: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-04 09:26:15,328: INFO/MainProcess] Task apps.gallery.tasks.process_audio[0df3a89d-f63b-469c-ba15-d7f9449c8a5b] received
+[2025-07-04 09:26:15,782: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-04 09:26:16,144: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[2f04f245-bee0-450d-800d-9c4d6586eed7] succeeded in 1.6218238230003408s: None
+[2025-07-04 09:26:16,318: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:26:16,319: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:26:16.319017
+[2025-07-04 09:26:16,319: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:26:17,026: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9079fb07-090b-4980-bd65-4de357f13aea] received
+[2025-07-04 09:26:38,393: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[bb9dde12-6eb2-44a6-b2b7-de0a9276b564] succeeded in 94.79300147999948s: None
+[2025-07-04 09:26:38,422: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[657cce4d-4e8c-4eac-90c4-e8e77acd551f] succeeded in 98.22337840199998s: None
+[2025-07-04 09:26:38,567: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:26:38,567: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:26:39,698: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:26:39,798: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:26:39,806: INFO/MainProcess] Task apps.gallery.tasks.process_audio[7af6f613-e104-40cf-b3b4-378d3f57f238] received
+[2025-07-04 09:26:40,028: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[2d09ac0e-9d75-4a6d-8db1-fde3b8d75577] succeeded in 1.4608552919999056s: None
+[2025-07-04 09:26:40,145: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[12f8ec01-5b84-458a-9b4a-2fe964bb2d06] succeeded in 1.578402355000435s: None
+[2025-07-04 09:26:40,385: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[3fe54722-c7c8-432f-bf7e-3c750cbd6267] received
+[2025-07-04 09:26:40,387: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:26:40,387: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:26:40.387198
+[2025-07-04 09:26:40,387: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:26:40,387: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:26:41,460: INFO/MainProcess] Task apps.gallery.tasks.process_audio[4bdfc107-f197-4062-b369-ef52431b16ca] received
+[2025-07-04 09:26:41,540: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:26:41,868: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[a60a5444-217f-45cd-80cb-24c2801a7fc9] succeeded in 1.4818410829993809s: None
+[2025-07-04 09:26:42,228: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a1a11dd3-10a3-4bb5-aef1-efa248cfbf37] received
+[2025-07-04 09:26:42,229: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:26:42,229: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:26:42.229571
+[2025-07-04 09:26:42,229: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:26:43,111: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '3302b1b7-3cda-41fa-b0e3-5712dc8fb1a8', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '3302b1b7-3cda-41fa-b0e3-5712dc8fb1a8', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 09:26:44,890: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2c98a0b5-3915-45ba-975a-327c331f9569] received
+[2025-07-04 09:27:39,415: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[e267ad83-55ec-4d36-8f2e-6d3cdf73ee12] succeeded in 96.4522412870001s: None
+[2025-07-04 09:27:39,585: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:27:40,652: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[0d8642cd-c170-4ac2-b26a-6ff112f4b511] received
+[2025-07-04 09:27:40,705: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:27:41,023: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[752e90a8-e139-4bd0-a715-003eb7d04612] succeeded in 1.4378672560005725s: None
+[2025-07-04 09:27:41,196: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:27:41,196: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:27:41.196236
+[2025-07-04 09:27:41,196: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:27:41,904: INFO/MainProcess] Task apps.gallery.tasks.process_audio[89f99b07-627d-4ac7-8305-a6f74101808e] received
+[2025-07-04 09:27:46,122: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[19bde879-40ce-493a-aac8-033867e1e9ec] succeeded in 89.80725071699999s: None
+[2025-07-04 09:27:46,299: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:27:46,299: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:27:46.299606
+[2025-07-04 09:27:46,299: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:27:47,008: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[287d4f8e-b1d0-45c2-83e1-756c13b61886] received
+[2025-07-04 09:28:10,596: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[6cc61c88-9d55-4e78-b18f-48a1ad3bb866] succeeded in 90.21319199000027s: None
+[2025-07-04 09:28:10,768: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:28:11,617: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[5680da62-0898-42a8-9987-e484b16b5e19] received
+[2025-07-04 09:28:11,938: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:28:12,277: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[29577f45-2c3e-40b4-b5e6-4c075f4b7a2e] succeeded in 1.509106127999985s: None
+[2025-07-04 09:28:12,452: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:28:12,452: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:28:12.452614
+[2025-07-04 09:28:12,452: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:28:13,164: INFO/MainProcess] Task apps.gallery.tasks.process_audio[0023701e-25b5-47c4-98a4-35e612c6d03e] received
+[2025-07-04 09:28:18,244: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[1f8674e6-a194-4131-b676-a261c1cb8839] succeeded in 96.01910451399999s: None
+[2025-07-04 09:28:18,416: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:28:19,120: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[13f19386-ab7f-4c86-b1bc-74ed65ef265e] received
+[2025-07-04 09:28:19,555: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:28:19,887: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[0fa3e9ed-6610-418e-9f5c-f0dee60c6b4e] succeeded in 1.471540236000692s: None
+[2025-07-04 09:28:20,230: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:28:20,230: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:28:20.230718
+[2025-07-04 09:28:20,230: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:28:20,933: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'e088d26f-f488-4a1f-b98b-3966aff6ee49', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'e088d26f-f488-4a1f-b98b-3966aff6ee49', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 09:28:21,979: INFO/MainProcess] Task apps.gallery.tasks.process_audio[0b4a3aa4-4878-4232-93ad-43d3091c4828] received
+[2025-07-04 09:29:11,333: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[96cd5d1a-c2c7-4849-a187-5d9c7aacfc4b] succeeded in 90.14074157699997s: None
+[2025-07-04 09:29:11,507: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:29:12,584: INFO/MainProcess] Task apps.gallery.tasks.process_audio[05234f73-4747-47b3-9dd2-64fd89a5735f] received
+[2025-07-04 09:29:12,683: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:29:13,002: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[076b1147-a87a-48aa-85aa-5a4153c681e5] succeeded in 1.494763611000053s: None
+[2025-07-04 09:29:13,175: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:29:13,175: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:29:13.175440
+[2025-07-04 09:29:13,175: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:29:13,888: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[3e752faf-13b6-45b1-9268-4dd285af5633] received
+[2025-07-04 09:29:21,303: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[fa3fbde4-7411-42e2-904f-dc9c44bbf26e] succeeded in 95.00877266499992s: None
+[2025-07-04 09:29:21,477: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-04 09:29:22,185: INFO/MainProcess] Task apps.gallery.tasks.process_audio[1f515604-dbac-48b1-bef8-1f22f89a7067] received
+[2025-07-04 09:29:22,713: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-04 09:29:23,078: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[0df3a89d-f63b-469c-ba15-d7f9449c8a5b] succeeded in 1.601500505000331s: None
+[2025-07-04 09:29:23,425: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:29:23,425: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:29:23.425458
+[2025-07-04 09:29:23,425: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:29:24,134: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[aa16c3d9-0c2c-48b0-8f79-766e554c4804] received
+[2025-07-04 09:49:36,538: INFO/MainProcess] missed heartbeat from celery@63f692d7cb61
+[2025-07-04 09:49:36,542: INFO/MainProcess] missed heartbeat from celery@838e3ebc3f56
+[2025-07-04 09:49:36,547: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 336, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 726, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+  File "/usr/local/lib/python3.12/site-packages/kombu/asynchronous/hub.py", line 373, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 1359, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 576, in on_readable
+    chan.handlers[type]()
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 925, in _receive
+    ret.append(self._receive_one(c))
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 935, in _receive_one
+    response = c.parse_response()
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 865, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 841, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 843, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 830, in _disconnect_raise_connect
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 842, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 863, in try_read
+    return conn.read_response(disconnect_on_error=False, push_request=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-04 09:49:36,561: WARNING/MainProcess] Restoring 16 unacknowledged message(s)
+[2025-07-04 09:49:49,526: WARNING/MainProcess] /usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:386: CPendingDeprecationWarning: 
+In Celery 5.1 we introduced an optional breaking change which
+on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+
+  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+
+[2025-07-04 09:49:49,527: INFO/MainProcess] Temporarily reducing the prefetch count to 4 to avoid over-fetching since 6 tasks are currently being processed.
+The prefetch count will be gradually restored to 16 as the tasks complete processing.
+[2025-07-04 09:49:51,900: INFO/MainProcess] Connected to redis://default:**@168.231.112.236:6379//
+[2025-07-04 09:49:53,571: INFO/MainProcess] mingle: searching for neighbors
+[2025-07-04 09:49:54,646: WARNING/ForkPoolWorker-3] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Connection closed by server.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 295, in run
+    user = User.objects.get(is_superuser=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+  warn(RuntimeWarning(
+
+[2025-07-04 09:49:55,870: ERROR/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[c9b3c625-0ad2-4953-ac35-b4f7daea9887] raised unexpected: ConnectionError('Connection closed by server.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 295, in run
+    user = User.objects.get(is_superuser=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-04 09:49:59,078: WARNING/ForkPoolWorker-2] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Connection closed by server.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 328, in run
+    if Image.objects.filter(image_id=id).exists():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+  warn(RuntimeWarning(
+
+[2025-07-04 09:50:00,292: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[ed6eea23-f5c7-48c5-ba18-1ebe1a9a4528] raised unexpected: ConnectionError('Connection closed by server.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 328, in run
+    if Image.objects.filter(image_id=id).exists():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-04 09:50:02,655: WARNING/ForkPoolWorker-4] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Connection closed by server.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 315, in run
+    collection = collections.first()
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 400, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+  warn(RuntimeWarning(
+
+[2025-07-04 09:50:03,822: ERROR/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[9079fb07-090b-4980-bd65-4de357f13aea] raised unexpected: ConnectionError('Connection closed by server.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 314, in run
+    if collections.exists():
+       ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-04 09:50:03,891: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[eff92f49-c698-4f8b-be9b-d3618a2b004f] raised unexpected: ConnectionError('Connection closed by server.')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 315, in run
+    collection = collections.first()
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1097, in first
+    for obj in queryset[:1]:
+               ~~~~~~~~^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 400, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-04 09:50:18,897: INFO/MainProcess] mingle: sync with 2 nodes
+[2025-07-04 09:50:18,897: INFO/MainProcess] mingle: sync complete
+[2025-07-04 09:50:23,962: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[287d4f8e-b1d0-45c2-83e1-756c13b61886] received
+[2025-07-04 09:50:24,149: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:50:24,150: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:50:24.150021
+[2025-07-04 09:50:24,150: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:50:24,680: INFO/MainProcess] Task apps.gallery.tasks.process_audio[89f99b07-627d-4ac7-8305-a6f74101808e] received
+[2025-07-04 09:50:24,861: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:50:25,390: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[0d8642cd-c170-4ac2-b26a-6ff112f4b511] received
+[2025-07-04 09:50:25,567: INFO/MainProcess] Resuming normal operations following a restart.
+Prefetch count has been restored to the maximum of 16
+[2025-07-04 09:50:25,567: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:50:25,567: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:50:25.567546
+[2025-07-04 09:50:25,567: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:50:26,007: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:50:26,276: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2c98a0b5-3915-45ba-975a-327c331f9569] received
+[2025-07-04 09:50:26,346: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[89f99b07-627d-4ac7-8305-a6f74101808e] succeeded in 1.4851639059997979s: None
+[2025-07-04 09:50:26,452: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:50:26,810: INFO/MainProcess] Task apps.gallery.tasks.process_audio[96cc0917-2a3a-4b16-a96d-fd9c5352c126] received
+[2025-07-04 09:50:27,171: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-04 09:50:27,634: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:50:27,700: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[0ce81b39-b007-4ffb-a913-4755dcfdbcc2] received
+[2025-07-04 09:50:27,972: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[2c98a0b5-3915-45ba-975a-327c331f9569] succeeded in 1.5196627529994657s: None
+[2025-07-04 09:50:28,404: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-04 09:50:28,502: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d037b106-f9b9-4d2f-aaf5-f6f47fbe29c4] received
+[2025-07-04 09:50:28,502: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:50:28,503: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:50:28.503061
+[2025-07-04 09:50:28,503: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:50:28,761: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[96cc0917-2a3a-4b16-a96d-fd9c5352c126] succeeded in 1.5901089139997566s: None
+[2025-07-04 09:50:29,210: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[f0f69a0b-d36d-45f2-95b0-f2b6a88aac17] received
+[2025-07-04 09:50:29,386: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-04 09:50:29,916: INFO/MainProcess] Task apps.gallery.tasks.process_audio[58eac3fa-b3d1-4d44-93f8-ee85b41619ed] received
+[2025-07-04 09:50:30,442: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ed59bdd8-f835-434f-a899-65b2d1649e88] received
+[2025-07-04 09:50:30,632: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-04 09:50:30,996: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[d037b106-f9b9-4d2f-aaf5-f6f47fbe29c4] succeeded in 1.6108071460002975s: None
+[2025-07-04 09:50:31,144: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3d0afad4-74ba-44ac-9ca2-63bf5c4d7f26] received
+[2025-07-04 09:50:31,679: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[4728fd92-74b5-4a88-8a9a-87cec563cdc4] received
+[2025-07-04 09:50:31,679: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:50:31,679: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:50:31.679965
+[2025-07-04 09:50:31,680: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:50:32,381: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d9c206af-0bdb-4d2e-8562-6b57a2c73769] received
+[2025-07-04 09:50:32,908: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[0567c0da-6964-45bf-8239-eb1803a0a28f] received
+[2025-07-04 09:50:33,606: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5ef4bb01-9c71-4d45-8d60-46f4334edd63] received
+[2025-07-04 09:50:34,131: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[6ed91394-9975-4f36-b154-ba0eeb4ec3c0] received
+[2025-07-04 09:50:34,653: INFO/MainProcess] Task apps.gallery.tasks.process_audio[7e8a5f17-b0cb-42c0-baeb-6f5fb4de7b13] received
+[2025-07-04 09:50:35,175: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[b89361ea-202d-4524-9c31-b3f599bf65bc] received
+[2025-07-04 09:50:35,869: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '150326aa-8bb3-40aa-9c40-1c5882a6e00d', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '150326aa-8bb3-40aa-9c40-1c5882a6e00d', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 09:50:55,308: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 336, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 726, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+  File "/usr/local/lib/python3.12/site-packages/kombu/asynchronous/hub.py", line 373, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 1359, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 576, in on_readable
+    chan.handlers[type]()
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 986, in _brpop_read
+    self.connection._deliver(loads(bytes_to_str(item)), dest)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/virtual/base.py", line 1017, in _deliver
+    callback(message)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/virtual/base.py", line 639, in _callback
+    return callback(message)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/kombu/messaging.py", line 668, in _receive_callback
+    return on_m(message) if on_m else self.receive(decoded, message)
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 644, in on_task_received
+    return on_unknown_task(None, message, exc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 591, in on_unknown_task
+    self.app.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 567, in _execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 571, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 555, in _disconnect_raise
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 568, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 542, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 584, in parse_response
+    response = connection.read_response()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-04 09:50:55,318: WARNING/MainProcess] Restoring 10 unacknowledged message(s)
+[2025-07-04 09:51:03,200: WARNING/MainProcess] /usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:386: CPendingDeprecationWarning: 
+In Celery 5.1 we introduced an optional breaking change which
+on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+
+  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+
+[2025-07-04 09:51:03,200: INFO/MainProcess] Temporarily reducing the prefetch count to 4 to avoid over-fetching since 10 tasks are currently being processed.
+The prefetch count will be gradually restored to 16 as the tasks complete processing.
+[2025-07-04 09:51:05,483: INFO/MainProcess] Connected to redis://default:**@168.231.112.236:6379//
+[2025-07-04 09:51:07,253: INFO/MainProcess] mingle: searching for neighbors
+[2025-07-04 09:51:09,731: INFO/MainProcess] mingle: sync with 2 nodes
+[2025-07-04 09:51:09,731: INFO/MainProcess] mingle: sync complete
+[2025-07-04 09:51:14,436: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ed59bdd8-f835-434f-a899-65b2d1649e88] received
+[2025-07-04 09:51:14,928: INFO/MainProcess] Task apps.gallery.tasks.process_audio[58eac3fa-b3d1-4d44-93f8-ee85b41619ed] received
+[2025-07-04 09:51:15,418: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d2369fea-b571-4a2f-9e0c-89058cd7abf9] received
+[2025-07-04 09:51:15,908: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[feb19eec-4908-46e0-9ed7-ed7ed6a60739] received
+[2025-07-04 09:51:54,406: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[287d4f8e-b1d0-45c2-83e1-756c13b61886] succeeded in 90.2596001259999s: None
+[2025-07-04 09:51:54,407: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:51:54,407: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:51:54.407367
+[2025-07-04 09:51:54,407: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:51:55,390: INFO/MainProcess] Task apps.gallery.tasks.process_audio[62a06b93-311c-45c7-8161-c4e01782d53e] received
+[2025-07-04 09:51:56,055: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9ff2928a-510e-4d43-9b2b-941d83a304d5] received
+[2025-07-04 09:51:56,549: INFO/MainProcess] Task apps.gallery.tasks.process_audio[063bb557-2e22-46ee-b67e-bebb3d71ed2d] received
+[2025-07-04 09:51:57,042: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[e2ce8600-660d-431e-9b04-c466d3d9e81a] received
+[2025-07-04 09:51:57,532: INFO/MainProcess] Task apps.gallery.tasks.process_audio[b372bd01-05a0-48b6-8b41-1f37fb3da5d1] received
+[2025-07-04 09:51:58,566: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[0d8642cd-c170-4ac2-b26a-6ff112f4b511] succeeded in 93.00233629499962s: None
+[2025-07-04 09:51:58,567: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:51:59,216: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[f1d446a0-79e1-4c9b-b8b2-d8358725b133] received
+[2025-07-04 09:51:59,707: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '28fba1f9-5ceb-4b3d-afc2-40b3bab51c73', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '28fba1f9-5ceb-4b3d-afc2-40b3bab51c73', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 09:51:59,789: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:51:59,895: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[0ce81b39-b007-4ffb-a913-4755dcfdbcc2] succeeded in 91.39656178299992s: None
+[2025-07-04 09:51:59,896: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:52:00,133: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[d2369fea-b571-4a2f-9e0c-89058cd7abf9] succeeded in 1.5667025399998238s: None
+[2025-07-04 09:52:01,073: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:52:01,351: INFO/MainProcess] Resuming normal operations following a restart.
+Prefetch count has been restored to the maximum of 16
+[2025-07-04 09:52:01,414: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[58eac3fa-b3d1-4d44-93f8-ee85b41619ed] succeeded in 1.5183523539999442s: None
+[2025-07-04 09:52:01,513: INFO/MainProcess] Task apps.gallery.tasks.process_audio[9b4d0c2b-9b9b-41b0-8266-a2f5bb421ea0] received
+[2025-07-04 09:52:02,217: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[d327f45f-86c0-46e1-abde-5ec97464356e] received
+[2025-07-04 09:52:02,217: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:52:02,217: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:52:02.217933
+[2025-07-04 09:52:02,218: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:52:02,893: INFO/MainProcess] Task apps.gallery.tasks.process_audio[25766c8a-67b2-41ca-bad8-cb8b9908df82] received
+[2025-07-04 09:52:03,513: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[751ddb3d-8ee2-47a0-ba95-686c1503aec0] received
+[2025-07-04 09:52:04,003: INFO/MainProcess] Task apps.gallery.tasks.process_audio[394439c2-571a-4e1b-88a7-53e6503d923e] received
+[2025-07-04 09:52:04,492: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[c67e7871-9e3c-442d-9dbc-aadde835285d] received
+[2025-07-04 09:52:04,833: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[f0f69a0b-d36d-45f2-95b0-f2b6a88aac17] succeeded in 93.15658063299998s: None
+[2025-07-04 09:52:04,834: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-04 09:52:04,834: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-04T09:52:04.834516
+[2025-07-04 09:52:04,834: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:52:04,984: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5ee989bc-a02e-45dd-9b66-5e1dc429402b] received
+[2025-07-04 09:52:05,818: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[1e161b5d-fe6e-4e69-bf46-f41f503e1d50] received
+[2025-07-04 09:52:06,311: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d0ae7ddc-250c-4085-9e28-9d396015aa37] received
+[2025-07-04 09:52:06,802: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[78e66d4d-cc69-4b11-aa5e-abfc54d62817] received
+[2025-07-04 09:52:07,312: INFO/MainProcess] Task apps.gallery.tasks.process_audio[7252b860-6330-44d2-8421-fee3f77f5ccf] received
+[2025-07-04 09:52:14,786: INFO/MainProcess] missed heartbeat from celery@838e3ebc3f56
+[2025-07-04 09:52:14,786: INFO/MainProcess] missed heartbeat from celery@63f692d7cb61
+[2025-07-04 09:53:30,457: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[ed59bdd8-f835-434f-a899-65b2d1649e88] succeeded in 96.05460702599976s: None
+[2025-07-04 09:53:30,458: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:53:31,692: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:53:31,814: INFO/MainProcess] Task apps.gallery.tasks.process_audio[6876bf63-85c2-4af0-999c-c11acc3192e7] received
+[2025-07-04 09:53:32,043: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[62a06b93-311c-45c7-8161-c4e01782d53e] succeeded in 1.5853187550001167s: None
+[2025-07-04 09:53:32,044: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:53:32,919: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[b541acbb-e18d-4839-9a7c-07a150fb3569] received
+[2025-07-04 09:53:33,365: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:53:33,718: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[063bb557-2e22-46ee-b67e-bebb3d71ed2d] succeeded in 1.674445458000264s: None
+[2025-07-04 09:53:33,719: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:53:33,719: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:53:33.719727
+[2025-07-04 09:53:33,719: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:53:34,130: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[9ff2928a-510e-4d43-9b2b-941d83a304d5] succeeded in 91.91593858600027s: None
+[2025-07-04 09:53:34,585: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3db9b86b-7336-4f4d-9e3b-a7c19f33c9b5] received
+[2025-07-04 09:53:34,585: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:53:34,585: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:53:34.585958
+[2025-07-04 09:53:34,586: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:53:35,427: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[329498e0-31d6-47bd-93c4-723607ff1422] received
+[2025-07-04 09:53:40,970: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[feb19eec-4908-46e0-9ed7-ed7ed6a60739] succeeded in 96.13996913900064s: None
+[2025-07-04 09:53:41,149: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:53:41,808: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e804f7b9-39b3-4305-9798-a7bad01501ca] received
+[2025-07-04 09:53:42,349: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:53:42,695: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[9b4d0c2b-9b9b-41b0-8266-a2f5bb421ea0] succeeded in 1.5492420139999012s: None
+[2025-07-04 09:53:42,867: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:53:42,868: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:53:42.868002
+[2025-07-04 09:53:42,868: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:53:43,532: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[46e88995-1a5e-4719-a404-78e7a555a82a] received
+[2025-07-04 09:55:03,616: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[e2ce8600-660d-431e-9b04-c466d3d9e81a] succeeded in 89.9007103390004s: None
+[2025-07-04 09:55:03,617: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:55:04,773: INFO/MainProcess] Task apps.gallery.tasks.process_audio[bfdd46fb-ade7-4c20-b1ae-58a937181a94] received
+[2025-07-04 09:55:04,896: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:55:05,249: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[b372bd01-05a0-48b6-8b41-1f37fb3da5d1] succeeded in 1.6323856710005202s: None
+[2025-07-04 09:55:05,250: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:55:06,116: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[01ad4a03-1ee2-4026-95de-ab6fc0e205e0] received
+[2025-07-04 09:55:06,419: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:55:06,676: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[f1d446a0-79e1-4c9b-b8b2-d8358725b133] succeeded in 92.09426546899977s: None
+[2025-07-04 09:55:06,767: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[25766c8a-67b2-41ca-bad8-cb8b9908df82] succeeded in 1.5169094869997934s: None
+[2025-07-04 09:55:06,768: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:55:06,768: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:55:06.768458
+[2025-07-04 09:55:06,768: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:55:06,850: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:55:06,850: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:55:06.850292
+[2025-07-04 09:55:06,850: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:55:08,008: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e80b5c95-0853-41f7-9604-2774937b7c04] received
+[2025-07-04 09:55:08,498: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9ce26f75-4fc5-4223-a7f4-3c165a8c0fa5] received
+[2025-07-04 09:55:14,275: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[d327f45f-86c0-46e1-abde-5ec97464356e] succeeded in 91.41134908500044s: None
+[2025-07-04 09:55:14,450: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:55:15,101: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2fbff814-41cd-4704-8746-3f620d03e755] received
+[2025-07-04 09:55:15,629: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:55:15,970: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[5ee989bc-a02e-45dd-9b66-5e1dc429402b] succeeded in 1.5206175190005524s: None
+[2025-07-04 09:55:16,144: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:55:16,144: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:55:16.144395
+[2025-07-04 09:55:16,144: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:55:16,970: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[fe98f731-7e50-494c-ac92-6707ad938358] received
+[2025-07-04 09:56:43,891: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[751ddb3d-8ee2-47a0-ba95-686c1503aec0] succeeded in 97.12685811100073s: None
+[2025-07-04 09:56:43,892: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:56:45,038: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5c798dc3-4ffb-47ef-bb41-26fbb273d017] received
+[2025-07-04 09:56:45,055: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:56:45,406: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[394439c2-571a-4e1b-88a7-53e6503d923e] succeeded in 1.5136727859999155s: None
+[2025-07-04 09:56:45,406: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:56:46,118: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[c67e7871-9e3c-442d-9dbc-aadde835285d] succeeded in 99.27218490999985s: None
+[2025-07-04 09:56:46,276: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[dba396ba-e33a-43d3-a9e8-2d3897530b1d] received
+[2025-07-04 09:56:46,623: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:56:46,667: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:56:47,016: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[d0ae7ddc-250c-4085-9e28-9d396015aa37] succeeded in 1.6100445140000375s: None
+[2025-07-04 09:56:47,017: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:56:47,017: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:56:47.017846
+[2025-07-04 09:56:47,017: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:56:47,356: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a297abb3-b3c9-4c1f-b090-cf18bb353887] received
+[2025-07-04 09:56:47,838: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:56:48,184: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a1c1402b-b399-40a6-950d-aacbac0b99f6] received
+[2025-07-04 09:56:48,189: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[7252b860-6330-44d2-8421-fee3f77f5ccf] succeeded in 1.5660973609992652s: None
+[2025-07-04 09:56:48,534: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:56:48,534: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:56:48.534567
+[2025-07-04 09:56:48,534: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:56:49,188: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c7efb907-5fb9-415b-81c9-706eae163cdd] received
+[2025-07-04 09:56:59,508: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[1e161b5d-fe6e-4e69-bf46-f41f503e1d50] succeeded in 103.36881616400024s: None
+[2025-07-04 09:56:59,684: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:57:00,338: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[2f125884-ce40-45a6-80b0-4b8c60e6a416] received
+[2025-07-04 09:57:00,816: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:57:01,163: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[3db9b86b-7336-4f4d-9e3b-a7c19f33c9b5] succeeded in 1.4794950039995456s: None
+[2025-07-04 09:57:01,340: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:57:01,340: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:57:01.340905
+[2025-07-04 09:57:01,340: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:57:02,002: INFO/MainProcess] Task apps.gallery.tasks.process_audio[29b5e93e-e453-471e-bebd-aa96046b267a] received
+[2025-07-04 09:58:21,069: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[78e66d4d-cc69-4b11-aa5e-abfc54d62817] succeeded in 94.05552481700033s: None
+[2025-07-04 09:58:21,070: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:58:22,265: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:58:22,387: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3fd02285-ad9d-4478-aad7-4110aff1c0a3] received
+[2025-07-04 09:58:22,652: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[6876bf63-85c2-4af0-999c-c11acc3192e7] succeeded in 1.5816251320002266s: None
+[2025-07-04 09:58:22,653: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 09:58:23,469: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[b541acbb-e18d-4839-9a7c-07a150fb3569] succeeded in 94.93872105199989s: None
+[2025-07-04 09:58:23,480: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[4e87ea13-cce4-4c71-9116-ad01444c8c22] received
+[2025-07-04 09:58:23,846: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 09:58:24,001: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:58:24,194: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[e804f7b9-39b3-4305-9798-a7bad01501ca] succeeded in 1.5418144900004336s: None
+[2025-07-04 09:58:24,195: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 09:58:24,195: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T09:58:24.195854
+[2025-07-04 09:58:24,195: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:58:24,663: INFO/MainProcess] Task apps.gallery.tasks.process_audio[0ecbde43-9620-4d37-a6b2-776d0ec47a92] received
+[2025-07-04 09:58:25,128: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:58:25,321: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[3c2860bd-27e5-403f-ac08-5b6687e2a836] received
+[2025-07-04 09:58:25,469: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[bfdd46fb-ade7-4c20-b1ae-58a937181a94] succeeded in 1.4687894879998566s: None
+[2025-07-04 09:58:25,670: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 09:58:26,496: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3db9c14a-c2ad-40f2-b066-099a81f1f6ab] received
+[2025-07-04 09:58:26,836: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 09:58:27,176: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[e80b5c95-0853-41f7-9604-2774937b7c04] succeeded in 1.5065064660002463s: None
+[2025-07-04 09:58:27,351: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 09:58:27,351: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T09:58:27.351967
+[2025-07-04 09:58:27,352: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:58:27,999: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[6bf47322-2898-457c-b319-73bc0da4a9c0] received
+[2025-07-04 09:58:34,427: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[329498e0-31d6-47bd-93c4-723607ff1422] succeeded in 93.09035379600027s: None
+[2025-07-04 09:58:34,599: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 09:58:35,417: INFO/MainProcess] Task apps.gallery.tasks.process_audio[67a548bc-b285-4aa9-bce8-7953d6c48ecd] received
+[2025-07-04 09:58:35,764: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 09:58:36,107: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[2fbff814-41cd-4704-8746-3f620d03e755] succeeded in 1.508133175999319s: None
+[2025-07-04 09:58:36,281: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 09:58:36,281: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T09:58:36.281270
+[2025-07-04 09:58:36,281: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 09:58:36,932: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[8517da23-6d49-4ff8-afb8-56794f02b2f9] received
+[2025-07-04 10:00:01,678: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[9ce26f75-4fc5-4223-a7f4-3c165a8c0fa5] succeeded in 94.33186854399992s: None
+[2025-07-04 10:00:01,854: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:00:02,644: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[46e88995-1a5e-4719-a404-78e7a555a82a] succeeded in 98.4539185650001s: None
+[2025-07-04 10:00:02,647: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:00:02,647: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:00:02.647880
+[2025-07-04 10:00:02,647: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:00:03,011: INFO/MainProcess] Task apps.gallery.tasks.process_audio[9153247e-0ba3-426b-9541-68ff11110fcb] received
+[2025-07-04 10:00:03,077: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:00:03,415: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[5c798dc3-4ffb-47ef-bb41-26fbb273d017] succeeded in 1.5617343010007971s: None
+[2025-07-04 10:00:03,748: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[d3b786ec-daf3-488e-b411-2619890661eb] received
+[2025-07-04 10:00:03,749: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:00:04,575: INFO/MainProcess] Task apps.gallery.tasks.process_audio[281ab982-9410-41cc-8cb0-310e7277c3eb] received
+[2025-07-04 10:00:04,990: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:00:05,330: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[a297abb3-b3c9-4c1f-b090-cf18bb353887] succeeded in 1.5810875759998453s: None
+[2025-07-04 10:00:05,503: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:00:05,503: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:00:05.503906
+[2025-07-04 10:00:05,503: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:00:06,152: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[df55c64e-dbbb-4bfb-8ed8-0966678431b8] received
+[2025-07-04 10:00:10,501: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[fe98f731-7e50-494c-ac92-6707ad938358] succeeded in 94.22380133300067s: None
+[2025-07-04 10:00:10,676: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 10:00:11,328: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'fe859981-b829-45ad-ad5a-75a7a67c78a5', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'fe859981-b829-45ad-ad5a-75a7a67c78a5', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 10:00:11,844: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 10:00:12,183: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[c7efb907-5fb9-415b-81c9-706eae163cdd] succeeded in 1.5070210089998s: None
+[2025-07-04 10:00:12,522: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c350079b-2b1e-4cba-8b19-d47af30ba3cc] received
+[2025-07-04 10:00:12,523: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:00:12,523: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:00:12.523130
+[2025-07-04 10:00:12,523: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:00:13,347: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[cee87d50-7503-4256-9943-7e704d44bf1a] received
+[2025-07-04 10:01:35,589: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[01ad4a03-1ee2-4026-95de-ab6fc0e205e0] succeeded in 92.94523228100024s: None
+[2025-07-04 10:01:35,590: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:01:35,591: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:01:35.591040
+[2025-07-04 10:01:35,591: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:01:36,738: INFO/MainProcess] Task apps.gallery.tasks.process_audio[b587b687-a55e-4bd8-8d27-bce6f3b14ff6] received
+[2025-07-04 10:01:37,347: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[a1c1402b-b399-40a6-950d-aacbac0b99f6] succeeded in 91.84675895500004s: None
+[2025-07-04 10:01:37,517: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:01:38,171: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a0ecb373-3bb8-473a-88b4-38a79b99e47f] received
+[2025-07-04 10:01:38,684: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:01:39,038: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[3fd02285-ad9d-4478-aad7-4110aff1c0a3] succeeded in 1.5209878899995601s: None
+[2025-07-04 10:01:39,378: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:01:39,378: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:01:39.378813
+[2025-07-04 10:01:39,378: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:01:40,037: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d5479e65-1542-43f0-8159-f20da4e4a20e] received
+[2025-07-04 10:01:48,031: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[2f125884-ce40-45a6-80b0-4b8c60e6a416] succeeded in 95.51136377400053s: None
+[2025-07-04 10:01:48,243: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 10:01:48,903: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[094fe1b4-6965-4639-ba53-aef0f7b9c930] received
+[2025-07-04 10:01:49,407: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 10:01:49,745: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[0ecbde43-9620-4d37-a6b2-776d0ec47a92] succeeded in 1.5017656770005487s: None
+[2025-07-04 10:01:49,916: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:01:49,916: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:01:49.916220
+[2025-07-04 10:01:49,916: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:01:50,742: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a88c4cbc-f016-43ee-a12e-e3fb7b4c6c77] received
+[2025-07-04 10:03:06,018: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[dba396ba-e33a-43d3-a9e8-2d3897530b1d] succeeded in 90.43133620699973s: None
+[2025-07-04 10:03:06,019: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:03:07,167: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:03:07,180: INFO/MainProcess] Task apps.gallery.tasks.process_audio[75bf2486-b6a4-407d-9ca4-e3e8f6e29760] received
+[2025-07-04 10:03:07,515: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[29b5e93e-e453-471e-bebd-aa96046b267a] succeeded in 1.4964378840004429s: None
+[2025-07-04 10:03:07,516: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:03:08,333: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[e73fa38e-8c82-4d5f-b04e-d970e92d3096] received
+[2025-07-04 10:03:08,784: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:03:09,134: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[3db9c14a-c2ad-40f2-b066-099a81f1f6ab] succeeded in 1.6184908159993938s: None
+[2025-07-04 10:03:09,135: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:03:09,135: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:03:09.135674
+[2025-07-04 10:03:09,135: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:03:09,919: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[4e87ea13-cce4-4c71-9116-ad01444c8c22] succeeded in 90.54480334999971s: None
+[2025-07-04 10:03:09,964: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c4c26d3c-a04c-4cd4-831e-abf8e3393165] received
+[2025-07-04 10:03:10,309: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:03:10,309: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:03:10.309971
+[2025-07-04 10:03:10,310: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:03:10,966: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[1c408387-b6dd-489a-b685-bc63e6262379] received
+[2025-07-04 10:03:22,170: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[3c2860bd-27e5-403f-ac08-5b6687e2a836] succeeded in 92.25788546900003s: None
+[2025-07-04 10:03:22,347: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 10:03:23,001: INFO/MainProcess] Task apps.gallery.tasks.process_audio[46163cc8-e1a6-4341-8713-c22827af476b] received
+[2025-07-04 10:03:23,641: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 10:03:23,982: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[9153247e-0ba3-426b-9541-68ff11110fcb] succeeded in 1.6356713130007847s: None
+[2025-07-04 10:03:24,156: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:03:24,156: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:03:24.156633
+[2025-07-04 10:03:24,156: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:03:24,983: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[511c49a3-ce69-48f4-bb32-f56777afdf36] received
+[2025-07-04 10:04:41,924: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[6bf47322-2898-457c-b319-73bc0da4a9c0] succeeded in 92.79148503600027s: None
+[2025-07-04 10:04:41,924: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:04:42,924: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c94dfbe1-9100-4cb4-9c09-83809b0f70fa] received
+[2025-07-04 10:04:43,231: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:04:43,585: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[67a548bc-b285-4aa9-bce8-7953d6c48ecd] succeeded in 1.660163540999747s: None
+[2025-07-04 10:04:43,585: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:04:44,420: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ef723a32-a917-4ba7-bd44-2b519f932db2] received
+[2025-07-04 10:04:44,825: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:04:45,174: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[281ab982-9410-41cc-8cb0-310e7277c3eb] succeeded in 1.5890575579996948s: None
+[2025-07-04 10:04:45,175: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:04:45,175: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:04:45.175860
+[2025-07-04 10:04:45,175: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:04:45,361: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[8517da23-6d49-4ff8-afb8-56794f02b2f9] succeeded in 95.05497343499974s: None
+[2025-07-04 10:04:45,523: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:04:45,523: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:04:45.523866
+[2025-07-04 10:04:45,523: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:04:46,366: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a6f24cbe-2e1a-4f4b-bf81-31316bca1d6c] received
+[2025-07-04 10:04:46,864: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[66a0c3cb-7170-4413-92b5-6937e82d02d8] received
+[2025-07-04 10:04:56,992: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[d3b786ec-daf3-488e-b411-2619890661eb] succeeded in 92.83949265299998s: None
+[2025-07-04 10:04:57,167: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 10:04:57,827: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '3758b5bf-9762-491d-bad4-855d2822470b', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '3758b5bf-9762-491d-bad4-855d2822470b', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 10:04:58,444: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 10:04:58,790: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[b587b687-a55e-4bd8-8d27-bce6f3b14ff6] succeeded in 1.6238203220000287s: None
+[2025-07-04 10:04:59,125: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d1f13598-0622-45cd-b317-7fff23427e4b] received
+[2025-07-04 10:04:59,126: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:04:59,126: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:04:59.126632
+[2025-07-04 10:04:59,126: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:04:59,960: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[b50b6ad1-09b7-4293-8788-c61e60acb8aa] received
+[2025-07-04 10:06:18,400: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[cee87d50-7503-4256-9943-7e704d44bf1a] succeeded in 92.87996797100004s: None
+[2025-07-04 10:06:18,570: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:06:19,391: INFO/MainProcess] Task apps.gallery.tasks.process_audio[0451fa40-9a71-4f69-8b8a-2d4c8b201978] received
+[2025-07-04 10:06:19,746: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:06:20,098: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[d5479e65-1542-43f0-8159-f20da4e4a20e] succeeded in 1.5285735659999773s: None
+[2025-07-04 10:06:20,274: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:06:20,274: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:06:20.274357
+[2025-07-04 10:06:20,274: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:06:20,936: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9b22b1e4-1d42-43cf-848c-1688447f7612] received
+[2025-07-04 10:06:21,457: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[df55c64e-dbbb-4bfb-8ed8-0966678431b8] succeeded in 96.28474412100059s: None
+[2025-07-04 10:06:21,457: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:06:22,278: INFO/MainProcess] Task apps.gallery.tasks.process_audio[f2a1ca31-4d52-4845-a4f8-6da593104570] received
+[2025-07-04 10:06:22,662: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:06:23,019: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[c350079b-2b1e-4cba-8b19-d47af30ba3cc] succeeded in 1.5616033469996182s: None
+[2025-07-04 10:06:23,020: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:06:24,024: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[c1f2302f-98b7-42ce-be77-b7f54f79eba5] received
+[2025-07-04 10:06:24,220: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:06:24,572: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[a88c4cbc-f016-43ee-a12e-e3fb7b4c6c77] succeeded in 1.5522264020000875s: None
+[2025-07-04 10:06:24,573: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:06:25,407: INFO/MainProcess] Task apps.gallery.tasks.process_audio[42c6d109-4c78-477f-a396-903895ed12b7] received
+[2025-07-04 10:06:25,777: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:06:26,129: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[75bf2486-b6a4-407d-9ca4-e3e8f6e29760] succeeded in 1.556008278000263s: None
+[2025-07-04 10:06:26,129: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:06:26,130: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:06:26.130118
+[2025-07-04 10:06:26,130: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:06:26,962: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[65694c05-217d-44f1-baec-a37bd49e8fb1] received
+[2025-07-04 10:06:28,756: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[a0ecb373-3bb8-473a-88b4-38a79b99e47f] succeeded in 89.63338868699975s: None
+[2025-07-04 10:06:28,932: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:06:28,933: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:06:28.933102
+[2025-07-04 10:06:28,933: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:06:29,583: INFO/MainProcess] Task apps.gallery.tasks.process_audio[31e50575-ed46-4cbc-9ed5-bc52a6dfac7e] received
+[2025-07-04 10:07:57,415: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[094fe1b4-6965-4639-ba53-aef0f7b9c930] succeeded in 97.14539340200008s: None
+[2025-07-04 10:07:57,589: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:07:58,061: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[e73fa38e-8c82-4d5f-b04e-d970e92d3096] succeeded in 91.93438506799976s: None
+[2025-07-04 10:07:58,061: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:07:58,413: INFO/MainProcess] Task apps.gallery.tasks.process_audio[24ebc290-222a-4c53-9b61-9f7764670d39] received
+[2025-07-04 10:07:58,818: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:07:59,064: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d27e8405-08b8-4f64-9ce0-5cfcf5286b0e] received
+[2025-07-04 10:07:59,159: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[46163cc8-e1a6-4341-8713-c22827af476b] succeeded in 1.5698158870000043s: None
+[2025-07-04 10:07:59,358: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:07:59,578: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:07:59,709: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[c4c26d3c-a04c-4cd4-831e-abf8e3393165] succeeded in 1.6492190429999027s: None
+[2025-07-04 10:07:59,710: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:07:59,710: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:07:59.710803
+[2025-07-04 10:07:59,710: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:08:00,243: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a74bfc5e-87fe-491a-9677-e176f20d4f93] received
+[2025-07-04 10:08:00,712: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:08:00,906: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[6d7bb2dc-fce0-4e75-8da6-a03d5da5a470] received
+[2025-07-04 10:08:01,061: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[c94dfbe1-9100-4cb4-9c09-83809b0f70fa] succeeded in 1.4834751250000409s: None
+[2025-07-04 10:08:01,252: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:08:01,944: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[1c408387-b6dd-489a-b685-bc63e6262379] succeeded in 93.01637989899973s: None
+[2025-07-04 10:08:02,085: INFO/MainProcess] Task apps.gallery.tasks.process_audio[034cd30c-8689-414d-a48b-421177966000] received
+[2025-07-04 10:08:02,406: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:08:02,431: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:08:02,431: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:08:02.431562
+[2025-07-04 10:08:02,431: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:08:02,748: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[a6f24cbe-2e1a-4f4b-bf81-31316bca1d6c] succeeded in 1.4965783580000789s: None
+[2025-07-04 10:08:03,105: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a845f18b-3316-40c4-bdd6-eb7a60d4ea8e] received
+[2025-07-04 10:08:03,105: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:08:04,095: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ac3f9851-21dd-4a91-8243-1aaad4445d75] received
+[2025-07-04 10:08:04,232: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:08:04,572: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[d1f13598-0622-45cd-b317-7fff23427e4b] succeeded in 1.4670948600005431s: None
+[2025-07-04 10:08:04,743: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:08:04,743: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:08:04.743866
+[2025-07-04 10:08:04,743: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:08:05,401: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[930627c0-df20-4fc1-aeb7-c8d00825ea58] received
+[2025-07-04 10:09:34,112: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[511c49a3-ce69-48f4-bb32-f56777afdf36] succeeded in 94.40533890200004s: None
+[2025-07-04 10:09:34,113: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:09:34,113: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:09:34.113947
+[2025-07-04 10:09:34,114: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:09:35,141: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c1ee3078-f5d6-448d-8a12-bbace2358a5a] received
+[2025-07-04 10:09:37,116: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[66a0c3cb-7170-4413-92b5-6937e82d02d8] succeeded in 94.68789678100075s: None
+[2025-07-04 10:09:37,287: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:09:37,288: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:09:37.288002
+[2025-07-04 10:09:37,288: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:09:38,120: INFO/MainProcess] Task apps.gallery.tasks.process_audio[36b459a9-a762-4bae-a2ea-06a0b4c45f85] received
+[2025-07-04 10:09:38,990: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[b50b6ad1-09b7-4293-8788-c61e60acb8aa] succeeded in 94.24947108299966s: None
+[2025-07-04 10:09:39,166: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:09:39,817: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[37c607aa-3672-4fb4-8271-c57c05fc9a19] received
+[2025-07-04 10:09:40,321: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:09:40,665: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[f2a1ca31-4d52-4845-a4f8-6da593104570] succeeded in 1.4981760339996981s: None
+[2025-07-04 10:09:40,837: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:09:40,837: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:09:40.837885
+[2025-07-04 10:09:40,837: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:09:41,488: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[f2c3901c-263f-46b8-898b-8c8f5d575cc3] received
+[2025-07-04 10:11:06,321: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[ef723a32-a917-4ba7-bd44-2b519f932db2] succeeded in 92.21169112999996s: None
+[2025-07-04 10:11:06,322: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:11:07,476: INFO/MainProcess] Task apps.gallery.tasks.process_audio[391f5c29-f2b1-44be-9837-b1d16c40d80a] received
+[2025-07-04 10:11:07,507: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:11:07,860: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[0451fa40-9a71-4f69-8b8a-2d4c8b201978] succeeded in 1.538409770000726s: None
+[2025-07-04 10:11:07,861: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:11:08,684: INFO/MainProcess] Task apps.gallery.tasks.process_audio[94303567-d6cf-4e8c-b2ad-60913a42159c] received
+[2025-07-04 10:11:09,071: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:11:09,321: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[9b22b1e4-1d42-43cf-848c-1688447f7612] succeeded in 92.03727229499873s: None
+[2025-07-04 10:11:09,420: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[42c6d109-4c78-477f-a396-903895ed12b7] succeeded in 1.5591943830004311s: None
+[2025-07-04 10:11:09,421: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:11:09,421: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:11:09.421649
+[2025-07-04 10:11:09,421: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:11:09,661: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 10:11:10,490: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[c89f6ad3-8040-4026-a97c-8eb3ccc8e19f] received
+[2025-07-04 10:11:10,831: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 10:11:10,984: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[7fda6007-593b-436f-8401-6f440747ad1b] received
+[2025-07-04 10:11:11,181: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[24ebc290-222a-4c53-9b61-9f7764670d39] succeeded in 1.5206964930002869s: None
+[2025-07-04 10:11:11,356: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-04 10:11:12,181: INFO/MainProcess] Task apps.gallery.tasks.process_audio[52eed65d-dd17-4ea0-a5e5-db26af8e148a] received
+[2025-07-04 10:11:12,508: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-04 10:11:12,856: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[d27e8405-08b8-4f64-9ce0-5cfcf5286b0e] succeeded in 1.499928016000922s: None
+[2025-07-04 10:11:13,029: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:11:13,029: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:11:13.029863
+[2025-07-04 10:11:13,029: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:11:13,691: INFO/MainProcess] Task apps.gallery.tasks.process_audio[b729502a-8766-4109-9a46-a2accadacc10] received
+[2025-07-04 10:11:15,729: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[c1f2302f-98b7-42ce-be77-b7f54f79eba5] succeeded in 94.89544281599956s: None
+[2025-07-04 10:11:15,905: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:11:15,905: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:11:15.905687
+[2025-07-04 10:11:15,905: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:11:16,735: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[ef3fe1e6-d788-475f-8807-49c35c686b71] received
+[2025-07-04 10:12:40,800: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[65694c05-217d-44f1-baec-a37bd49e8fb1] succeeded in 91.38206643500052s: None
+[2025-07-04 10:12:40,801: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:12:41,987: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:12:42,115: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[d9df302d-e870-4f52-9316-05b09dff982e] received
+[2025-07-04 10:12:42,336: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[31e50575-ed46-4cbc-9ed5-bc52a6dfac7e] succeeded in 1.5350639110001794s: None
+[2025-07-04 10:12:42,337: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:12:43,166: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'ef8dced2-ecb9-4a37-950f-1b6c7b72c8bf', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'ef8dced2-ecb9-4a37-950f-1b6c7b72c8bf', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@63f692d7cb61', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 10:12:43,506: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[a74bfc5e-87fe-491a-9677-e176f20d4f93] succeeded in 90.47963394399994s: None
+[2025-07-04 10:12:43,623: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:12:43,974: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[034cd30c-8689-414d-a48b-421177966000] succeeded in 1.6369491850000486s: None
+[2025-07-04 10:12:43,975: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:12:44,333: INFO/MainProcess] Task apps.gallery.tasks.process_audio[9744acb7-edd3-4493-9da4-76eaaa077198] received
+[2025-07-04 10:12:44,333: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:12:44,333: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:12:44.333972
+[2025-07-04 10:12:44,334: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:12:45,169: INFO/MainProcess] Task apps.gallery.tasks.process_audio[02f3f67b-f003-4dd6-8edb-e6434199b13c] received
+[2025-07-04 10:12:45,264: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:12:45,618: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[a845f18b-3316-40c4-bdd6-eb7a60d4ea8e] succeeded in 1.6435713509999914s: None
+[2025-07-04 10:12:45,619: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:12:45,619: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:12:45.619737
+[2025-07-04 10:12:45,619: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:12:45,666: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[e6ff4953-654a-4764-8cee-ec964cffa3ca] received
+[2025-07-04 10:12:47,327: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[e7e10fdf-c077-440f-ac0c-fa82fd2d458d] received
+[2025-07-04 10:12:52,411: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[6d7bb2dc-fce0-4e75-8da6-a03d5da5a470] succeeded in 96.50868730100046s: None
+[2025-07-04 10:12:52,758: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:12:53,411: INFO/MainProcess] Task apps.gallery.tasks.process_audio[28e615c5-bcdd-448d-a5a5-badf7e2da3b3] received
+[2025-07-04 10:12:53,938: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:12:54,281: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[36b459a9-a762-4bae-a2ea-06a0b4c45f85] succeeded in 1.5224875869989773s: None
+[2025-07-04 10:12:54,453: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:12:54,453: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:12:54.453457
+[2025-07-04 10:12:54,453: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:12:55,283: INFO/MainProcess] Task apps.gallery.tasks.process_audio[6f6f06f6-f5ee-4db3-afae-bf9448ef7e94] received
+[2025-07-04 10:14:31,635: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[930627c0-df20-4fc1-aeb7-c8d00825ea58] succeeded in 107.30643239900019s: None
+[2025-07-04 10:14:31,807: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:14:31,808: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:14:31.807980
+[2025-07-04 10:14:31,808: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:14:32,618: INFO/MainProcess] Task apps.gallery.tasks.process_audio[527274f9-b7e8-4e9c-8534-59760c0093cc] received
+[2025-07-04 10:14:33,566: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[ac3f9851-21dd-4a91-8243-1aaad4445d75] succeeded in 107.95124812600079s: None
+[2025-07-04 10:14:33,567: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:14:34,419: INFO/MainProcess] Task apps.gallery.tasks.process_audio[7a045a54-5c32-45ba-b754-0106a7be8c73] received
+[2025-07-04 10:14:34,769: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:14:35,122: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[c1ee3078-f5d6-448d-8a12-bbace2358a5a] succeeded in 1.555929610000021s: None
+[2025-07-04 10:14:35,123: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:14:36,139: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[98fb968b-467a-4d4a-9634-37807bd03e62] received
+[2025-07-04 10:14:36,263: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:14:36,611: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[391f5c29-f2b1-44be-9837-b1d16c40d80a] succeeded in 1.4874589880000713s: None
+[2025-07-04 10:14:36,612: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-04 10:14:37,450: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[9f67879f-17b3-43a2-b0bc-760a3e50c841] received
+[2025-07-04 10:14:37,872: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-04 10:14:38,223: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[94303567-d6cf-4e8c-b2ad-60913a42159c] succeeded in 1.6114038890009397s: None
+[2025-07-04 10:14:38,224: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-04 10:14:38,224: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-04T10:14:38.224227
+[2025-07-04 10:14:38,224: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:14:39,044: INFO/MainProcess] Task apps.gallery.tasks.process_audio[ec7f34e6-b7fd-4142-ba83-1f633467e935] received
+[2025-07-04 10:14:43,751: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[37c607aa-3672-4fb4-8271-c57c05fc9a19] succeeded in 109.30302515400035s: None
+[2025-07-04 10:14:43,925: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:14:44,663: INFO/MainProcess] Task apps.gallery.tasks.process_audio[65cf42b8-31af-4c6c-aeb8-ebca9bd5394e] received
+[2025-07-04 10:14:45,097: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:14:45,437: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[52eed65d-dd17-4ea0-a5e5-db26af8e148a] succeeded in 1.5120021010006894s: None
+[2025-07-04 10:14:45,612: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-04 10:14:46,273: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[132cf93d-3708-4b0f-b09f-b666bef52055] received
+[2025-07-04 10:14:46,828: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-04 10:14:47,171: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[b729502a-8766-4109-9a46-a2accadacc10] succeeded in 1.5594232909988932s: None
+[2025-07-04 10:14:47,345: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-04 10:14:47,346: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-04T10:14:47.346010
+[2025-07-04 10:14:47,346: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:14:48,001: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '9681767e-c23b-4030-a0c5-37687092ba72', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '9681767e-c23b-4030-a0c5-37687092ba72', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@736bcabd2b74', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-04 10:14:49,011: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[68a275c3-1dbc-4891-914d-4718a80c0de8] received
+[2025-07-04 10:16:05,297: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[f2c3901c-263f-46b8-898b-8c8f5d575cc3] succeeded in 93.49369247200048s: None
+[2025-07-04 10:16:05,473: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-04 10:16:05,473: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-04T10:16:05.473655
+[2025-07-04 10:16:05,473: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-04 10:16:06,450: INFO/MainProcess] Task apps.gallery.tasks.process_audio[cd5f9a39-20b2-4609-9c9d-5845e85350dc] received

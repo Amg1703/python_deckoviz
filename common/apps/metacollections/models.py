@@ -9,6 +9,7 @@ class MetaCollection(BaseModel):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='meta_collection')
     favourite_collections = models.ManyToManyField(Collection, related_name='favourited_by_meta_collections', blank=True)
     starred_collections = models.ManyToManyField(Collection, related_name='starred_by_meta_collections', blank=True)
+    liked_collections = models.ManyToManyField(Collection, related_name='liked_by_meta_collections', blank=True)
 
     class Meta:
         db_table = 'meta_collections'
