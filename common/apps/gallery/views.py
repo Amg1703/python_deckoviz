@@ -1,8 +1,8 @@
 # views.py
 from rest_framework import viewsets, filters,mixins
 from rest_framework.permissions import IsAuthenticated,AllowAny, IsAdminUser
-from .models import Image, Collection, CollectionImage,Audio, DailyCuration, Ritual
-from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer, DailyCurationSerializer, AdminRitualSerializer, UserRitualSerializer)
+from .models import Image, Collection, CollectionImage,Audio, DailyCuration, Ritual, DailyImageCuration
+from .serializers import (CollectionImageCreateSerializer,AudioSerializer, ImageSerializer, CollectionSerializer, CollectionImageSerializer,CollectionDetailSerializer, DailyCurationSerializer, AdminRitualSerializer, UserRitualSerializer, DailyImageCurationSerializer)
 from django.db.models import Q
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
@@ -210,6 +210,17 @@ def today_curation(request):
         return Response(data)
     except DailyCuration.DoesNotExist:
         return Response({'date': str(today), 'collections': []})
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def today_image_curation(request):
+    today = date.today()
+    try:
+        curation = DailyImageCuration.objects.get(date=today)
+        data = DailyImageCurationSerializer(curation, context={'request': request}).data
+        return Response(data)
+    except DailyImageCuration.DoesNotExist:
+        return Response({'date': str(today), 'images': []})
 
 class AdminRitualViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminUser]

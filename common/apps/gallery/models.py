@@ -196,6 +196,18 @@ class DailyCuration(models.Model):
     def __str__(self):
         return f"Daily Curation for {self.date}"
 
+class DailyImageCuration(models.Model):
+    date = models.DateField(default=timezone.now, unique=True)
+    images = models.ManyToManyField(Image, related_name='daily_image_curations')
+
+    class Meta:
+        verbose_name = 'Daily Image Curation'
+        verbose_name_plural = 'Daily Image Curations'
+        ordering = ['-date']
+
+    def __str__(self):
+        return f"Daily Image Curation for {self.date}"
+
 class Ritual(BaseModel):
     name = models.CharField(max_length=100)
     time_of_day = models.TimeField(help_text="Time of day when the ritual is triggered")

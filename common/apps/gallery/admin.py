@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, Collection,CollectionImage,Audio, DailyCuration
+from .models import Image, Collection,CollectionImage,Audio, DailyCuration, DailyImageCuration
 
 admin.site.register(Image)
 admin.site.register(Collection)
@@ -14,4 +14,14 @@ class DailyCurationAdmin(admin.ModelAdmin):
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         if db_field.name == 'collections':
             kwargs["queryset"] = Collection.objects.filter(view='public', is_active=True)
+        return super().formfield_for_manytomany(db_field, request, **kwargs)
+
+@admin.register(DailyImageCuration)
+class DailyImageCurationAdmin(admin.ModelAdmin):
+    list_display = ('date',)
+    filter_horizontal = ('images',)
+
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        if db_field.name == 'images':
+            kwargs["queryset"] = Image.objects.filter(view='public', is_active=True)
         return super().formfield_for_manytomany(db_field, request, **kwargs)

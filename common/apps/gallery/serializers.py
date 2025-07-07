@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Audio, Image, Collection, CollectionImage, DailyCuration, Ritual
+from .models import Audio, Image, Collection, CollectionImage, DailyCuration, Ritual, DailyImageCuration
 from apps.authentication.serializers import UserSerializer
 from apps.marketplace.serializers import PriceSerializer
 from apps.marketplace.models import Price
@@ -256,6 +256,13 @@ class DailyCurationSerializer(serializers.ModelSerializer):
     class Meta:
         model = DailyCuration
         fields = ['date', 'collections']
+
+class DailyImageCurationSerializer(serializers.ModelSerializer):
+    images = ImageSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = DailyImageCuration
+        fields = ['date', 'images']
 
 class AdminRitualSerializer(serializers.ModelSerializer):
     collections = CollectionSerializer(many=True, read_only=True)
