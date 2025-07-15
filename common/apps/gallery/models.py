@@ -6,6 +6,7 @@ from apps.utils.user_directory import user_image_path,user_music_path,user_audio
 import uuid
 from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
+from datetime import timedelta
 
 User = get_user_model()
 
@@ -215,6 +216,20 @@ class Ritual(BaseModel):
     is_active = models.BooleanField(default=True)
     is_global = models.BooleanField(default=False, help_text="True for admin/global rituals, False for user-defined rituals")
     created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, help_text="Null for global rituals, set for user-defined rituals")
+    repeat_type = models.CharField(
+        max_length=10,
+        choices=[('none', 'None'), ('daily', 'Daily'), ('weekly', 'Weekly'), ('monthly', 'Monthly'), ('yearly', 'Yearly')],
+        default='none',
+        help_text="How often the ritual repeats."
+    )
+    repeat_details = models.JSONField(
+        blank=True, null=True,
+        help_text="Details for repeat: For weekly, provide 'weekdays' (list of 0-6); for monthly, 'monthday' (1-31); for yearly, 'month' (1-12) and 'day' (1-31). Leave empty for daily. Edge cases: If a day does not exist (e.g., Feb 30), skip or trigger on last valid day."
+    )
+    description_and_meta_notes = models.TextField(
+        blank=True, null=True,
+        help_text="Description and meta notes for the ritual."
+    )
     
     class Meta:
         db_table = 'rituals'
@@ -226,3 +241,42 @@ class Ritual(BaseModel):
 
     def __str__(self):
         return f"{'Global' if self.is_global else 'User'} Ritual: {self.name} at {self.time_of_day}"
+
+    def should_run_on_date(self, date):
+        """
+        Returns True if the ritual should run on the given date (a datetime.date object),
+        based on repeat_type and repeat_details. Handles edge cases.
+        """
+        if not self.is_active:
+            return False
+        if self.repeat_type == 'none':
+            return False
+        if self.repeat_type == 'daily':
+            return True
+        if self.repeat_type == 'weekly':
+            weekdays = (self.repeat_details or {}).get('weekdays', [])
+            return date.weekday() in weekdays
+        if self.repeat_type == 'monthly':
+            monthday = (self.repeat_details or {}).get('monthday')
+            if not monthday:
+                return False
+            # Handle months with fewer days (e.g., Feb 30)
+            last_day = (date.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
+            if monthday > last_day.day:
+                return date.day == last_day.day
+            return date.day == monthday
+        if self.repeat_type == 'yearly':
+            month = (self.repeat_details or {}).get('month')
+            day = (self.repeat_details or {}).get('day')
+            if not month or not day:
+                return False
+            if date.month != month:
+                return False
+            # Handle invalid days (e.g., Feb 30)
+            try:
+                return date.day == day
+            except ValueError:
+                # If the day doesn't exist, trigger on the last valid day of the month
+                last_day = (date.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
+                return date.day == last_day.day
+        return False

@@ -237,9 +237,12 @@ class AdminRitualViewSet(viewsets.ModelViewSet):
         time_str = request.query_params.get('time')
         if not time_str:
             return Response({'detail': 'Missing time parameter.'}, status=400)
+        today = date.today()
         rituals = Ritual.objects.filter(is_global=True, time_of_day=time_str, is_active=True)
         data = []
         for ritual in rituals:
+            if not ritual.should_run_on_date(today):
+                continue
             collections = list(ritual.collections.all())
             random.shuffle(collections)
             data.append({
@@ -269,9 +272,12 @@ class UserRitualViewSet(viewsets.ModelViewSet):
         time_str = request.query_params.get('time')
         if not time_str:
             return Response({'detail': 'Missing time parameter.'}, status=400)
+        today = date.today()
         rituals = Ritual.objects.filter(is_global=False, created_by=request.user, time_of_day=time_str, is_active=True)
         data = []
         for ritual in rituals:
+            if not ritual.should_run_on_date(today):
+                continue
             collections = list(ritual.collections.all())
             random.shuffle(collections)
             data.append({
@@ -281,6 +287,46 @@ class UserRitualViewSet(viewsets.ModelViewSet):
                 'collections': CollectionSerializer(collections, many=True).data
             })
         return Response(data)
+
+    @action(detail=False, methods=['get'], url_path='daily', permission_classes=[IsAuthenticated])
+    def daily_rituals(self, request):
+        show_all = request.query_params.get('all', 'false').lower() == 'true'
+        rituals = Ritual.objects.filter(is_global=False, created_by=request.user, repeat_type='daily', is_active=True)
+        if not show_all:
+            today = date.today()
+            rituals = [r for r in rituals if r.should_run_on_date(today)]
+        serializer = self.get_serializer(rituals, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['get'], url_path='weekly', permission_classes=[IsAuthenticated])
+    def weekly_rituals(self, request):
+        show_all = request.query_params.get('all', 'false').lower() == 'true'
+        rituals = Ritual.objects.filter(is_global=False, created_by=request.user, repeat_type='weekly', is_active=True)
+        if not show_all:
+            today = date.today()
+            rituals = [r for r in rituals if r.should_run_on_date(today)]
+        serializer = self.get_serializer(rituals, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['get'], url_path='monthly', permission_classes=[IsAuthenticated])
+    def monthly_rituals(self, request):
+        show_all = request.query_params.get('all', 'false').lower() == 'true'
+        rituals = Ritual.objects.filter(is_global=False, created_by=request.user, repeat_type='monthly', is_active=True)
+        if not show_all:
+            today = date.today()
+            rituals = [r for r in rituals if r.should_run_on_date(today)]
+        serializer = self.get_serializer(rituals, many=True)
+        return Response(serializer.data)
+
+    @action(detail=False, methods=['get'], url_path='yearly', permission_classes=[IsAuthenticated])
+    def yearly_rituals(self, request):
+        show_all = request.query_params.get('all', 'false').lower() == 'true'
+        rituals = Ritual.objects.filter(is_global=False, created_by=request.user, repeat_type='yearly', is_active=True)
+        if not show_all:
+            today = date.today()
+            rituals = [r for r in rituals if r.should_run_on_date(today)]
+        serializer = self.get_serializer(rituals, many=True)
+        return Response(serializer.data)
 
 @api_view(['POST'])
 def regenerate_empty_collection_metadata(request):

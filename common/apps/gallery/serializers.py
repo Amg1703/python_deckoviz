@@ -273,13 +273,33 @@ class AdminRitualSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ritual
         fields = [
-            'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at'
+            'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at',
+            'repeat_type', 'repeat_details', 'description_and_meta_notes'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'collections']
 
     def validate_collection_ids(self, value):
         if len(value) != len(set(value)):
             raise serializers.ValidationError("Duplicate collections are not allowed in a ritual.")
+        return value
+
+    def validate_repeat_details(self, value):
+        repeat_type = self.initial_data.get('repeat_type', 'none')
+        if repeat_type == 'weekly':
+            weekdays = value.get('weekdays')
+            if not isinstance(weekdays, list) or not all(isinstance(d, int) and 0 <= d <= 6 for d in weekdays):
+                raise serializers.ValidationError("For weekly, 'weekdays' must be a list of integers 0-6.")
+        elif repeat_type == 'monthly':
+            monthday = value.get('monthday')
+            if not isinstance(monthday, int) or not (1 <= monthday <= 31):
+                raise serializers.ValidationError("For monthly, 'monthday' must be an integer 1-31.")
+        elif repeat_type == 'yearly':
+            month = value.get('month')
+            day = value.get('day')
+            if not (isinstance(month, int) and 1 <= month <= 12):
+                raise serializers.ValidationError("For yearly, 'month' must be 1-12.")
+            if not (isinstance(day, int) and 1 <= day <= 31):
+                raise serializers.ValidationError("For yearly, 'day' must be 1-31.")
         return value
 
     def create(self, validated_data):
@@ -306,13 +326,28 @@ class UserRitualSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ritual
         fields = [
-            'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at'
+            'id', 'name', 'time_of_day', 'collections', 'collection_ids', 'is_active', 'is_global', 'created_at', 'updated_at',
+            'repeat_type', 'repeat_details', 'description_and_meta_notes'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'collections', 'is_global']
 
-    def validate_collection_ids(self, value):
-        if len(value) != len(set(value)):
-            raise serializers.ValidationError("Duplicate collections are not allowed in a ritual.")
+    def validate_repeat_details(self, value):
+        repeat_type = self.initial_data.get('repeat_type', 'none')
+        if repeat_type == 'weekly':
+            weekdays = value.get('weekdays')
+            if not isinstance(weekdays, list) or not all(isinstance(d, int) and 0 <= d <= 6 for d in weekdays):
+                raise serializers.ValidationError("For weekly, 'weekdays' must be a list of integers 0-6.")
+        elif repeat_type == 'monthly':
+            monthday = value.get('monthday')
+            if not isinstance(monthday, int) or not (1 <= monthday <= 31):
+                raise serializers.ValidationError("For monthly, 'monthday' must be an integer 1-31.")
+        elif repeat_type == 'yearly':
+            month = value.get('month')
+            day = value.get('day')
+            if not (isinstance(month, int) and 1 <= month <= 12):
+                raise serializers.ValidationError("For yearly, 'month' must be 1-12.")
+            if not (isinstance(day, int) and 1 <= day <= 31):
+                raise serializers.ValidationError("For yearly, 'day' must be 1-31.")
         return value
 
     def validate(self, data):
