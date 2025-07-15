@@ -12,6 +12,7 @@ import requests
 import json
 import time
 import random
+from .collection_meta_generator import aggregate_collection_metadata
 
 class AudioViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -280,3 +281,16 @@ class UserRitualViewSet(viewsets.ModelViewSet):
                 'collections': CollectionSerializer(collections, many=True).data
             })
         return Response(data)
+
+@api_view(['POST'])
+def regenerate_empty_collection_metadata(request):
+    updated = 0
+    for collection in Collection.objects.filter(metadata__isnull=True):
+        image_metadatas = [img.image.metadata for img in collection.collection_images.select_related('image').all() if img.image and img.image.metadata]
+        if not image_metadatas:
+            continue
+        metadata = aggregate_collection_metadata(image_metadatas)
+        collection.metadata = metadata
+        collection.save(update_fields=['metadata'])
+        updated += 1
+    return Response({'updated_collections': updated})

@@ -345,3 +345,37 @@ class UserRitualSerializer(serializers.ModelSerializer):
         if collections is not None:
             instance.collections.set(collections)
         return instance
+
+class CollectionSearchSerializer(serializers.ModelSerializer):
+    user = serializers.ReadOnlyField(source='user.username')
+    class Meta:
+        model = Collection
+        fields = [
+            'id',
+            'name',
+            'metadata',
+            'description',
+            'tags',
+            'user',
+        ]
+
+class CollectionSearchInputSerializer(serializers.Serializer):
+    search_text = serializers.CharField(
+        required=False, allow_blank=True,
+        help_text="Free text to search in collection name and description."
+    )
+    tags = serializers.ListField(
+        child=serializers.CharField(),
+        required=False,
+        help_text="List of tags to filter collections."
+    )
+    moods = serializers.ListField(
+        child=serializers.CharField(),
+        required=False,
+        help_text="List of mood tags to filter collections."
+    )
+    search_type = serializers.ChoiceField(
+        choices=['private', 'global'],
+        required=False,
+        help_text="Search scope: 'private' for user collections, 'global' for public collections. Default is 'global'."
+    )
