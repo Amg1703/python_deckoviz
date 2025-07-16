@@ -76,6 +76,9 @@ urlpatterns = [
 
     # metaimages api
     path('metaimages/', include('apps.metaimages.urls')),
+
+    # metaaudios api
+    path('metaaudios/', include('apps.metaaudios.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

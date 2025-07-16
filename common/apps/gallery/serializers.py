@@ -17,6 +17,9 @@ class AudioSerializer(serializers.ModelSerializer):
         model = Audio
         fields = [
             'id', 
+            'track_title',
+            'description',
+            'genre',
             'transcript', 
             'transcript_url', 
             'transcript_status', 

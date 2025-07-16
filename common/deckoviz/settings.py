@@ -123,6 +123,7 @@ INSTALLED_APPS = [
     'apps.blogs',
     'apps.metacollections',
     'apps.metaimages',
+    'apps.metaaudios',
     'apps.modes',
     
     # third party apps  

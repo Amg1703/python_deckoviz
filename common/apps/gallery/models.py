@@ -18,6 +18,11 @@ class Audio(BaseModel):
     view = models.CharField(max_length=255, blank=True, null=True, choices=VIEW_TYPES, default='private')
     is_active = models.BooleanField(default=True)
     
+    # New fields for audio metadata
+    track_title = models.CharField(max_length=255, blank=True, default="")
+    description = models.TextField(blank=True, default="")
+    genre = models.CharField(max_length=100, blank=True, default="")
+    
     # Transcription fields
     transcript = models.TextField(blank=True, null=True)
     transcript_url = models.URLField(blank=True, null=True)
