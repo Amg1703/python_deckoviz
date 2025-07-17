@@ -42,6 +42,23 @@ class UserModeUpdateSerializer(serializers.ModelSerializer):
         model = UserMode
         fields = ('user_collections', 'user_music')
 
+    def update(self, instance, validated_data):
+        user_collections = validated_data.pop('user_collections', None)
+        user_music = validated_data.pop('user_music', None)
+
+        # Add collections instead of replacing
+        if user_collections is not None:
+            for collection in user_collections:
+                instance.user_collections.add(collection)
+
+        # Add music instead of replacing
+        if user_music is not None:
+            for music in user_music:
+                instance.user_music.add(music)
+
+        instance.save()
+        return instance
+
 class SessionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Session
