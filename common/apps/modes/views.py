@@ -5,6 +5,7 @@ from .models import Mode, UserMode, Session
 from apps.gallery.models import Collection
 from .serializers import ModeSerializer, UserModeSerializer, SessionSerializer, UserModeUpdateSerializer
 from django.shortcuts import get_object_or_404
+from apps.music.models import Music
 
 class ModeListView(generics.ListAPIView):
     queryset = Mode.objects.all()
@@ -46,6 +47,18 @@ class UserModeCollectionRemoveView(APIView):
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return Response({"detail": "Collection not found in this mode for the user."}, status=status.HTTP_404_NOT_FOUND)
+
+class UserModeMusicRemoveView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def delete(self, request, mode_id, music_id):
+        user_mode = get_object_or_404(UserMode, user=request.user, mode_id=mode_id)
+        music = get_object_or_404(Music, id=music_id)
+        if music in user_mode.user_music.all():
+            user_mode.user_music.remove(music)
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        else:
+            return Response({"detail": "Music not found in this mode for the user."}, status=status.HTTP_404_NOT_FOUND)
 
 class SessionCreateView(generics.CreateAPIView):
     queryset = Session.objects.all()
