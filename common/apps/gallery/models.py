@@ -17,6 +17,7 @@ class Audio(BaseModel):
     uploaded_by = models.ForeignKey(User, on_delete=models.PROTECT, null=True, related_name='uploaded_audios')
     view = models.CharField(max_length=255, blank=True, null=True, choices=VIEW_TYPES, default='private')
     is_active = models.BooleanField(default=True)
+    music_cover = models.ImageField(upload_to=user_image_path, blank=True, null=True, max_length=500, help_text="Optional cover photo for the audio")
     
     # New fields for audio metadata
     track_title = models.CharField(max_length=255, blank=True, default="")

@@ -12,6 +12,7 @@ import os
 logger = logging.getLogger(__name__)
 
 class AudioSerializer(serializers.ModelSerializer):
+    music_cover_url = serializers.CharField(write_only=True, required=False, allow_blank=True)
 
     class Meta:
         model = Audio
@@ -28,7 +29,9 @@ class AudioSerializer(serializers.ModelSerializer):
             'view', 
             'is_active', 
             'created_at', 
-            'updated_at'
+            'updated_at',
+            'music_cover',
+            'music_cover_url',
         ]
         read_only_fields = [
             'id', 
@@ -37,9 +40,25 @@ class AudioSerializer(serializers.ModelSerializer):
             'updated_at'
         ]
     
-    def create(self,validated_data):
+    def create(self, validated_data):
         user = self.context['request'].user 
         validated_data['uploaded_by'] = user
+        music_cover_url = validated_data.pop('music_cover_url', None)
+        music_cover_file = validated_data.get('music_cover', None)
+        from django.core.files.base import ContentFile
+        import requests, os
+        if not music_cover_file and music_cover_url:
+            if 's3.amazonaws.com' in music_cover_url or music_cover_url.startswith('https://s3.'):
+                validated_data['music_cover'] = music_cover_url
+            else:
+                try:
+                    response = requests.get(music_cover_url)
+                    response.raise_for_status()
+                    file_name = os.path.basename(music_cover_url.split('?')[0]) or 'music_cover.jpg'
+                    validated_data['music_cover'] = ContentFile(response.content, name=file_name)
+                except Exception as e:
+                    raise serializers.ValidationError({'music_cover_url': f'Failed to download image: {str(e)}'})
+        # If file is uploaded, Django handles it via the model field
         return super().create(validated_data)
 
 class ImageSerializer(serializers.ModelSerializer):
