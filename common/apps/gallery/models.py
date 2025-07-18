@@ -91,6 +91,7 @@ class Collection(BaseModel):
     type = models.CharField(max_length=255, blank=True, null=True,choices=COLLECTION_TYPES,default='personal')
     description = models.TextField(blank=True, default="")
     tags = ArrayField(models.CharField(max_length=100), blank=True, default=list)
+    music_title = models.CharField(max_length=255, blank=True, null=True, help_text="Optional title for the collection's music")
     
     class Meta:
         db_table = 'collections'

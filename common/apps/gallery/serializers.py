@@ -200,6 +200,7 @@ class CollectionSerializer(serializers.ModelSerializer):
             'view',
             'description',
             'tags',
+            'music_title',
         ]
 
     def create(self, validated_data):

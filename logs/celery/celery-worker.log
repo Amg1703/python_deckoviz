@@ -2580,3 +2580,25 @@
   . apps.gallery.tasks.process_audio
   . apps.gallery.tasks.retry_failed_transcriptions
 
+ 
+ -------------- celery@14bcd4d5c604 v5.3.1 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.31 2025-07-18 06:54:09
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         deckoviz:0x7f9777feaed0
+- ** ---------- .> transport:   redis://default:**@168.231.112.236:6379//
+- ** ---------- .> results:     redis://default:**@168.231.112.236:6379/
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . apps.gallery.tasks.analyze_existing_transcripts
+  . apps.gallery.tasks.populate_unsplash_images
+  . apps.gallery.tasks.process_audio
+  . apps.gallery.tasks.retry_failed_transcriptions
+
