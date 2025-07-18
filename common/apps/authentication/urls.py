@@ -1,7 +1,7 @@
 from django.urls import path,include 
 from rest_framework.routers import DefaultRouter 
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
-from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView,GoogleLoginView,GoogleCallbackView,UserProfileViewSet, ForgotPasswordView, ResetPasswordView, VerifyEmailView
+from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView,GoogleLoginView,GoogleCallbackView,UserProfileViewSet, ForgotPasswordView, ResetPasswordView, VerifyEmailView, ResendVerificationView
 
 router = DefaultRouter()
 router.register('user', UserView, basename='user_profile')
@@ -21,4 +21,5 @@ urlpatterns = [
     path('forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
     path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
     path('verify-email/', VerifyEmailView.as_view(), name='verify-email'),
+    path('resend-verification/', ResendVerificationView.as_view(), name='resend-verification'),
 ]

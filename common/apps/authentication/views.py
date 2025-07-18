@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response 
-from .serializers import RegisterSerializer, UserSerializer,AddressSerializer,NewsLetterSubscriberSerializer,UserProfileSerializer, ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer
+from .serializers import RegisterSerializer, UserSerializer,AddressSerializer,NewsLetterSubscriberSerializer,UserProfileSerializer, ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer, ResendVerificationSerializer
 from rest_framework import mixins,viewsets,status,generics
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from django.contrib.auth import get_user_model
@@ -13,6 +13,7 @@ from social_core.exceptions import MissingBackend
 from django.shortcuts import redirect
 from django.conf import settings
 from django.core.mail import send_mail
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 
 User = get_user_model()
 _google_sheet = None
@@ -27,6 +28,11 @@ def get_google_sheet():
             _google_sheet = None
     return _google_sheet
     
+@extend_schema(
+    request=RegisterSerializer,
+    responses={201: OpenApiResponse(description='User registered successfully. Please verify your email.')},
+    description="Register a new user. Sends a verification email."
+)
 class RegisterView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = [] 
@@ -160,6 +166,11 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+@extend_schema(
+    request=ForgotPasswordSerializer,
+    responses={200: OpenApiResponse(description='If the email exists, a reset link will be sent.')},
+    description="Request a password reset. Sends a reset code to the user's email if they exist."
+)
 class ForgotPasswordView(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
@@ -185,6 +196,11 @@ class ForgotPasswordView(APIView):
         )
         return Response({'detail': 'If the email exists, a reset link will be sent.'}, status=status.HTTP_200_OK)
 
+@extend_schema(
+    request=ResetPasswordSerializer,
+    responses={200: OpenApiResponse(description='Password has been reset successfully.')},
+    description="Reset password using the code sent to the user's email."
+)
 class ResetPasswordView(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
@@ -207,6 +223,11 @@ class ResetPasswordView(APIView):
         reset_token.save()
         return Response({'detail': 'Password has been reset successfully.'}, status=status.HTTP_200_OK) 
 
+@extend_schema(
+    request=EmailVerificationSerializer,
+    responses={200: OpenApiResponse(description='Email verified successfully. You can now log in.')},
+    description="Verify user email using the code sent to their email."
+)
 class VerifyEmailView(APIView):
     permission_classes = [AllowAny]
     def post(self, request):
@@ -228,3 +249,33 @@ class VerifyEmailView(APIView):
         verification_token.is_used = True
         verification_token.save()
         return Response({'detail': 'Email verified successfully. You can now log in.'}, status=status.HTTP_200_OK) 
+
+@extend_schema(
+    request=ResendVerificationSerializer,
+    responses={200: OpenApiResponse(description='If the email exists and is not verified, a new verification email has been sent.')},
+    description="Resend the email verification code to the user if not yet verified."
+)
+class ResendVerificationView(APIView):
+    permission_classes = [AllowAny]
+    def post(self, request):
+        serializer = ResendVerificationSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        User = get_user_model()
+        try:
+            user = User.objects.get(email=email)
+            if not user.email_verified:
+                # Invalidate old tokens
+                EmailVerificationToken.objects.filter(user=user, is_used=False).update(is_used=True)
+                token = EmailVerificationToken.generate_token()
+                EmailVerificationToken.objects.create(user=user, token=token)
+                send_mail(
+                    subject='Verify your email',
+                    message=f'Your email verification code is: {token}',
+                    from_email=getattr(settings, 'DEFAULT_FROM_EMAIL', None) or 'no-reply@deckoviz.com',
+                    recipient_list=[user.email],
+                    fail_silently=True,
+                )
+        except User.DoesNotExist:
+            pass  # Always return the same message
+        return Response({'detail': 'If the email exists and is not verified, a new verification email has been sent.'}, status=status.HTTP_200_OK) 
