@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os 
-from decouple import config
 from pathlib import Path
 from datetime import timedelta
 from google.oauth2 import service_account
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +31,7 @@ DEBUG = config('DEBUG') or True
 
 
 # Parse ALLOWED_HOSTS from environment - remove ports as they don't belong in ALLOWED_HOSTS
-raw_hosts = os.environ.get('ALLOWED_HOSTS').split(',')
+raw_hosts = config('ALLOWED_HOSTS').split(',')
 ALLOWED_HOSTS = []
 for host in raw_hosts:
     # Strip port numbers if present
@@ -287,10 +287,10 @@ AUTH_USER_MODEL = 'authentication.User'
 
 # See Here: https://django-storages.readthedocs.io/en/latest/backends/gcloud.html#
 # File Storages
-AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME') 
-AWS_REGION=os.environ.get('AWS_REGION')
+AWS_ACCESS_KEY_ID=config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY=config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME=config('AWS_STORAGE_BUCKET_NAME') 
+AWS_REGION=config('AWS_REGION')
 
 
 # Default file storage
@@ -359,3 +359,11 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
