@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from apps.authentication.models import BaseModel
-from apps.gallery.models import Collection
+from apps.gallery.models import Collection, Audio
 
 User = get_user_model()
 
@@ -32,7 +32,7 @@ class UserMode(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_modes')
     mode = models.ForeignKey(Mode, on_delete=models.CASCADE, related_name='user_customizations')
     user_collections = models.ManyToManyField(Collection, related_name='user_modes', blank=True)
-    user_music = models.ManyToManyField(Music, related_name='user_modes', blank=True)
+    user_music = models.ManyToManyField(Audio, related_name='user_modes', blank=True)
 
     class Meta:
         unique_together = ('user', 'mode')

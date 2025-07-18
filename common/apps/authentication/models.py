@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxLengthValidator
 from apps.utils.choices import ADDRESS_TYPES
 from .managers import AddressManager
+from django.utils import timezone
+import secrets
 
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -21,6 +23,7 @@ class BaseModel(TimeStampedModel):
 
 class User(AbstractUser,BaseModel):
     email = models.EmailField(unique=True)
+    email_verified = models.BooleanField(default=False)
     profile_visible = models.BooleanField(default=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
     banner_pictures = models.JSONField(default=list, blank=True)
@@ -96,4 +99,38 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"Profile of {self.user.username}"
-    
+
+
+class PasswordResetToken(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='password_reset_tokens')
+    token = models.CharField(max_length=64, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_used = models.BooleanField(default=False)
+
+    @staticmethod
+    def generate_token():
+        return secrets.token_urlsafe(32)
+
+    def is_expired(self):
+        # Token valid for 1 hour
+        return timezone.now() > self.created_at + timezone.timedelta(hours=1)
+
+    def __str__(self):
+        return f"Password reset token for {self.user.email} ({'used' if self.is_used else 'active'})" 
+
+class EmailVerificationToken(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='email_verification_tokens')
+    token = models.CharField(max_length=64, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_used = models.BooleanField(default=False)
+
+    @staticmethod
+    def generate_token():
+        return secrets.token_urlsafe(32)
+
+    def is_expired(self):
+        # Token valid for 24 hours
+        return timezone.now() > self.created_at + timezone.timedelta(hours=24)
+
+    def __str__(self):
+        return f"Email verification token for {self.user.email} ({'used' if self.is_used else 'active'})" 

@@ -1,7 +1,7 @@
 from django.urls import path,include 
 from rest_framework.routers import DefaultRouter 
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
-from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView,GoogleLoginView,GoogleCallbackView,UserProfileViewSet
+from .views import  RegisterView,UserView,AddressView,NewsLetterSubscriberView,GoogleLoginView,GoogleCallbackView,UserProfileViewSet, ForgotPasswordView, ResetPasswordView, VerifyEmailView
 
 router = DefaultRouter()
 router.register('user', UserView, basename='user_profile')
@@ -18,4 +18,7 @@ urlpatterns = [
     # Google OAuth2 URLs
     path('login/google/', GoogleLoginView.as_view(), name='google_login'),
     path('login/google/callback/', GoogleCallbackView.as_view(), name='google_callback'),
+    path('forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
+    path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
+    path('verify-email/', VerifyEmailView.as_view(), name='verify-email'),
 ]

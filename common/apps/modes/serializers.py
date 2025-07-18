@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Mode, UserMode, Session, Music
-from apps.gallery.models import Collection
-from apps.gallery.serializers import CollectionSerializer
+from apps.gallery.models import Collection, Audio
+from apps.gallery.serializers import CollectionSerializer, AudioSerializer
 
 class MusicSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,7 +19,7 @@ class ModeSerializer(serializers.ModelSerializer):
 
 class UserModeSerializer(serializers.ModelSerializer):
     user_collections = CollectionSerializer(many=True, read_only=True)
-    user_music = MusicSerializer(many=True, read_only=True)
+    user_music = AudioSerializer(many=True, read_only=True)
     mode = ModeSerializer(read_only=True)
 
     class Meta:
@@ -33,7 +33,7 @@ class UserModeUpdateSerializer(serializers.ModelSerializer):
         required=False
     )
     user_music = serializers.PrimaryKeyRelatedField(
-        queryset=Music.objects.all(),
+        queryset=Audio.objects.all(),
         many=True,
         required=False
     )
