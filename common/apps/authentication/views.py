@@ -176,10 +176,10 @@ class ForgotPasswordView(APIView):
     def post(self, request):
         serializer = ForgotPasswordSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        email = serializer.validated_data['email']
+        email = serializer.validated_data['email'].lower()
         User = get_user_model()
         try:
-            user = User.objects.get(email=email)
+            user = User.objects.get(email__iexact=email)
         except User.DoesNotExist:
             return Response({'detail': 'If the email exists, a reset link will be sent.'}, status=status.HTTP_200_OK)
         # Invalidate old tokens
@@ -260,10 +260,10 @@ class ResendVerificationView(APIView):
     def post(self, request):
         serializer = ResendVerificationSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        email = serializer.validated_data['email']
+        email = serializer.validated_data['email'].lower()
         User = get_user_model()
         try:
-            user = User.objects.get(email=email)
+            user = User.objects.get(email__iexact=email)
             if not user.email_verified:
                 # Invalidate old tokens
                 EmailVerificationToken.objects.filter(user=user, is_used=False).update(is_used=True)
