@@ -6,7 +6,12 @@ from .models import MetaAudio
 from .serializers import MetaAudioSerializer, AddToLikedAudioSerializer, AddToStarredAudioSerializer
 from apps.gallery.models import Audio
 from django.contrib.auth import get_user_model
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 
+@extend_schema(
+    responses={200: MetaAudioSerializer},
+    description="Retrieve the current user's MetaAudio object, including liked and starred audios. Creates one if it does not exist."
+)
 class MetaAudioView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -15,6 +20,11 @@ class MetaAudioView(APIView):
         serializer = MetaAudioSerializer(meta_audio)
         return Response(serializer.data)
 
+@extend_schema(
+    request=AddToLikedAudioSerializer,
+    responses={200: OpenApiResponse(description='Audio added to liked.'), 403: OpenApiResponse(description='Permission denied.'), 400: OpenApiResponse(description='Invalid input.')},
+    description="Add an audio to the user's liked audios. Only public or self-uploaded audios can be liked."
+)
 class AddToLikedAudioView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -31,6 +41,11 @@ class AddToLikedAudioView(APIView):
                 return Response({'error': 'You do not have permission to like this audio'}, status=status.HTTP_403_FORBIDDEN)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@extend_schema(
+    request=AddToLikedAudioSerializer,
+    responses={200: OpenApiResponse(description='Audio removed from liked.'), 400: OpenApiResponse(description='Invalid input.')},
+    description="Remove an audio from the user's liked audios."
+)
 class RemoveFromLikedAudioView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -44,6 +59,11 @@ class RemoveFromLikedAudioView(APIView):
             return Response({'status': 'audio removed from liked'}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@extend_schema(
+    request=AddToStarredAudioSerializer,
+    responses={200: OpenApiResponse(description='Audio added to starred.'), 403: OpenApiResponse(description='Permission denied.'), 400: OpenApiResponse(description='Invalid input.')},
+    description="Add an audio to the user's starred audios. Only public or self-uploaded audios can be starred."
+)
 class AddToStarredAudioView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -60,6 +80,11 @@ class AddToStarredAudioView(APIView):
                 return Response({'error': 'You do not have permission to star this audio'}, status=status.HTTP_403_FORBIDDEN)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@extend_schema(
+    request=AddToStarredAudioSerializer,
+    responses={200: OpenApiResponse(description='Audio removed from starred.'), 400: OpenApiResponse(description='Invalid input.')},
+    description="Remove an audio from the user's starred audios."
+)
 class RemoveFromStarredAudioView(APIView):
     permission_classes = [IsAuthenticated]
 
