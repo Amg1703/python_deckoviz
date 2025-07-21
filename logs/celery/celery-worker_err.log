@@ -98383,3 +98383,426 @@ KeyError: 'apps.gallery.tasks.generate_metadata'
 [2025-07-21 12:40:11,042: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-21T12:40:11.042703
 [2025-07-21 12:40:11,043: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
 [2025-07-21 12:40:14,558: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[eb1794dd-84b6-41f6-b9f5-c6be1acb6940] received
+[2025-07-21 12:41:22,337: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[ff2fc8fc-cab6-40c9-a1ee-b46e1f997c16] succeeded in 96.5898793260003s: None
+[2025-07-21 12:41:22,505: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:41:23,747: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:41:24,110: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[676f63de-1675-4192-9a94-22b8fa5facf0] succeeded in 1.6050961839991942s: None
+[2025-07-21 12:41:24,496: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a92612ab-8d52-4eb8-ae20-2aa54c141e7f] received
+[2025-07-21 12:41:24,497: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-21 12:41:24,497: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-21T12:41:24.497527
+[2025-07-21 12:41:24,497: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:41:27,483: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[84dc6102-504f-4c7f-82ad-46f622ad2fb6] received
+[2025-07-21 12:41:32,022: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[88ca3512-961e-4dbf-8000-d8b769f74fe3] succeeded in 99.33790228500038s: None
+[2025-07-21 12:41:32,302: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-21 12:41:32,303: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-21T12:41:32.303065
+[2025-07-21 12:41:32,303: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:41:33,595: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[718732a3-dc49-4954-99a7-ff39f043c715] succeeded in 96.38313482999911s: None
+[2025-07-21 12:41:33,761: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-21 12:41:33,761: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-21T12:41:33.761753
+[2025-07-21 12:41:33,761: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:41:34,550: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[2381dda8-ae22-4aa3-9aed-9029beca867b] received
+[2025-07-21 12:41:37,869: INFO/MainProcess] Task apps.gallery.tasks.process_audio[edee112f-8598-457a-b55c-19bae83a18fd] received
+[2025-07-21 12:41:45,003: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[bbdb9e01-5e01-4710-93fb-b8ab2f78c83e] succeeded in 93.96780292099902s: None
+[2025-07-21 12:41:45,281: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:46,496: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:46,848: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[99423db1-a003-4f14-9d9d-bbacda8c0765] succeeded in 1.5675624510004127s: None
+[2025-07-21 12:41:47,011: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:47,867: INFO/MainProcess] Task apps.gallery.tasks.process_audio[ddfd9e88-7ad3-4454-b5a4-fa80c8f131db] received
+[2025-07-21 12:41:48,155: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:48,503: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[96bb3cd9-22c0-4ef4-a485-f79e67d71911] succeeded in 1.492441272999713s: None
+[2025-07-21 12:41:48,664: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:49,841: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:50,191: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[634addef-c3a5-4ab6-ae8e-ef026c323d92] succeeded in 1.5264929730001313s: None
+[2025-07-21 12:41:50,352: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:51,524: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:51,870: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[4667add9-e820-40e3-a94d-668c689ce501] succeeded in 1.5175721689993225s: None
+[2025-07-21 12:41:52,036: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:53,169: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:53,524: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[35fc47e4-0691-4b0b-a660-14f03d93b749] succeeded in 1.488875230999838s: None
+[2025-07-21 12:41:53,688: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:54,887: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:55,236: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[299d3871-7e46-4831-a6a2-cb8b6748b8f7] succeeded in 1.547961132000637s: None
+[2025-07-21 12:41:55,400: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:41:56,586: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:41:56,933: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[8e57ae72-650e-4b39-a080-5f5cfac19746] succeeded in 1.5325567880008748s: None
+[2025-07-21 12:41:57,098: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-21 12:41:57,099: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-21T12:41:57.099134
+[2025-07-21 12:41:57,099: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:41:57,870: INFO/MainProcess] Task apps.gallery.tasks.process_audio[7a9cd559-d31f-421a-a6b1-71bfff3029a3] received
+[2025-07-21 12:42:07,869: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e5b29663-3093-469d-b663-a9a4e0c18e77] received
+[2025-07-21 12:42:17,867: INFO/MainProcess] Task apps.gallery.tasks.process_audio[236c447c-d028-4421-b752-7e6684d0c057] received
+[2025-07-21 12:42:28,142: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5360afad-7079-41ec-9bd4-45b55805a0cc] received
+[2025-07-21 12:42:34,462: INFO/MainProcess] Task apps.gallery.tasks.process_audio[98acb6fa-087d-4a70-bb22-39b9ff9bb5e2] received
+[2025-07-21 12:42:38,136: INFO/MainProcess] Task apps.gallery.tasks.process_audio[ef0a3655-51f7-4c54-849e-fe675ab422b8] received
+[2025-07-21 12:42:44,448: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3ba1ada7-dc63-4a8a-b0e4-696c5cb5113e] received
+[2025-07-21 12:42:56,824: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[af461327-9e7b-4593-81f7-33148eb3ee74] succeeded in 92.33250389600107s: None
+[2025-07-21 12:42:56,990: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-21 12:42:56,990: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-21T12:42:56.990782
+[2025-07-21 12:42:56,990: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:43:04,450: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2f182a90-7d1a-45c0-ab59-6784908a34c4] received
+[2025-07-21 12:43:05,861: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[f890a88d-8f18-4506-8135-6391bdbcc162] succeeded in 93.56378640200091s: None
+[2025-07-21 12:43:06,190: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:43:07,509: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:43:07,830: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[4fe0c4bf-5084-4ab2-9848-f354e41347ef] succeeded in 1.6402143420000357s: None
+[2025-07-21 12:43:07,858: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[3ce8397f-eb40-43c4-aa9f-1be563a7e175] succeeded in 94.10209994699835s: None
+[2025-07-21 12:43:07,995: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-21 12:43:07,995: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-21 12:43:07,995: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-21T12:43:07.995852
+[2025-07-21 12:43:07,996: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:43:09,124: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-21 12:43:09,496: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[187f78db-cfa7-4b5e-87e8-9e55cb49d5f5] succeeded in 1.501336088998869s: None
+[2025-07-21 12:43:09,662: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-21 12:43:10,946: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-21 12:43:11,317: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[a92612ab-8d52-4eb8-ae20-2aa54c141e7f] succeeded in 1.6560444870010542s: None
+[2025-07-21 12:43:11,483: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-21 12:43:11,483: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-21T12:43:11.483464
+[2025-07-21 12:43:11,483: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:43:14,449: INFO/MainProcess] Task apps.gallery.tasks.process_audio[81630963-465e-4032-804e-6ba82478bc6f] received
+[2025-07-21 12:43:18,140: INFO/MainProcess] Task apps.gallery.tasks.process_audio[8960ebfd-fe9f-4034-b6e5-b75cbcdb6f5e] received
+[2025-07-21 12:43:24,554: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[e0ae22ad-ced9-45de-b64a-571a432d86dd] received
+[2025-07-21 12:43:28,139: INFO/MainProcess] Task apps.gallery.tasks.process_audio[1b4a21fc-0258-4fa4-9b34-d5e8ff0bca64] received
+[2025-07-21 12:43:32,798: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[1857d6cf-11e0-4c70-8072-baee39b0de58] succeeded in 95.70456001000093s: None
+[2025-07-21 12:43:32,964: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-21 12:43:32,964: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-21T12:43:32.964425
+[2025-07-21 12:43:32,964: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:43:34,549: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[c4faa290-d218-4951-bfaf-5e54138109b0] received
+[2025-07-21 12:43:37,490: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[0dfda037-30b4-4124-821f-12fdb13a693d] received
+[2025-07-21 12:44:32,955: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[b9639f1b-0977-41b1-82ec-4a684faba6b0] succeeded in 95.97060794099889s: None
+[2025-07-21 12:44:33,118: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:34,351: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:34,404: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'a15d5e68-f059-4a93-a892-2d797e54bb31', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'a15d5e68-f059-4a93-a892-2d797e54bb31', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen6@ee51c6418902', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-21 12:44:34,714: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[edee112f-8598-457a-b55c-19bae83a18fd] succeeded in 1.596088559999771s: None
+[2025-07-21 12:44:35,255: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:36,456: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:36,822: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[ddfd9e88-7ad3-4454-b5a4-fa80c8f131db] succeeded in 1.5670965319986863s: None
+[2025-07-21 12:44:36,988: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:38,222: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:38,591: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[7a9cd559-d31f-421a-a6b1-71bfff3029a3] succeeded in 1.6027339760003088s: None
+[2025-07-21 12:44:38,755: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:40,039: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:40,408: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[e5b29663-3093-469d-b663-a9a4e0c18e77] succeeded in 1.653417867000826s: None
+[2025-07-21 12:44:40,572: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:41,831: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:42,115: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[eb1794dd-84b6-41f6-b9f5-c6be1acb6940] succeeded in 94.12501622399941s: None
+[2025-07-21 12:44:42,195: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[236c447c-d028-4421-b752-7e6684d0c057] succeeded in 1.6235297749990423s: None
+[2025-07-21 12:44:42,443: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:42,444: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:44:43,617: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:44:43,668: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:43,940: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[98acb6fa-087d-4a70-bb22-39b9ff9bb5e2] succeeded in 1.4983634330019413s: None
+[2025-07-21 12:44:44,034: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[5360afad-7079-41ec-9bd4-45b55805a0cc] succeeded in 1.5921177720010746s: None
+[2025-07-21 12:44:44,107: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:44:44,107: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:44,453: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e65fb93b-f441-4e83-95f3-d664a9d2f59a] received
+[2025-07-21 12:44:45,291: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:44:45,315: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:45,614: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[3ba1ada7-dc63-4a8a-b0e4-696c5cb5113e] succeeded in 1.5076081970000814s: None
+[2025-07-21 12:44:45,683: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[ef0a3655-51f7-4c54-849e-fe675ab422b8] succeeded in 1.5765687550010625s: None
+[2025-07-21 12:44:45,780: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:44:45,780: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:44:46,449: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[84dc6102-504f-4c7f-82ad-46f622ad2fb6] succeeded in 94.9733004209993s: None
+[2025-07-21 12:44:46,625: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-21 12:44:46,939: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:44:46,993: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:44:47,261: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[81630963-465e-4032-804e-6ba82478bc6f] succeeded in 1.4814669769984903s: None
+[2025-07-21 12:44:47,353: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[2f182a90-7d1a-45c0-ab59-6784908a34c4] succeeded in 1.5729023630010488s: None
+[2025-07-21 12:44:47,461: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-21 12:44:47,461: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:44:47,461: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-21T12:44:47.461710
+[2025-07-21 12:44:47,461: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:44:47,838: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-21 12:44:48,204: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[8960ebfd-fe9f-4034-b6e5-b75cbcdb6f5e] succeeded in 1.5794613690013648s: None
+[2025-07-21 12:44:48,369: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-21 12:44:48,369: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-21T12:44:48.369514
+[2025-07-21 12:44:48,369: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:44:48,689: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:44:49,014: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[1b4a21fc-0258-4fa4-9b34-d5e8ff0bca64] succeeded in 1.553447704998689s: None
+[2025-07-21 12:44:49,180: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-21 12:44:49,180: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-21T12:44:49.180396
+[2025-07-21 12:44:49,180: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:44:54,447: INFO/MainProcess] Task apps.gallery.tasks.process_audio[92f210d6-4686-41f7-8ad9-b0ba00b92251] received
+[2025-07-21 12:44:58,145: INFO/MainProcess] Task apps.gallery.tasks.process_audio[fa7821a8-a447-43b5-81ba-661cbb860b60] received
+[2025-07-21 12:45:04,546: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[1427f548-fe97-41e7-947c-ca9877d81062] received
+[2025-07-21 12:45:08,142: INFO/MainProcess] Task apps.gallery.tasks.process_audio[95b2b30e-a694-4c57-8978-428847b3856d] received
+[2025-07-21 12:45:09,185: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[2381dda8-ae22-4aa3-9aed-9029beca867b] succeeded in 96.22692876700057s: None
+[2025-07-21 12:45:09,464: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:45:10,794: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:45:11,148: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[e65fb93b-f441-4e83-95f3-d664a9d2f59a] succeeded in 1.6846574409973982s: None
+[2025-07-21 12:45:11,479: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:45:12,703: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:45:13,050: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[92f210d6-4686-41f7-8ad9-b0ba00b92251] succeeded in 1.5714026680034294s: None
+[2025-07-21 12:45:13,214: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:45:14,344: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:45:14,553: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[1d646fd2-cafb-4818-9415-38513b8444f1] received
+[2025-07-21 12:45:14,692: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[fa7821a8-a447-43b5-81ba-661cbb860b60] succeeded in 1.478287679998175s: None
+[2025-07-21 12:45:14,875: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-21 12:45:14,875: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-21T12:45:14.875647
+[2025-07-21 12:45:14,875: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:45:18,223: INFO/MainProcess] Task apps.gallery.tasks.process_audio[b8f0bc23-c325-46b0-98c4-eeb6a9c40cc6] received
+[2025-07-21 12:45:24,545: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[37fdf8ba-0fc5-4dc2-ba5b-9c4dbe2ed4b7] received
+[2025-07-21 12:45:34,456: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a642fc41-bdb7-40fa-aec0-4c8dbe060b3f] received
+[2025-07-21 12:45:37,729: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'f7ed1dfe-7a71-4bd9-b938-572bcf9c1f29', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f7ed1dfe-7a71-4bd9-b938-572bcf9c1f29', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@029272728e5c', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-21 12:45:44,445: INFO/MainProcess] Task apps.gallery.tasks.process_audio[02ee172a-377d-4c9b-82aa-8e6ae6c76c43] received
+[2025-07-21 12:45:48,144: INFO/MainProcess] Task apps.gallery.tasks.process_audio[880d7aa2-42df-4868-bc33-53267a4ae336] received
+[2025-07-21 12:45:54,522: INFO/MainProcess] Task apps.gallery.tasks.process_audio[569b5b3c-211b-45c8-ad3b-a3e67dc12893] received
+[2025-07-21 12:46:04,448: INFO/MainProcess] Task apps.gallery.tasks.process_audio[68f0ca9a-73fc-499c-8834-b506ff3eeb3a] received
+[2025-07-21 12:46:14,449: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c88e88f1-002d-437c-92ea-5e349ad606aa] received
+[2025-07-21 12:46:18,150: INFO/MainProcess] Task apps.gallery.tasks.process_audio[8796ace8-6f99-41b5-b8d8-98c48c8fba50] received
+[2025-07-21 12:46:24,472: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a1af81d3-c82e-42fa-84fc-8d4a1abe28b8] received
+[2025-07-21 12:46:25,655: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[e0ae22ad-ced9-45de-b64a-571a432d86dd] succeeded in 98.19961288799823s: None
+[2025-07-21 12:46:25,820: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:46:26,445: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[0dfda037-30b4-4124-821f-12fdb13a693d] succeeded in 97.27087082700018s: None
+[2025-07-21 12:46:26,550: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[c4faa290-d218-4951-bfaf-5e54138109b0] succeeded in 98.18704604600134s: None
+[2025-07-21 12:46:26,614: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:26,614: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-21 12:46:26,615: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-21T12:46:26.614996
+[2025-07-21 12:46:26,615: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:46:27,125: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:46:27,488: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[95b2b30e-a694-4c57-8978-428847b3856d] succeeded in 1.6683656179993704s: None
+[2025-07-21 12:46:27,651: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-21 12:46:27,651: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-21T12:46:27.651888
+[2025-07-21 12:46:27,652: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:46:27,787: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:28,111: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[b8f0bc23-c325-46b0-98c4-eeb6a9c40cc6] succeeded in 1.4967804139996588s: None
+[2025-07-21 12:46:28,274: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:29,508: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:29,829: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[a642fc41-bdb7-40fa-aec0-4c8dbe060b3f] succeeded in 1.5548417969985167s: None
+[2025-07-21 12:46:29,992: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:31,263: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:31,592: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[02ee172a-377d-4c9b-82aa-8e6ae6c76c43] succeeded in 1.600490010001522s: None
+[2025-07-21 12:46:31,757: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:32,952: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:33,272: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[880d7aa2-42df-4868-bc33-53267a4ae336] succeeded in 1.5147172729994054s: None
+[2025-07-21 12:46:33,436: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:34,402: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '2989176f-3046-4809-bbf3-5995595fd6ad', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '2989176f-3046-4809-bbf3-5995595fd6ad', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen6@ee51c6418902', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-21 12:46:34,731: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:35,056: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[569b5b3c-211b-45c8-ad3b-a3e67dc12893] succeeded in 1.6201449510008388s: None
+[2025-07-21 12:46:35,415: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:36,605: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:36,932: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[68f0ca9a-73fc-499c-8834-b506ff3eeb3a] succeeded in 1.5164781260027667s: None
+[2025-07-21 12:46:37,096: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:38,361: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:38,681: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[c88e88f1-002d-437c-92ea-5e349ad606aa] succeeded in 1.5853887849989405s: None
+[2025-07-21 12:46:38,848: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:40,044: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:40,366: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[8796ace8-6f99-41b5-b8d8-98c48c8fba50] succeeded in 1.518362596998486s: None
+[2025-07-21 12:46:40,533: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:41,748: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:42,074: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[a1af81d3-c82e-42fa-84fc-8d4a1abe28b8] succeeded in 1.5409669430009671s: None
+[2025-07-21 12:46:44,493: INFO/MainProcess] Task apps.gallery.tasks.process_audio[f8a789c8-99bc-46a8-acb8-00b42fe9b0fd] received
+[2025-07-21 12:46:44,699: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:45,933: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:46,257: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[f8a789c8-99bc-46a8-acb8-00b42fe9b0fd] succeeded in 1.5580958649989043s: None
+[2025-07-21 12:46:48,147: INFO/MainProcess] Task apps.gallery.tasks.process_audio[4d1716dd-d099-4c15-a9a9-4a4fd5422f1b] received
+[2025-07-21 12:46:48,469: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:46:49,748: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:46:50,075: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[4d1716dd-d099-4c15-a9a9-4a4fd5422f1b] succeeded in 1.6064293349991203s: None
+[2025-07-21 12:46:53,452: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[1427f548-fe97-41e7-947c-ca9877d81062] succeeded in 98.58269955599826s: None
+[2025-07-21 12:46:54,548: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[f9bcb6c9-a62b-4f70-854b-c76a3de73918] received
+[2025-07-21 12:46:54,714: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-21 12:46:54,714: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-21T12:46:54.714721
+[2025-07-21 12:46:54,714: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:46:57,572: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[f9bd1aa2-c0f0-4590-b96b-26268263efc7] received
+[2025-07-21 12:46:57,739: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-21 12:46:57,739: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-21T12:46:57.739663
+[2025-07-21 12:46:57,739: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:47:04,443: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e6b7b311-b5bc-4dd4-8f8f-a1f92cdc1a33] received
+[2025-07-21 12:47:08,142: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2fb9cd4c-5ff8-49b4-bc40-9541e40ea820] received
+[2025-07-21 12:47:14,548: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[2a21c145-ec27-496b-a506-0b551dfa33ca] received
+[2025-07-21 12:47:24,447: INFO/MainProcess] Task apps.gallery.tasks.process_audio[818664fb-0ca8-494d-b78d-986d0988b5d2] received
+[2025-07-21 12:47:28,244: INFO/MainProcess] Task apps.gallery.tasks.process_audio[54f962f9-3972-485f-8155-e66b877b0633] received
+[2025-07-21 12:47:34,446: INFO/MainProcess] Task apps.gallery.tasks.process_audio[7a9adb30-5275-4192-be5b-29d552c1d9e9] received
+[2025-07-21 12:47:37,711: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'c019a14b-a55e-4d05-a000-253fc75abcb9', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'c019a14b-a55e-4d05-a000-253fc75abcb9', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@029272728e5c', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-21 12:47:44,763: INFO/MainProcess] Task apps.gallery.tasks.process_audio[54f7438d-6c05-48d7-985a-28c08c7f6207] received
+[2025-07-21 12:47:47,531: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[d463fc73-1ef3-48ea-acdb-fba945b6b5b0] received
+[2025-07-21 12:47:54,532: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e816da40-a229-471d-ba29-f0d04bd6a45c] received
+[2025-07-21 12:47:58,152: INFO/MainProcess] Task apps.gallery.tasks.process_audio[70d26c93-b220-4483-aac3-f5ecd66b1356] received
+[2025-07-21 12:48:00,142: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[37fdf8ba-0fc5-4dc2-ba5b-9c4dbe2ed4b7] succeeded in 92.49630432900085s: None
+[2025-07-21 12:48:00,310: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:48:01,578: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:48:01,786: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[1d646fd2-cafb-4818-9415-38513b8444f1] succeeded in 95.17725302300096s: None
+[2025-07-21 12:48:01,940: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[e6b7b311-b5bc-4dd4-8f8f-a1f92cdc1a33] succeeded in 1.630211423002038s: None
+[2025-07-21 12:48:01,953: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:48:01,954: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-21 12:48:01,954: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-21T12:48:01.954547
+[2025-07-21 12:48:01,954: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:48:03,226: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:48:03,586: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[2fb9cd4c-5ff8-49b4-bc40-9541e40ea820] succeeded in 1.6331449630015413s: None
+[2025-07-21 12:48:03,752: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:48:04,544: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[00855c14-6232-4edd-89c6-32ff27473af8] received
+[2025-07-21 12:48:04,859: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:48:05,224: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[818664fb-0ca8-494d-b78d-986d0988b5d2] succeeded in 1.473082846001489s: None
+[2025-07-21 12:48:05,387: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:48:06,591: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:48:06,954: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[54f962f9-3972-485f-8155-e66b877b0633] succeeded in 1.5677110129981884s: None
+[2025-07-21 12:48:07,121: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:48:08,413: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:48:08,780: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[7a9adb30-5275-4192-be5b-29d552c1d9e9] succeeded in 1.6591395050018036s: None
+[2025-07-21 12:48:08,945: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-21 12:48:10,228: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-21 12:48:10,593: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[54f7438d-6c05-48d7-985a-28c08c7f6207] succeeded in 1.647872991998156s: None
+[2025-07-21 12:48:10,758: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-21 12:48:10,759: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-21T12:48:10.759029
+[2025-07-21 12:48:10,759: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:48:14,444: INFO/MainProcess] Task apps.gallery.tasks.process_audio[129f1304-afe6-439b-ae49-91dffa4a50f6] received
+[2025-07-21 12:48:18,146: INFO/MainProcess] Task apps.gallery.tasks.process_audio[1d8a8ddc-c26e-41fe-a61b-5373e98e7534] received
+[2025-07-21 12:48:24,446: INFO/MainProcess] Task apps.gallery.tasks.process_audio[d748c4e0-e8e3-4e0e-8cf8-5432187572e0] received
+[2025-07-21 12:48:28,147: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e4676fba-5f45-4882-bfad-e16daf8673d0] received
+[2025-07-21 12:48:32,007: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[f9bd1aa2-c0f0-4590-b96b-26268263efc7] succeeded in 94.27431461100059s: None
+[2025-07-21 12:48:32,174: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-21 12:48:33,094: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[f9bcb6c9-a62b-4f70-854b-c76a3de73918] succeeded in 98.38652734600328s: None
+[2025-07-21 12:48:33,260: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:33,332: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-21 12:48:33,679: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[e816da40-a229-471d-ba29-f0d04bd6a45c] succeeded in 1.5054442949985969s: None
+[2025-07-21 12:48:33,929: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-21 12:48:33,929: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-21T12:48:33.929428
+[2025-07-21 12:48:33,929: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-21 12:48:34,442: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:34,451: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': 'afe6ae79-e0a5-4d6a-8197-d9bae8afef39', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'afe6ae79-e0a5-4d6a-8197-d9bae8afef39', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen6@ee51c6418902', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-07-21 12:48:34,764: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[70d26c93-b220-4483-aac3-f5ecd66b1356] succeeded in 1.5046481920035149s: None
+[2025-07-21 12:48:35,300: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:36,593: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:36,914: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[129f1304-afe6-439b-ae49-91dffa4a50f6] succeeded in 1.6132380170020042s: None
+[2025-07-21 12:48:37,076: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:38,326: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:38,646: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[1d8a8ddc-c26e-41fe-a61b-5373e98e7534] succeeded in 1.5695543860019825s: None
+[2025-07-21 12:48:38,813: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:40,085: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:40,407: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[d748c4e0-e8e3-4e0e-8cf8-5432187572e0] succeeded in 1.594546538999566s: None
+[2025-07-21 12:48:40,570: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:41,807: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:42,127: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[e4676fba-5f45-4882-bfad-e16daf8673d0] succeeded in 1.5564722240014817s: None
+[2025-07-21 12:48:44,440: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e64b3b8f-e8de-4535-8b28-a770c6fc6102] received
+[2025-07-21 12:48:44,774: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:45,933: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:46,254: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[e64b3b8f-e8de-4535-8b28-a770c6fc6102] succeeded in 1.480600636001327s: None
+[2025-07-21 12:48:54,439: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c427f6b8-cee6-46aa-9d51-b65064caff6f] received
+[2025-07-21 12:48:54,601: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:55,888: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:56,207: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[c427f6b8-cee6-46aa-9d51-b65064caff6f] succeeded in 1.6057880239968654s: None
+[2025-07-21 12:48:58,143: INFO/MainProcess] Task apps.gallery.tasks.process_audio[8188e39f-330a-49e2-8c6f-3bc4dd59565e] received
+[2025-07-21 12:48:58,306: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:48:59,652: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:48:59,982: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[8188e39f-330a-49e2-8c6f-3bc4dd59565e] succeeded in 1.6765748420002637s: None
+[2025-07-21 12:49:04,682: INFO/MainProcess] Task apps.gallery.tasks.process_audio[cc32e3ad-6ba0-42d9-b55b-328b28c66512] received
+[2025-07-21 12:49:04,846: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:49:06,138: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:49:06,457: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[cc32e3ad-6ba0-42d9-b55b-328b28c66512] succeeded in 1.6112550049983838s: None
+[2025-07-21 12:49:14,443: INFO/MainProcess] Task apps.gallery.tasks.process_audio[900b2d43-00fe-45b5-aa3d-5fc1350f1b91] received
+[2025-07-21 12:49:14,609: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:49:15,904: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:49:16,227: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[900b2d43-00fe-45b5-aa3d-5fc1350f1b91] succeeded in 1.61788898800296s: None
+[2025-07-21 12:49:18,148: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a284e6cf-0f7e-440e-a986-19100df585f5] received
+[2025-07-21 12:49:18,312: INFO/ForkPoolWorker-3] Fetching audios to process
+[2025-07-21 12:49:19,499: INFO/ForkPoolWorker-3] No audio files to process
+[2025-07-21 12:49:19,823: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.process_audio[a284e6cf-0f7e-440e-a986-19100df585f5] succeeded in 1.5116363870001805s: None

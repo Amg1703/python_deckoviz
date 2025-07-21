@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response 
-from .serializers import RegisterSerializer, UserSerializer,AddressSerializer,NewsLetterSubscriberSerializer,UserProfileSerializer, ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer, ResendVerificationSerializer
+from .serializers import RegisterSerializer, UserSerializer,AddressSerializer,NewsLetterSubscriberSerializer,UserProfileSerializer, ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer, ResendVerificationSerializer, MyTokenObtainPairSerializer
 from rest_framework import mixins,viewsets,status,generics
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from django.contrib.auth import get_user_model
@@ -14,6 +14,7 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.core.mail import send_mail
 from drf_spectacular.utils import extend_schema, OpenApiResponse
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 User = get_user_model()
 _google_sheet = None
@@ -28,6 +29,9 @@ def get_google_sheet():
             _google_sheet = None
     return _google_sheet
     
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+
 @extend_schema(
     request=RegisterSerializer,
     responses={201: OpenApiResponse(description='User registered successfully. Please verify your email.')},

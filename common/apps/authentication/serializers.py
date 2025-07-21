@@ -4,9 +4,54 @@ from .models import Address,NewsLetterSubscriber, UserProfile
 from django.contrib.auth.password_validation import validate_password
 from .models import PasswordResetToken
 from django.utils.translation import gettext_lazy as _
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
-User = get_user_model() 
+User = get_user_model()
+
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    username_field = 'email'
+
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+        # Add custom claims
+        token['username'] = user.username
+        return token
+
+    def validate(self, attrs):
+        # The default validation now uses email, but we need to ensure it's case-insensitive
+        email = attrs.get("email", "").lower()
+        password = attrs.get("password")
+
+        if not email or not password:
+            raise serializers.ValidationError("Must include 'email' and 'password'.")
+
+        try:
+            # We perform the lookup, and then let the parent class handle the rest
+            user = User.objects.get(email__iexact=email)
+        except User.DoesNotExist:
+            raise serializers.ValidationError("No user with this email was found.")
+
+        if not user.check_password(password):
+            raise serializers.ValidationError("Incorrect password.")
+
+        if not user.is_active:
+            raise serializers.ValidationError("User is inactive.")
+            
+        # Add the user to the attributes to be used by the parent class
+        attrs['user'] = user
+        # We need to pass the original email to the super().validate, not the lowercased one
+        # as the parent class does its own lookup. Let's rely on our own validation and then create the token.
+        
+        refresh = self.get_token(user)
+
+        data = {}
+        data['refresh'] = str(refresh)
+        data['access'] = str(refresh.access_token)
+
+        return data
 
 
 class RegisterSerializer(serializers.ModelSerializer):
