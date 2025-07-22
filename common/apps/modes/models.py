@@ -19,6 +19,7 @@ class Mode(BaseModel):
         ('inspiration', 'Inspiration'),
         ('dance', 'Dance'),
         ('meditation', 'Meditation'),
+        ('creative', 'Creative'),
     ]
     name = models.CharField(max_length=20, choices=MODES, unique=True)
     admin_collections = models.ManyToManyField(Collection, related_name='admin_modes', blank=True)
