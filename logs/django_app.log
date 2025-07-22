@@ -1,0 +1,21 @@
+INFO 2025-07-22 10:08:12 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 11:54:00 [django.utils.autoreload] /app/apps/utils/middleware.py changed, reloading.
+INFO 2025-07-22 11:54:10 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 12:09:00 [django.utils.autoreload] /app/deckoviz/settings.py changed, reloading.
+INFO 2025-07-22 12:09:07 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 13:54:15 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:32:09 [django.utils.autoreload] /app/apps/curations/admin.py changed, reloading.
+INFO 2025-07-22 15:32:12 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:32:20 [django.utils.autoreload] /app/apps/curations/admin.py changed, reloading.
+INFO 2025-07-22 15:32:23 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:38:46 [django.utils.autoreload] /app/apps/curations/models.py changed, reloading.
+INFO 2025-07-22 15:38:49 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:39:00 [django.utils.autoreload] /app/apps/curations/admin.py changed, reloading.
+INFO 2025-07-22 15:39:03 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:39:11 [django.utils.autoreload] /app/apps/curations/admin.py changed, reloading.
+INFO 2025-07-22 15:39:14 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:39:22 [django.utils.autoreload] /app/apps/curations/serializers.py changed, reloading.
+INFO 2025-07-22 15:39:25 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:39:41 [django.utils.autoreload] /app/apps/curations/views.py changed, reloading.
+INFO 2025-07-22 15:39:44 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-22 15:47:20 [django.utils.autoreload] Watching for file changes with StatReloader

@@ -46,6 +46,7 @@ services:
       - "8000:8000"
     volumes:
       - ./common:/app
+      - ./logs:/app/logs  # Mount logs directory
     command: ["bash", "/app/scripts.sh"]
     networks:
       - decoviz_common_default 
@@ -67,6 +68,7 @@ services:
       - decoviz_common_default
     volumes:
       - ./api:/app
+      - ./logs:/app/logs  # Mount logs directory
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/" , "||" , "exit", "1"]
       interval: 10s

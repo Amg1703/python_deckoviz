@@ -4246,3 +4246,13 @@ Configuration ->
     . db -> /app/logs/celery/celerybeat-schedule
     . logfile -> [stderr]@%INFO
     . maxinterval -> 5.00 minutes (300s)
+celery beat v5.3.1 (emerald-rush) is starting.
+__    -    ... __   -        _
+LocalTime -> 2025-07-22 10:07:08
+Configuration ->
+    . broker -> redis://default:**@168.231.112.236:6379//
+    . loader -> celery.loaders.app.AppLoader
+    . scheduler -> celery.beat.PersistentScheduler
+    . db -> /app/logs/celery/celerybeat-schedule
+    . logfile -> [stderr]@%INFO
+    . maxinterval -> 5.00 minutes (300s)

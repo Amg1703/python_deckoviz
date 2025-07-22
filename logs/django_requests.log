@@ -1,0 +1,213 @@
+REQUEST 2025-07-22 10:08:47 [INFO] START POST /auth/login/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-22 10:08:49 [INFO] END POST /auth/login/ | Status: 200 | User: anonymous | Duration: 1.783s
+REQUEST 2025-07-22 10:08:49 [INFO] "POST /auth/login/ HTTP/1.1" 200 635
+REQUEST 2025-07-22 10:10:04 [INFO] START GET /metacollections/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-22 10:10:49 [INFO] END GET /metacollections/ | Status: 200 | User: user:09f4cb67-7864-44fe-ac36-5a30b7d052d9(riyan) | Duration: 44.147s
+REQUEST 2025-07-22 10:10:49 [INFO] "GET /metacollections/ HTTP/1.1" 200 396562
+REQUEST 2025-07-22 13:51:26 [INFO] START GET /admin/?id=adab7dc9-67ad-498b-a67e-ffcf0febe517&vscodeBrowserReqId=1753192286798 | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.102.0 Chrome
+REQUEST 2025-07-22 13:51:27 [INFO] END GET /admin/?id=adab7dc9-67ad-498b-a67e-ffcf0febe517&vscodeBrowserReqId=1753192286798 | Status: 302 | User: anonymous | Duration: 0.322s
+REQUEST 2025-07-22 13:51:27 [INFO] "GET /admin/?id=adab7dc9-67ad-498b-a67e-ffcf0febe517&vscodeBrowserReqId=1753192286798 HTTP/1.1" 302 0
+REQUEST 2025-07-22 13:51:27 [INFO] START GET /admin/login/?next=/admin/%3Fid%3Dadab7dc9-67ad-498b-a67e-ffcf0febe517%26vscodeBrowserReqId%3D1753192286798 | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.102.0 Chrome
+REQUEST 2025-07-22 13:51:27 [INFO] END GET /admin/login/?next=/admin/%3Fid%3Dadab7dc9-67ad-498b-a67e-ffcf0febe517%26vscodeBrowserReqId%3D1753192286798 | Status: 200 | User: anonymous | Duration: 0.216s
+REQUEST 2025-07-22 13:51:27 [INFO] "GET /admin/login/?next=/admin/%3Fid%3Dadab7dc9-67ad-498b-a67e-ffcf0febe517%26vscodeBrowserReqId%3D1753192286798 HTTP/1.1" 200 4330
+REQUEST 2025-07-22 13:54:35 [INFO] START GET /auth | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 13:54:35 [ERROR] ERROR GET /auth | User: anonymous | Duration: 0.010s | Exception: “/app/auth” does not exist
+REQUEST 2025-07-22 13:54:36 [INFO] END GET /auth | Status: 404 | User: anonymous | Duration: 0.071s
+REQUEST 2025-07-22 13:54:36 [WARNING] Not Found: /auth
+REQUEST 2025-07-22 13:54:36 [WARNING] "GET /auth HTTP/1.1" 404 5321
+REQUEST 2025-07-22 13:54:36 [INFO] START GET /favicon.ico | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 13:54:36 [ERROR] ERROR GET /favicon.ico | User: anonymous | Duration: 0.003s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-07-22 13:54:36 [INFO] END GET /favicon.ico | Status: 404 | User: anonymous | Duration: 0.018s
+REQUEST 2025-07-22 13:54:36 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-07-22 13:54:36 [WARNING] "GET /favicon.ico HTTP/1.1" 404 5349
+REQUEST 2025-07-22 13:54:41 [INFO] START GET /admin | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 13:54:41 [ERROR] ERROR GET /admin | User: anonymous | Duration: 0.003s | Exception: “/app/admin” does not exist
+REQUEST 2025-07-22 13:54:41 [INFO] END GET /admin | Status: 404 | User: anonymous | Duration: 0.107s
+REQUEST 2025-07-22 13:54:41 [WARNING] Not Found: /admin
+REQUEST 2025-07-22 13:54:41 [WARNING] "GET /admin HTTP/1.1" 404 5325
+REQUEST 2025-07-22 13:54:43 [INFO] START GET /admin/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 13:54:44 [INFO] END GET /admin/ | Status: 302 | User: anonymous | Duration: 0.202s
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /admin/ HTTP/1.1" 302 0
+REQUEST 2025-07-22 13:54:44 [INFO] START GET /admin/login/?next=/admin/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 13:54:44 [INFO] END GET /admin/login/?next=/admin/ | Status: 200 | User: anonymous | Duration: 0.141s
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4172
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/css/login.css HTTP/1.1" 200 951
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+REQUEST 2025-07-22 13:54:44 [INFO] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+REQUEST 2025-07-22 13:55:25 [INFO] START POST /admin/login/?next=/admin/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 13:55:27 [INFO] END POST /admin/login/?next=/admin/ | Status: 200 | User: anonymous | Duration: 2.053s
+REQUEST 2025-07-22 13:55:27 [INFO] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4342
+REQUEST 2025-07-22 15:30:56 [INFO] START POST /admin/login/?next=/admin/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:30:58 [INFO] END POST /admin/login/?next=/admin/ | Status: 302 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.203s
+REQUEST 2025-07-22 15:30:59 [INFO] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+REQUEST 2025-07-22 15:31:00 [INFO] START GET /admin/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:31:00 [INFO] END GET /admin/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.529s
+REQUEST 2025-07-22 15:31:00 [INFO] "GET /admin/ HTTP/1.1" 200 36414
+REQUEST 2025-07-22 15:31:00 [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+REQUEST 2025-07-22 15:31:00 [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+REQUEST 2025-07-22 15:31:00 [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+REQUEST 2025-07-22 15:31:00 [INFO] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+REQUEST 2025-07-22 15:31:26 [INFO] START GET /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:31:26 [ERROR] ERROR GET /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.394s | Exception: 'queryset'
+REQUEST 2025-07-22 15:31:26 [ERROR] Internal Server Error: /admin/curations/curatedcollections/add/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1959, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1818, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1852, in _changeform_view
+    fieldsets = self.get_fieldsets(request, obj)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 406, in get_fieldsets
+    return [(None, {"fields": self.get_fields(request, obj)})]
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 397, in get_fields
+    form = self._get_form_for_get_fields(request, obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 788, in _get_form_for_get_fields
+    return self.get_form(request, obj, fields=None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 839, in get_form
+    return modelform_factory(self.model, **defaults)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/forms/models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/forms/models.py", line 312, in __new__
+    fields = fields_for_model(
+             ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/forms/models.py", line 241, in fields_for_model
+    formfield = formfield_callback(f, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/admin/options.py", line 185, in formfield_for_dbfield
+    formfield = self.formfield_for_manytomany(db_field, request, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/curations/admin.py", line 34, in formfield_for_manytomany
+    kwargs["queryset"] = kwargs["queryset"].filter(is_active=True, view='public')
+                         ~~~~~~^^^^^^^^^^^^
+KeyError: 'queryset'
+REQUEST 2025-07-22 15:31:26 [INFO] END GET /admin/curations/curatedcollections/add/ | Status: 500 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.448s
+REQUEST 2025-07-22 15:31:26 [ERROR] "GET /admin/curations/curatedcollections/add/ HTTP/1.1" 500 178812
+REQUEST 2025-07-22 15:32:46 [INFO] START GET /admin/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:32:46 [INFO] END GET /admin/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.705s
+REQUEST 2025-07-22 15:32:46 [INFO] "GET /admin/ HTTP/1.1" 200 36414
+REQUEST 2025-07-22 15:32:50 [INFO] START GET /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:33:03 [INFO] START GET /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:33:07 [INFO] END GET /admin/curations/curatedcollections/add/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 18.393s
+REQUEST 2025-07-22 15:33:07 [INFO] "GET /admin/curations/curatedcollections/add/ HTTP/1.1" 200 39743
+REQUEST 2025-07-22 15:33:15 [INFO] END GET /admin/curations/curatedcollections/add/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 17.858s
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /admin/curations/curatedcollections/add/ HTTP/1.1" 200 39743
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+REQUEST 2025-07-22 15:33:15 [INFO] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+REQUEST 2025-07-22 15:33:16 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:33:16 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.317s
+REQUEST 2025-07-22 15:33:16 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-22 15:33:17 [INFO] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+REQUEST 2025-07-22 15:33:17 [INFO] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+REQUEST 2025-07-22 15:33:17 [INFO] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+REQUEST 2025-07-22 15:33:17 [INFO] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+REQUEST 2025-07-22 15:36:31 [INFO] START GET /admin/curations/curatedcollections/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:36:32 [INFO] END GET /admin/curations/curatedcollections/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.966s
+REQUEST 2025-07-22 15:36:32 [INFO] "GET /admin/curations/curatedcollections/ HTTP/1.1" 200 33129
+REQUEST 2025-07-22 15:36:32 [INFO] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+REQUEST 2025-07-22 15:36:32 [INFO] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+REQUEST 2025-07-22 15:36:33 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:36:33 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.443s
+REQUEST 2025-07-22 15:36:33 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-22 15:36:33 [INFO] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+REQUEST 2025-07-22 15:37:11 [INFO] START GET /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:37:18 [INFO] END GET /admin/curations/curatedcollections/add/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 8.101s
+REQUEST 2025-07-22 15:37:18 [INFO] "GET /admin/curations/curatedcollections/add/ HTTP/1.1" 200 39743
+REQUEST 2025-07-22 15:37:19 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:37:19 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.366s
+REQUEST 2025-07-22 15:37:19 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-22 15:47:30 [INFO] START GET /admin/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:47:31 [INFO] END GET /admin/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.331s
+REQUEST 2025-07-22 15:47:31 [INFO] "GET /admin/ HTTP/1.1" 200 36414
+REQUEST 2025-07-22 15:47:37 [INFO] START GET /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:47:44 [INFO] END GET /admin/curations/curatedcollections/add/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 8.399s
+REQUEST 2025-07-22 15:47:44 [INFO] "GET /admin/curations/curatedcollections/add/ HTTP/1.1" 200 34401
+REQUEST 2025-07-22 15:47:45 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:47:45 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.322s
+REQUEST 2025-07-22 15:47:45 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-22 15:48:01 [INFO] START POST /admin/curations/curatedcollections/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:48:03 [INFO] END POST /admin/curations/curatedcollections/add/ | Status: 302 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 3.243s
+REQUEST 2025-07-22 15:48:03 [INFO] "POST /admin/curations/curatedcollections/add/ HTTP/1.1" 302 0
+REQUEST 2025-07-22 15:48:04 [INFO] START GET /admin/curations/curatedcollections/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:48:05 [INFO] END GET /admin/curations/curatedcollections/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.663s
+REQUEST 2025-07-22 15:48:05 [INFO] "GET /admin/curations/curatedcollections/ HTTP/1.1" 200 30139
+REQUEST 2025-07-22 15:48:05 [INFO] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+REQUEST 2025-07-22 15:48:05 [INFO] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+REQUEST 2025-07-22 15:48:10 [INFO] START GET /admin/curations/curatedcollections/5d5e4a99-aa68-49a4-b195-fb87424542d0/change/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:48:19 [INFO] END GET /admin/curations/curatedcollections/5d5e4a99-aa68-49a4-b195-fb87424542d0/change/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 11.577s
+REQUEST 2025-07-22 15:48:19 [INFO] "GET /admin/curations/curatedcollections/5d5e4a99-aa68-49a4-b195-fb87424542d0/change/ HTTP/1.1" 200 34639
+REQUEST 2025-07-22 15:48:20 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:48:20 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.313s
+REQUEST 2025-07-22 15:48:20 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-22 15:48:28 [INFO] START GET /admin/curations/curatedcollections/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:48:30 [INFO] END GET /admin/curations/curatedcollections/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.894s
+REQUEST 2025-07-22 15:48:30 [INFO] "GET /admin/curations/curatedcollections/ HTTP/1.1" 200 29849
+REQUEST 2025-07-22 15:49:59 [INFO] START GET /admin/curations/curatedimages/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:50:02 [INFO] END GET /admin/curations/curatedimages/add/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 4.730s
+REQUEST 2025-07-22 15:50:02 [INFO] "GET /admin/curations/curatedimages/add/ HTTP/1.1" 200 183562
+REQUEST 2025-07-22 15:50:04 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:50:04 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.371s
+REQUEST 2025-07-22 15:50:04 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-22 15:50:10 [INFO] START POST /admin/curations/curatedimages/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:50:12 [INFO] END POST /admin/curations/curatedimages/add/ | Status: 302 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.951s
+REQUEST 2025-07-22 15:50:12 [INFO] "POST /admin/curations/curatedimages/add/ HTTP/1.1" 302 0
+REQUEST 2025-07-22 15:50:13 [INFO] START GET /admin/curations/curatedimages/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-22 15:50:14 [INFO] END GET /admin/curations/curatedimages/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.741s
+REQUEST 2025-07-22 15:50:14 [INFO] "GET /admin/curations/curatedimages/ HTTP/1.1" 200 29962
+REQUEST 2025-07-22 15:50:54 [INFO] START GET /curations/all/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-22 15:53:01 [INFO] END GET /curations/all/ | Status: 200 | User: anonymous | Duration: 127.157s
+REQUEST 2025-07-22 15:53:01 [INFO] "GET /curations/all/ HTTP/1.1" 200 404998

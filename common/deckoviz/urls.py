@@ -79,6 +79,9 @@ urlpatterns = [
 
     # metaaudios api
     path('metaaudios/', include('apps.metaaudios.urls')),
+
+    # curations api
+    path('curations/', include('apps.curations.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
