@@ -41,9 +41,13 @@ class ImageSearchView(APIView):
 
         # Build base queryset
         if search_type == 'private':
-            queryset = Image.objects.filter(uploaded_by=user, metadata__isnull=False, is_active=True)
+            queryset = Image.objects.filter(
+                uploaded_by=user, metadata__isnull=False, is_active=True
+            ).select_related('uploaded_by')
         else:  # global
-            queryset = Image.objects.filter(view='public', metadata__isnull=False, is_active=True)
+            queryset = Image.objects.filter(
+                view='public', metadata__isnull=False, is_active=True
+            ).select_related('uploaded_by')
 
         results = []
         for img in queryset:
@@ -112,9 +116,13 @@ class CollectionSearchView(APIView):
 
         # Build base queryset
         if search_type == 'private':
-            queryset = Collection.objects.filter(user=user, metadata__isnull=False, is_active=True)
+            queryset = Collection.objects.filter(
+                user=user, metadata__isnull=False, is_active=True
+            ).prefetch_related('collection_images__image__uploaded_by')
         else:  # global
-            queryset = Collection.objects.filter(view='public', metadata__isnull=False, is_active=True)
+            queryset = Collection.objects.filter(
+                view='public', metadata__isnull=False, is_active=True
+            ).prefetch_related('collection_images__image__uploaded_by')
 
         results = []
         for col in queryset:

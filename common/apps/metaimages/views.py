@@ -11,7 +11,10 @@ class MetaImageView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        meta_image, created = MetaImage.objects.get_or_create(user=request.user)
+        meta_image, created = MetaImage.objects.prefetch_related(
+            'liked_images__uploaded_by',
+            'starred_images__uploaded_by'
+        ).get_or_create(user=request.user)
         serializer = MetaImageSerializer(meta_image)
         return Response(serializer.data)
 

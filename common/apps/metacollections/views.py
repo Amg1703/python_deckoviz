@@ -16,7 +16,11 @@ class MetaCollectionView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        meta_collection, created = MetaCollection.objects.get_or_create(user=request.user)
+        meta_collection, created = MetaCollection.objects.prefetch_related(
+            'favourite_collections__collection_images__image__uploaded_by',
+            'starred_collections__collection_images__image__uploaded_by',
+            'liked_collections__collection_images__image__uploaded_by'
+        ).get_or_create(user=request.user)
         serializer = MetaCollectionSerializer(meta_collection)
         return Response(serializer.data)
 

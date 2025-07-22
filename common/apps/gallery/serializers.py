@@ -188,6 +188,7 @@ class ImageSerializer(serializers.ModelSerializer):
             'view',
             'price',
             'is_active',
+            'metadata',
             'created_at',
             'updated_at'
         ]
@@ -323,6 +324,7 @@ class CollectionSerializer(serializers.ModelSerializer):
             'description',
             'tags',
             'music_title',
+            'metadata',
         ]
 
     def create(self, validated_data):
@@ -372,6 +374,9 @@ class CollectionDetailSerializer(CollectionSerializer):
                 'updated_at': ci.image.updated_at,
                 'title': get_title(ci.image),
                 'description': get_description(ci.image),
+                'metadata': ci.image.metadata,
+                'view': ci.image.view,
+                'is_active': ci.image.is_active,
             }
             for ci in collection_images
         ]
@@ -509,6 +514,8 @@ class UserRitualSerializer(serializers.ModelSerializer):
 
 class CollectionSearchSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
+    collection_images = CollectionImageSerializer(many=True, read_only=True)
+    
     class Meta:
         model = Collection
         fields = [
@@ -518,6 +525,11 @@ class CollectionSearchSerializer(serializers.ModelSerializer):
             'description',
             'tags',
             'user',
+            'collection_images',
+            'view',
+            'is_active',
+            'created_at',
+            'updated_at',
         ]
 
 class CollectionSearchInputSerializer(serializers.Serializer):

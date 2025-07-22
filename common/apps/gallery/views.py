@@ -41,7 +41,7 @@ class ImageViewSet(viewsets.ModelViewSet):
         """Filter images for current user or active shared images"""
         return Image.objects.filter(
             Q(uploaded_by=self.request.user) & Q(is_active=True)
-        )
+        ).select_related('uploaded_by')
         
     def perform_create(self, serializer):
         serializer.save(uploaded_by=self.request.user)
@@ -101,7 +101,10 @@ class CollectionViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         """Filter collections for current user"""
-        return Collection.objects.filter(user=self.request.user, is_active=True)
+        return Collection.objects.filter(
+            user=self.request.user, 
+            is_active=True
+        ).prefetch_related('collection_images__image__uploaded_by')
     
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -115,7 +118,7 @@ class CollectionViewSet(viewsets.ModelViewSet):
         public_collections = Collection.objects.filter(
             view='public',
             is_active=True
-        ).order_by('?')
+        ).prefetch_related('collection_images__image__uploaded_by').order_by('?')
         
         page = self.paginate_queryset(public_collections)
         if page is not None:
