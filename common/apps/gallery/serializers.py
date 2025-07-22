@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 class AudioSerializer(serializers.ModelSerializer):
     music_cover_url = serializers.CharField(write_only=True, required=False, allow_blank=True)
+    audio_url = serializers.CharField(write_only=True, required=False, allow_blank=True)
 
     class Meta:
         model = Audio
@@ -32,6 +33,7 @@ class AudioSerializer(serializers.ModelSerializer):
             'updated_at',
             'music_cover',
             'music_cover_url',
+            'audio_url',
         ]
         read_only_fields = [
             'id', 
@@ -41,14 +43,68 @@ class AudioSerializer(serializers.ModelSerializer):
         ]
     
     def create(self, validated_data):
-        user = self.context['request'].user 
-        validated_data['uploaded_by'] = user
+        try:
+            user = self.context['request'].user 
+            validated_data['uploaded_by'] = user
+            
+            # Handle audio_url field
+            audio_url = validated_data.pop('audio_url', None)
+            audio_file = validated_data.get('audio', None)
+            
+            # Handle music_cover_url field
+            music_cover_url = validated_data.pop('music_cover_url', None)
+            music_cover_file = validated_data.get('music_cover', None)
+            if not music_cover_file and music_cover_url:
+                if 's3.amazonaws.com' in music_cover_url or music_cover_url.startswith('https://s3.') or 'amazonaws.com' in music_cover_url:
+                    validated_data['music_cover'] = music_cover_url
+                else:
+                    try:
+                        response = requests.get(music_cover_url)
+                        response.raise_for_status()
+                        file_name = os.path.basename(music_cover_url.split('?')[0]) or 'music_cover.jpg'
+                        validated_data['music_cover'] = ContentFile(response.content, name=file_name)
+                    except Exception as e:
+                        logger.error(f"Failed to download music cover from {music_cover_url}: {str(e)}")
+                        raise serializers.ValidationError({'music_cover_url': f'Failed to download image: {str(e)}'})
+            
+            # Create the audio instance first
+            if not audio_file and audio_url:
+                # For S3 URLs, create the instance without the audio field first
+                if 's3.amazonaws.com' in audio_url or audio_url.startswith('https://s3.') or 'amazonaws.com' in audio_url:
+                    audio_instance = super().create(validated_data)
+                    # Then directly set the audio field to the URL
+                    logger.info(f"Setting audio field to: {audio_url}")
+                    audio_instance.audio = audio_url
+                    audio_instance.save(update_fields=['audio'])
+                    logger.info(f"After save, audio field contains: {audio_instance.audio}")
+                    return audio_instance
+                else:
+                    # For other URLs, download and save the file
+                    try:
+                        response = requests.get(audio_url)
+                        response.raise_for_status()
+                        file_name = os.path.basename(audio_url.split('?')[0]) or 'audio_file.mp3'
+                        validated_data['audio'] = ContentFile(response.content, name=file_name)
+                    except Exception as e:
+                        logger.error(f"Failed to download audio from {audio_url}: {str(e)}")
+                        raise serializers.ValidationError({'audio_url': f'Failed to download audio: {str(e)}'})
+            
+            # If file is uploaded or no URL provided, Django handles it via the model field
+            return super().create(validated_data)
+        except Exception as e:
+            logger.error(f"Error creating audio: {str(e)}")
+            raise serializers.ValidationError({'detail': f'Error creating audio: {str(e)}'})
+    
+    def update(self, instance, validated_data):
+        # Handle audio_url field for updates
+        audio_url = validated_data.pop('audio_url', None)
+        audio_file = validated_data.get('audio', None)
+        
+        # Handle music_cover_url field for updates
         music_cover_url = validated_data.pop('music_cover_url', None)
         music_cover_file = validated_data.get('music_cover', None)
-        from django.core.files.base import ContentFile
-        import requests, os
         if not music_cover_file and music_cover_url:
-            if 's3.amazonaws.com' in music_cover_url or music_cover_url.startswith('https://s3.'):
+            if 's3.amazonaws.com' in music_cover_url or music_cover_url.startswith('https://s3.') or 'amazonaws.com' in music_cover_url:
                 validated_data['music_cover'] = music_cover_url
             else:
                 try:
@@ -58,8 +114,55 @@ class AudioSerializer(serializers.ModelSerializer):
                     validated_data['music_cover'] = ContentFile(response.content, name=file_name)
                 except Exception as e:
                     raise serializers.ValidationError({'music_cover_url': f'Failed to download image: {str(e)}'})
-        # If file is uploaded, Django handles it via the model field
-        return super().create(validated_data)
+        
+        # Update the instance
+        if not audio_file and audio_url:
+            # For S3 URLs, update without going through FileField validation
+            if 's3.amazonaws.com' in audio_url or audio_url.startswith('https://s3.') or 'amazonaws.com' in audio_url:
+                updated_instance = super().update(instance, validated_data)
+                updated_instance.audio = audio_url
+                updated_instance.save(update_fields=['audio'])
+                return updated_instance
+            else:
+                # For other URLs, download and save the file
+                try:
+                    response = requests.get(audio_url)
+                    response.raise_for_status()
+                    file_name = os.path.basename(audio_url.split('?')[0]) or 'audio_file.mp3'
+                    validated_data['audio'] = ContentFile(response.content, name=file_name)
+                except Exception as e:
+                    raise serializers.ValidationError({'audio_url': f'Failed to download audio: {str(e)}'})
+        
+        return super().update(instance, validated_data)
+    
+    def to_representation(self, instance):
+        """Custom representation to handle S3 URLs properly"""
+        data = super().to_representation(instance)
+        
+        # Handle audio field - if it's an S3 URL, return it directly
+        if instance.audio:
+            audio_value = str(instance.audio)
+            logger.info(f"Audio field raw value: {audio_value}")
+            logger.info(f"Audio field .url value: {getattr(instance.audio, 'url', 'NO URL ATTR')}")
+            
+            if 'amazonaws.com' in audio_value and audio_value.startswith('http'):
+                # It's already a full URL, use it directly
+                data['audio'] = audio_value
+                logger.info(f"Using direct URL: {audio_value}")
+            elif instance.audio:
+                # It's a file path, get the URL through storage
+                data['audio'] = instance.audio.url
+                logger.info(f"Using storage URL: {instance.audio.url}")
+        
+        # Handle music_cover field similarly
+        if instance.music_cover:
+            cover_value = str(instance.music_cover)
+            if 'amazonaws.com' in cover_value and cover_value.startswith('http'):
+                data['music_cover'] = cover_value
+            elif instance.music_cover:
+                data['music_cover'] = instance.music_cover.url
+                
+        return data
 
 class ImageSerializer(serializers.ModelSerializer):
     price = PriceSerializer(read_only=True)

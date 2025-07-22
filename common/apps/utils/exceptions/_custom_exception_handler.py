@@ -10,23 +10,20 @@ def custom_exception_handler(exc, context):
     
     # Handle ValidationError
     if isinstance(exc, ValidationError):
-        error_message = None
+        error_details = {}
         
-        # Get the first error message from the ValidationError
+        # Get detailed error information from the ValidationError
         if hasattr(exc, 'detail') and exc.detail:
             if isinstance(exc.detail, dict):
-                # Handle field-specific errors
-                if 'non_field_errors' in exc.detail:
-                    error_message = exc.detail['non_field_errors'][0]
-                else:
-                    # Get the first error from the first field
-                    first_field = next(iter(exc.detail))
-                    error_message = exc.detail[first_field][0]
+                # Handle field-specific errors - return full details
+                error_details = exc.detail
             elif isinstance(exc.detail, list):
-                error_message = exc.detail[0]
+                error_details = {"errors": exc.detail}
+            else:
+                error_details = {"error": str(exc.detail)}
         
         return Response(
-            {"error": str(error_message or "Validation error")},
+            error_details,
             status=status.HTTP_400_BAD_REQUEST
         )
     
@@ -35,12 +32,19 @@ def custom_exception_handler(exc, context):
         error_msg = str(exc).lower()
         if 'duplicate key value' in error_msg:
             return Response(
-                {"error": "This item already exists."},
+                {"error": "This item already exists.", "detail": str(exc)},
                 status=status.HTTP_400_BAD_REQUEST
             )
         return Response(
-            {"error": "A database error occurred."},
+            {"error": "A database error occurred.", "detail": str(exc)},
             status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    # Handle any other exceptions with full detail
+    if response is None:
+        return Response(
+            {"error": "An unexpected error occurred.", "detail": str(exc)},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
     # For other exceptions, use DRF's default response format

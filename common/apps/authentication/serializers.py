@@ -21,18 +21,25 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         return token
 
     def validate(self, attrs):
-        # The default validation now uses email, but we need to ensure it's case-insensitive
         email = attrs.get("email", "").lower()
         password = attrs.get("password")
 
         if not email or not password:
             raise serializers.ValidationError("Must include 'email' and 'password'.")
 
-        try:
-            # We perform the lookup, and then let the parent class handle the rest
-            user = User.objects.get(email__iexact=email)
-        except User.DoesNotExist:
+        # Check for duplicate users with case-insensitive emails
+        users = User.objects.filter(email__iexact=email)
+        
+        if users.count() > 1:
+            raise serializers.ValidationError(
+                "Duplicate accounts found for this email address. "
+                "Please contact support to merge your accounts."
+            )
+        
+        if not users.exists():
             raise serializers.ValidationError("No user with this email was found.")
+
+        user = users.first()
 
         if not user.check_password(password):
             raise serializers.ValidationError("Incorrect password.")
@@ -40,10 +47,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         if not user.is_active:
             raise serializers.ValidationError("User is inactive.")
             
-        # Add the user to the attributes to be used by the parent class
         attrs['user'] = user
-        # We need to pass the original email to the super().validate, not the lowercased one
-        # as the parent class does its own lookup. Let's rely on our own validation and then create the token.
         
         refresh = self.get_token(user)
 

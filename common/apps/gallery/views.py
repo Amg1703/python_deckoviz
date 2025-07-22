@@ -27,9 +27,6 @@ class AudioViewSet(viewsets.ModelViewSet):
         return Audio.objects.filter(
             Q(uploaded_by=self.request.user) & Q(is_active=True)
         )
-        
-    def perform_create(self, serializer):
-        serializer.save(uploaded_by=self.request.user)
 
 
 class ImageViewSet(viewsets.ModelViewSet):
