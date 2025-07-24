@@ -211,3 +211,9 @@ REQUEST 2025-07-22 15:50:14 [INFO] "GET /admin/curations/curatedimages/ HTTP/1.1
 REQUEST 2025-07-22 15:50:54 [INFO] START GET /curations/all/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-22 15:53:01 [INFO] END GET /curations/all/ | Status: 200 | User: anonymous | Duration: 127.157s
 REQUEST 2025-07-22 15:53:01 [INFO] "GET /curations/all/ HTTP/1.1" 200 404998
+REQUEST 2025-07-24 10:15:27 [INFO] START PUT /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 10:15:30 [INFO] END PUT /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 2.802s
+REQUEST 2025-07-24 10:15:30 [INFO] "PUT /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/ HTTP/1.1" 200 77
+REQUEST 2025-07-24 10:21:04 [INFO] START DELETE /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/audio/4c8e2c9e-3eb0-4519-bf2f-359566d50064/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 10:21:06 [INFO] END DELETE /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/audio/4c8e2c9e-3eb0-4519-bf2f-359566d50064/ | Status: 204 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 2.128s
+REQUEST 2025-07-24 10:21:06 [INFO] "DELETE /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/audio/4c8e2c9e-3eb0-4519-bf2f-359566d50064/ HTTP/1.1" 204 0

@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Mode, UserMode, Session, Music
-from apps.gallery.models import Collection
+from apps.gallery.models import Collection, Audio
 from .serializers import ModeSerializer, UserModeSerializer, SessionSerializer, UserModeUpdateSerializer
 from django.shortcuts import get_object_or_404
 
@@ -48,13 +48,20 @@ class UserModeCollectionRemoveView(APIView):
             return Response({"detail": "Collection not found in this mode for the user."}, status=status.HTTP_404_NOT_FOUND)
 
 class UserModeMusicRemoveView(APIView):
+    """
+    Delete specific audio/music from a user's mode.
+    Note: This view handles Audio objects, not Music objects, since the UserMode.user_music 
+    field references Audio from the gallery app, which is what gets added via PUT requests.
+    """
     permission_classes = [permissions.IsAuthenticated]
 
-    def delete(self, request, mode_id, music_id):
+    def delete(self, request, mode_id, audio_id=None, music_id=None):
         user_mode = get_object_or_404(UserMode, user=request.user, mode_id=mode_id)
-        music = get_object_or_404(Music, id=music_id)
-        if music in user_mode.user_music.all():
-            user_mode.user_music.remove(music)
+        # Support both audio_id and music_id for backward compatibility
+        item_id = audio_id or music_id
+        audio = get_object_or_404(Audio, id=item_id)
+        if audio in user_mode.user_music.all():
+            user_mode.user_music.remove(audio)
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return Response({"detail": "Music not found in this mode for the user."}, status=status.HTTP_404_NOT_FOUND)
