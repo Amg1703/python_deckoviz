@@ -14,13 +14,14 @@ Pipfile.lock
 *.pyc
 
 # Ignore log files
-# *.log
+*.log
+logs/
+*.log.*
 
 # Ignore environment-specific files
 .env
 .env.*
 *.pem
-# logs/
 
 # Celery Logs & Beat
 celerybeat-schedule

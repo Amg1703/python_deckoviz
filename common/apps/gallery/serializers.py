@@ -552,3 +552,16 @@ class CollectionSearchInputSerializer(serializers.Serializer):
         required=False,
         help_text="Search scope: 'private' for user collections, 'global' for public collections. Default is 'global'."
     )
+
+
+class AudioSearchInputSerializer(serializers.Serializer):
+    search_text = serializers.CharField(
+        required=True,
+        help_text="Text to search in track title, description, genre, and transcript content."
+    )
+    search_type = serializers.ChoiceField(
+        choices=['private', 'global'],
+        required=False,
+        default='global',
+        help_text="Search scope: 'private' for user's uploaded audios, 'global' for public audios. Default is 'global'."
+    )

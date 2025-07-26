@@ -678,3 +678,30 @@ REQUEST 2025-07-26 17:54:04 [WARNING] "POST /gallery/collections/ HTTP/1.1" 400 
 REQUEST 2025-07-26 18:13:50 [INFO] START POST /gallery/collections/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-26 18:13:51 [INFO] END POST /gallery/collections/ | Status: 201 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.518s
 REQUEST 2025-07-26 18:13:51 [INFO] "POST /gallery/collections/ HTTP/1.1" 201 397
+REQUEST 2025-07-26 18:50:44 [INFO] START GET /gallery/audios/public-audios/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 18:50:46 [INFO] END GET /gallery/audios/public-audios/ | Status: 200 | User: anonymous | Duration: 1.427s
+REQUEST 2025-07-26 18:50:46 [INFO] "GET /gallery/audios/public-audios/ HTTP/1.1" 200 52
+REQUEST 2025-07-26 18:55:13 [INFO] START GET /gallery/audios/public-audios/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 18:55:15 [INFO] END GET /gallery/audios/public-audios/ | Status: 200 | User: anonymous | Duration: 2.267s
+REQUEST 2025-07-26 18:55:15 [INFO] "GET /gallery/audios/public-audios/ HTTP/1.1" 200 717
+REQUEST 2025-07-26 18:58:14 [INFO] START GET /gallery/audios/public-audios/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 18:58:18 [INFO] END GET /gallery/audios/public-audios/ | Status: 200 | User: anonymous | Duration: 4.008s
+REQUEST 2025-07-26 18:58:18 [INFO] "GET /gallery/audios/public-audios/ HTTP/1.1" 200 1361
+REQUEST 2025-07-26 19:03:45 [INFO] START POST /gallery/audios/search/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 19:03:48 [INFO] END POST /gallery/audios/search/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 2.778s
+REQUEST 2025-07-26 19:03:48 [INFO] "POST /gallery/audios/search/ HTTP/1.1" 200 695
+REQUEST 2025-07-26 19:04:44 [INFO] START POST /gallery/audios/search/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 19:04:45 [INFO] END POST /gallery/audios/search/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.411s
+REQUEST 2025-07-26 19:04:45 [INFO] "POST /gallery/audios/search/ HTTP/1.1" 200 52
+REQUEST 2025-07-26 19:04:51 [INFO] START POST /gallery/audios/search/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 19:04:58 [INFO] END POST /gallery/audios/search/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 6.661s
+REQUEST 2025-07-26 19:04:58 [INFO] "POST /gallery/audios/search/ HTTP/1.1" 200 580
+REQUEST 2025-07-26 19:09:27 [INFO] START POST /gallery/audios/search/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 19:09:29 [INFO] END POST /gallery/audios/search/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.796s
+REQUEST 2025-07-26 19:09:29 [INFO] "POST /gallery/audios/search/ HTTP/1.1" 200 580
+REQUEST 2025-07-26 19:09:42 [INFO] START GET /gallery/audios/public-audios/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 19:09:43 [INFO] END GET /gallery/audios/public-audios/ | Status: 200 | User: anonymous | Duration: 1.354s
+REQUEST 2025-07-26 19:09:43 [INFO] "GET /gallery/audios/public-audios/ HTTP/1.1" 200 1361
+REQUEST 2025-07-26 19:09:57 [INFO] START POST /gallery/audios/search/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 19:09:59 [INFO] END POST /gallery/audios/search/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.374s
+REQUEST 2025-07-26 19:09:59 [INFO] "POST /gallery/audios/search/ HTTP/1.1" 200 695

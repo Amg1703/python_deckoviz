@@ -203,3 +203,55 @@ INFO 2025-07-26 18:11:28 [django.utils.autoreload] Watching for file changes wit
 INFO 2025-07-26 18:11:37 [django.utils.autoreload] /app/apps/dashboard/views.py changed, reloading.
 INFO 2025-07-26 18:11:41 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-26 18:14:06 [django.utils.autoreload] /app/apps/dashboard/forms.py changed, reloading.
+INFO 2025-07-26 18:14:09 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 18:45:45 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 18:45:49 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 18:55:15 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 18:55:15 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 18:55:15 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 18:58:18 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 18:58:18 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 18:58:18 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 18:58:18 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 18:58:18 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 18:58:18 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:00:36 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:00:39 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:01:02 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:01:05 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:01:14 [django.utils.autoreload] /app/apps/gallery/urls.py changed, reloading.
+INFO 2025-07-26 19:01:17 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:01:23 [django.utils.autoreload] /app/apps/gallery/urls.py changed, reloading.
+INFO 2025-07-26 19:01:26 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:03:48 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:03:48 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:03:48 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:04:58 [apps.gallery.serializers] Audio field raw value: audios/ae3a7351-095d-4cae-ac04-123330f95c95/sunflower-street-drumloop-85bpm-163900.mp3
+INFO 2025-07-26 19:04:58 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/ae3a7351-095d-4cae-ac04-123330f95c95/sunflower-street-drumloop-85bpm-163900.mp3
+INFO 2025-07-26 19:04:58 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/ae3a7351-095d-4cae-ac04-123330f95c95/sunflower-street-drumloop-85bpm-163900.mp3
+INFO 2025-07-26 19:05:08 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:05:11 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:07:21 [django.utils.autoreload] /app/apps/gallery/serializers.py changed, reloading.
+INFO 2025-07-26 19:07:24 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:07:30 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:07:33 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:07:38 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:07:41 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:07:48 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:07:51 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:08:04 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:08:07 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:08:18 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:08:21 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:09:29 [apps.gallery.serializers] Audio field raw value: audios/ae3a7351-095d-4cae-ac04-123330f95c95/sunflower-street-drumloop-85bpm-163900.mp3
+INFO 2025-07-26 19:09:29 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/ae3a7351-095d-4cae-ac04-123330f95c95/sunflower-street-drumloop-85bpm-163900.mp3
+INFO 2025-07-26 19:09:29 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/ae3a7351-095d-4cae-ac04-123330f95c95/sunflower-street-drumloop-85bpm-163900.mp3
+INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:09:59 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:09:59 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:09:59 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3

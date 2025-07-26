@@ -12,6 +12,7 @@ import requests
 import json
 import time
 import random
+from drf_spectacular.utils import extend_schema
 from .collection_meta_generator import aggregate_collection_metadata
 
 class AudioViewSet(viewsets.ModelViewSet):
@@ -27,6 +28,42 @@ class AudioViewSet(viewsets.ModelViewSet):
         return Audio.objects.filter(
             Q(uploaded_by=self.request.user) & Q(is_active=True)
         )
+
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny], url_path='public-audios')
+    @extend_schema(
+        responses=AudioSerializer(many=True),
+        description="Retrieve all public audio files in random order. "
+                    "This endpoint is accessible without authentication.",
+        summary="Get Public Audio Files",
+        tags=["Audio"],
+        parameters=[
+            {
+                "name": "page",
+                "in": "query",
+                "description": "Page number for pagination",
+                "required": False,
+                "schema": {"type": "integer", "minimum": 1}
+            },
+            {
+                "name": "page_size",
+                "in": "query", 
+                "description": "Number of items per page",
+                "required": False,
+                "schema": {"type": "integer", "minimum": 1, "maximum": 100}
+            }
+        ]
+    )
+    def public_audios(self, request):
+        """
+        Returns all public audios in random order by using .order_by('?').
+        """
+        queryset = Audio.objects.filter(view='public', is_active=True).order_by('?')
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 class ImageViewSet(viewsets.ModelViewSet):

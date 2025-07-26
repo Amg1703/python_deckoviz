@@ -1,8 +1,8 @@
 from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
-from .models import Image, Collection
-from .serializers import ImageSearchSerializer, CollectionSearchSerializer, CollectionSearchInputSerializer
+from .models import Image, Collection, Audio
+from .serializers import ImageSearchSerializer, CollectionSearchSerializer, CollectionSearchInputSerializer, AudioSerializer, AudioSearchInputSerializer
 from django.db.models import Q
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -161,4 +161,110 @@ class CollectionSearchView(APIView):
         paginator = self.pagination_class()
         page = paginator.paginate_queryset(collections, request)
         serializer = CollectionSearchSerializer(page, many=True)
+        return paginator.get_paginated_response(serializer.data)
+
+
+class AudioSearchPagination(PageNumberPagination):
+    page_size = 20
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
+
+class AudioSearchView(APIView):
+    permission_classes = [IsAuthenticated]
+    pagination_class = AudioSearchPagination
+
+    @extend_schema(
+        request=AudioSearchInputSerializer,
+        responses=AudioSerializer(many=True),
+        description="Search audios by track title, description, genre, and transcript content. "
+                    "Returns paginated results ranked by relevance score.",
+        summary="Search Audio Files",
+        tags=["Audio Search"],
+        examples=[
+            {
+                "name": "Search Public Audios",
+                "description": "Search for jazz music in public audios",
+                "value": {
+                    "search_text": "jazz music",
+                    "search_type": "global"
+                }
+            },
+            {
+                "name": "Search Private Audios",
+                "description": "Search user's own uploaded audios",
+                "value": {
+                    "search_text": "my recording",
+                    "search_type": "private"
+                }
+            }
+        ]
+    )
+    def post(self, request):
+        serializer = AudioSearchInputSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+        search_text = serializer.validated_data['search_text']
+        search_type = serializer.validated_data.get('search_type', 'global')
+        user = request.user
+
+        keywords = extract_keywords(search_text)
+
+        # Build base queryset
+        if search_type == 'private':
+            queryset = Audio.objects.filter(
+                uploaded_by=user, is_active=True
+            ).select_related('uploaded_by')
+        else:  # global (public)
+            queryset = Audio.objects.filter(
+                view='public', is_active=True
+            ).select_related('uploaded_by')
+
+        results = []
+        for audio in queryset:
+            score = 0
+            
+            # Score track title (highest priority)
+            track_title = (audio.track_title or '').lower()
+            for keyword in keywords:
+                if keyword in track_title:
+                    score += 10
+            
+            # Score genre
+            genre = (audio.genre or '').lower()
+            for keyword in keywords:
+                if keyword in genre:
+                    score += 8
+            
+            # Score description
+            description = (audio.description or '').lower()
+            for keyword in keywords:
+                if keyword in description:
+                    score += 5
+            
+            # Score transcript content
+            transcript = (audio.transcript or '').lower()
+            for keyword in keywords:
+                if keyword in transcript:
+                    score += 3
+            
+            # Score transcript summary
+            transcript_summary = (audio.transcript_summary or '').lower()
+            for keyword in keywords:
+                if keyword in transcript_summary:
+                    score += 4
+            
+            # Include all results if no specific keywords or if there's a match
+            if score > 0 or not keywords:
+                results.append((score, audio))
+
+        # Sort by score descending, then by creation date
+        results.sort(key=lambda x: (x[0], x[1].created_at), reverse=True)
+        audios = [audio for score, audio in results]
+
+        # Paginate
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(audios, request)
+        serializer = AudioSerializer(page, many=True)
         return paginator.get_paginated_response(serializer.data) 
