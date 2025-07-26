@@ -637,3 +637,37 @@ REQUEST 2025-07-26 16:00:01 [INFO] "POST /api/analytics/internal/complete-usage/
 REQUEST 2025-07-26 16:00:22 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-26 16:00:28 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 5.363s
 REQUEST 2025-07-26 16:00:28 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 19729
+REQUEST 2025-07-26 16:13:41 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 16:13:44 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.804s
+REQUEST 2025-07-26 16:13:44 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 19729
+REQUEST 2025-07-26 16:13:55 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:14:00 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 4.023s
+REQUEST 2025-07-26 16:14:00 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 16:14:06 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:14:08 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 500 | User: anonymous | Duration: 1.286s
+REQUEST 2025-07-26 16:14:08 [ERROR] Internal Server Error: /api/analytics/internal/complete-usage/
+REQUEST 2025-07-26 16:14:08 [ERROR] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 500 148
+REQUEST 2025-07-26 16:14:12 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 16:14:16 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.566s
+REQUEST 2025-07-26 16:14:16 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 19775
+REQUEST 2025-07-26 16:49:05 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:49:08 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.922s
+REQUEST 2025-07-26 16:49:08 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 16:49:20 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:49:24 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 3.838s
+REQUEST 2025-07-26 16:49:24 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 16:49:33 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 16:49:38 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 4.647s
+REQUEST 2025-07-26 16:49:38 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 20165
+REQUEST 2025-07-26 16:54:56 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 16:55:00 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.743s
+REQUEST 2025-07-26 16:55:00 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 20165
+REQUEST 2025-07-26 16:55:10 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:55:13 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.295s
+REQUEST 2025-07-26 16:55:13 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 16:55:20 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:55:23 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.694s
+REQUEST 2025-07-26 16:55:23 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 16:55:28 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 16:55:32 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.538s
+REQUEST 2025-07-26 16:55:32 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 20128

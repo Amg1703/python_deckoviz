@@ -100,6 +100,7 @@ def complete_usage_tracking(request):
         success = FeatureUsageTracker.complete_feature_usage(
             usage_record=usage_record,
             output_data=data.get('output_data'),
+            response_body=data.get('response_body'),
             processing_time=data.get('processing_time'),
             status=data.get('status', 'completed')
         )

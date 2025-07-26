@@ -152,3 +152,29 @@ INFO 2025-07-26 15:59:29 [apps.analytics.services] Started feature usage trackin
 INFO 2025-07-26 16:00:01 [apps.analytics.services] Completed feature usage: usage_id=a3487785-8bc6-40a4-ae47-45609cc25a70, status=completed
 INFO 2025-07-26 16:06:04 [django.utils.autoreload] /app/apps/analytics/apps.py changed, reloading.
 INFO 2025-07-26 16:06:09 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:09:23 [django.utils.autoreload] /app/apps/analytics/views.py changed, reloading.
+INFO 2025-07-26 16:09:26 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:12:40 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:13:59 [apps.credits.services] Free usage for image_editing, user: Devian
+INFO 2025-07-26 16:13:59 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=reimagine_art, credits=0, usage_id=feb8104a-0a72-48b3-8248-107831472e97
+ERROR 2025-07-26 16:14:08 [apps.analytics.views] Error in complete_usage_tracking: FeatureUsageTracker.complete_feature_usage() got an unexpected keyword argument 'response_body'
+INFO 2025-07-26 16:43:35 [django.utils.autoreload] /app/apps/analytics/views.py changed, reloading.
+INFO 2025-07-26 16:43:38 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:44:22 [django.utils.autoreload] /app/apps/analytics/services.py changed, reloading.
+INFO 2025-07-26 16:44:25 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:44:35 [django.utils.autoreload] /app/apps/analytics/views.py changed, reloading.
+INFO 2025-07-26 16:44:38 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:44:47 [django.utils.autoreload] /app/apps/analytics/serializers.py changed, reloading.
+INFO 2025-07-26 16:44:50 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:49:07 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 16:49:08 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=befbcd3a-dfcb-4cea-9478-dc8d4b38e84c
+INFO 2025-07-26 16:49:24 [apps.analytics.services] Completed feature usage: usage_id=befbcd3a-dfcb-4cea-9478-dc8d4b38e84c, status=completed
+INFO 2025-07-26 16:51:51 [django.utils.autoreload] /app/apps/analytics/services.py changed, reloading.
+INFO 2025-07-26 16:51:54 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:52:24 [django.utils.autoreload] /app/apps/analytics/services.py changed, reloading.
+INFO 2025-07-26 16:52:27 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 16:55:12 [apps.credits.services] Free usage for image_editing, user: Devian
+INFO 2025-07-26 16:55:13 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=reimagine_art, credits=0, usage_id=c99cb527-1f54-447a-ab6b-b96554927929
+INFO 2025-07-26 16:55:23 [apps.analytics.services] Completed feature usage: usage_id=c99cb527-1f54-447a-ab6b-b96554927929, status=completed
+INFO 2025-07-26 16:55:51 [django.utils.autoreload] /app/apps/analytics/serializers.py changed, reloading.
+INFO 2025-07-26 16:55:55 [django.utils.autoreload] Watching for file changes with StatReloader

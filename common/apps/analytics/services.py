@@ -171,12 +171,22 @@ class FeatureUsageTracker:
     def complete_feature_usage(
         usage_record: FeatureUsage,
         output_data: Dict[str, Any] = None,
+        response_body: Dict[str, Any] = None,
         processing_time: float = None,
         status: str = 'completed'
     ) -> bool:
         """Complete feature usage tracking"""
         try:
             usage_record.status = status
+            
+            # Store metadata in output_data
+            if output_data is None:
+                output_data = {}
+            
+            # Store the actual API response separately in output_data under response_body
+            if response_body is not None:
+                output_data['response_body'] = response_body
+            
             usage_record.output_data = output_data
             usage_record.processing_time = processing_time
             usage_record.save()

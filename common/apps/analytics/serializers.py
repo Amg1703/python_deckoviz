@@ -122,6 +122,7 @@ class UsageTrackingCompleteSerializer(serializers.Serializer):
     """Serializer for completing usage tracking"""
     usage_id = serializers.UUIDField()
     output_data = serializers.JSONField(required=False, allow_null=True)
+    response_body = serializers.JSONField(required=False, allow_null=True)
     processing_time = serializers.FloatField(required=False, allow_null=True)
     status = serializers.ChoiceField(
         choices=['completed', 'failed'], 
