@@ -30,32 +30,14 @@ class AudioViewSet(viewsets.ModelViewSet):
         )
 
     @action(detail=False, methods=['get'], permission_classes=[AllowAny], url_path='public-audios')
-    @extend_schema(
-        responses=AudioSerializer(many=True),
-        description="Retrieve all public audio files in random order. "
-                    "This endpoint is accessible without authentication.",
-        summary="Get Public Audio Files",
-        tags=["Audio"],
-        parameters=[
-            {
-                "name": "page",
-                "in": "query",
-                "description": "Page number for pagination",
-                "required": False,
-                "schema": {"type": "integer", "minimum": 1}
-            },
-            {
-                "name": "page_size",
-                "in": "query", 
-                "description": "Number of items per page",
-                "required": False,
-                "schema": {"type": "integer", "minimum": 1, "maximum": 100}
-            }
-        ]
-    )
+    # @extend_schema(
+    #     description="Retrieve all public audio files in random order.",
+    #     summary="Get Public Audio Files"
+    # )
     def public_audios(self, request):
         """
-        Returns all public audios in random order by using .order_by('?').
+        Returns all public audios in random order.
+        No authentication required. Supports pagination.
         """
         queryset = Audio.objects.filter(view='public', is_active=True).order_by('?')
         page = self.paginate_queryset(queryset)

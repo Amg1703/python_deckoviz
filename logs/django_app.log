@@ -255,3 +255,29 @@ INFO 2025-07-26 19:09:43 [apps.gallery.serializers] Using storage URL: https://d
 INFO 2025-07-26 19:09:59 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
 INFO 2025-07-26 19:09:59 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
 INFO 2025-07-26 19:09:59 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-07-26 19:17:42 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:17:45 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:17:56 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:17:59 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:19:05 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:19:09 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:19:15 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:19:18 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:19:24 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:19:27 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:19:42 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:19:45 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:21:20 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:21:23 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:21:35 [django.utils.autoreload] /app/apps/gallery/serializers.py changed, reloading.
+INFO 2025-07-26 19:21:38 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:21:54 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:21:57 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:22:02 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:22:06 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:22:11 [django.utils.autoreload] /app/apps/gallery/search_views.py changed, reloading.
+INFO 2025-07-26 19:22:14 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:22:20 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:22:24 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 19:23:21 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
+INFO 2025-07-26 19:23:24 [django.utils.autoreload] Watching for file changes with StatReloader

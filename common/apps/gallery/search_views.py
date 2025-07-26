@@ -2,7 +2,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from .models import Image, Collection, Audio
-from .serializers import ImageSearchSerializer, CollectionSearchSerializer, CollectionSearchInputSerializer, AudioSerializer, AudioSearchInputSerializer
+from .serializers import ImageSearchSerializer, CollectionSearchSerializer, CollectionSearchInputSerializer, AudioSerializer
 from django.db.models import Q
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -174,40 +174,24 @@ class AudioSearchView(APIView):
     permission_classes = [IsAuthenticated]
     pagination_class = AudioSearchPagination
 
-    @extend_schema(
-        request=AudioSearchInputSerializer,
-        responses=AudioSerializer(many=True),
-        description="Search audios by track title, description, genre, and transcript content. "
-                    "Returns paginated results ranked by relevance score.",
-        summary="Search Audio Files",
-        tags=["Audio Search"],
-        examples=[
-            {
-                "name": "Search Public Audios",
-                "description": "Search for jazz music in public audios",
-                "value": {
-                    "search_text": "jazz music",
-                    "search_type": "global"
-                }
-            },
-            {
-                "name": "Search Private Audios",
-                "description": "Search user's own uploaded audios",
-                "value": {
-                    "search_text": "my recording",
-                    "search_type": "private"
-                }
-            }
-        ]
-    )
+    # @extend_schema(
+    #     description="Search audios by track title, description, genre, and transcript content."
+    # )
     def post(self, request):
-        serializer = AudioSearchInputSerializer(data=request.data)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        """
+        Search audio files by track title, description, genre, and transcript content.
         
-        search_text = serializer.validated_data['search_text']
-        search_type = serializer.validated_data.get('search_type', 'global')
+        Request body:
+        - search_text (required): Text to search for
+        - search_type (optional): 'global' for public audios, 'private' for user's audios
+        """
+        data = request.data
+        search_text = data.get('search_text', '')
+        search_type = data.get('search_type', 'global')
         user = request.user
+
+        if not search_text.strip():
+            return Response({'error': 'search_text is required'}, status=status.HTTP_400_BAD_REQUEST)
 
         keywords = extract_keywords(search_text)
 
