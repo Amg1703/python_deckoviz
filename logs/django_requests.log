@@ -217,3 +217,423 @@ REQUEST 2025-07-24 10:15:30 [INFO] "PUT /modes/5e17cd4f-815c-49ba-be24-f82bed781
 REQUEST 2025-07-24 10:21:04 [INFO] START DELETE /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/audio/4c8e2c9e-3eb0-4519-bf2f-359566d50064/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-24 10:21:06 [INFO] END DELETE /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/audio/4c8e2c9e-3eb0-4519-bf2f-359566d50064/ | Status: 204 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 2.128s
 REQUEST 2025-07-24 10:21:06 [INFO] "DELETE /modes/5e17cd4f-815c-49ba-be24-f82bed7818ae/audio/4c8e2c9e-3eb0-4519-bf2f-359566d50064/ HTTP/1.1" 204 0
+REQUEST 2025-07-24 12:36:36 [INFO] START GET /analytics/features/popular/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:36:36 [ERROR] ERROR GET /analytics/features/popular/ | User: anonymous | Duration: 0.010s | Exception: “/app/analytics/features/popular” does not exist
+REQUEST 2025-07-24 12:36:36 [INFO] END GET /analytics/features/popular/ | Status: 404 | User: anonymous | Duration: 0.028s
+REQUEST 2025-07-24 12:36:36 [WARNING] Not Found: /analytics/features/popular/
+REQUEST 2025-07-24 12:36:36 [WARNING] "GET /analytics/features/popular/ HTTP/1.1" 404 5569
+REQUEST 2025-07-24 12:36:56 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:36:56 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.157s
+REQUEST 2025-07-24 12:36:56 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4248
+REQUEST 2025-07-24 12:36:56 [INFO] START GET /api/schema/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:36:57 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.756s
+REQUEST 2025-07-24 12:36:57 [INFO] "GET /api/schema/ HTTP/1.1" 200 377050
+REQUEST 2025-07-24 12:38:01 [INFO] START GET /api/analytics/features/popular/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:38:01 [ERROR] ERROR GET /api/analytics/features/popular/ | User: anonymous | Duration: 0.006s | Exception: “/app/api/analytics/features/popular” does not exist
+REQUEST 2025-07-24 12:38:01 [INFO] END GET /api/analytics/features/popular/ | Status: 404 | User: anonymous | Duration: 0.024s
+REQUEST 2025-07-24 12:38:01 [WARNING] Not Found: /api/analytics/features/popular/
+REQUEST 2025-07-24 12:38:01 [WARNING] "GET /api/analytics/features/popular/ HTTP/1.1" 404 6189
+REQUEST 2025-07-24 12:38:02 [INFO] START GET /favicon.ico | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:38:02 [ERROR] ERROR GET /favicon.ico | User: anonymous | Duration: 0.003s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-07-24 12:38:02 [INFO] END GET /favicon.ico | Status: 404 | User: anonymous | Duration: 0.020s
+REQUEST 2025-07-24 12:38:02 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-07-24 12:38:02 [WARNING] "GET /favicon.ico HTTP/1.1" 404 5506
+REQUEST 2025-07-24 12:38:56 [INFO] START GET /api/analytics/features/popular/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:38:56 [ERROR] ERROR GET /api/analytics/features/popular/ | User: anonymous | Duration: 0.005s | Exception: “/app/api/analytics/features/popular” does not exist
+REQUEST 2025-07-24 12:38:56 [INFO] END GET /api/analytics/features/popular/ | Status: 404 | User: anonymous | Duration: 0.021s
+REQUEST 2025-07-24 12:38:56 [WARNING] Not Found: /api/analytics/features/popular/
+REQUEST 2025-07-24 12:38:56 [WARNING] "GET /api/analytics/features/popular/ HTTP/1.1" 404 6189
+REQUEST 2025-07-24 12:39:28 [INFO] START GET /api/analytics/user/%7Buser_id%7D/history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:39:28 [ERROR] ERROR GET /api/analytics/user/%7Buser_id%7D/history/ | User: anonymous | Duration: 0.004s | Exception: “/app/api/analytics/user/{user_id}/history” does not exist
+REQUEST 2025-07-24 12:39:28 [INFO] END GET /api/analytics/user/%7Buser_id%7D/history/ | Status: 404 | User: anonymous | Duration: 0.019s
+REQUEST 2025-07-24 12:39:28 [WARNING] Not Found: /api/analytics/user/{user_id}/history/
+REQUEST 2025-07-24 12:39:28 [WARNING] "GET /api/analytics/user/%7Buser_id%7D/history/ HTTP/1.1" 404 9051
+REQUEST 2025-07-24 12:40:39 [INFO] START GET /api/analytics/admin/platform-analytics/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:40:39 [INFO] END GET /api/analytics/admin/platform-analytics/ | Status: 401 | User: anonymous | Duration: 0.083s
+REQUEST 2025-07-24 12:40:39 [WARNING] Unauthorized: /api/analytics/admin/platform-analytics/
+REQUEST 2025-07-24 12:40:39 [WARNING] "GET /api/analytics/admin/platform-analytics/ HTTP/1.1" 401 58
+REQUEST 2025-07-24 12:40:54 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:40:54 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 400 | User: anonymous | Duration: 0.004s
+REQUEST 2025-07-24 12:40:54 [WARNING] Bad Request: /api/analytics/internal/complete-usage/
+REQUEST 2025-07-24 12:40:54 [WARNING] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 400 100
+REQUEST 2025-07-24 12:45:16 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:45:16 [INFO] END GET /api/analytics/user/usage-history/ | Status: 401 | User: anonymous | Duration: 0.006s
+REQUEST 2025-07-24 12:45:16 [WARNING] Unauthorized: /api/analytics/user/usage-history/
+REQUEST 2025-07-24 12:45:16 [WARNING] "GET /api/analytics/user/usage-history/ HTTP/1.1" 401 58
+REQUEST 2025-07-24 12:45:55 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:45:56 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.413s
+REQUEST 2025-07-24 12:45:56 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 52
+REQUEST 2025-07-24 12:47:01 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:47:02 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.463s
+REQUEST 2025-07-24 12:47:02 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 52
+REQUEST 2025-07-24 12:48:17 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:48:18 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.352s
+REQUEST 2025-07-24 12:48:18 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 52
+REQUEST 2025-07-24 12:49:55 [INFO] START GET /api/analytics/user/usage-summary/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:49:56 [INFO] END GET /api/analytics/user/usage-summary/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.685s
+REQUEST 2025-07-24 12:49:56 [INFO] "GET /api/analytics/user/usage-summary/ HTTP/1.1" 200 217
+REQUEST 2025-07-24 12:50:10 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:50:11 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.354s
+REQUEST 2025-07-24 12:50:11 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 52
+REQUEST 2025-07-24 12:56:18 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-24 12:56:20 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.363s
+REQUEST 2025-07-24 12:56:20 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 52
+REQUEST 2025-07-24 12:56:54 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:56:54 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.013s
+REQUEST 2025-07-24 12:56:54 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4248
+REQUEST 2025-07-24 12:56:55 [INFO] START GET /api/schema/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:56:55 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.659s
+REQUEST 2025-07-24 12:56:56 [INFO] "GET /api/schema/ HTTP/1.1" 200 377050
+REQUEST 2025-07-24 12:57:01 [INFO] START GET /admin/login/?next=/admin/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:57:01 [INFO] END GET /admin/login/?next=/admin/ | Status: 200 | User: anonymous | Duration: 0.813s
+REQUEST 2025-07-24 12:57:01 [INFO] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4172
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/css/login.css HTTP/1.1" 200 951
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+REQUEST 2025-07-24 12:57:02 [INFO] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+REQUEST 2025-07-24 12:58:26 [INFO] START POST /admin/login/?next=/admin/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:58:29 [INFO] END POST /admin/login/?next=/admin/ | Status: 302 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.779s
+REQUEST 2025-07-24 12:58:29 [INFO] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+REQUEST 2025-07-24 12:58:31 [INFO] START GET /admin/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:58:32 [INFO] END GET /admin/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.414s
+REQUEST 2025-07-24 12:58:32 [INFO] "GET /admin/ HTTP/1.1" 200 39173
+REQUEST 2025-07-24 12:58:32 [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+REQUEST 2025-07-24 12:58:32 [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+REQUEST 2025-07-24 12:58:32 [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+REQUEST 2025-07-24 12:58:32 [INFO] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+REQUEST 2025-07-24 12:59:22 [INFO] START GET /admin/credits/usercredit/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:59:23 [INFO] END GET /admin/credits/usercredit/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.511s
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /admin/credits/usercredit/ HTTP/1.1" 200 32035
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+REQUEST 2025-07-24 12:59:23 [INFO] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+REQUEST 2025-07-24 12:59:24 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:59:25 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.499s
+REQUEST 2025-07-24 12:59:25 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 12:59:25 [INFO] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+REQUEST 2025-07-24 12:59:49 [INFO] START GET /admin/analytics/featurepricing/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:59:50 [INFO] END GET /admin/analytics/featurepricing/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.512s
+REQUEST 2025-07-24 12:59:50 [INFO] "GET /admin/analytics/featurepricing/ HTTP/1.1" 200 32816
+REQUEST 2025-07-24 12:59:51 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:59:51 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.424s
+REQUEST 2025-07-24 12:59:51 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 12:59:52 [INFO] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+REQUEST 2025-07-24 12:59:56 [INFO] START GET /admin/analytics/featurepricing/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:59:57 [INFO] END GET /admin/analytics/featurepricing/add/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.434s
+REQUEST 2025-07-24 12:59:57 [INFO] "GET /admin/analytics/featurepricing/add/ HTTP/1.1" 200 37543
+REQUEST 2025-07-24 12:59:57 [INFO] "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+REQUEST 2025-07-24 12:59:57 [INFO] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+REQUEST 2025-07-24 12:59:57 [INFO] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+REQUEST 2025-07-24 12:59:57 [INFO] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+REQUEST 2025-07-24 12:59:59 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 12:59:59 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.407s
+REQUEST 2025-07-24 12:59:59 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 13:00:30 [INFO] START POST /admin/analytics/featurepricing/add/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:00:31 [INFO] END POST /admin/analytics/featurepricing/add/ | Status: 302 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.223s
+REQUEST 2025-07-24 13:00:31 [INFO] "POST /admin/analytics/featurepricing/add/ HTTP/1.1" 302 0
+REQUEST 2025-07-24 13:00:32 [INFO] START GET /admin/analytics/featurepricing/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:00:33 [INFO] END GET /admin/analytics/featurepricing/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.230s
+REQUEST 2025-07-24 13:00:33 [INFO] "GET /admin/analytics/featurepricing/ HTTP/1.1" 200 35672
+REQUEST 2025-07-24 13:00:33 [INFO] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+REQUEST 2025-07-24 13:00:35 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:00:35 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.340s
+REQUEST 2025-07-24 13:00:35 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 13:02:05 [INFO] START GET /admin/credits/usercredit/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:02:05 [INFO] END GET /admin/credits/usercredit/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.305s
+REQUEST 2025-07-24 13:02:05 [INFO] "GET /admin/credits/usercredit/ HTTP/1.1" 200 32035
+REQUEST 2025-07-24 13:02:07 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:02:07 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.489s
+REQUEST 2025-07-24 13:02:07 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 13:02:11 [INFO] START GET /admin/credits/usercredit/6c49721b-0b6a-4604-932b-b565dceb6f2b/change/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:02:13 [INFO] END GET /admin/credits/usercredit/6c49721b-0b6a-4604-932b-b565dceb6f2b/change/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 3.511s
+REQUEST 2025-07-24 13:02:13 [INFO] "GET /admin/credits/usercredit/6c49721b-0b6a-4604-932b-b565dceb6f2b/change/ HTTP/1.1" 200 35277
+REQUEST 2025-07-24 13:02:14 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:02:14 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.475s
+REQUEST 2025-07-24 13:02:14 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 13:02:23 [INFO] START GET /admin/credits/usercredit/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 13:02:24 [INFO] END GET /admin/credits/usercredit/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.329s
+REQUEST 2025-07-24 13:02:24 [INFO] "GET /admin/credits/usercredit/ HTTP/1.1" 200 32035
+REQUEST 2025-07-24 20:01:58 [INFO] START GET /admin/credits/usercredit/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 20:01:59 [INFO] END GET /admin/credits/usercredit/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.478s
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /admin/credits/usercredit/ HTTP/1.1" 200 32035
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+REQUEST 2025-07-24 20:01:59 [INFO] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+REQUEST 2025-07-24 20:02:01 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 20:02:01 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.363s
+REQUEST 2025-07-24 20:02:01 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-24 20:02:01 [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+REQUEST 2025-07-24 20:02:01 [INFO] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+REQUEST 2025-07-24 20:02:02 [INFO] START GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 20:02:02 [ERROR] ERROR GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.463s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-07-24 20:02:02 [INFO] END GET /favicon.ico | Status: 404 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.474s
+REQUEST 2025-07-24 20:02:02 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-07-24 20:02:02 [WARNING] "GET /favicon.ico HTTP/1.1" 404 5506
+REQUEST 2025-07-24 20:02:18 [INFO] START GET /admin/analytics/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-24 20:02:18 [INFO] END GET /admin/analytics/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.824s
+REQUEST 2025-07-24 20:02:18 [INFO] "GET /admin/analytics/ HTTP/1.1" 200 7453
+REQUEST 2025-07-24 20:02:18 [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+REQUEST 2025-07-24 20:02:18 [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+REQUEST 2025-07-25 06:49:47 [INFO] START GET /metacollections/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-25 06:50:36 [INFO] END GET /metacollections/ | Status: 200 | User: user:09f4cb67-7864-44fe-ac36-5a30b7d052d9(riyan) | Duration: 49.050s
+REQUEST 2025-07-25 06:50:36 [INFO] "GET /metacollections/ HTTP/1.1" 200 396562
+REQUEST 2025-07-25 07:24:54 [INFO] START GET /admin/analytics/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-25 07:24:54 [INFO] END GET /admin/analytics/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.904s
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /admin/analytics/ HTTP/1.1" 200 7453
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+REQUEST 2025-07-25 07:24:54 [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+REQUEST 2025-07-25 07:24:56 [INFO] START GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-25 07:24:56 [ERROR] ERROR GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.396s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-07-25 07:24:56 [INFO] END GET /favicon.ico | Status: 404 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.454s
+REQUEST 2025-07-25 07:24:56 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-07-25 07:24:56 [WARNING] "GET /favicon.ico HTTP/1.1" 404 5506
+REQUEST 2025-07-25 10:05:55 [WARNING] Bad Request: /api/analytics/internal/start-usage/
+REQUEST 2025-07-25 10:05:55 [WARNING] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 400 80542
+REQUEST 2025-07-25 10:21:12 [INFO] START POST /api/auth/login/ | User: anonymous | IP: 172.18.0.1 | User-Agent: python-requests/2.32.3
+REQUEST 2025-07-25 10:21:12 [INFO] END POST /api/auth/login/ | Status: 403 | User: anonymous | Duration: 0.037s
+REQUEST 2025-07-25 10:21:12 [WARNING] "POST /api/auth/login/ HTTP/1.1" 403 2855
+REQUEST 2025-07-25 10:22:36 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:22:36 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 400 | User: anonymous | Duration: 0.004s
+REQUEST 2025-07-25 10:22:36 [WARNING] Bad Request: /api/analytics/internal/start-usage/
+REQUEST 2025-07-25 10:22:36 [WARNING] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 400 107
+REQUEST 2025-07-25 10:29:39 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:29:39 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 400 | User: anonymous | Duration: 0.017s
+REQUEST 2025-07-25 10:29:39 [WARNING] Bad Request: /api/analytics/internal/start-usage/
+REQUEST 2025-07-25 10:29:39 [WARNING] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 400 107
+REQUEST 2025-07-25 10:31:58 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:32:00 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.851s
+REQUEST 2025-07-25 10:35:43 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:35:46 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.819s
+REQUEST 2025-07-25 10:35:46 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-25 10:36:00 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:36:04 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 3.109s
+REQUEST 2025-07-25 10:36:04 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-25 10:37:16 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:37:19 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.915s
+REQUEST 2025-07-25 10:37:19 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-25 10:37:33 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.6 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-25 10:37:36 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 3.073s
+REQUEST 2025-07-25 10:37:36 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-25 10:37:52 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-25 10:37:53 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.855s
+REQUEST 2025-07-25 10:37:53 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 1516
+REQUEST 2025-07-25 18:20:05 [INFO] START GET /admin/analytics/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-25 18:20:07 [INFO] END GET /admin/analytics/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 3.417s
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /admin/analytics/ HTTP/1.1" 200 7453
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+REQUEST 2025-07-25 18:20:07 [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+REQUEST 2025-07-25 18:20:09 [INFO] START GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-25 18:20:09 [ERROR] ERROR GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.489s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-07-25 18:20:09 [INFO] END GET /favicon.ico | Status: 404 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.505s
+REQUEST 2025-07-25 18:20:09 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-07-25 18:20:09 [WARNING] "GET /favicon.ico HTTP/1.1" 404 5506
+REQUEST 2025-07-26 13:10:34 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 13:10:36 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.853s
+REQUEST 2025-07-26 13:10:36 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 1516
+REQUEST 2025-07-26 13:15:24 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 13:15:26 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.754s
+REQUEST 2025-07-26 13:15:26 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 1516
+REQUEST 2025-07-26 13:16:14 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:16:18 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.054s
+REQUEST 2025-07-26 13:16:18 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 13:18:11 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 13:18:13 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.983s
+REQUEST 2025-07-26 13:18:13 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 2848
+REQUEST 2025-07-26 13:18:51 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 13:18:53 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 2.034s
+REQUEST 2025-07-26 13:18:53 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 2848
+REQUEST 2025-07-26 13:19:03 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:19:05 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.766s
+REQUEST 2025-07-26 13:19:05 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 13:19:21 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:19:24 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.856s
+REQUEST 2025-07-26 13:19:24 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 13:19:38 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 13:19:40 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 2.043s
+REQUEST 2025-07-26 13:19:40 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 4313
+REQUEST 2025-07-26 13:30:55 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:30:58 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.982s
+REQUEST 2025-07-26 13:30:58 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 13:34:43 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:34:46 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.695s
+REQUEST 2025-07-26 13:34:46 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 13:34:58 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:35:00 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.621s
+REQUEST 2025-07-26 13:35:00 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 13:35:20 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 13:35:23 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.011s
+REQUEST 2025-07-26 13:35:23 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 14:48:59 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 14:49:04 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 5.568s
+REQUEST 2025-07-26 14:49:04 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 8129
+REQUEST 2025-07-26 14:50:02 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 14:50:05 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.095s
+REQUEST 2025-07-26 14:50:05 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 8129
+REQUEST 2025-07-26 14:50:09 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 14:50:12 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.538s
+REQUEST 2025-07-26 14:50:12 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 14:50:22 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 14:50:25 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.740s
+REQUEST 2025-07-26 14:50:25 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 14:50:39 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 14:50:42 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.083s
+REQUEST 2025-07-26 14:50:42 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 9594
+REQUEST 2025-07-26 14:51:05 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 14:51:07 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.428s
+REQUEST 2025-07-26 14:51:07 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 14:57:58 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 14:58:01 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.957s
+REQUEST 2025-07-26 14:58:01 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 14:58:16 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 14:58:19 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.733s
+REQUEST 2025-07-26 14:58:19 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:01:08 [INFO] START GET /api/analytics/user-usage/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.22621.5624
+REQUEST 2025-07-26 15:01:08 [ERROR] ERROR GET /api/analytics/user-usage/ | User: anonymous | Duration: 0.009s | Exception: “/app/api/analytics/user-usage” does not exist
+REQUEST 2025-07-26 15:01:08 [INFO] END GET /api/analytics/user-usage/ | Status: 404 | User: anonymous | Duration: 0.054s
+REQUEST 2025-07-26 15:01:08 [WARNING] Not Found: /api/analytics/user-usage/
+REQUEST 2025-07-26 15:01:08 [WARNING] "GET /api/analytics/user-usage/ HTTP/1.1" 404 6165
+REQUEST 2025-07-26 15:01:49 [INFO] START GET /api/analytics/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.22621.5624
+REQUEST 2025-07-26 15:01:49 [ERROR] ERROR GET /api/analytics/usage-history/ | User: anonymous | Duration: 0.003s | Exception: “/app/api/analytics/usage-history” does not exist
+REQUEST 2025-07-26 15:01:49 [INFO] END GET /api/analytics/usage-history/ | Status: 404 | User: anonymous | Duration: 0.013s
+REQUEST 2025-07-26 15:01:49 [WARNING] Not Found: /api/analytics/usage-history/
+REQUEST 2025-07-26 15:01:49 [WARNING] "GET /api/analytics/usage-history/ HTTP/1.1" 404 6177
+REQUEST 2025-07-26 15:02:05 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:02:08 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.257s
+REQUEST 2025-07-26 15:02:08 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 11410
+REQUEST 2025-07-26 15:04:26 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:04:29 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.248s
+REQUEST 2025-07-26 15:04:29 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 11410
+REQUEST 2025-07-26 15:19:22 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:19:30 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 7.828s
+REQUEST 2025-07-26 15:20:25 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:20:28 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.051s
+REQUEST 2025-07-26 15:20:28 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:20:46 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:20:49 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.680s
+REQUEST 2025-07-26 15:20:49 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:29:26 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:29:29 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.874s
+REQUEST 2025-07-26 15:29:29 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:29:36 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:29:39 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.900s
+REQUEST 2025-07-26 15:29:39 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:29:42 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:29:46 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.800s
+REQUEST 2025-07-26 15:29:46 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 15197
+REQUEST 2025-07-26 15:31:19 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:31:22 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.340s
+REQUEST 2025-07-26 15:31:22 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 131
+REQUEST 2025-07-26 15:31:22 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:31:25 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.967s
+REQUEST 2025-07-26 15:31:25 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:31:54 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:31:57 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.489s
+REQUEST 2025-07-26 15:31:57 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 131
+REQUEST 2025-07-26 15:32:02 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:32:04 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.744s
+REQUEST 2025-07-26 15:32:04 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:32:17 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:32:22 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 4.940s
+REQUEST 2025-07-26 15:32:22 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 131
+REQUEST 2025-07-26 15:32:25 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:32:28 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 3.407s
+REQUEST 2025-07-26 15:32:28 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:36:29 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:36:33 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.814s
+REQUEST 2025-07-26 15:36:33 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 131
+REQUEST 2025-07-26 15:36:45 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:36:48 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.789s
+REQUEST 2025-07-26 15:36:48 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:37:06 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:37:10 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.593s
+REQUEST 2025-07-26 15:37:10 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 16925
+REQUEST 2025-07-26 15:47:03 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:47:06 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.610s
+REQUEST 2025-07-26 15:47:06 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:47:25 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:47:28 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.695s
+REQUEST 2025-07-26 15:47:28 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:48:02 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:48:06 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.532s
+REQUEST 2025-07-26 15:48:06 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 17761
+REQUEST 2025-07-26 15:50:26 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:50:29 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.135s
+REQUEST 2025-07-26 15:50:29 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:51:21 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:51:24 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.922s
+REQUEST 2025-07-26 15:51:24 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:51:59 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:52:04 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 4.376s
+REQUEST 2025-07-26 15:52:04 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 18027
+REQUEST 2025-07-26 15:53:15 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:53:18 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 3.540s
+REQUEST 2025-07-26 15:53:18 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:54:05 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:54:10 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 4.553s
+REQUEST 2025-07-26 15:54:10 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:56:53 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:56:57 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 4.300s
+REQUEST 2025-07-26 15:56:57 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 18323
+REQUEST 2025-07-26 15:58:06 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:58:09 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.958s
+REQUEST 2025-07-26 15:58:09 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:58:11 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:58:15 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 3.744s
+REQUEST 2025-07-26 15:58:15 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:58:21 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 15:58:25 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 4.241s
+REQUEST 2025-07-26 15:58:25 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 18594
+REQUEST 2025-07-26 15:59:23 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:59:26 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.662s
+REQUEST 2025-07-26 15:59:26 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:59:26 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:59:26 [INFO] START POST /api/analytics/internal/start-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 15:59:29 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.930s
+REQUEST 2025-07-26 15:59:29 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 15:59:29 [INFO] END POST /api/analytics/internal/start-usage/ | Status: 200 | User: anonymous | Duration: 2.939s
+REQUEST 2025-07-26 15:59:29 [INFO] "POST /api/analytics/internal/start-usage/ HTTP/1.1" 200 130
+REQUEST 2025-07-26 15:59:58 [INFO] START POST /api/analytics/internal/complete-usage/ | User: anonymous | IP: 172.18.0.2 | User-Agent: python-httpx/0.28.1
+REQUEST 2025-07-26 16:00:01 [INFO] END POST /api/analytics/internal/complete-usage/ | Status: 200 | User: anonymous | Duration: 2.461s
+REQUEST 2025-07-26 16:00:01 [INFO] "POST /api/analytics/internal/complete-usage/ HTTP/1.1" 200 53
+REQUEST 2025-07-26 16:00:22 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 16:00:28 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 5.363s
+REQUEST 2025-07-26 16:00:28 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 19729

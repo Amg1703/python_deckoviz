@@ -37,3 +37,118 @@ INFO 2025-07-24 10:19:58 [django.utils.autoreload] Watching for file changes wit
 INFO 2025-07-24 10:20:07 [django.utils.autoreload] /app/apps/modes/views.py changed, reloading.
 INFO 2025-07-24 10:20:10 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-24 10:21:32 [django.utils.autoreload] /app/apps/modes/urls.py changed, reloading.
+INFO 2025-07-24 10:21:35 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-24 12:14:22 [django.utils.autoreload] /app/deckoviz/settings.py changed, reloading.
+INFO 2025-07-24 12:14:33 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-24 12:14:45 [django.utils.autoreload] /app/deckoviz/urls.py changed, reloading.
+INFO 2025-07-24 12:14:52 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-24 12:15:21 [django.utils.autoreload] /app/apps/analytics/models.py changed, reloading.
+INFO 2025-07-24 12:15:28 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-24 12:15:48 [django.utils.autoreload] /app/apps/analytics/models.py changed, reloading.
+INFO 2025-07-24 12:15:54 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-24 12:15:59 [django.utils.autoreload] /app/apps/analytics/models.py changed, reloading.
+INFO 2025-07-24 12:16:07 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-24 12:29:54 [django.utils.autoreload] Watching for file changes with StatReloader
+ERROR 2025-07-25 10:05:54 [django.security.DisallowedHost] Invalid HTTP_HOST header: 'common:8000'. You may need to add 'common' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'common:8000'. You may need to add 'common' to ALLOWED_HOSTS.
+INFO 2025-07-25 10:10:25 [django.utils.autoreload] /app/deckoviz/settings.py changed, reloading.
+INFO 2025-07-25 10:10:41 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-25 10:12:39 [django.utils.autoreload] /app/apps/credits/services.py changed, reloading.
+INFO 2025-07-25 10:12:47 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-25 10:16:06 [django.utils.autoreload] Watching for file changes with StatReloader
+WARNING 2025-07-25 10:21:12 [django.security.csrf] Forbidden (CSRF cookie not set.): /api/auth/login/
+ERROR 2025-07-25 10:24:05 [apps.analytics.services] Error starting feature usage tracking: CreditAIOperation() got unexpected keyword arguments: 'ai_operation_id'
+INFO 2025-07-25 10:24:36 [django.utils.autoreload] /app/apps/credits/services.py changed, reloading.
+INFO 2025-07-25 10:24:44 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-25 10:27:12 [apps.credits.services] Free usage for creative_tools, user: imransk
+INFO 2025-07-25 10:27:13 [apps.analytics.services] Started feature usage tracking: user=imransk, feature=poster, credits=0, usage_id=4dd16cb6-661d-47a7-9f9a-a819c688039d
+INFO 2025-07-25 10:27:39 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-25 10:32:00 [apps.credits.services] Free usage for creative_tools, user: imransk
+INFO 2025-07-25 10:32:00 [apps.analytics.services] Started feature usage tracking: user=imransk, feature=poster, credits=0, usage_id=c13954e9-311a-4663-9677-ae26e1441ed6
+INFO 2025-07-25 10:35:45 [apps.credits.services] Free usage for creative_tools, user: imransk
+INFO 2025-07-25 10:35:45 [apps.analytics.services] Started feature usage tracking: user=imransk, feature=poster, credits=0, usage_id=a323f59c-9291-49fe-8e06-96a4c029bcad
+INFO 2025-07-25 10:36:03 [apps.analytics.services] Completed feature usage: usage_id=a323f59c-9291-49fe-8e06-96a4c029bcad, status=completed
+INFO 2025-07-25 10:37:18 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-25 10:37:19 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=b86eaa4d-0eef-4673-b0ee-b65049e44138
+INFO 2025-07-25 10:37:36 [apps.analytics.services] Completed feature usage: usage_id=b86eaa4d-0eef-4673-b0ee-b65049e44138, status=completed
+INFO 2025-07-26 13:07:57 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 13:10:21 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 13:13:27 [django.utils.autoreload] /app/apps/analytics/serializers.py changed, reloading.
+INFO 2025-07-26 13:13:35 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 13:13:48 [django.utils.autoreload] /app/apps/analytics/services.py changed, reloading.
+INFO 2025-07-26 13:13:55 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 13:14:07 [django.utils.autoreload] /app/apps/analytics/models.py changed, reloading.
+INFO 2025-07-26 13:14:14 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 13:16:17 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 13:16:17 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=52ec7fa7-e131-4b34-9730-0c40d7d2c038
+INFO 2025-07-26 13:19:05 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 13:19:05 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=323e6e3c-4235-47d6-a7d6-506691a0c2b6
+INFO 2025-07-26 13:19:24 [apps.analytics.services] Completed feature usage: usage_id=323e6e3c-4235-47d6-a7d6-506691a0c2b6, status=completed
+INFO 2025-07-26 13:30:58 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 13:30:58 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=330bb65a-44d0-4b70-bee4-ab1cde7bcb4e
+INFO 2025-07-26 13:34:45 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 13:34:46 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=5a132f78-f246-4cec-b31e-ec8712a80e00
+INFO 2025-07-26 13:35:00 [apps.analytics.services] Completed feature usage: usage_id=5a132f78-f246-4cec-b31e-ec8712a80e00, status=completed
+INFO 2025-07-26 13:35:22 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 13:35:23 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=5c6f3ac1-3a07-4fab-b903-aa14711886f7
+INFO 2025-07-26 14:50:11 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 14:50:12 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=5281bd7c-9914-4761-8f4d-9753f6492ab0
+INFO 2025-07-26 14:50:25 [apps.analytics.services] Completed feature usage: usage_id=5281bd7c-9914-4761-8f4d-9753f6492ab0, status=completed
+INFO 2025-07-26 14:51:07 [apps.analytics.services] Completed feature usage: usage_id=5c6f3ac1-3a07-4fab-b903-aa14711886f7, status=completed
+INFO 2025-07-26 14:58:00 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 14:58:01 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=1fe1c1b6-60c1-429e-847a-f26a554f48f5
+INFO 2025-07-26 14:58:18 [apps.analytics.services] Completed feature usage: usage_id=1fe1c1b6-60c1-429e-847a-f26a554f48f5, status=completed
+INFO 2025-07-26 15:19:26 [apps.credits.services] Free usage for image_editing, user: Devian
+INFO 2025-07-26 15:19:29 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=reimagine_art, credits=0, usage_id=14768838-81bc-4693-bc92-4f86fbe5ae2d
+INFO 2025-07-26 15:19:44 [django.utils.autoreload] /app/apps/analytics/models.py changed, reloading.
+INFO 2025-07-26 15:19:53 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-26 15:20:27 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 15:20:27 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=poster, credits=0, usage_id=4e94fbc6-5e0e-4efd-a5ed-6cf095b16eea
+INFO 2025-07-26 15:20:49 [apps.analytics.services] Completed feature usage: usage_id=4e94fbc6-5e0e-4efd-a5ed-6cf095b16eea, status=completed
+INFO 2025-07-26 15:29:28 [apps.credits.services] Free usage for image_editing, user: Devian
+INFO 2025-07-26 15:29:28 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=reimagine_art, credits=0, usage_id=92654a0d-6169-46b5-a7a9-76868afea3c7
+INFO 2025-07-26 15:29:39 [apps.analytics.services] Completed feature usage: usage_id=92654a0d-6169-46b5-a7a9-76868afea3c7, status=completed
+INFO 2025-07-26 15:31:22 [apps.credits.services] Used 10 credits for chat_ai, user: Devian, new balance: 990
+INFO 2025-07-26 15:31:22 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=dream_visualizer_chat, credits=10, usage_id=8ff4aeed-c633-45d8-a7fb-e45d0a30df28
+INFO 2025-07-26 15:31:25 [apps.analytics.services] Completed feature usage: usage_id=8ff4aeed-c633-45d8-a7fb-e45d0a30df28, status=completed
+INFO 2025-07-26 15:31:57 [apps.credits.services] Used 10 credits for chat_ai, user: Devian, new balance: 980
+INFO 2025-07-26 15:31:57 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=dream_visualizer_chat, credits=10, usage_id=7512f7f8-f1cd-4197-9de5-2f35c7f4001a
+INFO 2025-07-26 15:32:04 [apps.analytics.services] Completed feature usage: usage_id=7512f7f8-f1cd-4197-9de5-2f35c7f4001a, status=completed
+INFO 2025-07-26 15:32:21 [apps.credits.services] Used 10 credits for chat_ai, user: Devian, new balance: 970
+INFO 2025-07-26 15:32:22 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=dream_visualizer_chat, credits=10, usage_id=425aa296-2b88-4879-8eb9-c5629fcb61c7
+INFO 2025-07-26 15:32:28 [apps.analytics.services] Completed feature usage: usage_id=425aa296-2b88-4879-8eb9-c5629fcb61c7, status=completed
+INFO 2025-07-26 15:36:32 [apps.credits.services] Used 10 credits for chat_ai, user: Devian, new balance: 960
+INFO 2025-07-26 15:36:33 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=dream_visualizer_chat, credits=10, usage_id=8f0e54fa-6c9c-457f-9a65-c09875ed8ad1
+INFO 2025-07-26 15:36:48 [apps.analytics.services] Completed feature usage: usage_id=8f0e54fa-6c9c-457f-9a65-c09875ed8ad1, status=completed
+INFO 2025-07-26 15:47:05 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 15:47:05 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=visual_journal, credits=0, usage_id=62192fed-3e94-4567-abd0-027af5fdf69d
+INFO 2025-07-26 15:47:28 [apps.analytics.services] Completed feature usage: usage_id=62192fed-3e94-4567-abd0-027af5fdf69d, status=completed
+INFO 2025-07-26 15:50:28 [apps.credits.services] Free usage for style_transfer, user: Devian
+INFO 2025-07-26 15:50:28 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=replicate_style_transfer, credits=0, usage_id=a876c469-3a49-4099-9dbd-807aa59fff2c
+INFO 2025-07-26 15:51:23 [apps.analytics.services] Completed feature usage: usage_id=a876c469-3a49-4099-9dbd-807aa59fff2c, status=completed
+INFO 2025-07-26 15:53:17 [apps.credits.services] Free usage for creative_tools, user: Devian
+INFO 2025-07-26 15:53:18 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=book_to_frames, credits=0, usage_id=95db62a8-35af-43a4-9030-7b74b75bfc3d
+INFO 2025-07-26 15:54:09 [apps.analytics.services] Completed feature usage: usage_id=95db62a8-35af-43a4-9030-7b74b75bfc3d, status=completed
+INFO 2025-07-26 15:58:09 [apps.credits.services] Free usage for video_generation, user: Devian
+INFO 2025-07-26 15:58:09 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=runware_image_to_video, credits=0, usage_id=8b07c766-282f-4a52-8550-31815d634b27
+INFO 2025-07-26 15:58:15 [apps.analytics.services] Completed feature usage: usage_id=8b07c766-282f-4a52-8550-31815d634b27, status=completed
+INFO 2025-07-26 15:59:25 [apps.credits.services] Free usage for visualization, user: Devian
+INFO 2025-07-26 15:59:26 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=text_visualization, credits=0, usage_id=843e7b1f-aee5-4c57-83c4-fe523c3be2b0
+INFO 2025-07-26 15:59:28 [apps.credits.services] Free usage for visualization, user: Devian
+INFO 2025-07-26 15:59:29 [apps.analytics.services] Completed feature usage: usage_id=843e7b1f-aee5-4c57-83c4-fe523c3be2b0, status=completed
+INFO 2025-07-26 15:59:29 [apps.analytics.services] Started feature usage tracking: user=Devian, feature=text_visualization, credits=0, usage_id=a3487785-8bc6-40a4-ae47-45609cc25a70
+INFO 2025-07-26 16:00:01 [apps.analytics.services] Completed feature usage: usage_id=a3487785-8bc6-40a4-ae47-45609cc25a70, status=completed
+INFO 2025-07-26 16:06:04 [django.utils.autoreload] /app/apps/analytics/apps.py changed, reloading.
+INFO 2025-07-26 16:06:09 [django.utils.autoreload] Watching for file changes with StatReloader

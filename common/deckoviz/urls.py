@@ -82,6 +82,9 @@ urlpatterns = [
 
     # curations api
     path('curations/', include('apps.curations.urls')),
+
+    # analytics api
+    path('api/analytics/', include('apps.analytics.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

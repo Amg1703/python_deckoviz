@@ -39,6 +39,9 @@ for host in raw_hosts:
         host = host.split(':')[0]
     ALLOWED_HOSTS.append(host)
 
+# Add Docker container names for internal communication
+ALLOWED_HOSTS.extend(['common', 'deckoviz_ai'])
+
 # Add the proper schemes for CSRF_TRUSTED_ORIGINS
 CSRF_TRUSTED_ORIGINS = []
 for host in raw_hosts:
@@ -126,6 +129,7 @@ INSTALLED_APPS = [
     'apps.metaaudios',
     'apps.modes',
     'apps.curations',
+    'apps.analytics',
     
     # third party apps  
     'rest_framework',

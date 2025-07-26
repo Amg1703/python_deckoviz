@@ -47,8 +47,32 @@ class CreditService:
         Use credits for an AI operation
         Returns (success, operation_id, message)
         """
-        if amount <= 0:
-            raise ValidationError("Amount must be positive when using credits")
+        if amount < 0:
+            raise ValidationError("Amount cannot be negative when using credits")
+        
+        # Handle free operations (0 credits)
+        if amount == 0:
+            # Create credit operation record for tracking purposes
+            credit_operation = CreditAIOperation.objects.create(
+                user=user,
+                operation_type=operation_type,
+                credits_used=0,
+                status='pending',
+                input_data=input_data,
+                operation_id=ai_operation_id
+            )
+            
+            # Record transaction for audit trail
+            transaction = CreditTransaction.objects.create(
+                user=user,
+                amount=0,
+                transaction_type='usage',
+                description=f"Free usage for {operation_type}",
+                reference_id=credit_operation.id
+            )
+            
+            logger.info(f"Free usage for {operation_type}, user: {user.username}")
+            return True, credit_operation.id, "Free operation completed successfully"
         
         credit_account = CreditService.get_user_credits(user)
         
@@ -63,7 +87,7 @@ class CreditService:
             credits_used=amount,
             status='pending',
             input_data=input_data,
-            ai_operation_id=ai_operation_id
+            operation_id=ai_operation_id
         )
         
         # Deduct credits
