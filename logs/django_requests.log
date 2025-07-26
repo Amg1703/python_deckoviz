@@ -671,3 +671,10 @@ REQUEST 2025-07-26 16:55:23 [INFO] "POST /api/analytics/internal/complete-usage/
 REQUEST 2025-07-26 16:55:28 [INFO] START GET /api/analytics/user/usage-history/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-26 16:55:32 [INFO] END GET /api/analytics/user/usage-history/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.538s
 REQUEST 2025-07-26 16:55:32 [INFO] "GET /api/analytics/user/usage-history/ HTTP/1.1" 200 20128
+REQUEST 2025-07-26 17:54:02 [INFO] START POST /gallery/collections/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 17:54:04 [INFO] END POST /gallery/collections/ | Status: 400 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.788s
+REQUEST 2025-07-26 17:54:04 [WARNING] Bad Request: /gallery/collections/
+REQUEST 2025-07-26 17:54:04 [WARNING] "POST /gallery/collections/ HTTP/1.1" 400 54
+REQUEST 2025-07-26 18:13:50 [INFO] START POST /gallery/collections/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-26 18:13:51 [INFO] END POST /gallery/collections/ | Status: 201 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 1.518s
+REQUEST 2025-07-26 18:13:51 [INFO] "POST /gallery/collections/ HTTP/1.1" 201 397

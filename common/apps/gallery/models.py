@@ -81,7 +81,7 @@ class Image(BaseModel):
     
 class Collection(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='collections')
-    name = models.CharField(max_length=255,unique=True)
+    name = models.CharField(max_length=255)
     music = models.FileField(upload_to=user_music_path, blank=True, null=True, max_length=500)
     view = models.CharField(max_length=255, blank=True, null=True,choices=VIEW_TYPES,default='private')  
     display_time = models.IntegerField(default=10, help_text="Time in seconds to display each image")

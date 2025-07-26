@@ -61,12 +61,6 @@ class CollectionWithImagesForm(forms.Form):
         required=False,
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
-    
-    def clean_name(self):
-        name = self.cleaned_data.get('name')
-        if Collection.objects.filter(name=name).exists():
-            raise ValidationError("A collection with this name already exists.")
-        return name
 
 
 class LoginForm(forms.Form):
