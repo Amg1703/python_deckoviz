@@ -725,3 +725,88 @@ REQUEST 2025-07-26 19:22:32 [INFO] "GET /api/schema/ HTTP/1.1" 200 378776
 REQUEST 2025-07-28 14:07:41 [INFO] START POST /gallery/images/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-28 14:08:16 [INFO] END POST /gallery/images/ | Status: 201 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 35.286s
 REQUEST 2025-07-28 14:08:16 [INFO] "POST /gallery/images/ HTTP/1.1" 201 1486
+REQUEST 2025-07-28 14:25:57 [INFO] START GET /metaimages/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-28 14:26:00 [INFO] END GET /metaimages/ | Status: 200 | User: user:f86fa24a-f1ca-4050-8a6b-adadc6e13154(Bravie) | Duration: 2.499s
+REQUEST 2025-07-28 14:26:00 [INFO] "GET /metaimages/ HTTP/1.1" 200 148
+REQUEST 2025-07-28 14:28:09 [INFO] START GET /metaimages/share/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-28 14:28:11 [INFO] END GET /metaimages/share/ | Status: 405 | User: user:f86fa24a-f1ca-4050-8a6b-adadc6e13154(Bravie) | Duration: 1.473s
+REQUEST 2025-07-28 14:28:11 [WARNING] Method Not Allowed: /metaimages/share/
+REQUEST 2025-07-28 14:28:11 [WARNING] "GET /metaimages/share/ HTTP/1.1" 405 40
+REQUEST 2025-07-28 14:28:18 [INFO] START POST /metaimages/share/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-28 14:28:20 [INFO] END POST /metaimages/share/ | Status: 400 | User: user:f86fa24a-f1ca-4050-8a6b-adadc6e13154(Bravie) | Duration: 2.649s
+REQUEST 2025-07-28 14:28:20 [WARNING] Bad Request: /metaimages/share/
+REQUEST 2025-07-28 14:28:20 [WARNING] "POST /metaimages/share/ HTTP/1.1" 400 61
+REQUEST 2025-07-28 14:29:22 [INFO] START POST /metaimages/share/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-28 14:29:30 [INFO] END POST /metaimages/share/ | Status: 403 | User: user:f86fa24a-f1ca-4050-8a6b-adadc6e13154(Bravie) | Duration: 8.144s
+REQUEST 2025-07-28 14:29:30 [WARNING] Forbidden: /metaimages/share/
+REQUEST 2025-07-28 14:29:30 [WARNING] "POST /metaimages/share/ HTTP/1.1" 403 48
+REQUEST 2025-07-28 14:29:55 [INFO] START POST /metaimages/share/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-28 14:30:00 [INFO] END POST /metaimages/share/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 4.152s
+REQUEST 2025-07-28 14:30:00 [INFO] "POST /metaimages/share/ HTTP/1.1" 200 51
+REQUEST 2025-07-28 14:30:26 [INFO] START GET /admin/analytics/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:27 [INFO] END GET /admin/analytics/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.533s
+REQUEST 2025-07-28 14:30:27 [INFO] "GET /admin/analytics/ HTTP/1.1" 200 7453
+REQUEST 2025-07-28 14:30:32 [INFO] START GET /api/schema/swagger-ui/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:32 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 1.535s
+REQUEST 2025-07-28 14:30:32 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4248
+REQUEST 2025-07-28 14:30:35 [INFO] START GET /api/schema/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:35 [INFO] START GET /admin/login/?next=/admin/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:35 [INFO] END GET /admin/login/?next=/admin/ | Status: 302 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.542s
+REQUEST 2025-07-28 14:30:35 [INFO] "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+REQUEST 2025-07-28 14:30:36 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 2.333s
+REQUEST 2025-07-28 14:30:36 [INFO] "GET /api/schema/ HTTP/1.1" 200 388519
+REQUEST 2025-07-28 14:30:37 [INFO] START GET /admin/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:38 [INFO] END GET /admin/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.740s
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /admin/ HTTP/1.1" 200 40122
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:38 [INFO] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+REQUEST 2025-07-28 14:30:41 [INFO] START GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:41 [ERROR] ERROR GET /favicon.ico | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.802s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-07-28 14:30:41 [INFO] END GET /favicon.ico | Status: 404 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.860s
+REQUEST 2025-07-28 14:30:41 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-07-28 14:30:41 [WARNING] "GET /favicon.ico HTTP/1.1" 404 5506
+REQUEST 2025-07-28 14:30:55 [INFO] START GET /admin/metaimages/metaimage/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:57 [INFO] END GET /admin/metaimages/metaimage/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 3.781s
+REQUEST 2025-07-28 14:30:57 [INFO] "GET /admin/metaimages/metaimage/ HTTP/1.1" 200 32987
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+REQUEST 2025-07-28 14:30:58 [INFO] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+REQUEST 2025-07-28 14:30:59 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:30:59 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.577s
+REQUEST 2025-07-28 14:30:59 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-28 14:30:59 [INFO] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+REQUEST 2025-07-28 14:31:03 [INFO] START GET /admin/metaimages/metaimage/48333a35-a477-4b9e-b3cc-0b632251ac2d/change/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:31:14 [INFO] START GET /admin/metaimages/metaimage/48333a35-a477-4b9e-b3cc-0b632251ac2d/change/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:31:16 [INFO] END GET /admin/metaimages/metaimage/48333a35-a477-4b9e-b3cc-0b632251ac2d/change/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 14.689s
+REQUEST 2025-07-28 14:31:16 [INFO] "GET /admin/metaimages/metaimage/48333a35-a477-4b9e-b3cc-0b632251ac2d/change/ HTTP/1.1" 200 364086
+REQUEST 2025-07-28 14:31:24 [INFO] END GET /admin/metaimages/metaimage/48333a35-a477-4b9e-b3cc-0b632251ac2d/change/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 12.419s
+REQUEST 2025-07-28 14:31:24 [INFO] "GET /admin/metaimages/metaimage/48333a35-a477-4b9e-b3cc-0b632251ac2d/change/ HTTP/1.1" 200 364086
+REQUEST 2025-07-28 14:31:24 [INFO] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+REQUEST 2025-07-28 14:31:24 [INFO] "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+REQUEST 2025-07-28 14:31:24 [INFO] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+REQUEST 2025-07-28 14:31:24 [INFO] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+REQUEST 2025-07-28 14:31:24 [INFO] "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+REQUEST 2025-07-28 14:31:26 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:31:26 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.665s
+REQUEST 2025-07-28 14:31:26 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+REQUEST 2025-07-28 14:32:44 [INFO] START GET /admin/metaimages/sharedimage/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:32:46 [INFO] END GET /admin/metaimages/sharedimage/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 2.585s
+REQUEST 2025-07-28 14:32:46 [INFO] "GET /admin/metaimages/sharedimage/ HTTP/1.1" 200 33208
+REQUEST 2025-07-28 14:32:46 [INFO] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+REQUEST 2025-07-28 14:32:47 [INFO] START GET /admin/jsi18n/ | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-28 14:32:47 [INFO] END GET /admin/jsi18n/ | Status: 200 | User: user:0fe64147-829c-4078-849b-a8d60185a8c3(dzadmin@gmail.com) | Duration: 1.526s
+REQUEST 2025-07-28 14:32:47 [INFO] "GET /admin/jsi18n/ HTTP/1.1" 200 3342

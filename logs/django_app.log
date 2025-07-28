@@ -283,3 +283,16 @@ INFO 2025-07-26 19:23:21 [django.utils.autoreload] /app/apps/gallery/views.py ch
 INFO 2025-07-26 19:23:24 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-28 14:07:24 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-28 14:08:16 [apps.gallery.serializers] Successfully generated metadata for: DJ - Title: DJ Mixing at a Club
+INFO 2025-07-28 14:14:08 [django.utils.autoreload] /app/apps/gallery/serializers.py changed, reloading.
+INFO 2025-07-28 14:14:16 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:15:50 [django.utils.autoreload] /app/apps/metaimages/models.py changed, reloading.
+INFO 2025-07-28 14:15:58 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:16:12 [django.utils.autoreload] /app/apps/metaimages/serializers.py changed, reloading.
+INFO 2025-07-28 14:16:20 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:16:55 [django.utils.autoreload] /app/apps/metaimages/views.py changed, reloading.
+INFO 2025-07-28 14:17:03 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:20:09 [django.utils.autoreload] /app/apps/metaimages/admin.py changed, reloading.
+INFO 2025-07-28 14:20:17 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:23:10 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:33:44 [django.utils.autoreload] /app/apps/metaimages/admin.py changed, reloading.
+INFO 2025-07-28 14:33:51 [django.utils.autoreload] Watching for file changes with StatReloader

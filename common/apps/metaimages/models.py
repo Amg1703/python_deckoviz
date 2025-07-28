@@ -19,4 +19,17 @@ class MetaImage(BaseModel):
         ]
 
     def __str__(self):
-        return f"{self.user.username}'s Meta Images" 
+        return f"{self.user.username}'s Meta Images"
+
+
+class SharedImage(models.Model):
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='shared_with')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='shared_images')
+    shared_with = models.ForeignKey(User, on_delete=models.CASCADE, related_name='images_shared_to_me')
+    shared_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('image', 'shared_with')
+
+    def __str__(self):
+        return f"{self.owner.email} shared {self.image} with {self.shared_with.email}" 
