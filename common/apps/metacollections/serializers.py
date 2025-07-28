@@ -7,15 +7,34 @@ class MetaCollectionSerializer(serializers.ModelSerializer):
     starred_collections = CollectionSerializer(many=True, read_only=True)
     liked_collections = CollectionSerializer(many=True, read_only=True)
     shared_collections = serializers.SerializerMethodField()
+    collections_shared_by_me = serializers.SerializerMethodField()
 
     class Meta:
         model = MetaCollection
-        fields = ['id', 'user', 'favourite_collections', 'starred_collections', 'liked_collections', 'shared_collections']
+        fields = ['id', 'user', 'favourite_collections', 'starred_collections', 'liked_collections', 'shared_collections', 'collections_shared_by_me']
 
     def get_shared_collections(self, obj):
+        """Collections that have been shared with this user"""
         from .models import SharedCollection
         shared = SharedCollection.objects.filter(shared_with=obj.user)
         return CollectionSerializer([s.collection for s in shared], many=True).data
+    
+    def get_collections_shared_by_me(self, obj):
+        """Collections that this user has shared with others"""
+        from .models import SharedCollection
+        shared_by_me = SharedCollection.objects.filter(owner=obj.user).select_related('collection', 'shared_with')
+        
+        # Group by collection and include sharing details
+        shared_data = []
+        for share in shared_by_me:
+            collection_data = CollectionSerializer(share.collection).data
+            # Add sharing metadata
+            collection_data['shared_with_email'] = share.shared_with.email
+            collection_data['shared_with_username'] = share.shared_with.username
+            collection_data['shared_at'] = share.shared_at
+            shared_data.append(collection_data)
+        
+        return shared_data
 
 class AddToFavouriteSerializer(serializers.Serializer):
     collection_id = serializers.UUIDField()

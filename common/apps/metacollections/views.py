@@ -188,4 +188,30 @@ class RemoveFromLikedCollectionView(APIView):
             meta_collection, created = MetaCollection.objects.get_or_create(user=request.user)
             meta_collection.liked_collections.remove(collection)
             return Response({'status': 'collection removed from liked'}, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@extend_schema(
+    responses={200: OpenApiResponse(description='List of collections shared by the current user.')},
+    description="Get all collections that the current user has shared with others, including sharing details."
+)
+class MySharedCollectionsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        shared_by_me = SharedCollection.objects.filter(owner=request.user).select_related('collection', 'shared_with')
+        
+        # Group by collection and include sharing details
+        shared_data = []
+        for share in shared_by_me:
+            from apps.gallery.serializers import CollectionSerializer
+            collection_data = CollectionSerializer(share.collection).data
+            # Add sharing metadata
+            collection_data['shared_with_email'] = share.shared_with.email
+            collection_data['shared_with_username'] = share.shared_with.username
+            collection_data['shared_at'] = share.shared_at
+            shared_data.append(collection_data)
+        
+        return Response({
+            'collections_shared_by_me': shared_data,
+            'total_count': len(shared_data)
+        }) 

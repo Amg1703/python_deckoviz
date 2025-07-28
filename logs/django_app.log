@@ -296,3 +296,16 @@ INFO 2025-07-28 14:20:17 [django.utils.autoreload] Watching for file changes wit
 INFO 2025-07-28 14:23:10 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-28 14:33:44 [django.utils.autoreload] /app/apps/metaimages/admin.py changed, reloading.
 INFO 2025-07-28 14:33:51 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:39:35 [django.utils.autoreload] /app/apps/metaimages/serializers.py changed, reloading.
+INFO 2025-07-28 14:39:43 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:39:57 [django.utils.autoreload] /app/apps/metacollections/serializers.py changed, reloading.
+INFO 2025-07-28 14:40:05 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:40:19 [django.utils.autoreload] /app/apps/metaimages/views.py changed, reloading.
+INFO 2025-07-28 14:40:27 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:40:41 [django.utils.autoreload] /app/apps/metacollections/views.py changed, reloading.
+INFO 2025-07-28 14:40:49 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:41:20 [django.utils.autoreload] /app/apps/metacollections/urls.py changed, reloading.
+INFO 2025-07-28 14:41:28 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:44:14 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:48:22 [django.utils.autoreload] /app/apps/metaimages/urls.py changed, reloading.
+INFO 2025-07-28 14:48:30 [django.utils.autoreload] Watching for file changes with StatReloader

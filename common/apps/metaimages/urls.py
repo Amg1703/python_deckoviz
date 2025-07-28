@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import (
     MetaImageView, AddToLikedView, RemoveFromLikedView, 
-    AddToStarredView, RemoveFromStarredView, ShareImageView, RemoveSharedUserView
+    AddToStarredView, RemoveFromStarredView, ShareImageView, RemoveSharedUserView,
+    MySharedImagesView
 )
 
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path('starred/remove/', RemoveFromStarredView.as_view(), name='remove-from-starred-image'),
     path('share/', ShareImageView.as_view(), name='share-image'),
     path('share/remove/', RemoveSharedUserView.as_view(), name='remove-shared-user'),
+    path('my-shared/', MySharedImagesView.as_view(), name='my-shared-images'),
 ] 

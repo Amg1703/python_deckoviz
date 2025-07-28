@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MetaCollectionView, AddToFavouritesView, RemoveFromFavouritesView, AddToStarredView, RemoveFromStarredView, ShareCollectionView, RemoveSharedUserView, AddToLikedCollectionView, RemoveFromLikedCollectionView
+from .views import MetaCollectionView, AddToFavouritesView, RemoveFromFavouritesView, AddToStarredView, RemoveFromStarredView, ShareCollectionView, RemoveSharedUserView, AddToLikedCollectionView, RemoveFromLikedCollectionView, MySharedCollectionsView
 
 urlpatterns = [
     path('', MetaCollectionView.as_view(), name='meta-collection'),
@@ -11,4 +11,5 @@ urlpatterns = [
     path('remove-shared-user/', RemoveSharedUserView.as_view(), name='remove-shared-user'),
     path('liked/add/', AddToLikedCollectionView.as_view(), name='add-to-liked-collection'),
     path('liked/remove/', RemoveFromLikedCollectionView.as_view(), name='remove-from-liked-collection'),
+    path('my-shared/', MySharedCollectionsView.as_view(), name='my-shared-collections'),
 ] 

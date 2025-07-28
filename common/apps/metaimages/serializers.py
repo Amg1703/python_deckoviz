@@ -6,15 +6,34 @@ class MetaImageSerializer(serializers.ModelSerializer):
     liked_images = ImageSerializer(many=True, read_only=True)
     starred_images = ImageSerializer(many=True, read_only=True)
     shared_images = serializers.SerializerMethodField()
+    images_shared_by_me = serializers.SerializerMethodField()
 
     class Meta:
         model = MetaImage
-        fields = ['id', 'user', 'liked_images', 'starred_images', 'shared_images']
+        fields = ['id', 'user', 'liked_images', 'starred_images', 'shared_images', 'images_shared_by_me']
 
     def get_shared_images(self, obj):
+        """Images that have been shared with this user"""
         from .models import SharedImage
         shared = SharedImage.objects.filter(shared_with=obj.user)
         return ImageSerializer([s.image for s in shared], many=True).data
+    
+    def get_images_shared_by_me(self, obj):
+        """Images that this user has shared with others"""
+        from .models import SharedImage
+        shared_by_me = SharedImage.objects.filter(owner=obj.user).select_related('image', 'shared_with')
+        
+        # Group by image and include sharing details
+        shared_data = []
+        for share in shared_by_me:
+            image_data = ImageSerializer(share.image).data
+            # Add sharing metadata
+            image_data['shared_with_email'] = share.shared_with.email
+            image_data['shared_with_username'] = share.shared_with.username
+            image_data['shared_at'] = share.shared_at
+            shared_data.append(image_data)
+        
+        return shared_data
 
 class AddToLikedSerializer(serializers.Serializer):
     image_id = serializers.UUIDField()

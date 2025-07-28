@@ -145,4 +145,30 @@ class RemoveSharedUserView(APIView):
                 return Response({'error': 'Only the owner can remove shared users.'}, status=status.HTTP_403_FORBIDDEN)
             SharedImage.objects.filter(image=image, owner=request.user, shared_with=user_to_remove).delete()
             return Response({'status': f'User {email} removed from shared image'}, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@extend_schema(
+    responses={200: OpenApiResponse(description='List of images shared by the current user.')},
+    description="Get all images that the current user has shared with others, including sharing details."
+)
+class MySharedImagesView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        shared_by_me = SharedImage.objects.filter(owner=request.user).select_related('image', 'shared_with')
+        
+        # Group by image and include sharing details
+        shared_data = []
+        for share in shared_by_me:
+            from apps.gallery.serializers import ImageSerializer
+            image_data = ImageSerializer(share.image).data
+            # Add sharing metadata
+            image_data['shared_with_email'] = share.shared_with.email
+            image_data['shared_with_username'] = share.shared_with.username
+            image_data['shared_at'] = share.shared_at
+            shared_data.append(image_data)
+        
+        return Response({
+            'images_shared_by_me': shared_data,
+            'total_count': len(shared_data)
+        }) 
