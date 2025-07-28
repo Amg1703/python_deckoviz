@@ -3,7 +3,6 @@ from .models import Audio, Image, Collection, CollectionImage, DailyCuration, Ri
 from apps.authentication.serializers import UserSerializer
 from apps.marketplace.serializers import PriceSerializer
 from apps.marketplace.models import Price
-from django.db import transaction
 import requests
 import logging
 from django.core.files.base import ContentFile
@@ -166,7 +165,6 @@ class AudioSerializer(serializers.ModelSerializer):
 
 class ImageSerializer(serializers.ModelSerializer):
     price = PriceSerializer(read_only=True)
-    buy_price = serializers.DecimalField(max_digits=10, decimal_places=2, write_only=True)
     uploaded_by = UserSerializer(read_only=True)
     
     title = serializers.CharField(required=False, allow_blank=True)
@@ -184,7 +182,6 @@ class ImageSerializer(serializers.ModelSerializer):
             'music',
             'external_url',
             'uploaded_by',
-            'buy_price',
             'view',
             'price',
             'is_active',
@@ -231,7 +228,6 @@ class ImageSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = self.context['request'].user
         validated_data['uploaded_by'] = user
-        buy_price = validated_data.pop('buy_price')
         file_url = validated_data.pop('file_url', None)
         # Download image from URL if file_url is provided
         if file_url and not validated_data.get('file'):
@@ -242,9 +238,7 @@ class ImageSerializer(serializers.ModelSerializer):
                 validated_data['file'] = ContentFile(response.content, name=file_name)
             except Exception as e:
                 raise serializers.ValidationError({'file_url': f'Failed to download image: {str(e)}'})
-        with transaction.atomic():
-            image = super().create(validated_data)
-            Price.objects.create(image=image, final_price=buy_price, is_active=True)
+        image = super().create(validated_data)
         self._generate_metadata(image)
         return image
     

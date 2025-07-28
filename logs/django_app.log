@@ -281,3 +281,5 @@ INFO 2025-07-26 19:22:20 [django.utils.autoreload] /app/apps/gallery/views.py ch
 INFO 2025-07-26 19:22:24 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-26 19:23:21 [django.utils.autoreload] /app/apps/gallery/views.py changed, reloading.
 INFO 2025-07-26 19:23:24 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:07:24 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-07-28 14:08:16 [apps.gallery.serializers] Successfully generated metadata for: DJ - Title: DJ Mixing at a Club
