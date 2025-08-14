@@ -75,4 +75,36 @@ class AddToLikedCollectionSerializer(serializers.Serializer):
         from apps.gallery.models import Collection
         if not Collection.objects.filter(id=value).exists():
             raise serializers.ValidationError("Collection does not exist.")
-        return value 
+        return value
+
+class SharedCollectionResponseSerializer(serializers.Serializer):
+    """Response serializer for shared collections with metadata"""
+    id = serializers.UUIDField()
+    title = serializers.CharField()
+    description = serializers.CharField()
+    shared_with_email = serializers.EmailField()
+    shared_with_username = serializers.CharField()
+    shared_at = serializers.DateTimeField()
+
+class SharedCollectionsByUserResponseSerializer(serializers.Serializer):
+    """Response serializer for collections shared by a specific user"""
+    collections_shared_by_user = SharedCollectionResponseSerializer(many=True)
+    sharer_info = serializers.DictField()
+    total_count = serializers.IntegerField()
+
+class UsersWhoSharedCollectionsResponseSerializer(serializers.Serializer):
+    """Response serializer for users who shared collections"""
+    user_id = serializers.IntegerField()
+    username = serializers.CharField()
+    email = serializers.EmailField()
+    shared_collections_count = serializers.IntegerField()
+
+class UsersWhoSharedCollectionsListResponseSerializer(serializers.Serializer):
+    """Response serializer for list of users who shared collections"""
+    users_who_shared = UsersWhoSharedCollectionsResponseSerializer(many=True)
+    total_users = serializers.IntegerField()
+
+class MySharedCollectionsResponseSerializer(serializers.Serializer):
+    """Response serializer for collections shared by current user"""
+    collections_shared_by_me = SharedCollectionResponseSerializer(many=True)
+    total_count = serializers.IntegerField()

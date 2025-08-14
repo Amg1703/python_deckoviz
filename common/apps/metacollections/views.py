@@ -3,14 +3,15 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .models import MetaCollection, SharedCollection
-from .serializers import MetaCollectionSerializer, AddToFavouriteSerializer, AddToStarredSerializer, ShareCollectionSerializer, AddToLikedCollectionSerializer
+from .serializers import MetaCollectionSerializer, AddToFavouriteSerializer, AddToStarredSerializer, ShareCollectionSerializer, AddToLikedCollectionSerializer, MySharedCollectionsResponseSerializer, SharedCollectionsByUserResponseSerializer, UsersWhoSharedCollectionsListResponseSerializer
 from apps.gallery.models import Collection
 from django.contrib.auth import get_user_model
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 
 @extend_schema(
     responses={200: MetaCollectionSerializer},
-    description="Retrieve the current user's MetaCollection object, including favourite, starred, liked, and shared collections. Creates one if it does not exist."
+    description="Retrieve the current user's MetaCollection object, including favourite, starred, liked, and shared collections. Creates one if it does not exist.",
+    tags=["MetaCollections"]
 )
 class MetaCollectionView(APIView):
     permission_classes = [IsAuthenticated]
@@ -107,7 +108,8 @@ class RemoveFromStarredView(APIView):
 @extend_schema(
     request=ShareCollectionSerializer,
     responses={200: OpenApiResponse(description='Collection shared with user.'), 403: OpenApiResponse(description='Only the owner can share this collection.'), 400: OpenApiResponse(description='Invalid input.')},
-    description="Share a collection with another user by email. Only the owner can share."
+    description="Share a collection with another user by email. Only the owner can share.",
+    tags=["Collection Sharing"]
 )
 class ShareCollectionView(APIView):
     permission_classes = [IsAuthenticated]
@@ -130,7 +132,8 @@ class ShareCollectionView(APIView):
 @extend_schema(
     request=ShareCollectionSerializer,
     responses={200: OpenApiResponse(description='User removed from shared collection.'), 403: OpenApiResponse(description='Only the owner can remove shared users.'), 400: OpenApiResponse(description='Invalid input.')},
-    description="Remove a user from a shared collection. Only the owner can remove."
+    description="Remove a user from a shared collection. Only the owner can remove.",
+    tags=["Collection Sharing"]
 )
 class RemoveSharedUserView(APIView):
     permission_classes = [IsAuthenticated]
@@ -191,8 +194,9 @@ class RemoveFromLikedCollectionView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @extend_schema(
-    responses={200: OpenApiResponse(description='List of collections shared by the current user.')},
-    description="Get all collections that the current user has shared with others, including sharing details."
+    responses={200: MySharedCollectionsResponseSerializer},
+    description="Get all collections that the current user has shared with others, including sharing details.",
+    tags=["Collection Sharing"]
 )
 class MySharedCollectionsView(APIView):
     permission_classes = [IsAuthenticated]
@@ -214,4 +218,91 @@ class MySharedCollectionsView(APIView):
         return Response({
             'collections_shared_by_me': shared_data,
             'total_count': len(shared_data)
+        })
+
+@extend_schema(
+    responses={200: SharedCollectionsByUserResponseSerializer, 404: OpenApiResponse(description='User not found')},
+    description="Get all collections that a specific user has shared with the current user. Useful for filtering shared content by sharer.",
+    parameters=[
+        {
+            'name': 'user_id',
+            'in': 'path',
+            'required': True,
+            'description': 'ID of the user who shared the collections',
+            'schema': {'type': 'integer'}
+        }
+    ],
+    tags=["Collection Sharing - User Filtering"]
+)
+class SharedCollectionsByUserView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, user_id):
+        try:
+            User = get_user_model()
+            sharer_user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Get collections shared by the specific user with the current user
+        shared_with_me = SharedCollection.objects.filter(
+            owner=sharer_user, 
+            shared_with=request.user
+        ).select_related('collection', 'owner')
+        
+        # Format the response
+        shared_data = []
+        for share in shared_with_me:
+            from apps.gallery.serializers import CollectionSerializer
+            collection_data = CollectionSerializer(share.collection).data
+            # Add sharer metadata
+            collection_data['shared_by_email'] = share.owner.email
+            collection_data['shared_by_username'] = share.owner.username
+            collection_data['shared_at'] = share.shared_at
+            shared_data.append(collection_data)
+        
+        return Response({
+            'collections_shared_by_user': shared_data,
+            'sharer_info': {
+                'user_id': sharer_user.id,
+                'username': sharer_user.username,
+                'email': sharer_user.email
+            },
+            'total_count': len(shared_data)
+        })
+
+@extend_schema(
+    responses={200: UsersWhoSharedCollectionsListResponseSerializer},
+    description="Get all users who have shared collections with the current user. Useful for building a filter list in the frontend.",
+    tags=["Collection Sharing - User Filtering"]
+)
+class UsersWhoSharedCollectionsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        # Get unique users who have shared collections with the current user
+        shared_users = SharedCollection.objects.filter(
+            shared_with=request.user
+        ).values(
+            'owner__id', 'owner__username', 'owner__email'
+        ).distinct()
+        
+        users_data = []
+        for user_data in shared_users:
+            # Count how many collections this user has shared with me
+            collection_count = SharedCollection.objects.filter(
+                owner_id=user_data['owner__id'],
+                shared_with=request.user
+            ).count()
+            
+            users_data.append({
+                'user_id': user_data['owner__id'],
+                'username': user_data['owner__username'],
+                'email': user_data['owner__email'],
+                'shared_collections_count': collection_count
+            })
+        
+        return Response({
+            'users_who_shared': users_data,
+            'total_users': len(users_data)
         }) 

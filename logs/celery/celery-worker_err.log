@@ -168768,3 +168768,692 @@ KeyError: 'apps.gallery.tasks.generate_metadata'
 [2025-07-28 14:47:53,960: INFO/MainProcess] Task apps.gallery.tasks.process_audio[091b4aaf-25ed-4083-a178-5788f1475e93] received
 [2025-07-28 14:48:03,935: INFO/MainProcess] Task apps.gallery.tasks.process_audio[52631980-0599-4abf-bf6a-e1a80d6f99a2] received
 [2025-07-28 14:48:08,516: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[7b24152f-f6a2-4ba7-8607-cbbb2802caf8] received
+[2025-07-28 14:48:48,908: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[9ded76d6-d2e1-42a3-9207-fd9ddabc7dae] succeeded in 110.25234679000005s: None
+[2025-07-28 14:48:49,208: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-28 14:48:50,590: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-28 14:48:51,023: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[b605c07a-6fdb-4a73-b654-d1e8a24fdaf3] succeeded in 1.8158173279998664s: None
+[2025-07-28 14:48:51,407: INFO/ForkPoolWorker-1] Fetching audios to process
+[2025-07-28 14:48:52,701: INFO/ForkPoolWorker-1] No audio files to process
+[2025-07-28 14:48:53,092: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.process_audio[40d35fc1-9f8c-4ace-95c3-2023953e129b] succeeded in 1.6874424659999931s: None
+[2025-07-28 14:48:53,490: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-28 14:48:53,491: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-28T14:48:53.491227
+[2025-07-28 14:48:53,491: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:48:54,083: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e31afb1d-4c91-43ad-9867-282e3d3ac870] received
+[2025-07-28 14:49:00,570: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[ffcbb996-aa76-45cb-bdda-bc4b9c051c88] succeeded in 118.01509360399996s: None
+[2025-07-28 14:49:00,774: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-28 14:49:00,775: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-28T14:49:00.775156
+[2025-07-28 14:49:00,775: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:49:02,137: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[e4f0fdf3-0ca2-403e-b9f6-25fa76a49463] succeeded in 117.61863566800002s: None
+[2025-07-28 14:49:02,545: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-28 14:49:02,545: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-28T14:49:02.545787
+[2025-07-28 14:49:02,545: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:49:04,020: INFO/MainProcess] Task apps.gallery.tasks.process_audio[8f4e98fb-9617-44a2-aa77-d134a1bc0df1] received
+[2025-07-28 14:49:14,011: INFO/MainProcess] Task apps.gallery.tasks.process_audio[a4bdf0fe-75da-4dfb-8b42-7aa6cac8cfc0] received
+[2025-07-28 14:49:18,113: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[cfb646b0-b5b7-4181-b7df-68ec62882019] succeeded in 109.10837985600028s: None
+[2025-07-28 14:49:18,298: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-28 14:49:18,299: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-28T14:49:18.299086
+[2025-07-28 14:49:18,299: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:49:19,806: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[7aaec8da-e03c-4935-bbd0-d86851ec4154] received
+[2025-07-28 14:49:23,964: INFO/MainProcess] Task apps.gallery.tasks.process_audio[12089e7e-e408-4398-a1fe-584bfcbfae20] received
+[2025-07-28 14:49:29,739: INFO/MainProcess] Task apps.gallery.tasks.process_audio[802610f9-42b7-4b0d-b9c0-dd315be65a0d] received
+[2025-07-28 14:50:41,842: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[add1f056-6915-4817-b178-3f014ce91159] succeeded in 108.35905132900007s: None
+[2025-07-28 14:50:42,095: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-28 14:50:42,095: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-28T14:50:42.095768
+[2025-07-28 14:50:42,096: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:50:44,170: INFO/MainProcess] Task apps.gallery.tasks.process_audio[47dfc77e-b8e3-480a-a84e-9b9a0f7b68b6] received
+[2025-07-28 14:50:44,843: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[c239776b-99f3-4154-a7af-1eaa0e3c38d7] succeeded in 102.30578004100016s: None
+[2025-07-28 14:50:45,053: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-28 14:50:45,648: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[b0d122d9-40da-4dfe-8384-d79aefa2171b] succeeded in 104.88166221500023s: None
+[2025-07-28 14:50:45,835: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-07-28 14:50:45,835: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-07-28T14:50:45.835822
+[2025-07-28 14:50:45,835: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:50:46,409: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-28 14:50:46,868: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[a10c6597-a739-4b9c-bb7f-f4d149e9216f] succeeded in 1.815674897000008s: None
+[2025-07-28 14:50:47,070: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-28 14:50:48,770: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-28 14:50:49,173: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[4d431b50-3455-4737-b2e6-3f6978e4a78d] succeeded in 2.1036664319999545s: None
+[2025-07-28 14:50:49,401: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-07-28 14:50:50,605: INFO/ForkPoolWorker-4] No audio files to process
+[2025-07-28 14:50:50,990: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[57eb4558-c109-4664-9e59-f3e3735e9658] succeeded in 1.5889921620000678s: None
+[2025-07-28 14:50:51,198: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-07-28 14:50:51,198: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-07-28T14:50:51.198938
+[2025-07-28 14:50:51,199: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:50:53,952: INFO/MainProcess] Task apps.gallery.tasks.process_audio[329c359c-b426-430d-b649-1a72c6841981] received
+[2025-07-28 14:50:59,821: INFO/MainProcess] Task apps.gallery.tasks.process_audio[2260e497-d847-456a-be8b-49b82d4f5c49] received
+[2025-07-28 14:51:05,490: INFO/ForkPoolWorker-3] Task apps.gallery.tasks.populate_unsplash_images[dde87df9-eedf-47c4-9f9d-29bebced92b4] succeeded in 107.20225300699985s: None
+[2025-07-28 14:51:05,704: INFO/ForkPoolWorker-3] Fetching unsplash images to process
+[2025-07-28 14:51:05,704: INFO/ForkPoolWorker-3] Starting Unsplash to gcs uploader job at 2025-07-28T14:51:05.704740
+[2025-07-28 14:51:05,704: INFO/ForkPoolWorker-3] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:51:08,691: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[8f9acc2b-fbb4-486c-9a40-9b402ce6610e] received
+[2025-07-28 14:51:09,817: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[46f309f3-37a0-4780-bee4-7aae746e56e3] received
+[2025-07-28 14:51:18,555: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[fca9a969-177a-4e96-a1da-e99da9fccc79] received
+[2025-07-28 14:51:19,824: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[2c743762-75db-43cd-932b-1d4363cdafa2] received
+[2025-07-28 14:52:24,517: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[2217b70a-eb41-4b1b-894f-6549c738e128] succeeded in 98.69244189000028s: None
+[2025-07-28 14:52:24,718: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-28 14:52:26,016: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-28 14:52:26,410: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[091b4aaf-25ed-4083-a178-5788f1475e93] succeeded in 1.6933411019999767s: None
+[2025-07-28 14:52:26,607: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-07-28 14:52:27,387: INFO/ForkPoolWorker-1] Task apps.gallery.tasks.populate_unsplash_images[3c4a9fe7-c28a-41ca-a129-6dcdd9587d2e] succeeded in 105.30262161899964s: None
+[2025-07-28 14:52:27,644: INFO/ForkPoolWorker-1] Fetching unsplash images to process
+[2025-07-28 14:52:27,644: INFO/ForkPoolWorker-1] Starting Unsplash to gcs uploader job at 2025-07-28T14:52:27.644633
+[2025-07-28 14:52:27,644: INFO/ForkPoolWorker-1] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-07-28 14:52:28,050: INFO/ForkPoolWorker-2] No audio files to process
+[2025-07-28 14:52:29,563: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (0/20) now.
+[2025-07-28 14:52:29,584: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (1/20) in 1.00 second.
+[2025-07-28 14:52:29,551: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 336, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 726, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+  File "/usr/local/lib/python3.12/site-packages/kombu/asynchronous/hub.py", line 373, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 1359, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 576, in on_readable
+    chan.handlers[type]()
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 925, in _receive
+    ret.append(self._receive_one(c))
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/kombu/transport/redis.py", line 935, in _receive_one
+    response = c.parse_response()
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 865, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 841, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 65, in call_with_retry
+    fail(error)
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 843, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 830, in _disconnect_raise_connect
+    raise error
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 842, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 863, in try_read
+    return conn.read_response(disconnect_on_error=False, push_request=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 592, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2025-07-28 14:52:29,746: WARNING/MainProcess] /usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:386: CPendingDeprecationWarning: 
+In Celery 5.1 we introduced an optional breaking change which
+on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+
+  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+
+[2025-07-28 14:52:29,749: INFO/MainProcess] Temporarily reducing the prefetch count to 4 to avoid over-fetching since 4 tasks are currently being processed.
+The prefetch count will be gradually restored to 16 as the tasks complete processing.
+[2025-07-28 14:52:29,848: WARNING/ForkPoolWorker-4] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Error 111 connecting to 168.231.112.236:6379. Connection refused.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 295, in run
+    user = User.objects.get(is_superuser=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1428, in get_connection
+    if connection.can_read() and self.cache is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 570, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/base.py", line 128, in can_read
+    return self._buffer and self._buffer.can_read(timeout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 95, in can_read
+    return bool(self.unread_bytes()) or self._read_from_socket(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1432, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 168.231.112.236:6379. Connection refused.
+
+  warn(RuntimeWarning(
+
+[2025-07-28 14:52:29,896: WARNING/ForkPoolWorker-1] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Error 111 connecting to 168.231.112.236:6379. Connection refused.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "168.231.112.236", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 295, in run
+    user = User.objects.get(is_superuser=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 279, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/base/base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/postgresql/base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: connection to server at "168.231.112.236", port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1428, in get_connection
+    if connection.can_read() and self.cache is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 570, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/base.py", line 128, in can_read
+    return self._buffer and self._buffer.can_read(timeout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 95, in can_read
+    return bool(self.unread_bytes()) or self._read_from_socket(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1432, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 168.231.112.236:6379. Connection refused.
+
+  warn(RuntimeWarning(
+
+[2025-07-28 14:52:29,899: WARNING/ForkPoolWorker-3] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Error 111 connecting to 168.231.112.236:6379. Connection refused.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 328, in run
+    if Image.objects.filter(image_id=id).exists():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/query.py", line 660, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1428, in get_connection
+    if connection.can_read() and self.cache is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 570, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/base.py", line 128, in can_read
+    return self._buffer and self._buffer.can_read(timeout)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 95, in can_read
+    return bool(self.unread_bytes()) or self._read_from_socket(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/socket.py", line 68, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 494, in trace_task
+    I, R, state, retval = on_error(task_request, exc)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 399, in on_error
+    R = I.handle_error_state(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 178, in handle_error_state
+    return {
+           ^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 230, in handle_failure
+    task.backend.mark_as_failure(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 167, in mark_as_failure
+    self.store_result(task_id, exc, state,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 973, in _store_result
+    current_meta = self._get_task_meta_for(task_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 995, in _get_task_meta_for
+    meta = self.get(self.get_key_for_task(task_id))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 376, in get
+    return self.client.get(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1432, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 168.231.112.236:6379. Connection refused.
+
+  warn(RuntimeWarning(
+
+[2025-07-28 19:14:28,332: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 2.00 seconds... (1/100)
+
+[2025-07-28 19:14:29,076: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (2/20) in 1.00 second.
+[2025-07-28 19:14:30,078: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (3/20) in 1.00 second.
+[2025-07-28 19:14:30,335: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 4.00 seconds... (2/100)
+
+[2025-07-28 19:14:31,080: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (4/20) in 1.00 second.
+[2025-07-28 19:14:32,082: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (5/20) in 1.00 second.
+[2025-07-28 19:14:33,084: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (6/20) in 1.00 second.
+[2025-07-28 19:14:34,086: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (7/20) in 1.00 second.
+[2025-07-28 19:14:34,338: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 6.00 seconds... (3/100)
+
+[2025-07-28 19:14:35,088: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (8/20) in 1.00 second.
+[2025-07-28 19:14:36,091: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (9/20) in 1.00 second.
+[2025-07-28 19:14:37,092: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (10/20) in 1.00 second.
+[2025-07-28 19:14:38,094: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (11/20) in 1.00 second.
+[2025-07-28 19:14:39,096: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (12/20) in 1.00 second.
+[2025-07-28 19:14:40,098: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (13/20) in 1.00 second.
+[2025-07-28 19:14:40,341: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 8.00 seconds... (4/100)
+
+[2025-07-28 19:14:41,100: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (14/20) in 1.00 second.
+[2025-07-28 19:14:42,102: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (15/20) in 1.00 second.
+[2025-07-28 19:14:43,104: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (16/20) in 1.00 second.
+[2025-07-28 19:14:44,106: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (17/20) in 1.00 second.
+[2025-07-28 19:14:45,107: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (18/20) in 1.00 second.
+[2025-07-28 19:14:46,109: ERROR/ForkPoolWorker-2] Connection to Redis lost: Retry (19/20) in 1.00 second.
+[2025-07-28 19:14:47,124: WARNING/ForkPoolWorker-2] /usr/local/lib/python3.12/site-packages/celery/app/trace.py:686: RuntimeWarning: Exception raised outside body: ConnectionError('Error 111 connecting to 168.231.112.236:6379. Connection refused.'):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 357, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 358, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 730, in _connect
+    raise err
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 718, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 544, in trace_task
+    task.backend.mark_as_done(
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 157, in mark_as_done
+    self.store_result(task_id, result, state, request=request)
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 526, in store_result
+    self._store_result(task_id, result, state, traceback,
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 979, in _store_result
+    self._set_with_state(self.get_key_for_task(task_id), self.encode(meta), state)
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/base.py", line 852, in _set_with_state
+    return self.set(key, value)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 400, in set
+    return self.ensure(self._set, (key, value), **retry_policy)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 384, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/backends/redis.py", line 409, in _set
+    pipe.execute()
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 1524, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 168.231.112.236:6379. Connection refused.
+
+  warn(RuntimeWarning(
+
+[2025-07-28 19:14:48,348: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 10.00 seconds... (5/100)
+
+[2025-07-28 19:14:58,361: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 12.00 seconds... (6/100)
+
+[2025-07-28 19:15:10,364: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 14.00 seconds... (7/100)
+
+[2025-07-28 19:15:24,368: ERROR/MainProcess] consumer: Cannot connect to redis://default:**@168.231.112.236:6379//: Error 111 connecting to 168.231.112.236:6379. Connection refused..
+Trying again in 16.00 seconds... (8/100)
+

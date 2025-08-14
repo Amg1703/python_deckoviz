@@ -65,4 +65,37 @@ class ShareImageSerializer(serializers.Serializer):
             raise serializers.ValidationError("Image does not exist.")
         if not User.objects.filter(email=data['email']).exists():
             raise serializers.ValidationError("User with this email does not exist.")
-        return data 
+        return data
+
+class SharedImageResponseSerializer(serializers.Serializer):
+    """Response serializer for shared images with metadata"""
+    id = serializers.UUIDField()
+    title = serializers.CharField()
+    image = serializers.URLField()
+    thumbnail = serializers.URLField()
+    shared_with_email = serializers.EmailField()
+    shared_with_username = serializers.CharField()
+    shared_at = serializers.DateTimeField()
+
+class SharedImagesByUserResponseSerializer(serializers.Serializer):
+    """Response serializer for images shared by a specific user"""
+    images_shared_by_user = SharedImageResponseSerializer(many=True)
+    sharer_info = serializers.DictField()
+    total_count = serializers.IntegerField()
+
+class UsersWhoSharedResponseSerializer(serializers.Serializer):
+    """Response serializer for users who shared images"""
+    user_id = serializers.IntegerField()
+    username = serializers.CharField()
+    email = serializers.EmailField()
+    shared_images_count = serializers.IntegerField()
+
+class UsersWhoSharedListResponseSerializer(serializers.Serializer):
+    """Response serializer for list of users who shared images"""
+    users_who_shared = UsersWhoSharedResponseSerializer(many=True)
+    total_users = serializers.IntegerField()
+
+class MySharedImagesResponseSerializer(serializers.Serializer):
+    """Response serializer for images shared by current user"""
+    images_shared_by_me = SharedImageResponseSerializer(many=True)
+    total_count = serializers.IntegerField()

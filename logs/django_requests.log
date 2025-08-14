@@ -836,3 +836,15 @@ REQUEST 2025-07-28 14:47:36 [INFO] "GET /metaimages/my-shared/ HTTP/1.1" 200 42
 REQUEST 2025-07-28 14:47:56 [INFO] START GET /metaimages/my-shared/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-28 14:47:59 [INFO] END GET /metaimages/my-shared/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.321s
 REQUEST 2025-07-28 14:47:59 [INFO] "GET /metaimages/my-shared/ HTTP/1.1" 200 1642
+REQUEST 2025-07-29 14:27:27 [INFO] START GET /metaimages/my-shared/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
+REQUEST 2025-07-29 14:27:31 [INFO] END GET /metaimages/my-shared/ | Status: 200 | User: user:ae3a7351-095d-4cae-ac04-123330f95c95(Devian) | Duration: 3.846s
+REQUEST 2025-07-29 14:27:31 [INFO] "GET /metaimages/my-shared/ HTTP/1.1" 200 1642
+REQUEST 2025-07-29 14:58:54 [INFO] START GET /api/schema/swagger-ui/?id=63086989-6dea-4df9-8ac6-1325a5e75794&vscodeBrowserReqId=1753801134308 | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.102.2 Chrome
+REQUEST 2025-07-29 14:58:54 [INFO] END GET /api/schema/swagger-ui/?id=63086989-6dea-4df9-8ac6-1325a5e75794&vscodeBrowserReqId=1753801134308 | Status: 200 | User: anonymous | Duration: 0.241s
+REQUEST 2025-07-29 14:58:54 [INFO] "GET /api/schema/swagger-ui/?id=63086989-6dea-4df9-8ac6-1325a5e75794&vscodeBrowserReqId=1753801134308 HTTP/1.1" 200 4248
+REQUEST 2025-07-29 14:59:13 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-29 14:59:13 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.005s
+REQUEST 2025-07-29 14:59:13 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4248
+REQUEST 2025-07-29 14:59:15 [INFO] START GET /api/schema/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
+REQUEST 2025-07-29 14:59:16 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.673s
+REQUEST 2025-07-29 14:59:16 [INFO] "GET /api/schema/ HTTP/1.1" 200 404779

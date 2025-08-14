@@ -3,14 +3,15 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .models import MetaImage, SharedImage
-from .serializers import MetaImageSerializer, AddToLikedSerializer, AddToStarredSerializer, ShareImageSerializer
+from .serializers import MetaImageSerializer, AddToLikedSerializer, AddToStarredSerializer, ShareImageSerializer, MySharedImagesResponseSerializer, SharedImagesByUserResponseSerializer, UsersWhoSharedListResponseSerializer
 from apps.gallery.models import Image
 from django.contrib.auth import get_user_model
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 
 @extend_schema(
     responses={200: MetaImageSerializer},
-    description="Retrieve the current user's MetaImage object, including liked, starred, and shared images. Creates one if it does not exist."
+    description="Retrieve the current user's MetaImage object, including liked, starred, and shared images. Creates one if it does not exist.",
+    tags=["MetaImages"]
 )
 class MetaImageView(APIView):
     permission_classes = [IsAuthenticated]
@@ -104,7 +105,8 @@ class RemoveFromStarredView(APIView):
 @extend_schema(
     request=ShareImageSerializer,
     responses={200: OpenApiResponse(description='Image shared with user.'), 403: OpenApiResponse(description='Only the owner can share this image.'), 400: OpenApiResponse(description='Invalid input.')},
-    description="Share an image with another user by email. Only the owner can share."
+    description="Share an image with another user by email. Only the owner can share.",
+    tags=["Image Sharing"]
 )
 class ShareImageView(APIView):
     permission_classes = [IsAuthenticated]
@@ -127,7 +129,8 @@ class ShareImageView(APIView):
 @extend_schema(
     request=ShareImageSerializer,
     responses={200: OpenApiResponse(description='User removed from shared image.'), 403: OpenApiResponse(description='Only the owner can remove shared users.'), 400: OpenApiResponse(description='Invalid input.')},
-    description="Remove a user from a shared image. Only the owner can remove."
+    description="Remove a user from a shared image. Only the owner can remove.",
+    tags=["Image Sharing"]
 )
 class RemoveSharedUserView(APIView):
     permission_classes = [IsAuthenticated]
@@ -148,8 +151,9 @@ class RemoveSharedUserView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @extend_schema(
-    responses={200: OpenApiResponse(description='List of images shared by the current user.')},
-    description="Get all images that the current user has shared with others, including sharing details."
+    responses={200: MySharedImagesResponseSerializer},
+    description="Get all images that the current user has shared with others, including sharing details.",
+    tags=["Image Sharing"]
 )
 class MySharedImagesView(APIView):
     permission_classes = [IsAuthenticated]
@@ -171,4 +175,91 @@ class MySharedImagesView(APIView):
         return Response({
             'images_shared_by_me': shared_data,
             'total_count': len(shared_data)
+        })
+
+@extend_schema(
+    responses={200: SharedImagesByUserResponseSerializer, 404: OpenApiResponse(description='User not found')},
+    description="Get all images that a specific user has shared with the current user. Useful for filtering shared content by sharer.",
+    parameters=[
+        {
+            'name': 'user_id',
+            'in': 'path',
+            'required': True,
+            'description': 'ID of the user who shared the images',
+            'schema': {'type': 'integer'}
+        }
+    ],
+    tags=["Image Sharing - User Filtering"]
+)
+class SharedImagesByUserView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, user_id):
+        try:
+            User = get_user_model()
+            sharer_user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        # Get images shared by the specific user with the current user
+        shared_with_me = SharedImage.objects.filter(
+            owner=sharer_user, 
+            shared_with=request.user
+        ).select_related('image', 'owner')
+        
+        # Format the response
+        shared_data = []
+        for share in shared_with_me:
+            from apps.gallery.serializers import ImageSerializer
+            image_data = ImageSerializer(share.image).data
+            # Add sharer metadata
+            image_data['shared_by_email'] = share.owner.email
+            image_data['shared_by_username'] = share.owner.username
+            image_data['shared_at'] = share.shared_at
+            shared_data.append(image_data)
+        
+        return Response({
+            'images_shared_by_user': shared_data,
+            'sharer_info': {
+                'user_id': sharer_user.id,
+                'username': sharer_user.username,
+                'email': sharer_user.email
+            },
+            'total_count': len(shared_data)
+        })
+
+@extend_schema(
+    responses={200: UsersWhoSharedListResponseSerializer},
+    description="Get all users who have shared images with the current user. Useful for building a filter list in the frontend.",
+    tags=["Image Sharing - User Filtering"]
+)
+class UsersWhoSharedImagesView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        # Get unique users who have shared images with the current user
+        shared_users = SharedImage.objects.filter(
+            shared_with=request.user
+        ).values(
+            'owner__id', 'owner__username', 'owner__email'
+        ).distinct()
+        
+        users_data = []
+        for user_data in shared_users:
+            # Count how many images this user has shared with me
+            image_count = SharedImage.objects.filter(
+                owner_id=user_data['owner__id'],
+                shared_with=request.user
+            ).count()
+            
+            users_data.append({
+                'user_id': user_data['owner__id'],
+                'username': user_data['owner__username'],
+                'email': user_data['owner__email'],
+                'shared_images_count': image_count
+            })
+        
+        return Response({
+            'users_who_shared': users_data,
+            'total_users': len(users_data)
         }) 
