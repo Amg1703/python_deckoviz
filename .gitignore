@@ -45,4 +45,4 @@ configs/
 /output/
 /common/rest_framework
 /common/admin
-/common/staticfiles/
+/common/staticfiles/logs/
