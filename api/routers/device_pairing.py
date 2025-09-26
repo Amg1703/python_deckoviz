@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from datetime import timedelta
 import uuid, secrets, bcrypt
-from api.utils.token import create_access_token, verify_access_token, get_current_user
+from utils.token import create_access_token, verify_access_token, get_current_user
 from common.apps.authentication.models import User, DeviceLink
 from django.utils import timezone
-from api.utils.qr_code import TVQRCodeGenerator
+from utils.qr_code import TVQRCodeGenerator
 
 router = APIRouter(prefix="/device", tags=["Device Pairing"])
 

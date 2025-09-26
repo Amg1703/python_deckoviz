@@ -3,10 +3,10 @@ from utils.token import create_access_token, verify_access_token, get_current_us
 from common.apps.authentication.models import User
 from django.utils import timezone
 import time, uuid, bcrypt, secrets, logging
-from api.utils.qr_redis import QRRedisManager
-from api.databases.configs import get_redis_client
-from api.utils.websocket_manager import ConnectionManager
-from api.utils.json_helpers import safe_parse_json
+from utils.qr_redis import QRRedisManager
+from databases.configs import get_redis_client
+from utils.websocket_manager import ConnectionManager
+from utils.json_helpers import safe_parse_json
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 
 router = APIRouter(prefix="/ws", tags=["WebSocket"])
