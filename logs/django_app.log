@@ -24112,3 +24112,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+INFO 2025-09-26 07:09:49 [django.utils.autoreload] /app/apps/gallery/serializers.py changed, reloading.
+INFO 2025-09-26 07:09:51 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-26 07:13:13 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-26 07:16:14 [django.utils.autoreload] Watching for file changes with StatReloader
