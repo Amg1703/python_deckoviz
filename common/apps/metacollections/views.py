@@ -432,3 +432,4 @@ class UsersWhoSharedCollectionsView(APIView):
             'users_who_shared': users_data,
             'total_users': len(users_data)
 }) 
+

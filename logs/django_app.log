@@ -23729,3 +23729,386 @@ Traceback (most recent call last):
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
 >>>>>>> 6e0cfd7 (Adding and committing code that was altered in production back to the github repo)
 INFO 2025-09-20 11:03:05 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-22 09:50:54 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-22 10:11:44 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-23 06:23:05 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 04:40:14 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 06:56:58 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 10:47:45 [django.utils.autoreload] /app/deckoviz/settings.py changed, reloading.
+INFO 2025-09-24 10:47:47 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 10:50:18 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 11:37:12 [django.utils.autoreload] /app/apps/metacollections/urls.py changed, reloading.
+INFO 2025-09-24 11:37:13 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 11:52:58 [django.utils.autoreload] /app/apps/metaimages/urls.py changed, reloading.
+INFO 2025-09-24 11:52:59 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 12:05:02 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-24 12:10:44 [apps.credits.services] Free usage for image_generation, user: rahulbhuse
+INFO 2025-09-24 12:10:44 [apps.analytics.services] Started feature usage tracking: user=rahulbhuse, feature=personal_painter, credits=0, usage_id=8f77039c-79a1-427a-b49a-ae6a4acf7b00
+INFO 2025-09-24 12:10:44 [apps.analytics.services] Completed feature usage: usage_id=8f77039c-79a1-427a-b49a-ae6a4acf7b00, status=failed
+INFO 2025-09-24 12:10:59 [apps.credits.services] Free usage for image_generation, user: rahulbhuse
+INFO 2025-09-24 12:10:59 [apps.analytics.services] Started feature usage tracking: user=rahulbhuse, feature=personal_painter, credits=0, usage_id=8bac34e5-38ae-4954-9632-d2eb12b83753
+INFO 2025-09-24 12:11:00 [apps.analytics.services] Completed feature usage: usage_id=8bac34e5-38ae-4954-9632-d2eb12b83753, status=failed
+INFO 2025-09-24 12:11:55 [apps.credits.services] Free usage for creative_tools, user: rahulbhuse
+INFO 2025-09-24 12:11:55 [apps.analytics.services] Started feature usage tracking: user=rahulbhuse, feature=story_visualizer, credits=0, usage_id=544c3d8a-6c28-4c8a-a451-3c4e6c0f0c6c
+INFO 2025-09-24 12:12:12 [apps.analytics.services] Completed feature usage: usage_id=544c3d8a-6c28-4c8a-a451-3c4e6c0f0c6c, status=completed
+ERROR 2025-09-24 13:37:58 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-24 19:33:03 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-24 21:42:28 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-24 23:51:09 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-24 23:51:10 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 11:01:22 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 13:46:55 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 13:46:56 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 14:32:46 [django.security.DisallowedHost] Invalid HTTP_HOST header: '[2a02:4780:f:c272::1]:8000'. You may need to add '[2a02:4780:f:c272::1]' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '[2a02:4780:f:c272::1]:8000'. You may need to add '[2a02:4780:f:c272::1]' to ALLOWED_HOSTS.
+ERROR 2025-09-25 16:12:42 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 16:12:49 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 16:13:10 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 20:14:44 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 20:14:44 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 21:20:58 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 21:21:02 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 21:21:07 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 22:16:57 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 22:17:01 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-25 22:17:10 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+ERROR 2025-09-26 00:32:03 [django.security.DisallowedHost] Invalid HTTP_HOST header: 'www.deckoviz.com'. You may need to add 'www.deckoviz.com' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.deckoviz.com'. You may need to add 'www.deckoviz.com' to ALLOWED_HOSTS.
+ERROR 2025-09-26 02:56:41 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/8e133332-9565-4451-a296-ab277b037742/Soft_Background.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Tu20Aarambh20Tu20Vishesh.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Tu20Aarambh20Tu20Vishesh.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Tu20Aarambh20Tu20Vishesh.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/crazyfeelingfullsongnenusailajasongsrringtone-41455.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/crazyfeelingfullsongnenusailajasongsrringtone-41455.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/crazyfeelingfullsongnenusailajasongsrringtone-41455.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/AIMusic_1752494401308.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/AIMusic_1752494401308.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/AIMusic_1752494401308.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/O20Desh20Mere20Ringtone_320PagalWorld.com.pe.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/O20Desh20Mere20Ringtone_320PagalWorld.com.pe.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/O20Desh20Mere20Ringtone_320PagalWorld.com.pe.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/O20Desh20Mere20Ringtone_320PagalWorld.com.pe.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/O20Desh20Mere20Ringtone_320PagalWorld.com.pe.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/O20Desh20Mere20Ringtone_320PagalWorld.com.pe.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/AIMusic_1752494401308.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/AIMusic_1752494401308.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/AIMusic_1752494401308.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/crazyfeelingfullsongnenusailajasongsrringtone-41455.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/crazyfeelingfullsongnenusailajasongsrringtone-41455.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/crazyfeelingfullsongnenusailajasongsrringtone-41455.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Tu20Aarambh20Tu20Vishesh.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Tu20Aarambh20Tu20Vishesh.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Tu20Aarambh20Tu20Vishesh.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field raw value: audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Jai20Radha20Madhav20Mahamantra2020Indian20Flute20Instrumental2020Krishna20Bhajan2020E0A49CE0A4AF20E0A4B0E0A4A720E0A4AEE0A4A7E0A4B520E0A4AEE0A4B9E0A4AEE0A4A4E0A4B0.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Audio field .url value: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Jai20Radha20Madhav20Mahamantra2020Indian20Flute20Instrumental2020Krishna20Bhajan2020E0A49CE0A4AF20E0A4B0E0A4A720E0A4AEE0A4A7E0A4B520E0A4AEE0A4B9E0A4AEE0A4A4E0A4B0.mp3
+INFO 2025-09-26 04:30:19 [apps.gallery.serializers] Using storage URL: https://deckoviz-medias.s3.eu-west-2.amazonaws.com/audios/92bc457d-cba0-43e7-bc64-b112abde58e2/Jai20Radha20Madhav20Mahamantra2020Indian20Flute20Instrumental2020Krishna20Bhajan2020E0A49CE0A4AF20E0A4B0E0A4A720E0A4AEE0A4A7E0A4B520E0A4AEE0A4B9E0A4AEE0A4A4E0A4B0.mp3
+ERROR 2025-09-26 06:05:27 [django.security.DisallowedHost] Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
