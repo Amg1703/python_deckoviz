@@ -18,7 +18,7 @@ class ConnectionManager:
             self.active_connections[room_id] = set()
         self.active_connections[room_id].add(websocket)
 
-    def disconnect(self, websocket: WebSocket, room_id: str):
+    async def disconnect(self, websocket: WebSocket, room_id: str):
         if room_id in self.active_connections:
             self.active_connections[room_id].discard(websocket)
             if not self.active_connections[room_id]:
