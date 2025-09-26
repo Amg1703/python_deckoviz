@@ -12,12 +12,13 @@ logging.basicConfig(level=logging.DEBUG)
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
-from routers import  websocket, rooms, qr_code_redis, curations, curations
+from routers import  websocket, rooms, qr_code_redis, curations, curations,device_pairing, device_ws
 from databases.configs import get_redis_client
 from middleware.logging import RequestLoggingMiddleware
 
 # Initialize the application
 app = FastAPI()
+
 
 # Add request logging middleware (should be first)
 app.add_middleware(RequestLoggingMiddleware)
@@ -36,6 +37,10 @@ app.include_router(websocket.router)
 app.include_router(rooms.router)
 app.include_router(qr_code_redis.router)
 app.include_router(curations.router)
+
+# THE 2 NEW ADDED ROUTES FOR QR CODE SCANNER
+app.include_router(device_pairing.router)
+app.include_router(device_ws.router)
 
 
 @app.get("/", dependencies=[Depends(get_redis_client)])

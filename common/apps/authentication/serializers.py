@@ -18,43 +18,22 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
         # Add custom claims
         token['username'] = user.username
+        token['email'] = user.email
         return token
 
     def validate(self, attrs):
-        email = attrs.get("email", "").lower()
-        password = attrs.get("password")
-
-        if not email or not password:
-            raise serializers.ValidationError("Must include 'email' and 'password'.")
-
-        # Check for duplicate users with case-insensitive emails
-        users = User.objects.filter(email__iexact=email)
+        # Normalize email
+        attrs[self.username_field] = attrs.get(self.username_field, "").lower()
         
-        if users.count() > 1:
-            raise serializers.ValidationError(
-                "Duplicate accounts found for this email address. "
-                "Please contact support to merge your accounts."
-            )
-        
-        if not users.exists():
-            raise serializers.ValidationError("No user with this email was found.")
+        # Call the parent to handle authentication and token creation
+        data = super().validate(attrs)
 
-        user = users.first()
-
-        if not user.check_password(password):
-            raise serializers.ValidationError("Incorrect password.")
-
-        if not user.is_active:
-            raise serializers.ValidationError("User is inactive.")
-            
-        attrs['user'] = user
-        
-        refresh = self.get_token(user)
-
-        data = {}
-        data['refresh'] = str(refresh)
-        data['access'] = str(refresh.access_token)
-
+        # Add custom response data if needed
+        data['user'] = {
+            "id": self.user.id,
+            "username": self.user.username,
+            "email": self.user.email,
+        }
         return data
 
 

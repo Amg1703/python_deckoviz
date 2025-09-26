@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from .models import Audio, Image, Collection, CollectionImage, DailyCuration, Ritual, DailyImageCuration
-from apps.authentication.serializers import UserSerializer
-from apps.marketplace.serializers import PriceSerializer
-from apps.marketplace.models import Price
+from common.apps.authentication.serializers import UserSerializer
+from common.apps.marketplace.serializers import PriceSerializer
+from common.apps.marketplace.models import Price
 import requests
 import logging
 from django.core.files.base import ContentFile
@@ -319,6 +319,9 @@ class CollectionSerializer(serializers.ModelSerializer):
             'tags',
             'music_title',
             'metadata',
+            'frame_colors',
+            'frame_width',
+            'transition_effects'
         ]
 
     def create(self, validated_data):

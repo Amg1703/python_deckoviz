@@ -61,6 +61,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:5174',
     'http://127.0.0.1:3000',
+    'http://168.231.112.236',
     'https://auth.deckoviz.com', 
     'https://api.deckoviz.com',
     'https://deckoviz.com'

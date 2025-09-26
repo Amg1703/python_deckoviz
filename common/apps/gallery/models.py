@@ -1,12 +1,13 @@
 from django.db import models
-from apps.authentication.models import BaseModel
+from common.apps.authentication.models import BaseModel
 from django.contrib.auth import get_user_model
-from apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS,COLLECTION_TYPES
-from apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
+from common.apps.utils.choices import INTERACTION_TYPES,VIEW_TYPES,TRANSCRIPTION_STATUS,COLLECTION_TYPES
+from common.apps.utils.user_directory import user_image_path,user_music_path,user_audio_path
 import uuid
 from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
 from datetime import timedelta
+
 
 User = get_user_model()
 
@@ -93,7 +94,30 @@ class Collection(BaseModel):
     description = models.TextField(blank=True, default="")
     tags = ArrayField(models.CharField(max_length=100), blank=True, default=list)
     music_title = models.CharField(max_length=255, blank=True, null=True, help_text="Optional title for the collection's music")
-    
+    frame_colors=ArrayField(models.CharField(max_length=255),blank=True, default=list) # Define type of array elements
+    frame_width=models.IntegerField(default=0)
+    transition_effects=models.CharField(max_length=50,choices=[
+        ('Fade In', 'Fade In'),
+        ('Fade Out', 'Fade Out'),
+        ('Slide Left', 'Slide Left'),
+        ('Slide Right', 'Slide Right'),
+        ('Slide Up', 'Slide Up'),
+        ('Slide Down', 'Slide Down'),
+        ('Zoom In', 'Zoom In'),
+        ('Zoom Out', 'Zoom Out'),
+        ('Flip Horizontal', 'Flip Horizontal'),
+        ('Flip Vertical', 'Flip Vertical'),
+        ('Rotate', 'Rotate'),
+        ('Bounce', 'Bounce'),
+        ('Elastic', 'Elastic'),
+        ('Pulse', 'Pulse'),
+        ('Shake', 'Shake'),
+        ('Swing', 'Swing'),
+        ('Wobble', 'Wobble'),
+        ('Jelly', 'Jelly'),
+        ('Light Speed', 'Light Speed'),
+        ('Roll In', 'Roll In'),
+    ], null=True, blank=True) # Makes the field optional
     class Meta:
         db_table = 'collections'
         verbose_name = 'Collection'
