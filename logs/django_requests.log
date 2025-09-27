@@ -35947,3 +35947,631 @@ REQUEST 2025-09-26 10:14:49 [INFO] "GET /gallery/images/?limit=10&offset=50 HTTP
 REQUEST 2025-09-26 10:14:51 [INFO] START GET /gallery/images/?limit=10&offset=60 | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
 REQUEST 2025-09-26 10:14:52 [INFO] END GET /gallery/images/?limit=10&offset=60 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.766s
 REQUEST 2025-09-26 10:14:52 [INFO] "GET /gallery/images/?limit=10&offset=60 HTTP/1.0" 200 1725
+REQUEST 2025-09-26 10:39:33 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 10:39:33 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.235s
+REQUEST 2025-09-26 10:39:33 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 10:39:33 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 10:40:08 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 10:40:08 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-26 10:40:08 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 10:40:08 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 10:40:08 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 10:40:08 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-26 10:40:08 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 10:40:08 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 10:40:09 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 10:40:09 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-26 10:40:09 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 10:40:09 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 10:52:29 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:29 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:30 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:30 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:30 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:36 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 6.549s
+REQUEST 2025-09-26 10:52:36 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 10:52:37 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 6.828s
+REQUEST 2025-09-26 10:52:37 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 10:52:37 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 7.382s
+REQUEST 2025-09-26 10:52:37 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 10:52:37 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:38 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:38 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.6.72 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 10:52:38 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.025s
+REQUEST 2025-09-26 10:52:38 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.024s
+REQUEST 2025-09-26 10:52:38 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 10:52:38 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-26 10:52:40 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 10.478s
+REQUEST 2025-09-26 10:52:40 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 10:52:40 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 10.581s
+REQUEST 2025-09-26 10:52:40 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 10:52:40 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.725s
+REQUEST 2025-09-26 10:52:40 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:18:22 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.59.6.178 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 11:18:22 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-26 11:18:22 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-26 11:18:23 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.59.6.178 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 11:18:24 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.792s
+REQUEST 2025-09-26 11:18:24 [INFO] "GET /api/schema/ HTTP/1.0" 200 408614
+REQUEST 2025-09-26 11:19:08 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.178 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 11:19:08 [INFO] END POST /gallery/images/search/ | Status: 401 | User: anonymous | Duration: 0.001s
+REQUEST 2025-09-26 11:19:08 [WARNING] Unauthorized: /gallery/images/search/
+REQUEST 2025-09-26 11:19:08 [WARNING] "POST /gallery/images/search/ HTTP/1.0" 401 58
+REQUEST 2025-09-26 11:20:35 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.178 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 11:20:36 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.167s
+REQUEST 2025-09-26 11:20:36 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 24041
+REQUEST 2025-09-26 11:28:27 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.178 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-26 11:28:27 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.148s
+REQUEST 2025-09-26 11:28:27 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15985
+REQUEST 2025-09-26 11:42:54 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:42:55 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.406s
+REQUEST 2025-09-26 11:42:55 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:42:56 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:42:57 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:42:57 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:42:57 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.591s
+REQUEST 2025-09-26 11:42:57 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:42:58 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.502s
+REQUEST 2025-09-26 11:42:58 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 11:42:58 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:42:58 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:42:58 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.013s
+REQUEST 2025-09-26 11:42:58 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 11:42:58 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.395s
+REQUEST 2025-09-26 11:42:58 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:42:59 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.177s
+REQUEST 2025-09-26 11:42:59 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:43:04 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:04 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.013s
+REQUEST 2025-09-26 11:43:04 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-26 11:43:14 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:14 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.158s
+REQUEST 2025-09-26 11:43:14 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14364
+REQUEST 2025-09-26 11:43:35 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:36 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.141s
+REQUEST 2025-09-26 11:43:36 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14117
+REQUEST 2025-09-26 11:43:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:36 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.305s
+REQUEST 2025-09-26 11:43:36 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14711
+REQUEST 2025-09-26 11:43:36 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.322s
+REQUEST 2025-09-26 11:43:36 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16619
+REQUEST 2025-09-26 11:43:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:36 [INFO] START POST /gallery/images/search/?page=2 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:37 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:37 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:37 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:37 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.972s
+REQUEST 2025-09-26 11:43:37 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13625
+REQUEST 2025-09-26 11:43:37 [INFO] END POST /gallery/images/search/?page=2 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.148s
+REQUEST 2025-09-26 11:43:37 [INFO] "POST /gallery/images/search/?page=2 HTTP/1.0" 200 30705
+REQUEST 2025-09-26 11:43:38 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.778s
+REQUEST 2025-09-26 11:43:38 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15574
+REQUEST 2025-09-26 11:43:38 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.604s
+REQUEST 2025-09-26 11:43:38 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15673
+REQUEST 2025-09-26 11:43:38 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.602s
+REQUEST 2025-09-26 11:43:38 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15233
+REQUEST 2025-09-26 11:43:38 [INFO] START POST /gallery/images/search/?page=2 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:38 [INFO] END POST /gallery/images/search/?page=2 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.153s
+REQUEST 2025-09-26 11:43:38 [INFO] "POST /gallery/images/search/?page=2 HTTP/1.0" 200 7059
+REQUEST 2025-09-26 11:43:49 [INFO] START POST /gallery/images/search/?page=3 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:43:49 [INFO] END POST /gallery/images/search/?page=3 | Status: 404 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.076s
+REQUEST 2025-09-26 11:43:49 [WARNING] Not Found: /gallery/images/search/
+REQUEST 2025-09-26 11:43:49 [WARNING] "POST /gallery/images/search/?page=3 HTTP/1.0" 404 26
+REQUEST 2025-09-26 11:44:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:37 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.132s
+REQUEST 2025-09-26 11:44:37 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14363
+REQUEST 2025-09-26 11:44:37 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:37 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.163s
+REQUEST 2025-09-26 11:44:37 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 12966
+REQUEST 2025-09-26 11:44:37 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:37 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:37 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.221s
+REQUEST 2025-09-26 11:44:37 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13285
+REQUEST 2025-09-26 11:44:38 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.686s
+REQUEST 2025-09-26 11:44:38 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15815
+REQUEST 2025-09-26 11:44:47 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:47 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.155s
+REQUEST 2025-09-26 11:44:47 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14881
+REQUEST 2025-09-26 11:44:47 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:47 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.167s
+REQUEST 2025-09-26 11:44:47 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15141
+REQUEST 2025-09-26 11:44:47 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:47 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.157s
+REQUEST 2025-09-26 11:44:47 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15899
+REQUEST 2025-09-26 11:44:47 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:47 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.149s
+REQUEST 2025-09-26 11:44:47 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15963
+REQUEST 2025-09-26 11:44:48 [INFO] START POST /gallery/images/search/?page=3 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:44:49 [INFO] END POST /gallery/images/search/?page=3 | Status: 404 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.051s
+REQUEST 2025-09-26 11:44:49 [WARNING] Not Found: /gallery/images/search/
+REQUEST 2025-09-26 11:44:49 [WARNING] "POST /gallery/images/search/?page=3 HTTP/1.0" 404 26
+REQUEST 2025-09-26 11:45:00 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:45:01 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:45:01 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.165s
+REQUEST 2025-09-26 11:45:01 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14705
+REQUEST 2025-09-26 11:45:01 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:45:01 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.364s
+REQUEST 2025-09-26 11:45:01 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13506
+REQUEST 2025-09-26 11:45:01 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:45:01 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.410s
+REQUEST 2025-09-26 11:45:01 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14981
+REQUEST 2025-09-26 11:45:01 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.293s
+REQUEST 2025-09-26 11:45:01 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15407
+REQUEST 2025-09-26 11:46:29 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:29 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:29 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.169s
+REQUEST 2025-09-26 11:46:29 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15058
+REQUEST 2025-09-26 11:46:29 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.203s
+REQUEST 2025-09-26 11:46:29 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14525
+REQUEST 2025-09-26 11:46:29 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:30 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:30 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.174s
+REQUEST 2025-09-26 11:46:30 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15843
+REQUEST 2025-09-26 11:46:30 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:30 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.742s
+REQUEST 2025-09-26 11:46:30 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 12634
+REQUEST 2025-09-26 11:46:30 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.798s
+REQUEST 2025-09-26 11:46:30 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15986
+REQUEST 2025-09-26 11:46:31 [INFO] START POST /gallery/images/search/?page=3 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:31 [INFO] END POST /gallery/images/search/?page=3 | Status: 404 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.055s
+REQUEST 2025-09-26 11:46:31 [WARNING] Not Found: /gallery/images/search/
+REQUEST 2025-09-26 11:46:31 [WARNING] "POST /gallery/images/search/?page=3 HTTP/1.0" 404 26
+REQUEST 2025-09-26 11:46:31 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:31 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.150s
+REQUEST 2025-09-26 11:46:31 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15587
+REQUEST 2025-09-26 11:46:42 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:42 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:42 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:42 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.251s
+REQUEST 2025-09-26 11:46:42 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15065
+REQUEST 2025-09-26 11:46:42 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.324s
+REQUEST 2025-09-26 11:46:42 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14823
+REQUEST 2025-09-26 11:46:42 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.345s
+REQUEST 2025-09-26 11:46:42 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16290
+REQUEST 2025-09-26 11:46:46 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:46 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:46 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:46 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:46 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.019s
+REQUEST 2025-09-26 11:46:46 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:46 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 11:46:46 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.673s
+REQUEST 2025-09-26 11:46:46 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:46:47 [INFO] START POST /gallery/collections/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:47 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.343s
+REQUEST 2025-09-26 11:46:47 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:46:47 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.483s
+REQUEST 2025-09-26 11:46:47 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 11:46:48 [INFO] END POST /gallery/collections/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.822s
+REQUEST 2025-09-26 11:46:48 [INFO] "POST /gallery/collections/search/ HTTP/1.0" 200 72978
+REQUEST 2025-09-26 11:46:49 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.904s
+REQUEST 2025-09-26 11:46:49 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:46:54 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:54 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:54 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:54 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:54 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.514s
+REQUEST 2025-09-26 11:46:54 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:46:54 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:54 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.017s
+REQUEST 2025-09-26 11:46:54 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 11:46:55 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.080s
+REQUEST 2025-09-26 11:46:55 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:46:55 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.110s
+REQUEST 2025-09-26 11:46:55 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 11:46:55 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:56 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.641s
+REQUEST 2025-09-26 11:46:56 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:46:56 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.932s
+REQUEST 2025-09-26 11:46:56 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15321
+REQUEST 2025-09-26 11:46:58 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:46:58 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.014s
+REQUEST 2025-09-26 11:46:58 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-26 11:47:01 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:01 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:01 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.320s
+REQUEST 2025-09-26 11:47:01 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14214
+REQUEST 2025-09-26 11:47:01 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.329s
+REQUEST 2025-09-26 11:47:01 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13645
+REQUEST 2025-09-26 11:47:02 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:02 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.186s
+REQUEST 2025-09-26 11:47:02 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16004
+REQUEST 2025-09-26 11:47:02 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:02 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:02 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.190s
+REQUEST 2025-09-26 11:47:02 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14168
+REQUEST 2025-09-26 11:47:02 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.186s
+REQUEST 2025-09-26 11:47:02 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15819
+REQUEST 2025-09-26 11:47:03 [INFO] START POST /gallery/images/search/?page=1 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:03 [INFO] END POST /gallery/images/search/?page=1 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.187s
+REQUEST 2025-09-26 11:47:03 [INFO] "POST /gallery/images/search/?page=1 HTTP/1.0" 200 31670
+REQUEST 2025-09-26 11:47:24 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:24 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:25 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.397s
+REQUEST 2025-09-26 11:47:25 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.397s
+REQUEST 2025-09-26 11:47:25 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13355
+REQUEST 2025-09-26 11:47:25 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13648
+REQUEST 2025-09-26 11:47:31 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:31 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.152s
+REQUEST 2025-09-26 11:47:31 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15276
+REQUEST 2025-09-26 11:47:31 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:31 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.247s
+REQUEST 2025-09-26 11:47:31 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 17193
+REQUEST 2025-09-26 11:47:31 [INFO] START POST /gallery/images/search/?page=1 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:32 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:32 [INFO] START POST /gallery/images/search/?page=1 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:32 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:33 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:33 [INFO] END POST /gallery/images/search/?page=1 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.612s
+REQUEST 2025-09-26 11:47:33 [INFO] "POST /gallery/images/search/?page=1 HTTP/1.0" 200 32153
+REQUEST 2025-09-26 11:47:33 [INFO] END POST /gallery/images/search/?page=1 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.953s
+REQUEST 2025-09-26 11:47:33 [INFO] "POST /gallery/images/search/?page=1 HTTP/1.0" 200 32107
+REQUEST 2025-09-26 11:47:33 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.073s
+REQUEST 2025-09-26 11:47:33 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14229
+REQUEST 2025-09-26 11:47:33 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.772s
+REQUEST 2025-09-26 11:47:33 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14603
+REQUEST 2025-09-26 11:47:33 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.440s
+REQUEST 2025-09-26 11:47:33 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15476
+REQUEST 2025-09-26 11:47:33 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:34 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:34 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.316s
+REQUEST 2025-09-26 11:47:34 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15217
+REQUEST 2025-09-26 11:47:34 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.331s
+REQUEST 2025-09-26 11:47:34 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15879
+REQUEST 2025-09-26 11:47:35 [INFO] START POST /gallery/images/search/?page=1 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:35 [INFO] END POST /gallery/images/search/?page=1 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.060s
+REQUEST 2025-09-26 11:47:35 [INFO] "POST /gallery/images/search/?page=1 HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:47:36 [INFO] START POST /gallery/images/search/?page=2 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:47:37 [INFO] END POST /gallery/images/search/?page=2 | Status: 404 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.437s
+REQUEST 2025-09-26 11:47:37 [WARNING] Not Found: /gallery/images/search/
+REQUEST 2025-09-26 11:47:37 [WARNING] "POST /gallery/images/search/?page=2 HTTP/1.0" 404 26
+REQUEST 2025-09-26 11:48:27 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:28 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.179s
+REQUEST 2025-09-26 11:48:28 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14361
+REQUEST 2025-09-26 11:48:28 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:28 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.061s
+REQUEST 2025-09-26 11:48:28 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:48:30 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:30 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.056s
+REQUEST 2025-09-26 11:48:30 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:48:31 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:31 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.151s
+REQUEST 2025-09-26 11:48:31 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14829
+REQUEST 2025-09-26 11:48:32 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:32 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.084s
+REQUEST 2025-09-26 11:48:32 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:48:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:36 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.252s
+REQUEST 2025-09-26 11:48:36 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.250s
+REQUEST 2025-09-26 11:48:36 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13431
+REQUEST 2025-09-26 11:48:36 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16487
+REQUEST 2025-09-26 11:48:36 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:36 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:37 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.365s
+REQUEST 2025-09-26 11:48:37 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:48:37 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.493s
+REQUEST 2025-09-26 11:48:37 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16988
+REQUEST 2025-09-26 11:48:37 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:37 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.062s
+REQUEST 2025-09-26 11:48:37 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:48:57 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:57 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.154s
+REQUEST 2025-09-26 11:48:57 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13612
+REQUEST 2025-09-26 11:48:58 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:48:58 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.076s
+REQUEST 2025-09-26 11:48:58 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 52
+REQUEST 2025-09-26 11:49:22 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:23 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.149s
+REQUEST 2025-09-26 11:49:23 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15236
+REQUEST 2025-09-26 11:49:23 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:23 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.153s
+REQUEST 2025-09-26 11:49:23 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13465
+REQUEST 2025-09-26 11:49:23 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:23 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:23 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.224s
+REQUEST 2025-09-26 11:49:23 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16423
+REQUEST 2025-09-26 11:49:24 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.249s
+REQUEST 2025-09-26 11:49:24 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16260
+REQUEST 2025-09-26 11:49:24 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:24 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:24 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:25 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.372s
+REQUEST 2025-09-26 11:49:25 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 12688
+REQUEST 2025-09-26 11:49:25 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.404s
+REQUEST 2025-09-26 11:49:25 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15610
+REQUEST 2025-09-26 11:49:25 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:25 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:25 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.867s
+REQUEST 2025-09-26 11:49:25 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 13019
+REQUEST 2025-09-26 11:49:26 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.355s
+REQUEST 2025-09-26 11:49:26 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 14181
+REQUEST 2025-09-26 11:49:26 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.348s
+REQUEST 2025-09-26 11:49:26 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 15261
+REQUEST 2025-09-26 11:49:26 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:26 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.168s
+REQUEST 2025-09-26 11:49:26 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 17084
+REQUEST 2025-09-26 11:49:27 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:27 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.206s
+REQUEST 2025-09-26 11:49:27 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 12954
+REQUEST 2025-09-26 11:49:27 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:27 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.151s
+REQUEST 2025-09-26 11:49:27 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 17084
+REQUEST 2025-09-26 11:49:28 [INFO] START GET /gallery/images/public-images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:29 [INFO] END GET /gallery/images/public-images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.174s
+REQUEST 2025-09-26 11:49:29 [INFO] "GET /gallery/images/public-images/ HTTP/1.0" 200 16361
+REQUEST 2025-09-26 11:49:29 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:49:30 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.551s
+REQUEST 2025-09-26 11:49:30 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 17084
+REQUEST 2025-09-26 11:50:30 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:50:30 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:50:30 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:50:30 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:50:31 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:50:31 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.020s
+REQUEST 2025-09-26 11:50:31 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 11:50:31 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.941s
+REQUEST 2025-09-26 11:50:31 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:50:31 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.032s
+REQUEST 2025-09-26 11:50:31 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 11:50:32 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.217s
+REQUEST 2025-09-26 11:50:32 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:50:33 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.316s
+REQUEST 2025-09-26 11:50:33 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:50:56 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:50:56 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.012s
+REQUEST 2025-09-26 11:50:56 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-26 11:52:07 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:07 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.128s
+REQUEST 2025-09-26 11:52:07 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:52:08 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:08 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.216s
+REQUEST 2025-09-26 11:52:08 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:52:09 [INFO] START GET /gallery/images/?limit=10&offset=10 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:10 [INFO] END GET /gallery/images/?limit=10&offset=10 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.139s
+REQUEST 2025-09-26 11:52:10 [INFO] "GET /gallery/images/?limit=10&offset=10 HTTP/1.0" 200 9758
+REQUEST 2025-09-26 11:52:12 [WARNING] Bad Request: /
+REQUEST 2025-09-26 11:52:12 [WARNING] "GET / HTTP/1.1" 400 80142
+REQUEST 2025-09-26 11:52:13 [INFO] START GET /gallery/images/?limit=10&offset=20 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:14 [INFO] END GET /gallery/images/?limit=10&offset=20 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.573s
+REQUEST 2025-09-26 11:52:14 [INFO] "GET /gallery/images/?limit=10&offset=20 HTTP/1.0" 200 7754
+REQUEST 2025-09-26 11:52:17 [INFO] START GET /gallery/images/?limit=10&offset=30 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:17 [INFO] END GET /gallery/images/?limit=10&offset=30 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.197s
+REQUEST 2025-09-26 11:52:17 [INFO] "GET /gallery/images/?limit=10&offset=30 HTTP/1.0" 200 7366
+REQUEST 2025-09-26 11:52:35 [INFO] START GET /gallery/images/?limit=10&offset=40 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:35 [INFO] END GET /gallery/images/?limit=10&offset=40 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.138s
+REQUEST 2025-09-26 11:52:35 [INFO] "GET /gallery/images/?limit=10&offset=40 HTTP/1.0" 200 8539
+REQUEST 2025-09-26 11:52:39 [INFO] START GET /gallery/images/?limit=10&offset=50 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:39 [INFO] END GET /gallery/images/?limit=10&offset=50 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.140s
+REQUEST 2025-09-26 11:52:39 [INFO] "GET /gallery/images/?limit=10&offset=50 HTTP/1.0" 200 7806
+REQUEST 2025-09-26 11:52:45 [INFO] START GET /gallery/images/?limit=10&offset=60 | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:52:45 [INFO] END GET /gallery/images/?limit=10&offset=60 | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.114s
+REQUEST 2025-09-26 11:52:45 [INFO] "GET /gallery/images/?limit=10&offset=60 HTTP/1.0" 200 1725
+REQUEST 2025-09-26 11:54:41 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:54:41 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:54:41 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:54:41 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:54:41 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.014s
+REQUEST 2025-09-26 11:54:41 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 11:54:41 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:54:42 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.767s
+REQUEST 2025-09-26 11:54:42 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:54:42 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.897s
+REQUEST 2025-09-26 11:54:42 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:54:42 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.017s
+REQUEST 2025-09-26 11:54:42 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 11:54:44 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.572s
+REQUEST 2025-09-26 11:54:44 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:55:03 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:03 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.011s
+REQUEST 2025-09-26 11:55:03 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-26 11:55:09 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:09 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:09 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:09 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:09 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.573s
+REQUEST 2025-09-26 11:55:09 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-26 11:55:10 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:10 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.015s
+REQUEST 2025-09-26 11:55:10 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 11:55:10 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.171s
+REQUEST 2025-09-26 11:55:10 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11410
+REQUEST 2025-09-26 11:55:10 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 1.326s
+REQUEST 2025-09-26 11:55:10 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-26 11:55:11 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 2.145s
+REQUEST 2025-09-26 11:55:11 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-26 11:55:36 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.6.150 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 11:55:36 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.034s
+REQUEST 2025-09-26 11:55:36 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-26 12:27:12 [INFO] START GET /robots.txt | User: anonymous | IP: 4.227.36.50 | User-Agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbo
+REQUEST 2025-09-26 12:27:12 [ERROR] ERROR GET /robots.txt | User: anonymous | Duration: 0.001s | Exception: “/app/robots.txt” does not exist
+REQUEST 2025-09-26 12:27:12 [INFO] END GET /robots.txt | Status: 404 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-26 12:27:12 [WARNING] Not Found: /robots.txt
+REQUEST 2025-09-26 12:27:12 [WARNING] "GET /robots.txt HTTP/1.0" 404 5505
+REQUEST 2025-09-26 12:27:19 [INFO] START GET /auth/newsletter/ | User: anonymous | IP: 20.171.207.195 | User-Agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbo
+REQUEST 2025-09-26 12:27:19 [INFO] END GET /auth/newsletter/ | Status: 405 | User: anonymous | Duration: 0.001s
+REQUEST 2025-09-26 12:27:19 [WARNING] Method Not Allowed: /auth/newsletter/
+REQUEST 2025-09-26 12:27:19 [WARNING] "GET /auth/newsletter/ HTTP/1.0" 405 40
+REQUEST 2025-09-26 13:19:58 [INFO] START GET /.env | User: anonymous | IP: 45.139.104.170 | User-Agent: Mozilla/5.0 (SS; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+REQUEST 2025-09-26 13:19:58 [INFO] END GET /.env | Status: 200 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-26 13:19:58 [INFO] "GET /.env HTTP/1.0" 200 1982
+REQUEST 2025-09-26 15:50:14 [INFO] START GET /.env | User: anonymous | IP: 45.139.104.170 | User-Agent: Mozilla/5.0 (ZZ; Linux i686; rv:122.0) Gecko/20100101 Firefox/122.0
+REQUEST 2025-09-26 15:50:14 [INFO] END GET /.env | Status: 200 | User: anonymous | Duration: 0.007s
+REQUEST 2025-09-26 15:50:14 [INFO] "GET /.env HTTP/1.0" 200 1982
+REQUEST 2025-09-26 15:56:53 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Ve
+REQUEST 2025-09-26 15:56:53 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.053s
+REQUEST 2025-09-26 15:56:53 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 15:56:53 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.0" 200 3426
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.0" 200 121457
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/js/csrf.js HTTP/1.0" 200 1793
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/css/prettify.css HTTP/1.0" 200 817
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.0" 200 87533
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/js/ajax-form.js HTTP/1.0" 200 3796
+REQUEST 2025-09-26 15:56:53 [INFO] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.0" 200 39680
+REQUEST 2025-09-26 15:56:54 [INFO] "GET /static/rest_framework/css/default.css HTTP/1.0" 200 1152
+REQUEST 2025-09-26 15:56:54 [INFO] "GET /static/rest_framework/js/prettify-min.js HTTP/1.0" 200 13632
+REQUEST 2025-09-26 15:56:54 [INFO] "GET /static/rest_framework/js/default.js HTTP/1.0" 200 1268
+REQUEST 2025-09-26 15:56:54 [INFO] "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.0" 200 59
+REQUEST 2025-09-26 15:56:54 [INFO] "GET /static/rest_framework/img/grid.png HTTP/1.0" 200 1458
+REQUEST 2025-09-26 15:56:55 [INFO] START GET /favicon.ico | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Ve
+REQUEST 2025-09-26 15:56:55 [ERROR] ERROR GET /favicon.ico | User: anonymous | Duration: 0.001s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-09-26 15:56:55 [INFO] END GET /favicon.ico | Status: 404 | User: anonymous | Duration: 0.008s
+REQUEST 2025-09-26 15:56:55 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-09-26 15:56:55 [WARNING] "GET /favicon.ico HTTP/1.0" 404 5509
+REQUEST 2025-09-26 17:06:27 [INFO] START GET /metacollections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:27 [INFO] START GET /metacollections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:27 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:27 [INFO] START GET /metacollections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:27 [INFO] START GET /metaimages/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /metacollections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 4.766s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /metacollections/ HTTP/1.0" 200 11441
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /metacollections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 4.607s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /metacollections/ HTTP/1.0" 200 11441
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /metaimages/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 4.523s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /metaimages/ HTTP/1.0" 200 12349
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /metacollections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 4.819s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /metacollections/ HTTP/1.0" 200 11441
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 4.789s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 37665
+REQUEST 2025-09-26 17:06:32 [INFO] START GET /gallery/images/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:32 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.012s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 17:06:32 [INFO] END GET /gallery/images/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.166s
+REQUEST 2025-09-26 17:06:32 [INFO] "GET /gallery/images/ HTTP/1.0" 200 7629
+REQUEST 2025-09-26 17:06:33 [INFO] START GET /auth/user/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:33 [INFO] END GET /auth/user/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.012s
+REQUEST 2025-09-26 17:06:33 [INFO] "GET /auth/user/ HTTP/1.0" 200 408
+REQUEST 2025-09-26 17:06:45 [INFO] START GET /gallery/images/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:45 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:45 [INFO] START GET /metaimages/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:45 [INFO] START GET /metacollections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:45 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:46 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.055s
+REQUEST 2025-09-26 17:06:46 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 17:06:46 [INFO] END GET /metacollections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.696s
+REQUEST 2025-09-26 17:06:46 [INFO] "GET /metacollections/ HTTP/1.0" 200 11441
+REQUEST 2025-09-26 17:06:46 [INFO] END GET /metaimages/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.779s
+REQUEST 2025-09-26 17:06:46 [INFO] "GET /metaimages/ HTTP/1.0" 200 12349
+REQUEST 2025-09-26 17:06:46 [INFO] END GET /gallery/images/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.793s
+REQUEST 2025-09-26 17:06:46 [INFO] "GET /gallery/images/ HTTP/1.0" 200 7629
+REQUEST 2025-09-26 17:06:46 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.845s
+REQUEST 2025-09-26 17:06:46 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 37665
+REQUEST 2025-09-26 17:06:47 [INFO] START GET /auth/user/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:06:47 [INFO] END GET /auth/user/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.012s
+REQUEST 2025-09-26 17:06:47 [INFO] "GET /auth/user/ HTTP/1.0" 200 408
+REQUEST 2025-09-26 17:11:45 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:45 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.010s
+REQUEST 2025-09-26 17:11:45 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 17:11:56 [INFO] START GET /metacollections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:57 [INFO] END GET /metacollections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.140s
+REQUEST 2025-09-26 17:11:57 [INFO] "GET /metacollections/ HTTP/1.0" 200 11441
+REQUEST 2025-09-26 17:11:57 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:57 [INFO] START GET /metaimages/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:57 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.011s
+REQUEST 2025-09-26 17:11:57 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 17:11:57 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:57 [INFO] START GET /gallery/images/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:57 [INFO] END GET /metaimages/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.371s
+REQUEST 2025-09-26 17:11:57 [INFO] "GET /metaimages/ HTTP/1.0" 200 12349
+REQUEST 2025-09-26 17:11:58 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.514s
+REQUEST 2025-09-26 17:11:58 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 37665
+REQUEST 2025-09-26 17:11:58 [INFO] END GET /gallery/images/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.474s
+REQUEST 2025-09-26 17:11:58 [INFO] "GET /gallery/images/ HTTP/1.0" 200 7629
+REQUEST 2025-09-26 17:11:59 [INFO] START GET /auth/user/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:11:59 [INFO] END GET /auth/user/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.011s
+REQUEST 2025-09-26 17:11:59 [INFO] "GET /auth/user/ HTTP/1.0" 200 408
+REQUEST 2025-09-26 17:12:04 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:12:04 [INFO] START GET /metaimages/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:12:04 [INFO] START GET /metacollections/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:12:04 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:12:04 [INFO] START GET /gallery/images/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:12:05 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.720s
+REQUEST 2025-09-26 17:12:05 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-26 17:12:06 [INFO] END GET /metaimages/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 1.537s
+REQUEST 2025-09-26 17:12:06 [INFO] "GET /metaimages/ HTTP/1.0" 200 12349
+REQUEST 2025-09-26 17:12:06 [INFO] END GET /gallery/images/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 1.541s
+REQUEST 2025-09-26 17:12:06 [INFO] "GET /gallery/images/ HTTP/1.0" 200 7629
+REQUEST 2025-09-26 17:12:06 [INFO] END GET /metacollections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 1.569s
+REQUEST 2025-09-26 17:12:06 [INFO] "GET /metacollections/ HTTP/1.0" 200 11441
+REQUEST 2025-09-26 17:12:06 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 1.581s
+REQUEST 2025-09-26 17:12:06 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 37665
+REQUEST 2025-09-26 17:12:06 [INFO] START GET /auth/user/ | User: anonymous | IP: 49.36.79.145 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-26 17:12:06 [INFO] END GET /auth/user/ | Status: 200 | User: user:31ac30c2-86b5-4ce2-89e1-37556c52ab63(Suraj) | Duration: 0.013s
+REQUEST 2025-09-26 17:12:06 [INFO] "GET /auth/user/ HTTP/1.0" 200 408
+REQUEST 2025-09-26 17:19:53 [WARNING] Bad Request: /api/client/update
+REQUEST 2025-09-26 17:19:53 [WARNING] "POST /api/client/update?arch=amd64&commit=08059e95dacafe0bf6e5782f8e2c8ec9cd8c5a17&os=windows HTTP/1.1" 400 81703
+REQUEST 2025-09-26 17:22:01 [WARNING] Bad Request: /
+REQUEST 2025-09-26 17:22:01 [WARNING] "GET / HTTP/1.1" 400 80253
+REQUEST 2025-09-26 18:14:55 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mo
+REQUEST 2025-09-26 18:14:55 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-26 18:14:55 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 18:14:55 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 18:14:55 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Ve
+REQUEST 2025-09-26 18:14:55 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-26 18:14:55 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-26 18:14:55 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-26 18:14:55 [INFO] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.0" 200 3426
+REQUEST 2025-09-26 18:14:55 [INFO] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.0" 200 121457
+REQUEST 2025-09-26 18:14:55 [INFO] "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.0" 200 121457
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/ajax-form.js HTTP/1.0" 200 3796
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.0" 200 3426
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.0" 200 87533
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/css/prettify.css HTTP/1.0" 200 817
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/css/prettify.css HTTP/1.0" 200 817
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/css/default.css HTTP/1.0" 200 1152
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/css/default.css HTTP/1.0" 200 1152
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/csrf.js HTTP/1.0" 200 1793
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.0" 200 39680
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/prettify-min.js HTTP/1.0" 200 13632
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/default.js HTTP/1.0" 200 1268
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.0" 200 59
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/img/grid.png HTTP/1.0" 200 1458
+REQUEST 2025-09-26 18:14:56 [INFO] "GET /static/rest_framework/img/grid.png HTTP/1.0" 200 1458
+REQUEST 2025-09-26 18:14:57 [INFO] START GET /favicon.ico | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_6_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Ve
+REQUEST 2025-09-26 18:14:57 [ERROR] ERROR GET /favicon.ico | User: anonymous | Duration: 0.001s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-09-26 18:14:57 [INFO] END GET /favicon.ico | Status: 404 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-26 18:14:57 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-09-26 18:14:57 [WARNING] "GET /favicon.ico HTTP/1.0" 404 5509
+REQUEST 2025-09-26 19:07:50 [WARNING] Bad Request: /
+REQUEST 2025-09-26 19:07:50 [WARNING] "GET / HTTP/1.1" 400 80493
+REQUEST 2025-09-26 22:55:54 [INFO] code 400, message Bad request version ('À\x13À')
+REQUEST 2025-09-26 22:55:54 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-26 22:55:54 [INFO] code 400, message Bad request version ('À(À$À\x14À')
+REQUEST 2025-09-26 22:55:54 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-26 23:43:55 [WARNING] Bad Request: /
+REQUEST 2025-09-26 23:43:55 [WARNING] "GET / HTTP/1.1" 400 80351
+REQUEST 2025-09-26 23:43:58 [INFO] code 505, message Invalid HTTP version (2.0)
+REQUEST 2025-09-26 23:43:58 [ERROR] "PRI * HTTP/2.0" 505 -
+REQUEST 2025-09-26 23:44:06 [INFO] code 505, message Invalid HTTP version (2.0)
+REQUEST 2025-09-26 23:44:06 [ERROR] "PRI * HTTP/2.0" 505 -
+REQUEST 2025-09-26 23:44:10 [WARNING] Bad Request: /wiki
+REQUEST 2025-09-26 23:44:10 [WARNING] "GET /wiki HTTP/1.1" 400 80395
+REQUEST 2025-09-27 00:47:30 [INFO] START GET /robots.txt | User: anonymous | IP: 104.210.140.128 | User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.
+REQUEST 2025-09-27 00:47:30 [ERROR] ERROR GET /robots.txt | User: anonymous | Duration: 0.017s | Exception: “/app/robots.txt” does not exist
+REQUEST 2025-09-27 00:47:30 [INFO] END GET /robots.txt | Status: 404 | User: anonymous | Duration: 0.029s
+REQUEST 2025-09-27 00:47:30 [WARNING] Not Found: /robots.txt
+REQUEST 2025-09-27 00:47:30 [WARNING] "GET /robots.txt HTTP/1.0" 404 5505
+REQUEST 2025-09-27 00:47:31 [INFO] START GET /robots.txt | User: anonymous | IP: 104.210.140.128 | User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.
+REQUEST 2025-09-27 00:47:31 [ERROR] ERROR GET /robots.txt | User: anonymous | Duration: 0.001s | Exception: “/app/robots.txt” does not exist
+REQUEST 2025-09-27 00:47:31 [INFO] END GET /robots.txt | Status: 404 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-27 00:47:31 [WARNING] Not Found: /robots.txt
+REQUEST 2025-09-27 00:47:31 [WARNING] "GET /robots.txt HTTP/1.0" 404 5505
+REQUEST 2025-09-27 02:37:35 [WARNING] Bad Request: /
+REQUEST 2025-09-27 02:37:35 [WARNING] "GET / HTTP/1.1" 400 80100
+REQUEST 2025-09-27 08:30:10 [INFO] code 400, message Bad request version ('À\x14À')
+REQUEST 2025-09-27 08:30:10 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-27 08:30:10 [INFO] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Þxoó\x16$ñZ\x15!aéÈ\x89YÜ¦')
+REQUEST 2025-09-27 08:30:10 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-27 08:30:11 [WARNING] Bad Request: /
+REQUEST 2025-09-27 08:30:11 [WARNING] "GET / HTTP/1.1" 400 80465
+REQUEST 2025-09-27 08:30:12 [WARNING] Bad Request: /login
+REQUEST 2025-09-27 08:30:12 [WARNING] "GET /login HTTP/1.1" 400 80520
+REQUEST 2025-09-27 08:42:31 [INFO] - Broken pipe from ('159.146.99.221', 43670)
+REQUEST 2025-09-27 09:01:36 [INFO] START GET /favicon.ico | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-27 09:01:36 [ERROR] ERROR GET /favicon.ico | User: anonymous | Duration: 0.016s | Exception: “/app/favicon.ico” does not exist
+REQUEST 2025-09-27 09:01:36 [INFO] END GET /favicon.ico | Status: 404 | User: anonymous | Duration: 0.028s
+REQUEST 2025-09-27 09:01:36 [WARNING] Not Found: /favicon.ico
+REQUEST 2025-09-27 09:01:36 [WARNING] "GET /favicon.ico HTTP/1.0" 404 5509
