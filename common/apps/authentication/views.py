@@ -1,10 +1,26 @@
-from rest_framework.views import APIView
 import bcrypt
-from .models import DeviceLink
-from .serializers import DeviceLinkSerializer, RefreshTokenSerializer
+from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
-
+from rest_framework import status, mixins, viewsets, generics
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from .models import DeviceLink, Address, NewsLetterSubscriber, UserProfile, PasswordResetToken, EmailVerificationToken
+from .serializers import (
+    DeviceLinkSerializer, RefreshTokenSerializer, RegisterSerializer, UserSerializer,
+    AddressSerializer, NewsLetterSubscriberSerializer, UserProfileSerializer,
+    ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer,
+    ResendVerificationSerializer, MyTokenObtainPairSerializer
+)
+from django.contrib.auth import get_user_model
+from apps.utils.google_sheet import GoogleSheet
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework_simplejwt.tokens import RefreshToken
+from social_django.utils import load_strategy, load_backend
+from social_core.exceptions import MissingBackend
+from django.shortcuts import redirect
+from django.conf import settings
+from django.core.mail import send_mail
+from drf_spectacular.utils import extend_schema, OpenApiResponse
+from rest_framework_simplejwt.views import TokenObtainPairView
 class DeviceLinkCreateView(APIView):
     def post(self, request):
         serializer = DeviceLinkSerializer(data=request.data)
@@ -40,23 +56,7 @@ class LogoutDeviceView(APIView):
                 device.delete()
                 return Response({"detail": "Device unlinked successfully"})
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
-from rest_framework.views import APIView
-from rest_framework.response import Response 
-from .serializers import RegisterSerializer, UserSerializer,AddressSerializer,NewsLetterSubscriberSerializer,UserProfileSerializer, ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer, ResendVerificationSerializer, MyTokenObtainPairSerializer
-from rest_framework import mixins,viewsets,status,generics
-from rest_framework.permissions import IsAuthenticated,AllowAny
-from django.contrib.auth import get_user_model
-from .models import Address,NewsLetterSubscriber,UserProfile, PasswordResetToken, EmailVerificationToken
-from apps.utils.google_sheet import GoogleSheet
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework_simplejwt.tokens import RefreshToken
-from social_django.utils import load_strategy, load_backend
-from social_core.exceptions import MissingBackend
-from django.shortcuts import redirect
-from django.conf import settings
-from django.core.mail import send_mail
-from drf_spectacular.utils import extend_schema, OpenApiResponse
-from rest_framework_simplejwt.views import TokenObtainPairView
+
 
 User = get_user_model()
 _google_sheet = None

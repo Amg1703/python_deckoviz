@@ -1,10 +1,14 @@
 from rest_framework import serializers
-from .models import DeviceLink
+from .models import DeviceLink, Address, NewsLetterSubscriber, UserProfile, PasswordResetToken
 from django.utils import timezone
 from datetime import timedelta
+from django.contrib.auth import get_user_model
+from django.contrib.auth.password_validation import validate_password
+from django.utils.translation import gettext_lazy as _
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class DeviceLinkSerializer(serializers.ModelSerializer):
-    user_id = serializers.IntegerField(write_only=True)
+    user_id = serializers.UUIDField(write_only=True)
     expires_in_days = serializers.IntegerField(write_only=True, default=365)
 
     class Meta:
@@ -25,13 +29,6 @@ class DeviceLinkSerializer(serializers.ModelSerializer):
 
 class RefreshTokenSerializer(serializers.Serializer):
     refresh_token = serializers.CharField()
-from rest_framework import serializers
-from django.contrib.auth import get_user_model
-from .models import Address,NewsLetterSubscriber, UserProfile
-from django.contrib.auth.password_validation import validate_password
-from .models import PasswordResetToken
-from django.utils.translation import gettext_lazy as _
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 
 User = get_user_model()
