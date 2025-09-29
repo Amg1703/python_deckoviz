@@ -173761,3 +173761,1148 @@ Traceback (most recent call last):
 django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
 DETAIL:  Failing row contains (2025-09-27 09:01:56.787779+00, 2025-09-27 09:01:56.787792+00, b79964c5-ceb1-4c6f-b95b-2d1bf6c068c2, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
 
+/usr/local/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
+absolutely not recommended!
+
+Please specify a different user using the --uid option.
+
+User information: uid=0 euid=0 gid=0 egid=0
+
+  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
+[2025-09-29 07:37:26,717: INFO/MainProcess] Connected to redis://default:**@168.231.112.236:6379//
+[2025-09-29 07:37:26,727: INFO/MainProcess] mingle: searching for neighbors
+[2025-09-29 07:37:27,735: INFO/MainProcess] mingle: all alone
+[2025-09-29 07:37:27,749: INFO/MainProcess] celery@ee51c6418902 ready.
+[2025-09-29 07:37:27,753: INFO/MainProcess] Task apps.gallery.tasks.process_audio[1a39abe4-637c-4804-a407-3b33f646f749] received
+[2025-09-29 07:37:27,754: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:37:27,755: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[fb820018-3983-49d8-a26f-5349bcc89847] received
+[2025-09-29 07:37:27,756: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '29b46c89-426f-429b-b31f-f1f718252a46', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '29b46c89-426f-429b-b31f-f1f718252a46', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@ee51c6418902', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-09-29 07:37:27,762: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:37:27,763: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:37:27.763109
+[2025-09-29 07:37:27,763: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:37:27,783: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:37:27,786: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[1a39abe4-637c-4804-a407-3b33f646f749] succeeded in 0.03207390600000792s: None
+[2025-09-29 07:37:29,718: INFO/MainProcess] Events of group {task} enabled by remote.
+[2025-09-29 07:37:34,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5fa83e4d-d7d9-4fa4-aa5f-857b07231718] received
+[2025-09-29 07:37:34,770: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:37:34,779: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:37:34,780: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[5fa83e4d-d7d9-4fa4-aa5f-857b07231718] succeeded in 0.009376421999988338s: None
+[2025-09-29 07:37:34,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a88dceb4-5784-43da-a7d2-fd4e1fb1f2ed] received
+[2025-09-29 07:37:34,800: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:37:34,800: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:37:34.800530
+[2025-09-29 07:37:34,800: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:37:38,021: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[fb820018-3983-49d8-a26f-5349bcc89847] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:37:38.009025+00, 2025-09-29 07:37:38.009075+00, 4dd85b3a-daa7-458e-a56a-0d29f821581a, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:37:38.009025+00, 2025-09-29 07:37:38.009075+00, 4dd85b3a-daa7-458e-a56a-0d29f821581a, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:37:38.009025+00, 2025-09-29 07:37:38.009075+00, 4dd85b3a-daa7-458e-a56a-0d29f821581a, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:37:44,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[5fdf49fb-5fe7-4997-96e0-cf45a49bb248] received
+[2025-09-29 07:37:44,770: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:37:44,778: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:37:44,779: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[5fdf49fb-5fe7-4997-96e0-cf45a49bb248] succeeded in 0.008411396999989051s: None
+[2025-09-29 07:37:44,798: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[8845a1be-8cff-4dc5-8291-e44aa3c31dc6] received
+[2025-09-29 07:37:44,800: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:37:44,800: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:37:44.800286
+[2025-09-29 07:37:44,800: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:37:47,240: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[a88dceb4-5784-43da-a7d2-fd4e1fb1f2ed] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:37:47.233952+00, 2025-09-29 07:37:47.234+00, 93b5940a-7664-45e3-9736-37b54278c344, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:37:47.233952+00, 2025-09-29 07:37:47.234+00, 93b5940a-7664-45e3-9736-37b54278c344, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:37:47.233952+00, 2025-09-29 07:37:47.234+00, 93b5940a-7664-45e3-9736-37b54278c344, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:37:54,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[b65a1b20-29d4-4587-852d-5a32eddd6deb] received
+[2025-09-29 07:37:54,770: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:37:54,790: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:37:54,791: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[b65a1b20-29d4-4587-852d-5a32eddd6deb] succeeded in 0.02095637300000419s: None
+[2025-09-29 07:37:54,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[bd77fb00-cfe4-47cd-95e5-0b0a009e23ae] received
+[2025-09-29 07:37:54,800: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:37:54,800: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:37:54.800775
+[2025-09-29 07:37:54,800: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:37:57,414: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[8845a1be-8cff-4dc5-8291-e44aa3c31dc6] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:37:57.408978+00, 2025-09-29 07:37:57.408995+00, 8cb266e8-1099-4522-89b3-75f093258f6b, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:37:57.408978+00, 2025-09-29 07:37:57.408995+00, 8cb266e8-1099-4522-89b3-75f093258f6b, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:37:57.408978+00, 2025-09-29 07:37:57.408995+00, 8cb266e8-1099-4522-89b3-75f093258f6b, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:38:04,770: INFO/MainProcess] Task apps.gallery.tasks.process_audio[3845180e-03cc-44ad-a2d1-7a6be9326fe0] received
+[2025-09-29 07:38:04,773: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:38:04,781: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:38:04,782: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[3845180e-03cc-44ad-a2d1-7a6be9326fe0] succeeded in 0.009763160000005655s: None
+[2025-09-29 07:38:04,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[7799fe55-7b2a-4427-89ed-c7830fbbaf5f] received
+[2025-09-29 07:38:04,800: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:38:04,800: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:38:04.800520
+[2025-09-29 07:38:04,800: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:38:05,014: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[bd77fb00-cfe4-47cd-95e5-0b0a009e23ae] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:38:04.987274+00, 2025-09-29 07:38:04.987289+00, b792266d-881e-43e8-b233-855e347982c6, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:04.987274+00, 2025-09-29 07:38:04.987289+00, b792266d-881e-43e8-b233-855e347982c6, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:04.987274+00, 2025-09-29 07:38:04.987289+00, b792266d-881e-43e8-b233-855e347982c6, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:38:14,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[729c1b94-f6fb-47f7-a3e6-3d20982f5a93] received
+[2025-09-29 07:38:14,771: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:38:14,779: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:38:14,780: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[729c1b94-f6fb-47f7-a3e6-3d20982f5a93] succeeded in 0.009516274999995744s: None
+[2025-09-29 07:38:14,798: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[2a830c58-c2a6-49b9-9ab6-4255a853cb10] received
+[2025-09-29 07:38:14,800: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:38:14,800: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:38:14.800625
+[2025-09-29 07:38:14,800: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:38:14,980: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[7799fe55-7b2a-4427-89ed-c7830fbbaf5f] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:38:14.975863+00, 2025-09-29 07:38:14.975883+00, 339e73b2-a42a-42a7-a42f-6cc27db597a3, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:14.975863+00, 2025-09-29 07:38:14.975883+00, 339e73b2-a42a-42a7-a42f-6cc27db597a3, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:14.975863+00, 2025-09-29 07:38:14.975883+00, 339e73b2-a42a-42a7-a42f-6cc27db597a3, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:38:24,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[ed0279e3-252b-4665-91ba-2c35ff24bb63] received
+[2025-09-29 07:38:24,770: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:38:24,791: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:38:24,792: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[ed0279e3-252b-4665-91ba-2c35ff24bb63] succeeded in 0.022264061999976548s: None
+[2025-09-29 07:38:24,798: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[57214924-3732-4e11-828a-82a7a5d5cf3b] received
+[2025-09-29 07:38:24,800: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:38:24,800: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:38:24.800215
+[2025-09-29 07:38:24,800: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:38:25,498: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[2a830c58-c2a6-49b9-9ab6-4255a853cb10] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:38:25.49451+00, 2025-09-29 07:38:25.494525+00, 627a415c-1067-40a9-b4c9-c8450ad0e07b, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:25.49451+00, 2025-09-29 07:38:25.494525+00, 627a415c-1067-40a9-b4c9-c8450ad0e07b, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:25.49451+00, 2025-09-29 07:38:25.494525+00, 627a415c-1067-40a9-b4c9-c8450ad0e07b, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:38:34,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[ad3e142d-f517-4e45-b596-9b4c7cc55273] received
+[2025-09-29 07:38:34,770: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:38:34,778: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:38:34,779: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[ad3e142d-f517-4e45-b596-9b4c7cc55273] succeeded in 0.008596791000002213s: None
+[2025-09-29 07:38:34,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[bbcc408c-6fc3-4ab8-a74e-2873f743e0cc] received
+[2025-09-29 07:38:34,800: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:38:34,800: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:38:34.800524
+[2025-09-29 07:38:34,800: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:38:34,978: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[57214924-3732-4e11-828a-82a7a5d5cf3b] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:38:34.972927+00, 2025-09-29 07:38:34.972945+00, 4742b2d4-ee2c-4818-8c70-a0fde9a55a62, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:34.972927+00, 2025-09-29 07:38:34.972945+00, 4742b2d4-ee2c-4818-8c70-a0fde9a55a62, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:34.972927+00, 2025-09-29 07:38:34.972945+00, 4742b2d4-ee2c-4818-8c70-a0fde9a55a62, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:38:44,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[92b77701-26f8-4776-b006-6d01825613e8] received
+[2025-09-29 07:38:44,771: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:38:44,779: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:38:44,781: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[92b77701-26f8-4776-b006-6d01825613e8] succeeded in 0.0102265490000093s: None
+[2025-09-29 07:38:44,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[afaa3f87-fe03-45b9-9c1f-85f0643c4e46] received
+[2025-09-29 07:38:44,801: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:38:44,801: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:38:44.801679
+[2025-09-29 07:38:44,801: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:38:44,964: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[bbcc408c-6fc3-4ab8-a74e-2873f743e0cc] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:38:44.959672+00, 2025-09-29 07:38:44.959684+00, 6c82e30a-8b7d-401d-bae8-a3a04cc24dcc, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:44.959672+00, 2025-09-29 07:38:44.959684+00, 6c82e30a-8b7d-401d-bae8-a3a04cc24dcc, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:44.959672+00, 2025-09-29 07:38:44.959684+00, 6c82e30a-8b7d-401d-bae8-a3a04cc24dcc, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:38:54,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[ced17cee-56c0-409b-bc7e-620a409bd24f] received
+[2025-09-29 07:38:54,771: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:38:54,779: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:38:54,779: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[ced17cee-56c0-409b-bc7e-620a409bd24f] succeeded in 0.008848061999998436s: None
+[2025-09-29 07:38:54,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[b5d246c1-fb0a-4080-a6c5-1944b060d31f] received
+[2025-09-29 07:38:54,800: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:38:54,800: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:38:54.800699
+[2025-09-29 07:38:54,800: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:38:54,972: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[afaa3f87-fe03-45b9-9c1f-85f0643c4e46] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:38:54.967765+00, 2025-09-29 07:38:54.967781+00, 7541a943-9a5b-4ebf-87c6-4468b7e332fc, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:54.967765+00, 2025-09-29 07:38:54.967781+00, 7541a943-9a5b-4ebf-87c6-4468b7e332fc, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:38:54.967765+00, 2025-09-29 07:38:54.967781+00, 7541a943-9a5b-4ebf-87c6-4468b7e332fc, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:39:04,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[c89a6e14-a7cd-4dec-8da2-af001fe66a59] received
+[2025-09-29 07:39:04,771: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:39:04,780: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:39:04,781: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[c89a6e14-a7cd-4dec-8da2-af001fe66a59] succeeded in 0.009890871999999717s: None
+[2025-09-29 07:39:04,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[10d83d79-380d-4882-a5d2-d4d1d9eb7c54] received
+[2025-09-29 07:39:04,801: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:39:04,801: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:39:04.801409
+[2025-09-29 07:39:04,801: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:39:04,983: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[b5d246c1-fb0a-4080-a6c5-1944b060d31f] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:39:04.979146+00, 2025-09-29 07:39:04.979162+00, 9a03287a-0dc4-4871-a646-17ac3d6620f5, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:04.979146+00, 2025-09-29 07:39:04.979162+00, 9a03287a-0dc4-4871-a646-17ac3d6620f5, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:04.979146+00, 2025-09-29 07:39:04.979162+00, 9a03287a-0dc4-4871-a646-17ac3d6620f5, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:39:14,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e95a9b6c-a87e-40e0-b90f-784034f37264] received
+[2025-09-29 07:39:14,771: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:39:14,779: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:39:14,780: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[e95a9b6c-a87e-40e0-b90f-784034f37264] succeeded in 0.009085139000006848s: None
+[2025-09-29 07:39:14,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[cc5af215-a1fd-4e87-9164-8663095a7e77] received
+[2025-09-29 07:39:14,800: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:39:14,800: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:39:14.800827
+[2025-09-29 07:39:14,800: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:39:14,987: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[10d83d79-380d-4882-a5d2-d4d1d9eb7c54] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:39:14.982711+00, 2025-09-29 07:39:14.982725+00, b14a8cab-7225-4088-96af-5d576c37e29a, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:14.982711+00, 2025-09-29 07:39:14.982725+00, b14a8cab-7225-4088-96af-5d576c37e29a, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:14.982711+00, 2025-09-29 07:39:14.982725+00, b14a8cab-7225-4088-96af-5d576c37e29a, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:39:24,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[f1fa23b8-9e1e-4e6b-a275-a896b4f66961] received
+[2025-09-29 07:39:24,770: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:39:24,779: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:39:24,780: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[f1fa23b8-9e1e-4e6b-a275-a896b4f66961] succeeded in 0.009885702999980595s: None
+[2025-09-29 07:39:24,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[813c2e94-394b-4c13-b768-9db02a1d5311] received
+[2025-09-29 07:39:24,801: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:39:24,801: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:39:24.801392
+[2025-09-29 07:39:24,801: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:39:24,801: ERROR/MainProcess] Received unregistered task of type 'apps.gallery.tasks.generate_metadata'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+https://docs.celeryq.dev/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+
+The full contents of the message headers:
+{'lang': 'py', 'task': 'apps.gallery.tasks.generate_metadata', 'id': '9680d7b5-245f-4325-bf12-33d8dce4f4cc', 'shadow': None, 'eta': None, 'expires': None, 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '9680d7b5-245f-4325-bf12-33d8dce4f4cc', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen7@ee51c6418902', 'ignore_result': False, 'stamped_headers': None, 'stamps': {}}
+
+The delivery info for this task is:
+{'exchange': '', 'routing_key': 'celery'}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/worker/consumer/consumer.py", line 642, in on_task_received
+    strategy = strategies[type_]
+               ~~~~~~~~~~^^^^^^^
+KeyError: 'apps.gallery.tasks.generate_metadata'
+[2025-09-29 07:39:24,976: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[cc5af215-a1fd-4e87-9164-8663095a7e77] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:39:24.971055+00, 2025-09-29 07:39:24.97107+00, 18669607-6e65-4c20-9524-09c2e2a62607, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:24.971055+00, 2025-09-29 07:39:24.97107+00, 18669607-6e65-4c20-9524-09c2e2a62607, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:24.971055+00, 2025-09-29 07:39:24.97107+00, 18669607-6e65-4c20-9524-09c2e2a62607, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:39:34,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[4e659745-e24a-41d9-9c50-649e273aa8b9] received
+[2025-09-29 07:39:34,771: INFO/ForkPoolWorker-4] Fetching audios to process
+[2025-09-29 07:39:34,783: INFO/ForkPoolWorker-4] No audio files to process
+[2025-09-29 07:39:34,785: INFO/ForkPoolWorker-4] Task apps.gallery.tasks.process_audio[4e659745-e24a-41d9-9c50-649e273aa8b9] succeeded in 0.014121848000002046s: None
+[2025-09-29 07:39:34,800: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[bf321850-517d-4b7c-99c9-a38540adfbe4] received
+[2025-09-29 07:39:34,802: INFO/ForkPoolWorker-4] Fetching unsplash images to process
+[2025-09-29 07:39:34,802: INFO/ForkPoolWorker-4] Starting Unsplash to gcs uploader job at 2025-09-29T07:39:34.802491
+[2025-09-29 07:39:34,802: INFO/ForkPoolWorker-4] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:39:34,976: ERROR/ForkPoolWorker-2] Task apps.gallery.tasks.populate_unsplash_images[813c2e94-394b-4c13-b768-9db02a1d5311] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:39:34.970903+00, 2025-09-29 07:39:34.970915+00, b4010c2f-9d54-4561-998b-7b1d2881b074, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:34.970903+00, 2025-09-29 07:39:34.970915+00, b4010c2f-9d54-4561-998b-7b1d2881b074, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:34.970903+00, 2025-09-29 07:39:34.970915+00, b4010c2f-9d54-4561-998b-7b1d2881b074, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+[2025-09-29 07:39:44,769: INFO/MainProcess] Task apps.gallery.tasks.process_audio[e6382501-8c1d-475d-92b6-ffc3783ec975] received
+[2025-09-29 07:39:44,771: INFO/ForkPoolWorker-2] Fetching audios to process
+[2025-09-29 07:39:44,779: INFO/ForkPoolWorker-2] No audio files to process
+[2025-09-29 07:39:44,780: INFO/ForkPoolWorker-2] Task apps.gallery.tasks.process_audio[e6382501-8c1d-475d-92b6-ffc3783ec975] succeeded in 0.009587218999996594s: None
+[2025-09-29 07:39:44,799: INFO/MainProcess] Task apps.gallery.tasks.populate_unsplash_images[a3a94094-b6b8-4ee3-a2a3-9a9ae50a77a8] received
+[2025-09-29 07:39:44,800: INFO/ForkPoolWorker-2] Fetching unsplash images to process
+[2025-09-29 07:39:44,800: INFO/ForkPoolWorker-2] Starting Unsplash to gcs uploader job at 2025-09-29T07:39:44.800721
+[2025-09-29 07:39:44,800: INFO/ForkPoolWorker-2] Using 6 search queries: nature, people, food, travel, architecture, animals
+[2025-09-29 07:39:44,981: ERROR/ForkPoolWorker-4] Task apps.gallery.tasks.populate_unsplash_images[bf321850-517d-4b7c-99c9-a38540adfbe4] raised unexpected: IntegrityError('null value in column "description" of relation "images" violates not-null constraint\nDETAIL:  Failing row contains (2025-09-29 07:39:44.975789+00, 2025-09-29 07:39:44.975802+00, 0e9d6023-dbb7-40af-b07b-76b1457a7c5f, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).\n')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:44.975789+00, 2025-09-29 07:39:44.975802+00, 0e9d6023-dbb7-40af-b07b-76b1457a7c5f, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 477, in trace_task
+    R = retval = fun(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/app/trace.py", line 760, in __protected_call__
+    return self.run(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/gallery/tasks.py", line 155, in populate_unsplash_images
+    client.run()
+  File "/app/apps/utils/unsplash_client/_client.py", line 331, in run
+    image = Image.objects.create(
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/app/apps/gallery/models.py", line 69, in save
+    super().save(*args, **kwargs)
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 892, in save
+    self.save_base(
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 998, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1161, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/base.py", line 1202, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "description" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2025-09-29 07:39:44.975789+00, 2025-09-29 07:39:44.975802+00, 0e9d6023-dbb7-40af-b07b-76b1457a7c5f, , C1fMH2Vej8A, https://images.unsplash.com/photo-1485963631004-f2f00b1d6606?cro..., , public, t, 0fe64147-829c-4078-849b-a8d60185a8c3, null, null, null, null).
+
