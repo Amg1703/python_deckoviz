@@ -28808,3 +28808,13 @@ REQUEST 2025-09-26 05:52:57 [INFO] START GET /qr/device/4644af97-f986-42dd-8075-
 REQUEST 2025-09-26 05:52:57 [INFO] END GET /qr/device/4644af97-f986-42dd-8075-c5d82ec4c78a/room | Status: 404 | Duration: 0.006s | IP: 172.26.0.1
 REQUEST 2025-09-26 06:16:14 [INFO] START GET /qr/device/f9bcc9be-39c7-48f9-ab30-fa6c49f1ad56/room | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
 REQUEST 2025-09-26 06:16:14 [INFO] END GET /qr/device/f9bcc9be-39c7-48f9-ab30-fa6c49f1ad56/room | Status: 404 | Duration: 0.005s | IP: 172.26.0.1
+REQUEST 2025-09-29 07:43:29 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 07:43:29 [INFO] END GET /docs | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-29 07:43:29 [INFO] START GET /openapi.json | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 07:43:29 [INFO] END GET /openapi.json | Status: 200 | Duration: 0.009s | IP: 172.26.0.1
+REQUEST 2025-09-29 07:43:44 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 07:43:44 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-29 07:47:13 [INFO] START GET / | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 07:47:13 [INFO] END GET / | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-29 07:47:13 [INFO] START GET /favicon.ico | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 07:47:13 [INFO] END GET /favicon.ico | Status: 404 | Duration: 0.000s | IP: 172.26.0.1
