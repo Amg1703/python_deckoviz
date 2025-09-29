@@ -24249,3 +24249,7 @@ Traceback (most recent call last):
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
 INFO 2025-09-29 07:28:19 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-09-29 07:37:33 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-29 09:19:08 [django.utils.autoreload] /app/apps/authentication/apps.py changed, reloading.
+INFO 2025-09-29 09:19:09 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-29 09:24:52 [django.utils.autoreload] Watching for file changes with StatReloader
+INFO 2025-09-29 10:58:53 [django.utils.autoreload] Watching for file changes with StatReloader
