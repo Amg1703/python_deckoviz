@@ -1,4 +1,46 @@
 from rest_framework.views import APIView
+import bcrypt
+from .models import DeviceLink
+from .serializers import DeviceLinkSerializer, RefreshTokenSerializer
+from rest_framework.response import Response
+from rest_framework import status
+
+class DeviceLinkCreateView(APIView):
+    def post(self, request):
+        serializer = DeviceLinkSerializer(data=request.data)
+        if serializer.is_valid():
+            device = serializer.save()
+            return Response(DeviceLinkSerializer(device).data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class RefreshTokenView(APIView):
+    def post(self, request):
+        serializer = RefreshTokenSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        refresh_token = serializer.validated_data["refresh_token"]
+        for device in DeviceLink.objects.all():
+            if bcrypt.checkpw(refresh_token.encode(), device.refresh_token_hash.encode()):
+                if device.is_expired():
+                    return Response({"detail": "Refresh token expired"}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response({
+                    "user_id": device.user.id,
+                    "role": device.device_type,
+                })
+        return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
+
+class LogoutDeviceView(APIView):
+    def post(self, request):
+        serializer = RefreshTokenSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        refresh_token = serializer.validated_data["refresh_token"]
+        for device in DeviceLink.objects.all():
+            if bcrypt.checkpw(refresh_token.encode(), device.refresh_token_hash.encode()):
+                device.delete()
+                return Response({"detail": "Device unlinked successfully"})
+        return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
+from rest_framework.views import APIView
 from rest_framework.response import Response 
 from .serializers import RegisterSerializer, UserSerializer,AddressSerializer,NewsLetterSubscriberSerializer,UserProfileSerializer, ForgotPasswordSerializer, ResetPasswordSerializer, EmailVerificationSerializer, ResendVerificationSerializer, MyTokenObtainPairSerializer
 from rest_framework import mixins,viewsets,status,generics

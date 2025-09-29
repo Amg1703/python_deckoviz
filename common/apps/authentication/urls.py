@@ -1,3 +1,5 @@
+from django.urls import path
+from .views import DeviceLinkCreateView, RefreshTokenView, LogoutDeviceView
 from django.urls import path,include 
 from rest_framework.routers import DefaultRouter 
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
@@ -22,4 +24,7 @@ urlpatterns = [
     path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
     path('verify-email/', VerifyEmailView.as_view(), name='verify-email'),
     path('resend-verification/', ResendVerificationView.as_view(), name='resend-verification'),
+    path("device-links/", DeviceLinkCreateView.as_view(), name="device-link-create"),
+    path("device-links/refresh/", RefreshTokenView.as_view(), name="device-refresh"),
+    path("device-links/logout/", LogoutDeviceView.as_view(), name="device-logout"),
 ]

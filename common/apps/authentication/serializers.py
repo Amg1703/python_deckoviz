@@ -1,4 +1,31 @@
 from rest_framework import serializers
+from .models import DeviceLink
+from django.utils import timezone
+from datetime import timedelta
+
+class DeviceLinkSerializer(serializers.ModelSerializer):
+    user_id = serializers.IntegerField(write_only=True)
+    expires_in_days = serializers.IntegerField(write_only=True, default=365)
+
+    class Meta:
+        model = DeviceLink
+        fields = ["id", "user_id", "refresh_token_hash", "device_type", "expires_in_days", "expires_at"]
+
+    def create(self, validated_data):
+        user_id = validated_data.pop("user_id")
+        expires_in_days = validated_data.pop("expires_in_days", 365)
+        from django.contrib.auth import get_user_model
+        User = get_user_model()
+        user = User.objects.get(id=user_id)
+        return DeviceLink.objects.create(
+            user=user,
+            expires_at=timezone.now() + timedelta(days=expires_in_days),
+            **validated_data
+        )
+
+class RefreshTokenSerializer(serializers.Serializer):
+    refresh_token = serializers.CharField()
+from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import Address,NewsLetterSubscriber, UserProfile
 from django.contrib.auth.password_validation import validate_password

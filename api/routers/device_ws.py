@@ -1,7 +1,5 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Depends
 from utils.token import create_access_token, verify_access_token, get_current_user
-from common.apps.authentication.models import User
-from django.utils import timezone
 import time, uuid, bcrypt, secrets, logging
 from utils.qr_redis import QRRedisManager
 from databases.configs import get_redis_client
