@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 import uuid, secrets, bcrypt, requests, os, time
 from utils.token import create_access_token, get_current_user
 from utils.qr_code import TVQRCodeGenerator
-
+from utils.create_qr import generate_qr_base64
 router = APIRouter(prefix="/device", tags=["Device Pairing"])
 
 # Django service URL (service name = container name in Docker network)
@@ -42,7 +42,7 @@ def call_django(endpoint: str, method: str = "post", data: dict = None):
 @router.post("/session/new")
 def create_session():
     session_id = str(uuid.uuid4())
-    qr_code = TVQRCodeGenerator(session_id)
+    qr_code = generate_qr_base64(session_id)
     return {
         "session_id": session_id,
         "qr_url": f"https://app.com/qr/{session_id}",
