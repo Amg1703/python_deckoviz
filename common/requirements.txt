@@ -56,3 +56,4 @@ django-ckeditor==6.2.0
 
 
 
+bcrypt

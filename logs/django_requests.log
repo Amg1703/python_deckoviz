@@ -36575,3 +36575,25 @@ REQUEST 2025-09-27 09:01:36 [ERROR] ERROR GET /favicon.ico | User: anonymous | D
 REQUEST 2025-09-27 09:01:36 [INFO] END GET /favicon.ico | Status: 404 | User: anonymous | Duration: 0.028s
 REQUEST 2025-09-27 09:01:36 [WARNING] Not Found: /favicon.ico
 REQUEST 2025-09-27 09:01:36 [WARNING] "GET /favicon.ico HTTP/1.0" 404 5509
+REQUEST 2025-09-29 10:59:28 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 10:59:28 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.054s
+REQUEST 2025-09-29 10:59:28 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 10:59:28 [INFO] START GET /api/schema/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 10:59:28 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.237s
+REQUEST 2025-09-29 10:59:28 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-29 10:59:42 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 10:59:42 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.024s
+REQUEST 2025-09-29 10:59:42 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 10:59:42 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 11:05:48 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.59.13.131 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 11:05:48 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.001s
+REQUEST 2025-09-29 11:05:48 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 11:05:49 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.59.13.131 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 11:05:49 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.161s
+REQUEST 2025-09-29 11:05:49 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-29 11:27:36 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 11:27:36 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.002s
+REQUEST 2025-09-29 11:27:36 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 11:27:36 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 11:27:36 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.224s
+REQUEST 2025-09-29 11:27:36 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
