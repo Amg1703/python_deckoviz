@@ -28888,3 +28888,81 @@ REQUEST 2025-09-29 11:27:43 [INFO] START GET /openapi.json | IP: 172.26.0.1 | Us
 REQUEST 2025-09-29 11:27:43 [INFO] END GET /openapi.json | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
 REQUEST 2025-09-29 11:36:35 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
 REQUEST 2025-09-29 11:36:35 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 05:33:46 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 05:33:46 [INFO] END GET /docs | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 05:33:47 [INFO] START GET /openapi.json | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 05:33:47 [INFO] END GET /openapi.json | Status: 200 | Duration: 0.024s | IP: 172.26.0.1
+REQUEST 2025-09-30 05:34:18 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 05:34:18 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.033s | IP: 172.26.0.1
+REQUEST 2025-09-30 05:55:37 [INFO] START GET /login | IP: 45.38.44.226 | User-Agent: Go-http-client/1.1
+REQUEST 2025-09-30 05:55:37 [INFO] END GET /login | Status: 404 | Duration: 0.001s | IP: 45.38.44.226
+REQUEST 2025-09-30 05:56:52 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 05:56:53 [ERROR] ERROR POST /device/pair-tv | Duration: 0.225s | IP: 172.26.0.1 | Exception: 'id'
+REQUEST 2025-09-30 06:06:58 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:06:58 [INFO] END GET /docs | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:07:00 [INFO] START GET /openapi.json | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:07:00 [INFO] END GET /openapi.json | Status: 200 | Duration: 0.007s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:07:10 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:07:10 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.018s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:10:51 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:10:51 [ERROR] ERROR POST /device/pair-tv | Duration: 0.225s | IP: 172.26.0.1 | Exception: 'id'
+REQUEST 2025-09-30 06:13:15 [INFO] START POST /device/refresh | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:13:15 [INFO] END POST /device/refresh | Status: 502 | Duration: 0.016s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:13:31 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:13:31 [INFO] END GET /docs | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:13:31 [INFO] START GET /openapi.json | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:13:31 [INFO] END GET /openapi.json | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:13:43 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:13:43 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 06:16:25 [INFO] START GET /.env.tmp | IP: 170.39.218.2 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0
+REQUEST 2025-09-30 06:16:25 [INFO] END GET /.env.tmp | Status: 404 | Duration: 0.000s | IP: 170.39.218.2
+REQUEST 2025-09-30 06:19:21 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:19:21 [INFO] END POST /device/pair-tv | Status: 401 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 07:02:27 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 07:02:27 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.009s | IP: 172.26.0.1
+REQUEST 2025-09-30 07:16:53 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 07:16:53 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 07:21:27 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 07:21:27 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 07:39:36 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 07:39:36 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.011s | IP: 172.26.0.1
+REQUEST 2025-09-30 07:42:08 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 07:42:09 [ERROR] ERROR POST /device/pair-tv | Duration: 0.229s | IP: 172.26.0.1 | Exception: 'id'
+REQUEST 2025-09-30 07:42:59 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Thunder Client (https://www.thunderclient.com)
+REQUEST 2025-09-30 07:43:00 [ERROR] ERROR POST /device/pair-tv | Duration: 0.228s | IP: 172.26.0.1 | Exception: 'id'
+REQUEST 2025-09-30 07:52:35 [INFO] START GET /login | IP: 45.38.44.226 | User-Agent: Go-http-client/1.1
+REQUEST 2025-09-30 07:52:35 [INFO] END GET /login | Status: 404 | Duration: 0.001s | IP: 45.38.44.226
+REQUEST 2025-09-30 08:01:24 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:01:24 [INFO] END GET /docs | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:01:24 [INFO] START GET /openapi.json | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:01:24 [INFO] END GET /openapi.json | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:01:54 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:01:54 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:14:39 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:14:39 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.009s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:17:31 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:17:31 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:19:56 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:19:56 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:52:44 [INFO] START POST /device/session/new | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:52:44 [INFO] END POST /device/session/new | Status: 200 | Duration: 0.008s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:53:11 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:53:11 [INFO] END POST /device/pair-tv | Status: 401 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:54:20 [INFO] START GET / | IP: 192.81.208.14 | User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.3
+REQUEST 2025-09-30 08:54:20 [INFO] END GET / | Status: 200 | Duration: 0.001s | IP: 192.81.208.14
+REQUEST 2025-09-30 08:54:20 [INFO] START GET /favicon.ico | IP: 192.81.208.14 | User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.3
+REQUEST 2025-09-30 08:54:20 [INFO] END GET /favicon.ico | Status: 404 | Duration: 0.000s | IP: 192.81.208.14
+REQUEST 2025-09-30 08:54:42 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:54:42 [INFO] END POST /device/pair-tv | Status: 401 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:54:53 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 08:54:53 [INFO] END POST /device/pair-tv | Status: 401 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:56:59 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: PostmanRuntime/7.46.1
+REQUEST 2025-09-30 08:56:59 [INFO] END GET /docs | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:58:02 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: PostmanRuntime/7.46.1
+REQUEST 2025-09-30 08:58:02 [INFO] END GET /docs | Status: 200 | Duration: 0.001s | IP: 172.26.0.1
+REQUEST 2025-09-30 08:58:19 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: PostmanRuntime/7.46.1
+REQUEST 2025-09-30 08:58:19 [INFO] END GET /docs | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
+REQUEST 2025-09-30 09:01:58 [INFO] START GET /docs | IP: 172.26.0.1 | User-Agent: PostmanRuntime/7.46.1
+REQUEST 2025-09-30 09:01:58 [INFO] END GET /docs | Status: 200 | Duration: 0.000s | IP: 172.26.0.1
+REQUEST 2025-09-30 09:08:35 [INFO] START POST /device/pair-tv | IP: 172.26.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 09:08:35 [ERROR] ERROR POST /device/pair-tv | Duration: 0.224s | IP: 172.26.0.1 | Exception: 'id'
