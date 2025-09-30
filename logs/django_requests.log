@@ -36597,3 +36597,148 @@ REQUEST 2025-09-29 11:27:36 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 42
 REQUEST 2025-09-29 11:27:36 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
 REQUEST 2025-09-29 11:27:36 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.224s
 REQUEST 2025-09-29 11:27:36 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-29 12:01:17 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:01:17 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.061s
+REQUEST 2025-09-29 12:01:17 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 12:01:19 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:01:19 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.001s
+REQUEST 2025-09-29 12:01:19 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 12:01:20 [INFO] START GET /api/schema/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:01:20 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.272s
+REQUEST 2025-09-29 12:01:20 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-29 12:01:23 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:01:23 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.046s
+REQUEST 2025-09-29 12:01:23 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 12:01:23 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 12:01:24 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:01:24 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-29 12:01:24 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 12:01:24 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 12:02:54 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:02:54 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.001s
+REQUEST 2025-09-29 12:02:54 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 12:02:55 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:02:55 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.155s
+REQUEST 2025-09-29 12:02:55 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-29 12:02:58 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:02:58 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-29 12:02:58 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 12:02:58 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 12:11:00 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:11:00 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.109s
+REQUEST 2025-09-29 12:11:00 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 12:11:00 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 12:11:13 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:11:13 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-29 12:11:13 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 12:11:13 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 12:20:34 [INFO] START POST /auth/login/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:20:35 [INFO] END POST /auth/login/ | Status: 200 | User: anonymous | Duration: 0.229s
+REQUEST 2025-09-29 12:20:35 [INFO] "POST /auth/login/ HTTP/1.0" 200 851
+REQUEST 2025-09-29 12:29:05 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:29:05 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.003s
+REQUEST 2025-09-29 12:29:05 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-29 12:29:06 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.59.13.198 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:29:06 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.257s
+REQUEST 2025-09-29 12:29:06 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-29 12:33:25 [INFO] START GET /robots.txt | User: anonymous | IP: 104.210.140.133 | User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.
+REQUEST 2025-09-29 12:33:25 [ERROR] ERROR GET /robots.txt | User: anonymous | Duration: 0.001s | Exception: “/app/robots.txt” does not exist
+REQUEST 2025-09-29 12:33:25 [INFO] END GET /robots.txt | Status: 404 | User: anonymous | Duration: 0.006s
+REQUEST 2025-09-29 12:33:25 [WARNING] Not Found: /robots.txt
+REQUEST 2025-09-29 12:33:25 [WARNING] "GET /robots.txt HTTP/1.0" 404 5652
+REQUEST 2025-09-29 12:33:26 [INFO] START GET /robots.txt | User: anonymous | IP: 104.210.140.133 | User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.
+REQUEST 2025-09-29 12:33:26 [ERROR] ERROR GET /robots.txt | User: anonymous | Duration: 0.001s | Exception: “/app/robots.txt” does not exist
+REQUEST 2025-09-29 12:33:26 [INFO] END GET /robots.txt | Status: 404 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-29 12:33:26 [WARNING] Not Found: /robots.txt
+REQUEST 2025-09-29 12:33:26 [WARNING] "GET /robots.txt HTTP/1.0" 404 5652
+REQUEST 2025-09-29 12:57:10 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-29 12:57:10 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.070s
+REQUEST 2025-09-29 12:57:10 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-29 12:57:10 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-29 13:34:51 [WARNING] Bad Request: /
+REQUEST 2025-09-29 13:34:51 [WARNING] "GET / HTTP/1.1" 400 80101
+REQUEST 2025-09-29 15:13:07 [WARNING] Bad Request: /
+REQUEST 2025-09-29 15:13:07 [WARNING] "GET / HTTP/1.1" 400 80572
+REQUEST 2025-09-29 15:13:08 [WARNING] Bad Request: /
+REQUEST 2025-09-29 15:13:08 [WARNING] "GET / HTTP/1.1" 400 80572
+REQUEST 2025-09-29 15:13:08 [WARNING] Bad Request: /
+REQUEST 2025-09-29 15:13:08 [WARNING] "GET / HTTP/1.1" 400 80572
+REQUEST 2025-09-29 15:13:08 [WARNING] Bad Request: /HNAP1/
+REQUEST 2025-09-29 15:13:08 [WARNING] "GET /HNAP1/ HTTP/1.1" 400 80788
+REQUEST 2025-09-29 15:13:08 [WARNING] Bad Request: /HNAP1/
+REQUEST 2025-09-29 15:13:08 [WARNING] "GET /HNAP1/ HTTP/1.1" 400 80788
+REQUEST 2025-09-29 15:13:09 [WARNING] Bad Request: /HNAP1/
+REQUEST 2025-09-29 15:13:09 [WARNING] "GET /HNAP1/ HTTP/1.1" 400 80788
+REQUEST 2025-09-29 15:30:04 [INFO] code 400, message Bad request syntax ('\x12\x01\x00&\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00ÿ')
+REQUEST 2025-09-29 15:30:04 [WARNING] " &                          ÿ" 400 -
+REQUEST 2025-09-29 15:30:06 [INFO] code 400, message Bad request version ('À/À+\x00\x9eÌ¨\x13\x01\x13\x02\x01\x00\x00\x18\x00\x00\x00\x14\x00\x12\x00\x00\x0f168.231.112.236')
+REQUEST 2025-09-29 15:30:06 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-29 15:30:06 [WARNING] Bad Request: /
+REQUEST 2025-09-29 15:30:07 [INFO] code 400, message Bad request syntax ('SSH-2.0-WanScannerBot')
+REQUEST 2025-09-29 15:30:07 [WARNING] "SSH-2.0-WanScannerBot" 400 -
+REQUEST 2025-09-29 15:30:08 [INFO] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00&!à\x00\x00þÊ\x00Cookie:')
+REQUEST 2025-09-29 15:30:08 [WARNING] "  &!à  þÊ Cookie: mstshash=" 400 -
+REQUEST 2025-09-29 15:30:08 [INFO] code 400, message Bad request syntax ('\x10\x0f\x00\x04MQTT\x04\x00\x00')
+REQUEST 2025-09-29 15:30:08 [WARNING] " MQTT  " 400 -
+REQUEST 2025-09-29 15:30:11 [INFO] code 400, message Bad HTTP/0.9 request type ('AMQP\x00\x00')
+REQUEST 2025-09-29 15:30:11 [WARNING] "AMQP  	" 400 -
+REQUEST 2025-09-29 15:30:14 [INFO] code 400, message Bad request syntax ('\x00\x00\x00%ÿSMBr\x00\x00\x00\x00\x18\x01(\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00')
+REQUEST 2025-09-29 15:30:14 [WARNING] "   %ÿSMBr    (                        " 400 -
+REQUEST 2025-09-29 15:30:14 [INFO] code 400, message Bad request version ('RTSP/1.0')
+REQUEST 2025-09-29 15:30:14 [WARNING] "OPTIONS / RTSP/1.0" 400 -
+REQUEST 2025-09-29 15:30:17 [INFO] code 400, message Bad request syntax ('\x00\x00\x00\x08\x04Ò\x16/')
+REQUEST 2025-09-29 15:30:17 [WARNING] "   Ò/" 400 -
+REQUEST 2025-09-29 15:30:17 [INFO] code 400, message Bad request syntax ('\x01\x00\x00\x00')
+REQUEST 2025-09-29 15:30:17 [WARNING] "   " 400 -
+REQUEST 2025-09-29 15:30:17 [WARNING] Bad Request: /
+REQUEST 2025-09-29 15:30:18 [WARNING] "GET / HTTP/1.1" 400 80247
+REQUEST 2025-09-29 16:29:08 [WARNING] Bad Request: /
+REQUEST 2025-09-29 16:29:08 [WARNING] "GET / HTTP/1.1" 400 80101
+REQUEST 2025-09-29 17:07:05 [INFO] code 400, message Bad request syntax ('MGLNDD_168.231.112.236_8000')
+REQUEST 2025-09-29 17:07:05 [WARNING] "MGLNDD_168.231.112.236_8000" 400 -
+REQUEST 2025-09-29 18:37:37 [WARNING] Bad Request: /
+REQUEST 2025-09-29 18:37:38 [WARNING] "GET / HTTP/1.1" 400 80399
+REQUEST 2025-09-29 18:44:43 [INFO] - Broken pipe from ('66.132.153.122', 36038)
+REQUEST 2025-09-29 18:44:47 [WARNING] Bad Request: /
+REQUEST 2025-09-29 18:44:47 [WARNING] "GET / HTTP/1.1" 400 79821
+REQUEST 2025-09-29 18:44:52 [WARNING] Bad Request: /
+REQUEST 2025-09-29 18:44:52 [WARNING] "GET / HTTP/1.1" 400 80352
+REQUEST 2025-09-29 18:44:54 [INFO] code 505, message Invalid HTTP version (2.0)
+REQUEST 2025-09-29 18:44:54 [ERROR] "PRI * HTTP/2.0" 505 -
+REQUEST 2025-09-29 18:44:57 [INFO] code 505, message Invalid HTTP version (2.0)
+REQUEST 2025-09-29 18:44:57 [ERROR] "PRI * HTTP/2.0" 505 -
+REQUEST 2025-09-29 18:44:58 [WARNING] Bad Request: /wiki
+REQUEST 2025-09-29 18:44:58 [WARNING] "GET /wiki HTTP/1.1" 400 80396
+REQUEST 2025-09-29 20:29:11 [INFO] START GET / | User: anonymous | IP: 205.210.31.77 | User-Agent: Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks
+REQUEST 2025-09-29 20:29:11 [ERROR] ERROR GET / | User: anonymous | Duration: 0.019s | Exception: Directory indexes are not allowed here.
+REQUEST 2025-09-29 20:29:11 [INFO] END GET / | Status: 404 | User: anonymous | Duration: 0.033s
+REQUEST 2025-09-29 20:29:11 [WARNING] Not Found: /
+REQUEST 2025-09-29 20:29:11 [WARNING] "GET / HTTP/1.0" 404 5607
+REQUEST 2025-09-29 21:10:46 [WARNING] Bad Request: /
+REQUEST 2025-09-29 21:10:46 [WARNING] "GET / HTTP/1.1" 400 80232
+REQUEST 2025-09-29 21:26:27 [WARNING] Bad Request: /helpdesk/WebObjects/Helpdesk.woa
+REQUEST 2025-09-29 21:26:27 [WARNING] "GET /helpdesk/WebObjects/Helpdesk.woa HTTP/1.1" 400 80825
+REQUEST 2025-09-30 00:58:50 [WARNING] Bad Request: /
+REQUEST 2025-09-30 00:58:50 [WARNING] "GET / HTTP/1.1" 400 80473
+REQUEST 2025-09-30 02:09:18 [INFO] code 400, message Bad request syntax ('MGLNDD_168.231.112.236_8000')
+REQUEST 2025-09-30 02:09:18 [WARNING] "MGLNDD_168.231.112.236_8000" 400 -
+REQUEST 2025-09-30 02:10:12 [INFO] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03%')
+REQUEST 2025-09-30 02:10:12 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-30 02:10:12 [INFO] code 400, message Bad request version ('À\x14À')
+REQUEST 2025-09-30 02:10:12 [ERROR] You're accessing the development server over HTTPS, but it only supports HTTP.
+REQUEST 2025-09-30 02:10:12 [WARNING] Bad Request: /
+REQUEST 2025-09-30 02:10:12 [WARNING] "GET / HTTP/1.1" 400 80465
+REQUEST 2025-09-30 02:10:12 [WARNING] Bad Request: /login
+REQUEST 2025-09-30 02:10:12 [WARNING] "GET /login HTTP/1.1" 400 80520
+REQUEST 2025-09-30 02:34:55 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.58.31.4 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 02:34:55 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.051s
+REQUEST 2025-09-30 02:34:55 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-30 02:34:56 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.58.31.4 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 02:34:57 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 1.166s
+REQUEST 2025-09-30 02:34:57 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-30 02:58:25 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 152.58.31.248 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 02:58:25 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.002s
+REQUEST 2025-09-30 02:58:25 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-30 02:58:25 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.58.31.248 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 02:58:25 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.156s
+REQUEST 2025-09-30 02:58:25 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
