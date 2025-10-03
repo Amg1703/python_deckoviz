@@ -309,7 +309,6 @@ INFO 2025-07-28 14:41:28 [django.utils.autoreload] Watching for file changes wit
 INFO 2025-07-28 14:44:14 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-28 14:48:22 [django.utils.autoreload] /app/apps/metaimages/urls.py changed, reloading.
 INFO 2025-07-28 14:48:30 [django.utils.autoreload] Watching for file changes with StatReloader
-<<<<<<< HEAD
 INFO 2025-07-29 14:24:20 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-29 14:40:19 [django.utils.autoreload] /app/apps/metaimages/views.py changed, reloading.
 INFO 2025-07-29 14:40:30 [django.utils.autoreload] Watching for file changes with StatReloader
@@ -338,7 +337,6 @@ INFO 2025-07-29 14:51:59 [django.utils.autoreload] Watching for file changes wit
 INFO 2025-07-29 14:52:22 [django.utils.autoreload] /app/apps/metacollections/views.py changed, reloading.
 INFO 2025-07-29 14:52:29 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-29 14:56:14 [django.utils.autoreload] Watching for file changes with StatReloader
-=======
 INFO 2025-07-28 14:51:21 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-07-28 15:00:15 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
 INFO 2025-07-28 15:00:15 [apps.gallery.serializers] Audio field raw value: audios/8e133332-9565-4451-a296-ab277b037742/background-technology.mp3
@@ -23727,7 +23725,6 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
->>>>>>> 6e0cfd7 (Adding and committing code that was altered in production back to the github repo)
 INFO 2025-09-20 11:03:05 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-09-22 09:50:54 [django.utils.autoreload] Watching for file changes with StatReloader
 INFO 2025-09-22 10:11:44 [django.utils.autoreload] Watching for file changes with StatReloader
@@ -24522,3 +24519,4 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '168.231.112.236:8000'. You may need to add '168.231.112.236' to ALLOWED_HOSTS.
+INFO 2025-09-30 05:33:23 [django.utils.autoreload] Watching for file changes with StatReloader

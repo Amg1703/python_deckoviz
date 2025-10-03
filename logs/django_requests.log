@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 REQUEST 2025-07-22 10:08:47 [INFO] START POST /auth/login/ | User: anonymous | IP: 172.18.0.1 | User-Agent: PostmanRuntime/7.44.1
 REQUEST 2025-07-22 10:08:49 [INFO] END POST /auth/login/ | Status: 200 | User: anonymous | Duration: 1.783s
 REQUEST 2025-07-22 10:08:49 [INFO] "POST /auth/login/ HTTP/1.1" 200 635
@@ -849,7 +848,6 @@ REQUEST 2025-07-29 14:59:13 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.1" 200 42
 REQUEST 2025-07-29 14:59:15 [INFO] START GET /api/schema/ | User: anonymous | IP: 172.18.0.1 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Sa
 REQUEST 2025-07-29 14:59:16 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.673s
 REQUEST 2025-07-29 14:59:16 [INFO] "GET /api/schema/ HTTP/1.1" 200 404779
-=======
 REQUEST 2025-09-05 02:15:33 [INFO] START POST /gallery/images/search/ | User: anonymous | IP: 152.58.33.94 | User-Agent: okhttp/4.12.0
 REQUEST 2025-09-05 02:15:33 [INFO] END POST /gallery/images/search/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.180s
 REQUEST 2025-09-05 02:15:33 [INFO] "POST /gallery/images/search/ HTTP/1.0" 200 30697
@@ -30244,7 +30242,6 @@ REQUEST 2025-09-20 09:52:08 [ERROR] ERROR GET /robots.txt | User: anonymous | Du
 REQUEST 2025-09-20 09:52:08 [INFO] END GET /robots.txt | Status: 404 | User: anonymous | Duration: 0.004s
 REQUEST 2025-09-20 09:52:08 [WARNING] Not Found: /robots.txt
 REQUEST 2025-09-20 09:52:08 [WARNING] "GET /robots.txt HTTP/1.0" 404 5505
->>>>>>> 6e0cfd7 (Adding and committing code that was altered in production back to the github repo)
 REQUEST 2025-09-24 11:58:15 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.58.32.176 | User-Agent: okhttp/4.12.0
 REQUEST 2025-09-24 11:58:15 [INFO] END GET /auth/user/ | Status: 401 | User: anonymous | Duration: 0.024s
 REQUEST 2025-09-24 11:58:15 [WARNING] Unauthorized: /auth/user/
@@ -36742,3 +36739,90 @@ REQUEST 2025-09-30 02:58:25 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 42
 REQUEST 2025-09-30 02:58:25 [INFO] START GET /api/schema/ | User: anonymous | IP: 152.58.31.248 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
 REQUEST 2025-09-30 02:58:25 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.156s
 REQUEST 2025-09-30 02:58:25 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-30 05:33:38 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 05:33:38 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.067s
+REQUEST 2025-09-30 05:33:38 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-30 05:33:38 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-30 05:34:00 [INFO] START GET /auth/login/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 05:34:00 [INFO] END GET /auth/login/ | Status: 405 | User: anonymous | Duration: 0.005s
+REQUEST 2025-09-30 05:34:00 [WARNING] Method Not Allowed: /auth/login/
+REQUEST 2025-09-30 05:34:00 [WARNING] "GET /auth/login/ HTTP/1.0" 405 7581
+REQUEST 2025-09-30 05:56:03 [INFO] START GET /metacollections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:03 [INFO] START GET /metaimages/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:03 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:03 [INFO] START GET /metacollections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:03 [INFO] START GET /gallery/images/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:03 [INFO] END GET /metaimages/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.058s
+REQUEST 2025-09-30 05:56:03 [INFO] "GET /metaimages/ HTTP/1.0" 200 173
+REQUEST 2025-09-30 05:56:03 [INFO] END GET /metacollections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.070s
+REQUEST 2025-09-30 05:56:03 [INFO] END GET /metacollections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.051s
+REQUEST 2025-09-30 05:56:03 [INFO] "GET /metacollections/ HTTP/1.0" 200 220
+REQUEST 2025-09-30 05:56:03 [INFO] "GET /metacollections/ HTTP/1.0" 200 220
+REQUEST 2025-09-30 05:56:03 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:03 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.011s
+REQUEST 2025-09-30 05:56:03 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-30 05:56:04 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 1.208s
+REQUEST 2025-09-30 05:56:04 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 17878
+REQUEST 2025-09-30 05:56:04 [INFO] END GET /gallery/images/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 1.305s
+REQUEST 2025-09-30 05:56:04 [INFO] "GET /gallery/images/ HTTP/1.0" 200 15850
+REQUEST 2025-09-30 05:56:05 [INFO] START GET /auth/user/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 05:56:05 [INFO] END GET /auth/user/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.010s
+REQUEST 2025-09-30 05:56:05 [INFO] "GET /auth/user/ HTTP/1.0" 200 413
+REQUEST 2025-09-30 06:03:48 [INFO] START GET /api/schema/swagger-ui/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:03:48 [INFO] END GET /api/schema/swagger-ui/ | Status: 200 | User: anonymous | Duration: 0.004s
+REQUEST 2025-09-30 06:03:48 [INFO] "GET /api/schema/swagger-ui/ HTTP/1.0" 200 4248
+REQUEST 2025-09-30 06:03:49 [INFO] START GET /api/schema/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:03:49 [INFO] END GET /api/schema/ | Status: 200 | User: anonymous | Duration: 0.396s
+REQUEST 2025-09-30 06:03:49 [INFO] "GET /api/schema/ HTTP/1.0" 200 449781
+REQUEST 2025-09-30 06:04:20 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Sa
+REQUEST 2025-09-30 06:04:20 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.174s
+REQUEST 2025-09-30 06:04:20 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 17878
+REQUEST 2025-09-30 06:09:51 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:51 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:52 [INFO] START GET /metaimages/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:52 [INFO] START GET /metacollections/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:52 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:55 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 3.985s
+REQUEST 2025-09-30 06:09:55 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 4.087s
+REQUEST 2025-09-30 06:09:55 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-30 06:09:55 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-30 06:09:56 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 3.970s
+REQUEST 2025-09-30 06:09:56 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 75982
+REQUEST 2025-09-30 06:09:56 [INFO] END GET /metaimages/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 3.987s
+REQUEST 2025-09-30 06:09:56 [INFO] "GET /metaimages/ HTTP/1.0" 200 103723
+REQUEST 2025-09-30 06:09:56 [INFO] START GET /gallery/images/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:56 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:56 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.012s
+REQUEST 2025-09-30 06:09:56 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-30 06:09:57 [INFO] END GET /gallery/images/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.443s
+REQUEST 2025-09-30 06:09:57 [INFO] "GET /gallery/images/ HTTP/1.0" 200 11051
+REQUEST 2025-09-30 06:09:57 [INFO] START GET /auth/user/ | User: anonymous | IP: 152.59.63.191 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 06:09:57 [INFO] END GET /auth/user/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 0.015s
+REQUEST 2025-09-30 06:09:57 [INFO] "GET /auth/user/ HTTP/1.0" 200 412
+REQUEST 2025-09-30 06:09:57 [INFO] END GET /metacollections/ | Status: 200 | User: user:92bc457d-cba0-43e7-bc64-b112abde58e2(rahulbhuse) | Duration: 5.736s
+REQUEST 2025-09-30 06:09:57 [INFO] "GET /metacollections/ HTTP/1.0" 200 1706642
+REQUEST 2025-09-30 06:13:15 [INFO] START POST /api/device-links/refresh/ | User: anonymous | IP: 172.26.0.2 | User-Agent: python-requests/2.32.4
+REQUEST 2025-09-30 06:13:15 [INFO] END POST /api/device-links/refresh/ | Status: 401 | User: anonymous | Duration: 0.008s
+REQUEST 2025-09-30 06:13:15 [WARNING] Unauthorized: /api/device-links/refresh/
+REQUEST 2025-09-30 06:13:15 [WARNING] "POST /api/device-links/refresh/ HTTP/1.1" 401 34
+REQUEST 2025-09-30 08:50:39 [INFO] START GET /metacollections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:39 [INFO] START GET /metacollections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:39 [INFO] START GET /metaimages/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:39 [INFO] START GET /gallery/images/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:39 [INFO] START GET /gallery/collections/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:39 [INFO] END GET /metacollections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.207s
+REQUEST 2025-09-30 08:50:39 [INFO] END GET /metaimages/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.223s
+REQUEST 2025-09-30 08:50:39 [INFO] END GET /metacollections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.238s
+REQUEST 2025-09-30 08:50:39 [INFO] "GET /metacollections/ HTTP/1.0" 200 220
+REQUEST 2025-09-30 08:50:39 [INFO] "GET /metacollections/ HTTP/1.0" 200 220
+REQUEST 2025-09-30 08:50:39 [INFO] "GET /metaimages/ HTTP/1.0" 200 173
+REQUEST 2025-09-30 08:50:39 [INFO] START GET /gallery/curations/today/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:39 [INFO] END GET /gallery/curations/today/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.012s
+REQUEST 2025-09-30 08:50:39 [INFO] "GET /gallery/curations/today/ HTTP/1.0" 200 38
+REQUEST 2025-09-30 08:50:41 [INFO] END GET /gallery/images/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 1.809s
+REQUEST 2025-09-30 08:50:41 [INFO] END GET /gallery/collections/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 1.768s
+REQUEST 2025-09-30 08:50:41 [INFO] "GET /gallery/collections/ HTTP/1.0" 200 17878
+REQUEST 2025-09-30 08:50:41 [INFO] "GET /gallery/images/ HTTP/1.0" 200 15850
+REQUEST 2025-09-30 08:50:41 [INFO] START GET /auth/user/ | User: anonymous | IP: 115.99.41.10 | User-Agent: okhttp/4.12.0
+REQUEST 2025-09-30 08:50:41 [INFO] END GET /auth/user/ | Status: 200 | User: user:00f0b7a7-d9f5-4124-b47d-75ff145ea338(Arjun1703) | Duration: 0.011s
+REQUEST 2025-09-30 08:50:41 [INFO] "GET /auth/user/ HTTP/1.0" 200 413
