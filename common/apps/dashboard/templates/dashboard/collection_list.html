@@ -1,0 +1,317 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}My Collections{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Collection Card Styling */
+    .collection-card {
+        transition: transform 0.2s, box-shadow 0.2s;
+        border: none;
+        box-shadow: 0 0.15rem 1.25rem 0 rgba(58, 59, 69, 0.15);
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .collection-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.3rem 1.5rem 0 rgba(58, 59, 69, 0.3);
+    }
+    
+    .collection-card .card-img-top {
+        height: 180px;
+        object-fit: cover;
+    }
+    
+    .collection-card .card-body {
+        flex: 1;
+    }
+    
+    .collection-card .card-title {
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .collection-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.5rem;
+        color: #858796;
+        font-size: 0.85rem;
+    }
+    
+    .collection-stats span {
+        display: flex;
+        align-items: center;
+    }
+    
+    .collection-stats i {
+        margin-right: 0.35rem;
+    }
+    
+    .card-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+    }
+    
+    /* Action Buttons */
+    .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .btn-action {
+        border-radius: 0;
+        padding: 0.375rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.8rem;
+        transition: all 0.2s;
+    }
+    
+    .btn-action-primary {
+        background-color: #4e73df;
+        border-color: #4e73df;
+        color: white;
+    }
+    
+    .btn-action-primary:hover {
+        background-color: #2653d4;
+        border-color: #2653d4;
+        color: white;
+    }
+    
+    .btn-action-success {
+        background-color: #1cc88a;
+        border-color: #1cc88a;
+        color: white;
+    }
+    
+    .btn-action-success:hover {
+        background-color: #169d6a;
+        border-color: #169d6a;
+        color: white;
+    }
+    
+    .btn-action-secondary {
+        background-color: #858796;
+        border-color: #858796;
+        color: white;
+    }
+    
+    .btn-action-secondary:hover {
+        background-color: #6e707e;
+        border-color: #6e707e;
+        color: white;
+    }
+    
+    /* Carousel Styling */
+    .carousel-container {
+        height: 180px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .carousel-container .carousel-item {
+        height: 180px;
+        transition: transform 1s ease-in-out;
+    }
+    
+    /* Slow down carousel transitions */
+    .carousel-inner .active.carousel-item-start,
+    .carousel-inner .active.carousel-item-end {
+        transition: transform 1.5s ease-in-out;
+    }
+    
+    .carousel-container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .carousel-container .carousel-caption {
+        background-color: rgba(0, 0, 0, 0.5);
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 0.5rem;
+    }
+    
+    .carousel-container .carousel-control-prev,
+    .carousel-container .carousel-control-next {
+        width: 10%;
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+    
+    .carousel-container:hover .carousel-control-prev,
+    .carousel-container:hover .carousel-control-next {
+        opacity: 0.8;
+    }
+    
+    .image-count-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+        background: rgba(0,0,0,0.5);
+        color: white;
+        padding: 0.25rem 0.6rem;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    .placeholder-image {
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8f9fc;
+        color: #858796;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header d-flex justify-content-between align-items-center">
+    <h1><i class="fas fa-images me-2"></i> My Collections</h1>
+    <a href="{% url 'dashboard:collection-with-images-create' %}" class="btn btn-primary">
+        <i class="fas fa-plus me-1"></i> New Collection
+    </a>
+</div>
+
+{% if collections %}
+<div class="row">
+    {% for collection in collections %}
+    <div class="col-md-6 mb-4">
+        <div class="card collection-card">
+            <!-- View Status Badge -->
+            <div class="card-badge">
+                <span class="badge bg-{% if collection.view == 'public' %}success{% else %}secondary{% endif %}">
+                    {{ collection.view|title }}
+                </span>
+            </div>
+            
+            <!-- Image Carousel -->
+            {% with images=collection.collection_images.all %}
+            {% if images %}
+            <div class="image-count-badge">
+                <i class="fas fa-image"></i> {{ images|length }}
+            </div>
+            <div id="carousel-{{ collection.id }}" class="carousel slide carousel-container" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-inner">
+                    {% for collection_image in images|slice:":5" %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ collection_image.image.file.url }}" alt="Image {{ forloop.counter }}" class="d-block w-100">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% if images|length > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ collection.id }}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ collection.id }}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                {% endif %}
+            </div>
+            {% else %}
+            <div class="placeholder-image">
+                <i class="fas fa-images fa-3x text-gray-300"></i>
+            </div>
+            {% endif %}
+            {% endwith %}
+            
+            <!-- Card Body -->
+            <div class="card-body">
+                <h5 class="card-title">{{ collection.name }}</h5>
+                
+                <div class="collection-stats">
+                    <span><i class="fas fa-clock"></i> {{ collection.display_time }}s</span>
+                    {% if collection.music %}
+                    <span><i class="fas fa-music"></i> Music</span>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Card Footer with Action Buttons -->
+            <div class="card-footer bg-transparent">
+                <div class="d-flex flex-column gap-2">
+                    <a href="{% url 'dashboard:collection-detail' pk=collection.id|stringformat:'s' %}" class="btn btn-action btn-action-primary">
+                        <i class="fas fa-eye"></i> View Collection
+                    </a>
+                    <div class="d-flex gap-2">
+                        <a href="{% url 'dashboard:add-images' pk=collection.id|stringformat:'s' %}" class="btn btn-action btn-action-success flex-grow-1">
+                            <i class="fas fa-plus-circle"></i> Add Images
+                        </a>
+                        <a href="{% url 'dashboard:collection-update' pk=collection.id|stringformat:'s' %}" class="btn btn-action btn-action-secondary flex-grow-1">
+                            <i class="fas fa-edit"></i> Edit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+    <i class="fas fa-images fa-4x text-gray-300 mb-3"></i>
+    <p class="lead text-gray-500">You don't have any collections yet.</p>
+    <a href="{% url 'dashboard:collection-with-images-create' %}" class="btn btn-primary mt-2">
+        <i class="fas fa-plus me-1"></i> Create Your First Collection
+    </a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all carousels
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            // Create Bootstrap carousel instance
+            new bootstrap.Carousel(carousel, {
+                interval: false,  // Don't auto-rotate
+                transition: 'slide',
+                wrap: true,
+                touch: true
+            });
+            
+            // Add data attribute to control transition speed
+            carousel.setAttribute('data-bs-transition', '1.5s');
+            
+            // Manually add transition style
+            const carouselInner = carousel.querySelector('.carousel-inner');
+            if (carouselInner) {
+                carouselInner.style.transition = 'transform 1.5s ease-in-out';
+            }
+            
+            // Add hover pause functionality
+            carousel.addEventListener('mouseenter', function() {
+                // Stop cycling when mouse enters (redundant since interval is false, but good practice)
+                this.pause();
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                // Resume cycling when mouse leaves (redundant since interval is false, but good practice)
+                this.cycle();
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,70 @@
+V1 Remainings
+1. transform images to gif or video functionality, 
+2. ⁠style transfer images to any art style 
+3. ⁠Basic Recommendation engine
+4. ⁠Queue mechanism
+
+Queue Mechanism
+Daily TV app collection updates routine: How to set up the display and collections 
+system 
+Queue mechanism 
+The user can add 20 collections in a queue at any time. 
+A certain amount of space is reserved on the TV to store one or of these collections
+- lets say x gb. Our system calculates how many of the collections, 
+starting from the first one, can be sent to the TV. (eg. if x is 2 gb, and
+say col. 1 is 800 mb, collection 2. is 600 mb, collection 3 is 800 mb, 
+then only the first 2 are sent.)
+Once each of these collections have been displayed, then the TV app sends a 
+note to the mobile app asking to send the next batch. If the mobile phone is not
+ in the vicinity (communication failed), then it keeps on trying every 10 minutes. 
+ This loop keeps on repeating.
+
+
+Once you are done with this, you can work on this: 
+Voice journal transcription, summarization, and AI insights and feedback
+
+
+
+ssh root@168.231.112.236
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Tasks -->
+1. 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

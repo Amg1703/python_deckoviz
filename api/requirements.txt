@@ -1,0 +1,17 @@
+# Backend dependencies for FastAPI
+fastapi[standard]
+uvicorn>=0.15.0 
+python-dotenv>=0.19.0
+redis>=4.0.1
+pydantic
+sqlalchemy>=1.4.48
+psycopg2-binary>=2.9.5
+websockets
+bcrypt==4.0.1
+python-jose==3.3.0
+qrcode
+
+# Utility dependencies 
+google-cloud-storage>=3.1.0
+google-genai>=0.1.0
+pillow==11.2.1
