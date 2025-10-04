@@ -1,0 +1,81 @@
+[
+  {
+    "model": "credits.creditpackage",
+    "fields": {
+      "name": "Starter",
+      "description": "Perfect starter plan for your first smart art experience",
+      "features":[
+        "7-inch HD display",
+        "Basic AI art curation",
+        "Wi-Fi connectivity",
+        "100+ art collection",
+        "3 month free subscription"
+      ],
+      "credits": 300,
+      "price": "299.00",
+      "is_active": true,
+      "created_at": "2025-05-01T00:00:00Z",
+      "updated_at": "2025-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "credits.creditpackage",
+    "fields": {
+      "name": "Premium",
+      "description": "Our most popular option for art enthusiasts",
+      "features":[
+        "12-inch 4K display",
+        "Advanced AI learning",
+        "Wi-Fi + Bluetooth",
+        "Unlimited art library",
+        "Motion & light sensors",
+        "1 year free subscription"
+      ],
+      "credits": 600,
+      "price": "499.00",
+      "is_active": true,
+      "created_at": "2025-05-01T00:00:00Z",
+      "updated_at": "2025-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "credits.creditpackage",
+    "fields": {
+      "name": "Professional",
+      "description": "Gallery-quality display for discerning collectors",
+      "features":[
+        "21-inch 4K UHD display",
+        "Premium finish options",
+        "Advanced color calibration",
+        "Priority new releases",
+        "Custom frame options",
+        "Lifetime subscription"
+      ],
+      "credits": 1000,
+      "price": "799.00",
+      "is_active": true,
+      "created_at": "2025-05-01T00:00:00Z",
+      "updated_at": "2025-05-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "credits.creditpackage",
+    "fields": {
+      "name": "Enterprise",
+      "description": "Custom solutions for businesses and galleries",
+      "features":[
+        "Multiple frame network",
+        "Branded content options",
+        "API integration",
+        "Dedicated account manager",
+        "Custom sizing available",
+        "Bulk discounts"
+      ],
+      "credits": 5000,
+      "price": "2999.00",
+      "is_active": true,
+      "created_at": "2025-05-01T00:00:00Z",
+      "updated_at": "2025-05-01T00:00:00Z"
+    }
+  }
+]
