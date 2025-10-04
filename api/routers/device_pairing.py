@@ -64,14 +64,14 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
             "/api/device-links/",
             method="post",
             data={
-                "user_id": current_user["id"],
+                "user_id": current_user.get("user_id"),
                 "refresh_token_hash": refresh_hash,
                 "expires_in_days": REFRESH_EXPIRE_DAYS,
                 "device_type": "tv",
             }
         )
         access_token = create_access_token(
-            {"user_id": str(current_user["id"]), "role": "tv"},
+            {"user_id": str(current_user.get("user_id")), "role": "tv"},
             exp_minutes=TV_ACCESS_EXPIRE_MINUTES,
         )
         return {
@@ -84,7 +84,7 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
         return {
             "status": "success",
             "session_id": session_id,
-            "user_id": current_user.get("id"),
+            "user_id": current_user.get("user_id"),
             "refresh_token": refresh_token,
             "refresh_hash": refresh_hash,
             "message": f"Device paired successfully (mock response). Error: {str(e)}"
