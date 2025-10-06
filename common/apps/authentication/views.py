@@ -21,6 +21,21 @@ from django.conf import settings
 from django.core.mail import send_mail
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework_simplejwt.views import TokenObtainPairView
+@extend_schema(
+    request=DeviceLinkSerializer,
+    responses={
+        201: OpenApiResponse(
+            response=DeviceLinkSerializer,
+            description="DeviceLink created successfully."
+        ),
+        400: OpenApiResponse(description="Invalid input."),
+        401: OpenApiResponse(description="Unauthorized."),
+        404: OpenApiResponse(description="User not found."),
+        500: OpenApiResponse(description="Internal server error.")
+    },
+    description="Create a new DeviceLink for device pairing.",
+    tags=["DeviceLink"]
+)
 class DeviceLinkCreateView(APIView):
     def post(self, request):
         serializer = DeviceLinkSerializer(data=request.data)
