@@ -28,6 +28,54 @@ class DeviceLinkCreateView(APIView):
             device = serializer.save()
             return Response(DeviceLinkSerializer(device).data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from uuid import UUID
+from django.utils import timezone
+
+class DeviceLinkCreateView(APIView):
+    authentication_classes = [JWTAuthentication, SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        # Extract and validate payload
+        data = request.data
+        user_id = data.get("user_id")
+        refresh_token_hash = data.get("refresh_token_hash")
+        expires_in_days = data.get("expires_in_days", 365)
+        device_type = data.get("device_type", "tv")
+
+        # Validate user_id format
+        try:
+            user_uuid = UUID(user_id)
+        except Exception:
+            return Response({"detail": "Invalid user_id format."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Validate JWT user matches payload user_id
+        jwt_user = request.user
+        if not jwt_user or str(jwt_user.id) != str(user_id):
+            return Response({"detail": "JWT user does not match user_id or user not authenticated."}, status=status.HTTP_401_UNAUTHORIZED)
+
+        # Check user exists in DB
+        try:
+            user_obj = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response({"detail": "User not found."}, status=status.HTTP_404_NOT_FOUND)
+
+        # Create DeviceLink
+        device_link = DeviceLink.objects.create(
+            user=user_obj,
+            device_type=device_type,
+            refresh_token_hash=refresh_token_hash,
+            expires_at=None if not expires_in_days else (user_obj.created_at + timezone.timedelta(days=int(expires_in_days)))
+        )
+
+        serializer = DeviceLinkSerializer(device_link)
+        return Response({
+            "status": "success",
+            "device_link": serializer.data,
+            "message": "Device paired successfully."
+        }, status=status.HTTP_201_CREATED)
 
 class RefreshTokenView(APIView):
     def post(self, request):
