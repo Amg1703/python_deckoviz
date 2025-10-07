@@ -21,7 +21,7 @@ def create_access_token(payload: dict) -> str:
 async def get_current_user(request: Request):
 	"""
 	Accept JWT from either Authorization header (Bearer <token>) or query param (token/access_token).
-	This allows both legacy and new mobile app requests to work seamlessly.
+	Returns a dict: {"user": payload, "token": original_token}
 	"""
 	token = None
 	# Check Authorization header
@@ -33,5 +33,6 @@ async def get_current_user(request: Request):
 		token = request.query_params.get("token") or request.query_params.get("access_token")
 	if not token:
 		raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Missing JWT token")
-	return verify_access_token(token)
+	payload = verify_access_token(token)
+	return {"user": payload, "token": token}
 

@@ -50,32 +50,30 @@ def create_session():
 
 @router.post("/pair-tv")
 def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
-    if not current_user:
+    if not current_user or not current_user.get("user"):
         raise HTTPException(status_code=401, detail="Invalid user")
 
     refresh_token = secrets.token_urlsafe(64)
     refresh_hash = bcrypt.hashpw(refresh_token.encode(), bcrypt.gensalt()).decode()
 
-    # Try to call Django with Authorization header, parse response, and return curated device link info
     try:
         url = f"{DJANGO_URL}/api/device-links/"
         payload = {
-            "user_id": current_user.get("user_id"),
+            "user_id": current_user["user"].get("user_id"),
             "refresh_token_hash": refresh_hash,
             "expires_in_days": REFRESH_EXPIRE_DAYS,
             "device_type": "tv",
         }
         headers = {
-            "Authorization": f"Bearer {current_user.get('token')}"
+            "Authorization": f"Bearer {current_user['token']}"
         }
         resp = requests.post(url, json=payload, headers=headers, timeout=5)
         if resp.status_code in (200, 201):
             resp_json = resp.json()
-            # Return the curated response
             return {
                 "status": "success",
                 "session_id": session_id,
-                "user_id": current_user.get("user_id"),
+                "user_id": current_user["user"].get("user_id"),
                 "refresh_token": refresh_token,
                 "refresh_hash": refresh_hash,
                 "device_link": resp_json.get("device_link"),
@@ -84,11 +82,10 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
         else:
             raise HTTPException(status_code=resp.status_code, detail=resp.text)
     except Exception as e:
-        # Safe fallback response
         return {
             "status": "success",
             "session_id": session_id,
-            "user_id": current_user.get("user_id"),
+            "user_id": current_user["user"].get("user_id"),
             "refresh_token": refresh_token,
             "refresh_hash": refresh_hash,
             "message": f"Device paired successfully (mock response). Error: {str(e)}"
@@ -145,7 +142,7 @@ def refresh_token(refresh_token: str, current_user: dict = Depends(get_current_u
     # Call Django refresh endpoint
     url = f"{DJANGO_URL}/api/device-links/refresh/"
     payload = {"refresh_token": refresh_token}
-    headers = {"Authorization": f"Bearer {current_user.get('token')}"}
+    headers = {"Authorization": f"Bearer {current_user['token']}"}
     try:
         resp = requests.post(url, json=payload, headers=headers, timeout=5)
         if resp.status_code in (200, 201):
@@ -161,7 +158,7 @@ def logout_tv(refresh_token: str, current_user: dict = Depends(get_current_user)
     # Call Django logout endpoint
     url = f"{DJANGO_URL}/api/device-links/logout"
     payload = {"refresh_token": refresh_token}
-    headers = {"Authorization": f"Bearer {current_user.get('token')}"}
+    headers = {"Authorization": f"Bearer {current_user['token']}"}
     try:
         resp = requests.post(url, json=payload, headers=headers, timeout=5)
         if resp.status_code in (200, 201):
