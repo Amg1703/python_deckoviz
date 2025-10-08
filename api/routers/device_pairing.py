@@ -48,71 +48,41 @@ def create_session():
     }
 
 
-@router.post("/pair-tv")
-def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
-    if not current_user or not current_user.get("user"):
-        raise HTTPException(status_code=401, detail="Invalid user")
 
-    refresh_token = secrets.token_urlsafe(64)
-    # Truncate to 72 bytes for bcrypt compatibility
-    refresh_token_trunc = refresh_token[:72]
-    refresh_hash = bcrypt.hashpw(refresh_token_trunc.encode(), bcrypt.gensalt()).decode()
-
-    try:
-        url = f"{DJANGO_URL}/api/device-links/"
-        payload = {
-            "user_id": current_user["user"].get("user_id"),
-            "refresh_token_hash": refresh_hash,
-            "expires_in_days": REFRESH_EXPIRE_DAYS,
-            "device_type": "tv",
-        }
-        headers = {
-            "Authorization": f"Bearer {current_user['token']}"
-        }
-        resp = requests.post(url, json=payload, headers=headers, timeout=5)
-        if resp.status_code in (200, 201):
-            resp_json = resp.json()
-            return {
-                "status": "success",
-                "session_id": session_id,
-                "user_id": current_user["user"].get("user_id"),
-                "refresh_token": refresh_token,
-                "refresh_hash": refresh_hash,
-                "device_link": resp_json.get("device_link"),
-                "message": resp_json.get("message", "Device paired successfully.")
-            }
-        else:
-            raise HTTPException(status_code=resp.status_code, detail=resp.text)
-    except Exception as e:
-        return {
-            "status": "success",
-            "session_id": session_id,
-            "user_id": current_user["user"].get("user_id"),
-            "refresh_token": refresh_token,
-            "refresh_hash": refresh_hash,
-            "message": f"Device paired successfully (mock response). Error: {str(e)}"
-        }
 
 
 @router.post("/pair-tv")
 def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
-    if not current_user:
+    """
+    Pair a TV device with the current user.
+    - Generates a secure refresh_token.
+    - Truncates to 72 bytes for bcrypt compatibility (bcrypt only uses first 72 bytes).
+    - Hashes the truncated token and sends the hash to Django for storage.
+    - Returns the full refresh_token to the client (never store the plain token).
+    """
+    if not current_user or not (current_user.get("user") or current_user.get("user_id")):
         raise HTTPException(status_code=401, detail="Invalid user")
 
     refresh_token = secrets.token_urlsafe(64)
     refresh_token_trunc = refresh_token[:72]
     refresh_hash = bcrypt.hashpw(refresh_token_trunc.encode(), bcrypt.gensalt()).decode()
 
-    # Call Django pairing endpoint
+    # Debug: Ensure hash is valid bcrypt format
+    if not (refresh_hash.startswith("$2b$") and len(refresh_hash) == 60):
+        raise HTTPException(status_code=500, detail="Generated refresh_token_hash is not a valid bcrypt hash.")
+
+    # Use correct user_id extraction for both possible dict structures
+    user_id = current_user["user"].get("user_id") if current_user.get("user") else current_user.get("user_id")
+
     url = f"{DJANGO_URL}/api/device-links/"
     payload = {
-        "user_id": current_user.get("user_id"),
+        "user_id": user_id,
         "refresh_token_hash": refresh_hash,
         "expires_in_days": REFRESH_EXPIRE_DAYS,
         "device_type": "tv",
     }
     headers = {
-        "Authorization": f"Bearer {current_user.get('token')}"
+        "Authorization": f"Bearer {current_user.get('token') or current_user['token']}"
     }
     try:
         resp = requests.post(url, json=payload, headers=headers, timeout=5)
@@ -121,7 +91,7 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
             return {
                 "status": "success",
                 "session_id": session_id,
-                "user_id": current_user.get("user_id"),
+                "user_id": user_id,
                 "refresh_token": refresh_token,
                 "refresh_hash": refresh_hash,
                 "device_link": resp_json.get("device_link"),
@@ -133,7 +103,7 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
         return {
             "status": "success",
             "session_id": session_id,
-            "user_id": current_user.get("user_id"),
+            "user_id": user_id,
             "refresh_token": refresh_token,
             "refresh_hash": refresh_hash,
             "message": f"Device paired successfully (mock response). Error: {str(e)}"
