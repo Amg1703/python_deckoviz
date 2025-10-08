@@ -102,10 +102,11 @@ class RefreshTokenView(APIView):
             # Truncate to 72 bytes for bcrypt compatibility
             refresh_token_trunc = refresh_token[:72]
             if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
-                if device.is_expired():
+                if hasattr(device, 'is_expired') and device.is_expired():
                     return Response({"detail": "Refresh token expired"}, status=status.HTTP_401_UNAUTHORIZED)
+                # Return user_id and role for FastAPI to generate new access token
                 return Response({
-                    "user_id": device.user.id,
+                    "user_id": str(device.user.id),
                     "role": device.device_type,
                 })
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)

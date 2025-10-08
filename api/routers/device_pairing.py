@@ -116,14 +116,37 @@ def refresh_token(refresh_token: str, current_user: dict = Depends(get_current_u
     url = f"{DJANGO_URL}/api/device-links/refresh/"
     payload = {"refresh_token": refresh_token}
     headers = {"Authorization": f"Bearer {current_user['token']}"}
+    """
+    Refresh endpoint: Validates the refresh token with Django, and returns a new access token (JWT) for the TV app.
+    """
+    # Call Django to validate the refresh token and get user info
     try:
-        resp = requests.post(url, json=payload, headers=headers, timeout=5)
-        if resp.status_code in (200, 201):
-            return resp.json()
-        else:
-            raise HTTPException(status_code=resp.status_code, detail=resp.text)
+        response = call_django("/api/device-links/refresh/", method="post", data={"refresh_token": refresh_token})
     except Exception as e:
-        return {"status": "error", "message": f"Refresh failed. Error: {str(e)}"}
+        raise HTTPException(status_code=401, detail=f"Refresh failed: {str(e)}")
+
+    # If Django returns user_id and role, issue a new access token
+    user_id = response.get("user_id")
+    role = response.get("role")
+    if not user_id or not role:
+        raise HTTPException(status_code=401, detail="Invalid refresh token or user info not found.")
+
+    # Set expiry based on role
+    if role == "tv":
+        expires_minutes = TV_ACCESS_EXPIRE_MINUTES
+    else:
+        expires_minutes = MOBILE_ACCESS_EXPIRE_MINUTES
+
+    # Create new access token
+    payload = {"user_id": user_id, "role": role}
+    access_token = create_access_token(payload)
+
+    return {
+        "access_token": access_token,
+        "expires_in": expires_minutes * 60,  # seconds
+        "user_id": user_id,
+        "role": role
+    }
 
 
 @router.post("/logout-tv")
