@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import DeviceLinkCreateView, RefreshTokenView, LogoutDeviceView
+from django.views.decorators.csrf import csrf_exempt
 from django.urls import path,include 
 from rest_framework.routers import DefaultRouter 
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
@@ -26,5 +27,5 @@ urlpatterns = [
     path('resend-verification/', ResendVerificationView.as_view(), name='resend-verification'),
     path("device-links/", DeviceLinkCreateView.as_view(), name="device-link-create"),
     path("device-links/refresh/", RefreshTokenView.as_view(), name="device-refresh"),
-    path("device-links/logout/", LogoutDeviceView.as_view(), name="device-logout"),
+    path("device-links/logout/", csrf_exempt(LogoutDeviceView.as_view()), name="device-logout"),
 ]
