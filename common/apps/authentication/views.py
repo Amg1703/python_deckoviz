@@ -22,6 +22,31 @@ from django.conf import settings
 from django.core.mail import send_mail
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework_simplejwt.views import TokenObtainPairView
+
+# --- Ensure only one definition and proper CSRF exemption for LogoutDeviceView ---
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
+@method_decorator(csrf_exempt, name='dispatch')
+class LogoutDeviceView(APIView):
+    def post(self, request):
+        serializer = RefreshTokenSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        refresh_token = serializer.validated_data["refresh_token"]
+        for device in DeviceLink.objects.all():
+            refresh_token_trunc = refresh_token[:72]
+            if hasattr(device, 'refresh_token_hash') and device.refresh_token_hash and \
+               hasattr(device, 'delete'):
+                try:
+                    import bcrypt
+                    if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
+                        device.delete()
+                        return Response({"detail": "Device unlinked successfully"})
+                except Exception:
+                    continue
+        return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 @extend_schema(
     request=DeviceLinkSerializer,
     responses={
