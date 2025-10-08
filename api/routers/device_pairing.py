@@ -148,10 +148,6 @@ def refresh_token(refresh_token: str, current_user: dict = Depends(get_current_u
         "role": role
     }
 
-
-@router.post("/logout-tv")
-from fastapi import Body
-
 @router.post("/logout-tv")
 def logout_tv(
     body: dict = Body(...),
