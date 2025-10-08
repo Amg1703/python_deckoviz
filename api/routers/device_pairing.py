@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Body
+from fastapi import APIRouter, Depends, HTTPException, Body, Query
 import uuid, secrets, bcrypt, requests, os, time
 from utils.token import create_access_token, get_current_user
 from utils.qr_code import TVQRCodeGenerator
@@ -52,7 +52,11 @@ def create_session():
 
 
 @router.post("/pair-tv")
-def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
+def pair_tv(
+    session_id: str = Query(..., description="Session ID for pairing"),
+    token: str = Query(None, alias="token", description="JWT access token (optional, can also be sent as Authorization header)"),
+    current_user: dict = Depends(get_current_user)
+):
     """
     Pair a TV device with the current user.
     - Generates a secure refresh_token.
@@ -166,8 +170,7 @@ def logout_tv(
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Logout failed. Error: {e}")
 
-@router.post("/logout-tv")
-def logout_tv(refresh_token: str):
+## Removed duplicate /logout-tv endpoint that accepted refresh_token as a query parameter
     call_django(
         "/api/device-links/logout/",
         method="post",
