@@ -54,7 +54,9 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
         raise HTTPException(status_code=401, detail="Invalid user")
 
     refresh_token = secrets.token_urlsafe(64)
-    refresh_hash = bcrypt.hashpw(refresh_token.encode(), bcrypt.gensalt()).decode()
+    # Truncate to 72 bytes for bcrypt compatibility
+    refresh_token_trunc = refresh_token[:72]
+    refresh_hash = bcrypt.hashpw(refresh_token_trunc.encode(), bcrypt.gensalt()).decode()
 
     try:
         url = f"{DJANGO_URL}/api/device-links/"
@@ -98,7 +100,8 @@ def pair_tv(session_id: str, current_user: dict = Depends(get_current_user)):
         raise HTTPException(status_code=401, detail="Invalid user")
 
     refresh_token = secrets.token_urlsafe(64)
-    refresh_hash = bcrypt.hashpw(refresh_token.encode(), bcrypt.gensalt()).decode()
+    refresh_token_trunc = refresh_token[:72]
+    refresh_hash = bcrypt.hashpw(refresh_token_trunc.encode(), bcrypt.gensalt()).decode()
 
     # Call Django pairing endpoint
     url = f"{DJANGO_URL}/api/device-links/"

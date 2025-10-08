@@ -99,7 +99,9 @@ class RefreshTokenView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         refresh_token = serializer.validated_data["refresh_token"]
         for device in DeviceLink.objects.all():
-            if bcrypt.checkpw(refresh_token.encode(), device.refresh_token_hash.encode()):
+            # Truncate to 72 bytes for bcrypt compatibility
+            refresh_token_trunc = refresh_token[:72]
+            if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
                 if device.is_expired():
                     return Response({"detail": "Refresh token expired"}, status=status.HTTP_401_UNAUTHORIZED)
                 return Response({
@@ -115,7 +117,8 @@ class LogoutDeviceView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         refresh_token = serializer.validated_data["refresh_token"]
         for device in DeviceLink.objects.all():
-            if bcrypt.checkpw(refresh_token.encode(), device.refresh_token_hash.encode()):
+            refresh_token_trunc = refresh_token[:72]
+            if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
                 device.delete()
                 return Response({"detail": "Device unlinked successfully"})
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
