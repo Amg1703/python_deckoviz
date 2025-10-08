@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Body
 import uuid, secrets, bcrypt, requests, os, time
 from utils.token import create_access_token, get_current_user
 from utils.qr_code import TVQRCodeGenerator
@@ -150,19 +150,25 @@ def refresh_token(refresh_token: str, current_user: dict = Depends(get_current_u
 
 
 @router.post("/logout-tv")
-def logout_tv(refresh_token: str, current_user: dict = Depends(get_current_user)):
-    # Call Django logout endpoint
-    url = f"{DJANGO_URL}/api/device-links/logout"
-    payload = {"refresh_token": refresh_token}
-    headers = {"Authorization": f"Bearer {current_user['token']}"}
+from fastapi import Body
+
+@router.post("/logout-tv")
+def logout_tv(
+    body: dict = Body(...),
+    current_user: dict = Depends(get_current_user)
+):
+    """
+    Logout device by sending refresh_token to Django. Only accept refresh_token from JSON body.
+    """
+    refresh_token = body.get("refresh_token")
+    if not refresh_token:
+        raise HTTPException(status_code=400, detail="refresh_token required in body")
     try:
-        resp = requests.post(url, json=payload, headers=headers, timeout=5)
-        if resp.status_code in (200, 201):
-            return resp.json()
-        else:
-            raise HTTPException(status_code=resp.status_code, detail=resp.text)
+        # Call Django logout endpoint with POST and JSON body
+        response = call_django("/api/device-links/logout/", method="post", data={"refresh_token": refresh_token})
+        return {"status": "success", "message": "Logged out successfully."}
     except Exception as e:
-        return {"status": "error", "message": f"Logout failed. Error: {str(e)}"}
+        raise HTTPException(status_code=400, detail=f"Logout failed. Error: {e}")
 
 @router.post("/logout-tv")
 def logout_tv(refresh_token: str):
