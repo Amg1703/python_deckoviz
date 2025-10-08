@@ -13,6 +13,7 @@ from .serializers import (
 from django.contrib.auth import get_user_model
 from apps.utils.google_sheet import GoogleSheet
 from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 from rest_framework_simplejwt.tokens import RefreshToken
 from social_django.utils import load_strategy, load_backend
 from social_core.exceptions import MissingBackend
@@ -111,11 +112,13 @@ class RefreshTokenView(APIView):
                 })
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 
+@method_decorator(csrf_exempt, name='dispatch')
 class LogoutDeviceView(APIView):
     def post(self, request):
         serializer = RefreshTokenSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
         refresh_token = serializer.validated_data["refresh_token"]
         for device in DeviceLink.objects.all():
             refresh_token_trunc = refresh_token[:72]
@@ -123,6 +126,7 @@ class LogoutDeviceView(APIView):
                 device.delete()
                 return Response({"detail": "Device unlinked successfully"})
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
+
 
 
 User = get_user_model()
