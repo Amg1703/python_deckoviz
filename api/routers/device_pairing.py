@@ -115,7 +115,11 @@ def pair_tv(
 
 
 @router.post("/refresh")
-def refresh_token(refresh_token: str, current_user: dict = Depends(get_current_user)):
+def refresh_token(
+    refresh_token: str,
+    token: str = Query(None, alias="token", description="JWT access token (optional, can also be sent as Authorization header)"),
+    current_user: dict = Depends(get_current_user)
+):
     # Call Django refresh endpoint
     url = f"{DJANGO_URL}/api/device-links/refresh/"
     payload = {"refresh_token": refresh_token}
@@ -155,6 +159,7 @@ def refresh_token(refresh_token: str, current_user: dict = Depends(get_current_u
 @router.post("/logout-tv")
 def logout_tv(
     body: dict = Body(...),
+    token: str = Query(None, alias="token", description="JWT access token (optional, can also be sent as Authorization header)"),
     current_user: dict = Depends(get_current_user)
 ):
     """
