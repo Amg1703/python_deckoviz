@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Price
- 
+# --- ProductSerializer ---
+from .models import Price, Product, Cart, CartItem, Order, OrderItem, Coupon
 class PriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Price
@@ -11,9 +11,6 @@ class PriceSerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at'
         ]
-
-# --- ProductSerializer ---
-from .models import Product, Cart, CartItem, Order, OrderItem, Coupon
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
