@@ -131,6 +131,7 @@ INSTALLED_APPS = [
     'apps.modes',
     'apps.curations',
     'apps.analytics',
+    'apps.social',
     
     # third party apps  
     'rest_framework',
