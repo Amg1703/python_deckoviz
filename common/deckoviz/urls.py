@@ -94,6 +94,9 @@ urlpatterns = [
     path('api/schema/redoc/',
          SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
     path('api/', include('apps.authentication.urls')),
+
+    # social feed api
+    path('social/', include('apps.social.urls')),
 ]
 
 if settings.DEBUG:
