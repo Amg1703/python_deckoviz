@@ -295,7 +295,7 @@ class CollectionImageCreateSerializer(serializers.ModelSerializer):
 
 class CollectionSerializer(serializers.ModelSerializer):
     collection_images = CollectionImageSerializer(many=True, read_only=True)
-    user = serializers.ReadOnlyField(source='user.username')
+    user = UserSerializer(read_only=True)
     music_url = serializers.CharField(write_only=True, required=False, allow_blank=True)
 
     class Meta:
