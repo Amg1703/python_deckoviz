@@ -1,3 +1,48 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from apps.gallery.models import Image, Collection
+
+# --- Create Post Options Endpoint ---
+class CreatePostOptionsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        # Images: only id, title, file
+        images = Image.objects.filter(uploaded_by=user).order_by('-created_at')
+        images_data = [
+            {
+                'id': img.id,
+                'title': img.title,
+                'file': img.file.url if img.file else None
+            }
+            for img in images
+        ]
+
+        # Collections: id, name, and images (id, title, file)
+        collections = Collection.objects.filter(user=user).order_by('-created_at')
+        collections_data = []
+        for col in collections:
+            col_images = col.collection_images.select_related('image').all()
+            col_images_data = [
+                {
+                    'id': ci.image.id,
+                    'title': ci.image.title,
+                    'file': ci.image.file.url if ci.image.file else None
+                }
+                for ci in col_images if ci.image
+            ]
+            collections_data.append({
+                'id': col.id,
+                'name': col.name,
+                'images': col_images_data
+            })
+
+        return Response({
+            'images': images_data,
+            'collections': collections_data
+        })
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -75,22 +120,33 @@ class CreatePostView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        # Accepts either image or collection creation
-        post_type = request.data.get('type')
-        if post_type == 'image':
-            serializer = ImageSerializer(data=request.data, context={'request': request})
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        elif post_type == 'collection':
-            serializer = CollectionSerializer(data=request.data, context={'request': request})
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        else:
-            return Response({'error': 'Invalid type. Must be "image" or "collection".'}, status=status.HTTP_400_BAD_REQUEST)
+        # Accepts creation of a new Post with images, moods, theme, view
+        from .models import Post
+        from .serializers import PostSerializer
+        user = request.user
+        images = request.data.get('images', [])
+        moods = request.data.get('moods', [])
+        theme = request.data.get('theme', None)
+        view = request.data.get('view', 'public')
+
+        # images can be a list of image IDs
+        if not isinstance(images, list):
+            return Response({'error': 'images must be a list of image IDs.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Validate images exist and belong to user (or are accessible)
+        from apps.gallery.models import Image
+        image_objs = Image.objects.filter(id__in=images)
+        if image_objs.count() != len(images):
+            return Response({'error': 'One or more images not found.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        post = Post.objects.create(user=user, theme=theme, view=view, moods=moods)
+        post.images.set(image_objs)
+        post.save()
+        serializer = PostSerializer(post)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+from .models import Post
+from .serializers import PostSerializer
 
 class UserPostsView(APIView):
     permission_classes = [IsAuthenticated]
@@ -99,9 +155,12 @@ class UserPostsView(APIView):
         user = request.user
         images = Image.objects.filter(uploaded_by=user).order_by('-created_at')
         collections = Collection.objects.filter(user=user).order_by('-created_at')
+        posts = Post.objects.filter(user=user).order_by('-created_at')
         image_data = ImageSerializer(images, many=True).data
         collection_data = CollectionSerializer(collections, many=True).data
+        post_data = PostSerializer(posts, many=True).data
         return Response({
             'images': image_data,
-            'collections': collection_data
+            'collections': collection_data,
+            'posts': post_data
         })

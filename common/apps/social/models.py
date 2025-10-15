@@ -26,3 +26,21 @@ class CollectionInteraction(BaseModel):
     collection = models.ForeignKey('gallery.Collection', on_delete=models.CASCADE)
     interaction_type = models.CharField(max_length=20, choices=INTERACTION_TYPES)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+# --- Post Model ---
+from django.contrib.postgres.fields import ArrayField
+from django.utils import timezone
+
+class Post(BaseModel):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="posts")
+    images = models.ManyToManyField('gallery.Image', related_name="posts")
+    moods = ArrayField(models.CharField(max_length=50), blank=True, default=list)
+    theme = models.CharField(max_length=100, blank=True, null=True)
+    view = models.CharField(max_length=50, blank=True, null=True, default='public')
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Post by {self.user.username} ({self.id})"
