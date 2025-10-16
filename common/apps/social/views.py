@@ -34,7 +34,7 @@ class UserGalleriesView(APIView):
 
     def get(self, request):
         user = request.user
-        images = Image.objects.filter(user=user)
+        images = Image.objects.filter(uploaded_by=user)
         # Only return id, title, and file (image URL)
         data = [
             {
@@ -204,7 +204,7 @@ class UserPostsView(APIView):
         serializer = PostSerializer(post)
 
         # Fetch user's galleries (images)
-        user_images = Image.objects.filter(user=user)
+        user_images = Image.objects.filter(uploaded_by=user)
         galleries = [
             {
                 'id': img.id,
@@ -216,14 +216,21 @@ class UserPostsView(APIView):
 
         # Fetch user's collections
         user_collections = Collection.objects.filter(user=user)
-        collections = [
-            {
+        collections = []
+        for col in user_collections:
+            cover_url = None
+            first_image = None
+            if hasattr(col, 'collection_images'):
+                col_images = col.collection_images.select_related('image').all()
+                if col_images:
+                    first_image = col_images[0].image if hasattr(col_images[0], 'image') else None
+            if first_image and hasattr(first_image, 'file') and first_image.file:
+                cover_url = first_image.file.url
+            collections.append({
                 'id': col.id,
                 'title': getattr(col, 'title', ''),
-                'cover_image': col.cover_image.url if hasattr(col, 'cover_image') and col.cover_image else None
-            }
-            for col in user_collections
-        ]
+                'cover_image': cover_url
+            })
 
         return Response({
             'post': serializer.data,
