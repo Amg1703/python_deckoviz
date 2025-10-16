@@ -1,3 +1,7 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from apps.gallery.models import Image, Collection
 # --- User Collections Endpoint ---
 class UserCollectionsView(APIView):
     permission_classes = [IsAuthenticated]
@@ -6,19 +10,23 @@ class UserCollectionsView(APIView):
         user = request.user
         collections = Collection.objects.filter(user=user)
         # Only return id, title, and cover image (if available)
-        data = [
-            {
+        data = []
+        for col in collections:
+            # Get the first image in the collection as cover
+            cover_url = None
+            first_image = None
+            if hasattr(col, 'collection_images'):
+                col_images = col.collection_images.select_related('image').all()
+                if col_images:
+                    first_image = col_images[0].image if hasattr(col_images[0], 'image') else None
+            if first_image and hasattr(first_image, 'file') and first_image.file:
+                cover_url = first_image.file.url
+            data.append({
                 'id': col.id,
                 'title': getattr(col, 'title', ''),
-                'cover_image': col.cover_image.url if hasattr(col, 'cover_image') and col.cover_image else None
-            }
-            for col in collections
-        ]
+                'cover_image': cover_url
+            })
         return Response({'collections': data})
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from apps.gallery.models import Image, Collection
 
 # --- User Galleries (Images) Endpoint ---
 class UserGalleriesView(APIView):
