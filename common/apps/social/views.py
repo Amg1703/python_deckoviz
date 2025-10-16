@@ -1,7 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from drf_spectacular.utils import extend_schema
 from apps.gallery.models import Image, Collection
+from .models import SocialConnection, ImageInteraction, CollectionInteraction, Post
+from .serializers import PostSerializer
 # --- User Collections Endpoint ---
 class UserCollectionsView(APIView):
     permission_classes = [IsAuthenticated]
@@ -87,16 +90,10 @@ class CreatePostOptionsView(APIView):
             'collections': collections_data
         })
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from django.utils import timezone
 from datetime import timedelta
 from django.db.models import Count, Q, F
-from apps.gallery.models import Image, Collection
-from .models import SocialConnection, ImageInteraction, CollectionInteraction
-from apps.authentication.models import User
 from apps.gallery.serializers import ImageSerializer, CollectionSerializer
 from rest_framework.decorators import api_view, permission_classes
 
