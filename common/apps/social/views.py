@@ -1,7 +1,42 @@
+# --- User Collections Endpoint ---
+class UserCollectionsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        collections = Collection.objects.filter(user=user)
+        # Only return id, title, and cover image (if available)
+        data = [
+            {
+                'id': col.id,
+                'title': getattr(col, 'title', ''),
+                'cover_image': col.cover_image.url if hasattr(col, 'cover_image') and col.cover_image else None
+            }
+            for col in collections
+        ]
+        return Response({'collections': data})
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from apps.gallery.models import Image, Collection
+
+# --- User Galleries (Images) Endpoint ---
+class UserGalleriesView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user
+        images = Image.objects.filter(user=user)
+        # Only return id, title, and file (image URL)
+        data = [
+            {
+                'id': img.id,
+                'title': getattr(img, 'title', ''),
+                'file': img.file.url if hasattr(img, 'file') and img.file else None
+            }
+            for img in images
+        ]
+        return Response({'galleries': data})
 
 # --- Create Post Options Endpoint ---
 class CreatePostOptionsView(APIView):
@@ -151,16 +186,39 @@ from .serializers import PostSerializer
 class UserPostsView(APIView):
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
+    def post(self, request):
         user = request.user
-        images = Image.objects.filter(uploaded_by=user).order_by('-created_at')
-        collections = Collection.objects.filter(user=user).order_by('-created_at')
-        posts = Post.objects.filter(user=user).order_by('-created_at')
-        image_data = ImageSerializer(images, many=True).data
-        collection_data = CollectionSerializer(collections, many=True).data
-        post_data = PostSerializer(posts, many=True).data
+        data = request.data.copy()
+        images = data.pop('images', [])
+        post = Post.objects.create(user=user, **data)
+        if images:
+            post.images.set(images)
+        serializer = PostSerializer(post)
+
+        # Fetch user's galleries (images)
+        user_images = Image.objects.filter(user=user)
+        galleries = [
+            {
+                'id': img.id,
+                'title': getattr(img, 'title', ''),
+                'file': img.file.url if hasattr(img, 'file') and img.file else None
+            }
+            for img in user_images
+        ]
+
+        # Fetch user's collections
+        user_collections = Collection.objects.filter(user=user)
+        collections = [
+            {
+                'id': col.id,
+                'title': getattr(col, 'title', ''),
+                'cover_image': col.cover_image.url if hasattr(col, 'cover_image') and col.cover_image else None
+            }
+            for col in user_collections
+        ]
+
         return Response({
-            'images': image_data,
-            'collections': collection_data,
-            'posts': post_data
-        })
+            'post': serializer.data,
+            'galleries': galleries,
+            'collections': collections
+        }, status=201)
