@@ -283,10 +283,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Swagger API Documentation View
 SPECTACULAR_SETTINGS = {
-    'TITLE': "Deckoviz  API",
+    'TITLE': "Deckoviz API",
     'DESCRIPTION': "API documentation for Deckoviz",
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SCHEMA_PATH_PREFIX_TRIMMING': True,
+    'SWAGGER_UI_SETTINGS': {
+        'persistAuthorization': True,
+        'displayRequestDuration': True,
+    },
+    'PREPROCESSING_HOOKS': [],
+    'POSTPROCESSING_HOOKS': [],
+    'ENUM_NAME_OVERRIDES': {},
+    'SORT_OPERATIONS': False,
+    'SORT_OPERATION_PARAMETERS': False,
+    'CAMELIZE_NAMES': False,
+    'DISABLE_ERRORS_AND_WARNINGS': False,
 }
 
 # authentication user model
