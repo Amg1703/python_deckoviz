@@ -162,28 +162,75 @@ class SerendipityFeedView(APIView):
 class CreatePostView(APIView):
     permission_classes = [IsAuthenticated]
 
+    from drf_spectacular.utils import extend_schema
+
+    @extend_schema(
+        request={
+            'type': 'object',
+            'properties': {
+                'images': {
+                    'type': 'array',
+                    'items': {'type': 'string', 'format': 'uuid'},
+                    'description': 'List of image IDs (UUIDs) to attach to the post.'
+                },
+                'collections': {
+                    'type': 'array',
+                    'items': {'type': 'string', 'format': 'uuid'},
+                    'description': 'List of collection IDs (UUIDs) to attach to the post.'
+                },
+                'moods': {
+                    'type': 'array',
+                    'items': {'type': 'string'},
+                    'description': 'List of moods.'
+                },
+                'theme': {'type': 'string', 'description': 'Theme for the post.'},
+                'view': {
+                    'type': 'string',
+                    'enum': ['public', 'private'],
+                    'description': 'Visibility of the post. "public" = Serendipity feed, "private" = Friends feed.'
+                }
+            },
+            'required': ['images', 'moods', 'theme', 'view']
+        },
+        responses={201: PostSerializer},
+        description="Create a new post with selected images, collections, moods, theme, and view.\n- view='public' posts go to the Serendipity feed.\n- view='private' posts go to the Friends feed."
+    )
     def post(self, request):
-        # Accepts creation of a new Post with images, moods, theme, view
+        """
+        Create a new post. Accepts:
+        - images: list of image UUIDs
+        - collections: list of collection UUIDs
+        - moods: list of strings
+        - theme: string
+        - view: 'public' or 'private' (public = Serendipity feed, private = Friends feed)
+        """
         from .models import Post
         from .serializers import PostSerializer
+        from apps.gallery.models import Image, Collection
         user = request.user
         images = request.data.get('images', [])
+        collections = request.data.get('collections', [])
         moods = request.data.get('moods', [])
         theme = request.data.get('theme', None)
         view = request.data.get('view', 'public')
 
-        # images can be a list of image IDs
+        # Validate images
         if not isinstance(images, list):
             return Response({'error': 'images must be a list of image IDs.'}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Validate images exist and belong to user (or are accessible)
-        from apps.gallery.models import Image
-        image_objs = Image.objects.filter(id__in=images)
+        image_objs = Image.objects.filter(id__in=images, uploaded_by=user)
         if image_objs.count() != len(images):
-            return Response({'error': 'One or more images not found.'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'One or more images not found or do not belong to user.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Validate collections
+        if collections and not isinstance(collections, list):
+            return Response({'error': 'collections must be a list of collection IDs.'}, status=status.HTTP_400_BAD_REQUEST)
+        collection_objs = Collection.objects.filter(id__in=collections, user=user) if collections else []
+        if collections and collection_objs.count() != len(collections):
+            return Response({'error': 'One or more collections not found or do not belong to user.'}, status=status.HTTP_400_BAD_REQUEST)
 
         post = Post.objects.create(user=user, theme=theme, view=view, moods=moods)
         post.images.set(image_objs)
+        # Optionally, you can link collections to the post if your model supports it
         post.save()
         serializer = PostSerializer(post)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
