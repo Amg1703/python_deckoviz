@@ -176,6 +176,7 @@ class CreatePostView(APIView):
         - moods: list of strings
         - theme: string
         - view: 'public' or 'private' (public = Serendipity feed, private = Friends feed)
+        Now: All images from selected collections are auto-attached to the post (deduplicated with images).
         """
         from .models import Post
         from .serializers import PostSerializer
@@ -190,20 +191,31 @@ class CreatePostView(APIView):
         # Validate images
         if not isinstance(images, list):
             return Response({'error': 'images must be a list of image IDs.'}, status=status.HTTP_400_BAD_REQUEST)
-        image_objs = Image.objects.filter(id__in=images, uploaded_by=user)
-        if image_objs.count() != len(images):
+        image_objs = list(Image.objects.filter(id__in=images, uploaded_by=user))
+        if len(image_objs) != len(images):
             return Response({'error': 'One or more images not found or do not belong to user.'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Validate collections
         if collections and not isinstance(collections, list):
             return Response({'error': 'collections must be a list of collection IDs.'}, status=status.HTTP_400_BAD_REQUEST)
-        collection_objs = Collection.objects.filter(id__in=collections, user=user) if collections else []
-        if collections and collection_objs.count() != len(collections):
+        collection_objs = list(Collection.objects.filter(id__in=collections, user=user)) if collections else []
+        if collections and len(collection_objs) != len(collections):
             return Response({'error': 'One or more collections not found or do not belong to user.'}, status=status.HTTP_400_BAD_REQUEST)
 
+        # Gather all images from selected collections (deduplicate with images)
+        collection_image_ids = set()
+        for col in collection_objs:
+            # Get all images in the collection (CollectionImage relation)
+            for ci in col.collection_images.select_related('image').all():
+                if ci.image and ci.image.uploaded_by == user:
+                    collection_image_ids.add(ci.image.id)
+
+        # Merge with explicitly listed images (deduplicate)
+        all_image_ids = set([img.id for img in image_objs]) | collection_image_ids
+        all_image_objs = list(Image.objects.filter(id__in=all_image_ids, uploaded_by=user))
+
         post = Post.objects.create(user=user, theme=theme, view=view, moods=moods)
-        post.images.set(image_objs)
-        # Optionally, you can link collections to the post if your model supports it
+        post.images.set(all_image_objs)
         post.save()
         serializer = PostSerializer(post)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
