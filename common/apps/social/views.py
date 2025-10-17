@@ -156,42 +156,18 @@ class SerendipityFeedView(APIView):
         return Response({'images': image_data, 'collections': collection_data})
 
 # --- Create Post Endpoint ---
+from drf_spectacular.utils import extend_schema, OpenApiResponse
+from .serializers import CreatePostRequestSerializer
+
+@extend_schema(
+    request=CreatePostRequestSerializer,
+    responses={201: PostSerializer, 400: OpenApiResponse(description="Invalid input.")},
+    description="Create a new post with images, collections, moods, theme, and view.",
+    tags=["Social"]
+)
 class CreatePostView(APIView):
     permission_classes = [IsAuthenticated]
 
-    from drf_spectacular.utils import extend_schema
-
-    @extend_schema(
-        request={
-            'type': 'object',
-            'properties': {
-                'images': {
-                    'type': 'array',
-                    'items': {'type': 'string', 'format': 'uuid'},
-                    'description': 'List of image IDs (UUIDs) to attach to the post.'
-                },
-                'collections': {
-                    'type': 'array',
-                    'items': {'type': 'string', 'format': 'uuid'},
-                    'description': 'List of collection IDs (UUIDs) to attach to the post.'
-                },
-                'moods': {
-                    'type': 'array',
-                    'items': {'type': 'string'},
-                    'description': 'List of moods.'
-                },
-                'theme': {'type': 'string', 'description': 'Theme for the post.'},
-                'view': {
-                    'type': 'string',
-                    'enum': ['public', 'private'],
-                    'description': 'Visibility of the post. "public" = Serendipity feed, "private" = Friends feed.'
-                }
-            },
-            'required': ['images', 'moods', 'theme', 'view']
-        },
-        responses={201: PostSerializer},
-        description="Create a new post with selected images, collections, moods, theme, and view.\n- view='public' posts go to the Serendipity feed.\n- view='private' posts go to the Friends feed."
-    )
     def post(self, request):
         """
         Create a new post. Accepts:
