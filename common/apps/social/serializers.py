@@ -23,6 +23,7 @@ from rest_framework import serializers
 from .models import SocialConnection, ImageInteraction, CollectionInteraction, Post
 from apps.gallery.serializers import ImageSerializer
 from apps.authentication.serializers import UserSerializer
+from .models import PostLike, PostComment, Follow
 
 class SocialConnectionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -44,6 +45,9 @@ class CollectionInteractionSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True, read_only=True)
     user = UserSerializer(read_only=True)
+    like_count = serializers.IntegerField(read_only=True)
+    comment_count = serializers.IntegerField(read_only=True)
+    recent_comments = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
@@ -51,6 +55,9 @@ class PostSerializer(serializers.ModelSerializer):
             'id',
             'user',
             'images',
+            'like_count',
+            'comment_count',
+            'recent_comments',
             'moods',
             'theme',
             'view',
@@ -58,3 +65,42 @@ class PostSerializer(serializers.ModelSerializer):
             'created_at',
             'updated_at',
         ]
+
+    def get_recent_comments(self, obj):
+        comments = obj.comments.filter(is_active=True).order_by('-created_at')[:3]
+        return [
+            {
+                'id': c.id,
+                'user': UserSerializer(c.user).data,
+                'content': c.content,
+                'created_at': c.created_at,
+            }
+            for c in comments
+        ]
+
+
+class PostLikeSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+
+    class Meta:
+        model = PostLike
+        fields = ['id', 'user', 'post', 'created_at']
+        read_only_fields = ['id', 'user', 'created_at']
+
+
+class PostCommentSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
+
+    class Meta:
+        model = PostComment
+        fields = ['id', 'user', 'post', 'content', 'created_at']
+        read_only_fields = ['id', 'user', 'created_at']
+
+
+class FollowSerializer(serializers.ModelSerializer):
+    follower = UserSerializer(read_only=True)
+    following = UserSerializer(read_only=True)
+
+    class Meta:
+        model = Follow
+        fields = ['id', 'follower', 'following', 'created_at']

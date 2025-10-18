@@ -158,6 +158,10 @@ class SerendipityFeedView(APIView):
 # --- Create Post Endpoint ---
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 from .serializers import CreatePostRequestSerializer
+from .serializers import PostLikeSerializer, PostCommentSerializer, FollowSerializer
+from .models import PostLike, PostComment, Follow
+from rest_framework.generics import ListAPIView
+from rest_framework.permissions import IsAuthenticated
 
 @extend_schema(
     request=CreatePostRequestSerializer,
@@ -219,6 +223,118 @@ class CreatePostView(APIView):
         post.save()
         serializer = PostSerializer(post)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+@extend_schema(
+    request=None,
+    responses={200: OpenApiResponse(description='Toggled like status')},
+    description="Toggle like/unlike for a post.",
+    tags=["Social"]
+)
+class PostLikeToggleView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, post_id):
+        user = request.user
+        try:
+            post = Post.objects.get(id=post_id)
+        except Post.DoesNotExist:
+            return Response({'error': 'Post not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        like, created = PostLike.objects.get_or_create(user=user, post=post)
+        if not created:
+            # already liked -> unlike
+            like.delete()
+            return Response({'liked': False}, status=status.HTTP_200_OK)
+        return Response({'liked': True}, status=status.HTTP_201_CREATED)
+
+
+@extend_schema(
+    request=PostCommentSerializer,
+    responses={201: PostCommentSerializer, 400: OpenApiResponse(description='Invalid input')},
+    description="Add a comment to a post.",
+    tags=["Social"]
+)
+class PostCommentCreateView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, post_id):
+        user = request.user
+        try:
+            post = Post.objects.get(id=post_id)
+        except Post.DoesNotExist:
+            return Response({'error': 'Post not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = PostCommentSerializer(data=request.data)
+        if serializer.is_valid():
+            comment = PostComment.objects.create(
+                user=user,
+                post=post,
+                content=serializer.validated_data.get('content')
+            )
+            return Response(PostCommentSerializer(comment).data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class PostCommentsListView(ListAPIView):
+    serializer_class = PostCommentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        post_id = self.kwargs.get('post_id')
+        return PostComment.objects.filter(post_id=post_id, is_active=True).order_by('-created_at')
+
+
+class PostLikesListView(ListAPIView):
+    serializer_class = PostLikeSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        post_id = self.kwargs.get('post_id')
+        return PostLike.objects.filter(post_id=post_id).select_related('user')
+
+
+@extend_schema(
+    request=None,
+    responses={200: OpenApiResponse(description='Toggled follow status')},
+    description="Toggle follow/unfollow a user.",
+    tags=["Social"]
+)
+class FollowToggleView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, user_id):
+        follower = request.user
+        if str(follower.id) == str(user_id):
+            return Response({'error': 'Cannot follow yourself.'}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            to_follow = follower.__class__.objects.get(id=user_id)
+        except Exception:
+            return Response({'error': 'User not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        rel, created = Follow.objects.get_or_create(follower=follower, following=to_follow)
+        if not created:
+            rel.delete()
+            return Response({'following': False}, status=status.HTTP_200_OK)
+        return Response({'following': True}, status=status.HTTP_201_CREATED)
+
+
+class FollowersListView(ListAPIView):
+    serializer_class = FollowSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user_id = self.kwargs.get('user_id')
+        return Follow.objects.filter(following_id=user_id).select_related('follower')
+
+
+class FollowingListView(ListAPIView):
+    serializer_class = FollowSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        user_id = self.kwargs.get('user_id')
+        return Follow.objects.filter(follower_id=user_id).select_related('following')
 
 from .models import Post
 from .serializers import PostSerializer
