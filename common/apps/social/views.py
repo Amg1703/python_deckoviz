@@ -1,10 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from drf_spectacular.utils import extend_schema
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 from apps.gallery.models import Image, Collection
-from .models import SocialConnection, ImageInteraction, CollectionInteraction, Post
-from .serializers import PostSerializer
+from .models import SocialConnection, ImageInteraction, CollectionInteraction, Post, Follow
+from .serializers import PostSerializer, FollowSerializer
+from apps.authentication.serializers import UserSerializer
+from django.contrib.auth import get_user_model
 # --- User Collections Endpoint ---
 class UserCollectionsView(APIView):
     permission_classes = [IsAuthenticated]
@@ -124,6 +126,54 @@ class FriendsFeedView(APIView):
         collection_data = CollectionSerializer(collections, many=True).data
         return Response({'images': image_data, 'collections': collection_data})
 
+# --- Follow/Unfollow and Followers/Following Endpoints ---
+User = get_user_model()
+
+@extend_schema(
+    request={"application/json": OpenApiResponse(description="{ 'user_id': '<uuid>' }")},
+    responses={200: OpenApiResponse(description="Unfollowed."), 201: OpenApiResponse(description="Followed."), 400: OpenApiResponse(description="Invalid user_id."), 404: OpenApiResponse(description="User not found.")},
+    description="Toggle follow/unfollow for a user. Auth required.",
+    tags=["Social"]
+)
+class FollowToggleView(APIView):
+    permission_classes = [IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        target_user_id = request.data.get("user_id")
+        if not target_user_id or str(request.user.id) == str(target_user_id):
+            return Response({"detail": "Invalid user_id."}, status=400)
+        try:
+            target_user = User.objects.get(id=target_user_id)
+        except User.DoesNotExist:
+            return Response({"detail": "User not found."}, status=404)
+        follow, created = Follow.objects.get_or_create(follower=request.user, following=target_user)
+        if not created:
+            follow.delete()
+            return Response({"detail": "Unfollowed."}, status=200)
+        return Response({"detail": "Followed."}, status=201)
+
+@extend_schema(
+    responses={200: UserSerializer(many=True)},
+    description="List users who follow the given user.",
+    tags=["Social"]
+)
+class FollowersListView(APIView):
+    permission_classes = [AllowAny]
+    def get(self, request, user_id):
+        followers = Follow.objects.filter(following__id=user_id).select_related("follower")
+        data = UserSerializer([f.follower for f in followers], many=True).data
+        return Response(data)
+
+@extend_schema(
+    responses={200: UserSerializer(many=True)},
+    description="List users the given user is following.",
+    tags=["Social"]
+)
+class FollowingListView(APIView):
+    permission_classes = [AllowAny]
+    def get(self, request, user_id):
+        following = Follow.objects.filter(follower__id=user_id).select_related("following")
+        data = UserSerializer([f.following for f in following], many=True).data
+        return Response(data)
 # --- Serendipity Feed ---
 class SerendipityFeedView(APIView):
     permission_classes = [IsAuthenticated]
