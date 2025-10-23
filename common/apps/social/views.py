@@ -98,6 +98,7 @@ from datetime import timedelta
 from django.db.models import Count, Q, F
 from apps.gallery.serializers import ImageSerializer, CollectionSerializer
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.pagination import PageNumberPagination
 
 
 # --- Friends Feed ---
@@ -125,6 +126,76 @@ class FriendsFeedView(APIView):
         image_data = ImageSerializer(images, many=True).data
         collection_data = CollectionSerializer(collections, many=True).data
         return Response({'images': image_data, 'collections': collection_data})
+
+
+@extend_schema(
+    responses={200: 'UserProfileResponseSerializer'},
+    description='Retrieve a public user profile including posts, followers, and following previews.',
+    tags=['Social']
+)
+class UserProfileView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, user_id):
+        User = get_user_model()
+        try:
+            profile_user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response({'detail': 'User not found.'}, status=404)
+
+        # Privacy check
+        if not getattr(profile_user, 'profile_visible', True) and (not request.user or not request.user.is_authenticated or request.user != profile_user):
+            return Response({'detail': 'Profile is private.'}, status=403)
+
+        # Posts (paginated using DRF pagination)
+        posts_qs = Post.objects.filter(user=profile_user).order_by('-created_at')
+        paginator = PageNumberPagination()
+        # allow client to pass page_size, with default 10 and upper bound 100
+        try:
+            paginator.page_size = min(int(request.query_params.get('page_size', 10)), 100)
+        except Exception:
+            paginator.page_size = 10
+        page = paginator.paginate_queryset(posts_qs, request, view=self)
+        posts_data = PostSerializer(page, many=True).data if page is not None else []
+
+        # Followers/following previews and counts
+        followers_qs = Follow.objects.filter(following=profile_user).select_related('follower')[:5]
+        following_qs = Follow.objects.filter(follower=profile_user).select_related('following')[:5]
+        followers_preview = [f.follower for f in followers_qs]
+        following_preview = [f.following for f in following_qs]
+
+        followers_count = Follow.objects.filter(following=profile_user).count()
+        following_count = Follow.objects.filter(follower=profile_user).count()
+
+        is_following = False
+        if request.user and getattr(request.user, 'is_authenticated', False) and request.user != profile_user:
+            is_following = Follow.objects.filter(follower=request.user, following=profile_user).exists()
+
+        user_info = UserSerializer(profile_user).data
+
+        base = {
+            'user': user_info,
+            'followers_count': followers_count,
+            'following_count': following_count,
+            'followers_preview': UserSerializer(followers_preview, many=True).data,
+            'following_preview': UserSerializer(following_preview, many=True).data,
+            'is_following': is_following,
+        }
+
+        # If we used pagination, include pagination metadata and results
+        if page is not None:
+            paginated = paginator.get_paginated_response(posts_data).data
+            # paginated contains: count, next, previous, results
+            base.update({
+                'posts': paginated.get('results', []),
+                'posts_count': paginated.get('count', 0),
+                'posts_next': paginated.get('next'),
+                'posts_previous': paginated.get('previous'),
+            })
+            return Response(base)
+
+        base['posts'] = posts_data
+        return Response(base)
 
 # --- Follow/Unfollow and Followers/Following Endpoints ---
 User = get_user_model()

@@ -7,6 +7,7 @@ from .views import (
     PostLikeToggleView, PostCommentCreateView, PostCommentsListView, PostLikesListView,
     FollowToggleView, FollowersListView, FollowingListView
 )
+from .views import UserProfileView
 
 urlpatterns = [
     path('feed/friends/', FriendsFeedView.as_view(), name='social-feed-friends'),
@@ -26,4 +27,6 @@ urlpatterns = [
     path('follow/<uuid:user_id>/', FollowToggleView.as_view(), name='follow-toggle'),
     path('followers/<uuid:user_id>/', FollowersListView.as_view(), name='followers-list'),
     path('following/<uuid:user_id>/', FollowingListView.as_view(), name='following-list'),
+    # User profile
+    path('profile/<uuid:user_id>/', UserProfileView.as_view(), name='user-profile'),
 ]

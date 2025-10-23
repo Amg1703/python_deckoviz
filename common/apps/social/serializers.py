@@ -104,3 +104,14 @@ class FollowSerializer(serializers.ModelSerializer):
     class Meta:
         model = Follow
         fields = ['id', 'follower', 'following', 'created_at']
+
+
+# --- User Profile Response Serializer ---
+class UserProfileResponseSerializer(serializers.Serializer):
+    user = UserSerializer()
+    posts = PostSerializer(many=True)
+    followers_count = serializers.IntegerField()
+    following_count = serializers.IntegerField()
+    followers_preview = UserSerializer(many=True)
+    following_preview = UserSerializer(many=True)
+    is_following = serializers.BooleanField()
