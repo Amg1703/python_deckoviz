@@ -376,11 +376,11 @@ async def websocket_mobile_endpoint(websocket: WebSocket):
         return
         
     # Verify the room exists in Redis
-    if not redis_manager.room_exists(room_id):
-        logger.debug("Room does not exist")
-        await manager.broadcast(room_id, {"error": "Room does not exist"})
-        await manager.disconnect(websocket, room_id)
-        return
+    # if not redis_manager.room_exists(room_id):
+    #     logger.debug("Room does not exist")
+    #     await manager.broadcast(room_id, {"error": "Room does not exist"})
+    #     await manager.disconnect(websocket, room_id)
+    #     return
         
     # Add room if it doesn't exist yet
     redis_manager.add_room(room_id)
