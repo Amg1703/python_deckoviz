@@ -45,21 +45,20 @@ class QRRedisManager:
             paired: Whether the device is paired with a room
         """
         try:
-            # Create the Redis key
             key = f"{self.DEVICE_ROOM_PREFIX}{device_id}"
-            
-            # Convert data to JSON
             json_data = json.dumps(data)
-            
-            # Set expiry time based on whether device is paired
-            expiry = self.DEFAULT_DEVICE_EXPIRY if paired else self.UNPAIRED_DEVICE_EXPIRY
-            
-            # Store in Redis with expiry
-            self.redis.set(key, json_data, ex=expiry)
-            
-            logger.debug(f"Stored device data for {device_id} in Redis")
+
+            if paired:
+                # Store permanently (no expiry)
+                self.redis.set(key, json_data)
+            else:
+                # Store temporary (unpaired)
+                self.redis.set(key, json_data, ex=self.UNPAIRED_DEVICE_EXPIRY)
+
+            logger.debug(f"Stored device data for {device_id} (paired={paired}) in Redis")
         except Exception as e:
             logger.error(f"Error storing device data in Redis: {str(e)}")
+            # Re-raise so callers can handle the failure if needed
             raise
     
     def get_device_data(self, device_id: str) -> Optional[Dict[str, Any]]:
