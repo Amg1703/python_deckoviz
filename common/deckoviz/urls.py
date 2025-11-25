@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from django.urls import path,include,re_path
 from rest_framework.routers import DefaultRouter
 from drf_spectacular.views import SpectacularAPIView,SpectacularRedocView,SpectacularSwaggerView
+from django.views.generic import RedirectView
 
 
 # Set dynamic admin title based on the environment
@@ -97,6 +98,11 @@ urlpatterns = [
 
     # social feed api
     path('social/', include('apps.social.urls')),
+
+    # root -> go to the authentication UI/root (auth app)
+    # This ensures visiting the site root lands on the auth app instead of falling
+    # back to the development static-file handler which produced the 404.
+    path('', RedirectView.as_view(url='/auth/', permanent=False)),
 ]
 
 if settings.DEBUG:
