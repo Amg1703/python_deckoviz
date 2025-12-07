@@ -132,6 +132,13 @@ INSTALLED_APPS = [
     'apps.curations',
     'apps.analytics',
     'apps.social',
+    'apps.ai_montage',
+    'apps.event_scheduler',
+    'apps.collection_with_narration',
+    'apps.iterative_artwork',
+    'apps.market_material',
+    'apps.music_generator',
+    'apps.visual_chat',
     
     # third party apps  
     'rest_framework',

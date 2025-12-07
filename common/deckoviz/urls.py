@@ -87,6 +87,27 @@ urlpatterns = [
 
     # analytics api
     path('api/analytics/', include('apps.analytics.urls')),
+
+    # ai_montage api
+    path('api/ai-montage/', include('apps.ai_montage.urls')),
+
+    # event_scheduler api
+    path('api/event-scheduler/', include('apps.event_scheduler.urls')),
+
+    # collection_with_narration api
+    path('api/collection-narration/', include('apps.collection_with_narration.urls')),
+
+    # iterative_artwork api
+    path('api/iterative-artwork/', include('apps.iterative_artwork.urls')),
+
+    # market_material api
+    path('api/market-material/', include('apps.market_material.urls')),
+
+    # music_generator api
+    path('api/music-generator/', include('apps.music_generator.urls')),
+
+    # visual_chat api
+    path('api/visual-chat/', include('apps.visual_chat.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

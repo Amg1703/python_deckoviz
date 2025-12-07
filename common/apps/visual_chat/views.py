@@ -1,0 +1,95 @@
+from rest_framework import viewsets, status
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from django.shortcuts import get_object_or_404
+
+from .models import PDF, Job, Image
+from .serializers import (
+    PDFSerializer, PDFCreateSerializer, PDFListSerializer,
+    JobSerializer, JobCreateSerializer, JobUpdateSerializer,
+    ImageSerializer, ImageCreateSerializer
+)
+
+
+class PDFInternalViewSet(viewsets.ModelViewSet):
+    """Internal API for PDF operations (no authentication)"""
+    
+    queryset = PDF.objects.all()
+    serializer_class = PDFSerializer
+    
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return PDFCreateSerializer
+        elif self.action == 'list':
+            return PDFListSerializer
+        return PDFSerializer
+    
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        
+        # Return full object
+        instance = PDF.objects.get(id=serializer.data['id'])
+        output_serializer = PDFSerializer(instance)
+        return Response(output_serializer.data, status=status.HTTP_201_CREATED)
+
+
+class JobInternalViewSet(viewsets.ModelViewSet):
+    """Internal API for Job operations (no authentication)"""
+    
+    queryset = Job.objects.all()
+    serializer_class = JobSerializer
+    
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return JobCreateSerializer
+        elif self.action in ['update', 'partial_update']:
+            return JobUpdateSerializer
+        return JobSerializer
+    
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        
+        # Return full object
+        instance = Job.objects.get(id=serializer.data['id'])
+        output_serializer = JobSerializer(instance)
+        return Response(output_serializer.data, status=status.HTTP_201_CREATED)
+    
+    @action(detail=False, methods=['get'], url_path='by-pdf/(?P<pdf_id>[^/.]+)')
+    def by_pdf(self, request, pdf_id=None):
+        """Get all jobs for a PDF"""
+        jobs = self.queryset.filter(pdf_id=pdf_id).order_by('-created_at')
+        serializer = self.get_serializer(jobs, many=True)
+        return Response(serializer.data)
+
+
+class ImageInternalViewSet(viewsets.ModelViewSet):
+    """Internal API for Image operations (no authentication)"""
+    
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
+    
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return ImageCreateSerializer
+        return ImageSerializer
+    
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        
+        # Return full object
+        instance = Image.objects.get(id=serializer.data['id'])
+        output_serializer = ImageSerializer(instance)
+        return Response(output_serializer.data, status=status.HTTP_201_CREATED)
+    
+    @action(detail=False, methods=['get'], url_path='by-job/(?P<job_id>[^/.]+)')
+    def by_job(self, request, job_id=None):
+        """Get all images for a job"""
+        images = self.queryset.filter(job_id=job_id).order_by('-created_at')
+        serializer = self.get_serializer(images, many=True)
+        return Response(serializer.data)
