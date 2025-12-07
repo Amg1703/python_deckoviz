@@ -1,0 +1,59 @@
+# Event Scheduler Crontab Configuration
+# This file shows how to set up cron jobs for scheduled event triggering
+
+# Run every minute to check for scheduled events
+# The --minutes-ahead=1 parameter means it will trigger events scheduled within the next 1 minute
+* * * * * cd /app && python manage.py trigger_scheduled_events --minutes-ahead=1 >> /var/log/cron.log 2>&1
+
+# Alternative: Run every 5 minutes with 5-minute lookahead
+# */5 * * * * cd /app && python manage.py trigger_scheduled_events --minutes-ahead=5 >> /var/log/cron.log 2>&1
+
+# Alternative: Run every hour for hourly events
+# 0 * * * * cd /app && python manage.py trigger_scheduled_events --minutes-ahead=60 >> /var/log/cron.log 2>&1
+
+# INSTALLATION INSTRUCTIONS:
+# 1. Copy this file to the Django container
+# 2. Install it with: crontab /path/to/this/file
+# 3. Verify with: crontab -l
+# 4. View logs with: tail -f /var/log/cron.log
+
+# DOCKER SETUP:
+# Add to your docker-compose.yml for the 'common' service:
+#
+# volumes:
+#   - ./crontab:/etc/cron.d/event-scheduler
+# command: >
+#   bash -c "
+#   crontab /etc/cron.d/event-scheduler &&
+#   cron &&
+#   python manage.py runserver 0.0.0.0:8000
+#   "
+
+# PRODUCTION SETUP (systemd timer):
+# Create /etc/systemd/system/event-scheduler.timer:
+#
+# [Unit]
+# Description=Event Scheduler Trigger Timer
+# 
+# [Timer]
+# OnCalendar=*:0/1
+# Persistent=true
+# 
+# [Install]
+# WantedBy=timers.target
+#
+# Create /etc/systemd/system/event-scheduler.service:
+#
+# [Unit]
+# Description=Event Scheduler Trigger Service
+# 
+# [Service]
+# Type=oneshot
+# WorkingDirectory=/path/to/python_deckoviz/common
+# ExecStart=/usr/bin/python manage.py trigger_scheduled_events --minutes-ahead=1
+# User=your-user
+# Environment="DJANGO_SETTINGS_MODULE=deckoviz.settings"
+#
+# Enable with:
+# sudo systemctl enable event-scheduler.timer
+# sudo systemctl start event-scheduler.timer
