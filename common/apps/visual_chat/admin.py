@@ -6,7 +6,7 @@ from .models import PDF, Job, Image
 class PDFAdmin(admin.ModelAdmin):
     list_display = ('id', 'filename', 'pages_count', 'size_mb', 'uploaded_at')
     list_filter = ('uploaded_at',)
-    search_fields = ('filename', 'extracted_text')
+    search_fields = ('filename',)
     readonly_fields = ('id', 'uploaded_at', 'size_mb')
     ordering = ('-uploaded_at',)
     
@@ -17,10 +17,6 @@ class PDFAdmin(admin.ModelAdmin):
     fieldsets = (
         ('File Information', {
             'fields': ('id', 'filename', 'size_bytes', 'size_mb', 'pages_count', 'uploaded_at')
-        }),
-        ('Content', {
-            'fields': ('extracted_text',),
-            'classes': ('collapse',)
         }),
     )
 

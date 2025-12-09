@@ -13,7 +13,7 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = [
-            'id', 'user', 'user_id', 'event_name', 'event_type',
+            'id','user_id', 'event_name', 'event_type',
             'trigger_time', 'trigger_time_local', 'schedule_type', 'timezone',
             'day_of_week', 'interval_minutes', 'max_executions', 'execution_count',
             'expires_at', 'visual_config', 'location', 'description',

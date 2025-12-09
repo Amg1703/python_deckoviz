@@ -53,6 +53,7 @@ class CollectionNarrationUpdateSerializer(serializers.ModelSerializer):
             'status',
             'script',
             'audio_path',
+            'input_type',
             'video_path',
             'final_video_path',
             'audio_duration',

@@ -293,3 +293,59 @@ def list_user_events(request):
             'success': False,
             'message': str(e)
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['GET'])
+@permission_classes([])  # No auth required for internal API calls
+def check_duplicate_event(request):
+    """Check if a duplicate event exists (called from FastAPI)"""
+    try:
+        user_id = request.GET.get('user_id')
+        trigger_time = request.GET.get('trigger_time')
+        schedule_type = request.GET.get('schedule_type')
+        day_of_week = request.GET.get('day_of_week')
+        
+        if not all([user_id, trigger_time, schedule_type]):
+            return Response({
+                'success': False,
+                'message': 'Missing required parameters: user_id, trigger_time, schedule_type'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Build query to find duplicate
+        query = Event.objects.filter(
+            user__id=user_id,
+            trigger_time=trigger_time,
+            schedule_type=schedule_type,
+            enabled=True
+        )
+        
+        # For weekly events, also check day_of_week
+        if schedule_type == 'weekly' and day_of_week:
+            query = query.filter(day_of_week=day_of_week)
+        
+        duplicate = query.first()
+        
+        if duplicate:
+            return Response({
+                'success': True,
+                'data': {
+                    'exists': True,
+                    'event_id': str(duplicate.id),
+                    'event_name': duplicate.event_name,
+                    'trigger_time': duplicate.trigger_time,
+                    'schedule_type': duplicate.schedule_type,
+                    'day_of_week': duplicate.day_of_week
+                }
+            }, status=status.HTTP_200_OK)
+        
+        return Response({
+            'success': True,
+            'data': {'exists': False}
+        }, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        logger.exception("Error checking duplicate event")
+        return Response({
+            'success': False,
+            'message': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

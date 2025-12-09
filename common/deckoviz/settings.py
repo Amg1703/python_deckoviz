@@ -62,6 +62,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5174',
     'http://127.0.0.1:3000',
     'http://168.231.112.236',
+    'http://172.20.100.242',
     'https://auth.deckoviz.com', 
     'https://api.deckoviz.com',
     'https://deckoviz.com'
@@ -136,7 +137,7 @@ INSTALLED_APPS = [
     'apps.event_scheduler',
     'apps.collection_with_narration',
     'apps.iterative_artwork',
-    'apps.market_material',
+    # 'apps.market_material',
     'apps.music_generator',
     'apps.visual_chat',
     

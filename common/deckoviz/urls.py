@@ -101,7 +101,7 @@ urlpatterns = [
     path('api/iterative-artwork/', include('apps.iterative_artwork.urls')),
 
     # market_material api
-    path('api/market-material/', include('apps.market_material.urls')),
+    # path('api/market-material/', include('apps.market_material.urls')),
 
     # music_generator api
     path('api/music-generator/', include('apps.music_generator.urls')),

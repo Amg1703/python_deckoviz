@@ -12,7 +12,18 @@ class PDF(models.Model):
     size_bytes = models.BigIntegerField()
     pages_count = models.IntegerField()
     file_data = models.BinaryField()
-    extracted_text = models.TextField(null=True, blank=True)
+    # extracted_text = models.TextField(null=True, blank=True)
+
+    def extract_page_text(self, page_number: int) -> str:
+        """Extract text from a specific page"""
+        import PyPDF2
+        from io import BytesIO
+        
+        pdf_reader = PyPDF2.PdfReader(BytesIO(bytes(self.file_data)))
+        if page_number < 1 or page_number > len(pdf_reader.pages):
+            raise ValueError(f"Invalid page number: {page_number}")
+        
+        return pdf_reader.pages[page_number - 1].extract_text()
     
     class Meta:
         db_table = 'visual_chat_pdfs'

@@ -13,11 +13,33 @@ class PDFSerializer(serializers.ModelSerializer):
 
 class PDFCreateSerializer(serializers.ModelSerializer):
     """Serializer for creating PDF"""
+    file_data = serializers.FileField(write_only=True)
     
     class Meta:
         model = PDF
-        fields = ['filename', 'size_bytes', 'pages_count', 'file_data', 'extracted_text']
+        fields = ['filename', 'file_data']  # Only these 2 fields required
 
+    def create(self, validated_data):
+        import PyPDF2
+        from io import BytesIO
+        
+        file = validated_data.pop('file_data')
+        file_bytes = file.read()
+        
+        # Calculate size_bytes
+        validated_data['size_bytes'] = len(file_bytes)
+        
+        # Calculate pages_count
+        try:
+            pdf_reader = PyPDF2.PdfReader(BytesIO(file_bytes))
+            validated_data['pages_count'] = len(pdf_reader.pages)
+        except Exception:
+            validated_data['pages_count'] = 0
+        
+        # Store file data
+        validated_data['file_data'] = file_bytes
+        
+        return super().create(validated_data)
 
 class PDFListSerializer(serializers.ModelSerializer):
     """Serializer for listing PDFs (without file_data)"""

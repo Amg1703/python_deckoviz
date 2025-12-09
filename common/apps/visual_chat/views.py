@@ -34,6 +34,28 @@ class PDFInternalViewSet(viewsets.ModelViewSet):
         output_serializer = PDFSerializer(instance)
         return Response(output_serializer.data, status=status.HTTP_201_CREATED)
 
+    @action(detail=True, methods=['post'])
+    def extract_page(self, request, pk=None):
+        """Extract text from a specific page"""
+        pdf = self.get_object()
+        page_number = request.data.get('page_number')
+        
+        if not page_number:
+            return Response(
+                {"error": "page_number is required"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        try:
+            text = pdf.extract_page_text(int(page_number))
+            return Response({"text": text, "page_number": page_number})
+        except ValueError as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response(
+                {"error": f"Failed to extract text: {str(e)}"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 class JobInternalViewSet(viewsets.ModelViewSet):
     """Internal API for Job operations (no authentication)"""
