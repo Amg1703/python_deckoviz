@@ -25,35 +25,26 @@ class PDFInternalViewSet(viewsets.ModelViewSet):
         return PDFSerializer
     
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        
-        # Return full object
-        instance = PDF.objects.get(id=serializer.data['id'])
-        output_serializer = PDFSerializer(instance)
-        return Response(output_serializer.data, status=status.HTTP_201_CREATED)
-
-    @action(detail=True, methods=['post'])
-    def extract_page(self, request, pk=None):
-        """Extract text from a specific page"""
-        pdf = self.get_object()
-        page_number = request.data.get('page_number')
-        
-        if not page_number:
-            return Response(
-                {"error": "page_number is required"},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        
         try:
-            text = pdf.extract_page_text(int(page_number))
-            return Response({"text": text, "page_number": page_number})
-        except ValueError as e:
-            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            import logging
+            logger = logging.getLogger(__name__)
+            
+            # Log incoming data for debugging
+            logger.info(f"Received data: {request.data.keys()}")
+            logger.info(f"Received files: {request.FILES.keys()}")
+            
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            
+            # Return full object
+            instance = PDF.objects.get(id=serializer.data['id'])
+            output_serializer = PDFSerializer(instance)
+            return Response(output_serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
+            logger.exception(f"Error creating PDF: {str(e)}")
             return Response(
-                {"error": f"Failed to extract text: {str(e)}"},
+                {"error": str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
 
