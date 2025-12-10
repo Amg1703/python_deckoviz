@@ -353,7 +353,10 @@ STORAGES = {
         },
     },
 }
- 
+
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+if not STRIPE_SECRET_KEY:
+    raise ValueError("STRIPE_SECRET_KEY not set in environment")
 
 # Celery Configuration
 CELERY_BROKER_URL = config('REDIS_URL')

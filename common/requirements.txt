@@ -59,3 +59,4 @@ PyPDF2
 bcrypt
 qrcode[pil]
 pillow
+stripe
