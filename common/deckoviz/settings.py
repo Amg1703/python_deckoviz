@@ -140,6 +140,7 @@ INSTALLED_APPS = [
     # 'apps.market_material',
     'apps.music_generator',
     'apps.visual_chat',
+    'apps.visual_audiobook',
     
     # third party apps  
     'rest_framework',

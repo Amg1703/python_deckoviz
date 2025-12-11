@@ -86,7 +86,14 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class ImageCreateSerializer(serializers.ModelSerializer):
     """Serializer for creating Image"""
+    file = serializers.FileField(write_only=True, required=False)
     
     class Meta:
         model = Image
-        fields = ['job', 'provider', 'provider_job_id', 'width', 'height', 'mime']
+        fields = ['job', 'provider', 'provider_job_id', 'width', 'height', 'mime', 'file']
+    
+    def create(self, validated_data):
+        file = validated_data.pop('file', None)
+        if file:
+            validated_data['image_data'] = file.read()
+        return super().create(validated_data)

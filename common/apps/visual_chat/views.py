@@ -38,11 +38,50 @@ class PDFInternalViewSet(viewsets.ModelViewSet):
             self.perform_create(serializer)
             
             # Return full object
-            instance = PDF.objects.get(id=serializer.data['id'])
+            # instance = PDF.objects.get(id=serializer.data['id'])
+            # output_serializer = PDFSerializer(instance)
+            instance = serializer.instance
             output_serializer = PDFSerializer(instance)
             return Response(output_serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
             logger.exception(f"Error creating PDF: {str(e)}")
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+    
+    @action(detail=True, methods=['post'], url_path='extract-page')
+    def extract_page(self, request, pk=None):
+        """Extract text from a specific page"""
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            pdf = self.get_object()
+            page_number = request.data.get('page_number')
+            
+            if not page_number:
+                return Response(
+                    {"error": "page_number is required"},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            
+            try:
+                text = pdf.extract_page_text(int(page_number))
+                return Response({"text": text, "page_number": page_number})
+            except ValueError as e:
+                return Response(
+                    {"error": str(e)},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            except Exception as e:
+                logger.exception(f"Error extracting page text: {str(e)}")
+                return Response(
+                    {"error": f"Failed to extract text: {str(e)}"},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                )
+        except Exception as e:
+            logger.exception(f"Error in extract_page: {str(e)}")
             return Response(
                 {"error": str(e)},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
@@ -67,7 +106,7 @@ class JobInternalViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
         
         # Return full object
-        instance = Job.objects.get(id=serializer.data['id'])
+        instance = serializer.instance
         output_serializer = JobSerializer(instance)
         return Response(output_serializer.data, status=status.HTTP_201_CREATED)
     
@@ -96,7 +135,7 @@ class ImageInternalViewSet(viewsets.ModelViewSet):
         self.perform_create(serializer)
         
         # Return full object
-        instance = Image.objects.get(id=serializer.data['id'])
+        instance = serializer.instance
         output_serializer = ImageSerializer(instance)
         return Response(output_serializer.data, status=status.HTTP_201_CREATED)
     

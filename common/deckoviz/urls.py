@@ -108,6 +108,9 @@ urlpatterns = [
 
     # visual_chat api
     path('api/visual-chat/', include('apps.visual_chat.urls')),
+
+    # visual_audiobook api
+    path('api/visual-audiobook/', include('apps.visual_audiobook.urls')),
      
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

@@ -57,7 +57,7 @@ class Job(models.Model):
     error = models.TextField(null=True, blank=True)
     
     class Meta:
-        db_table = 'jobs'
+        db_table = 'visual_chat_jobs'
         ordering = ['-created_at']
         indexes = [
             models.Index(fields=['pdf', '-created_at']),
