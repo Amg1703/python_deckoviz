@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from apps.authentication.models import BaseModel
+import json
 
 User = get_user_model()
 
@@ -19,6 +20,25 @@ class ScheduleType(models.TextChoices):
     HOURLY = "hourly", "Hourly"
     INTERVAL = "interval", "Interval"
     ONCE = "once", "Once"
+
+class SafeJSONField(models.JSONField):
+    """JSONField that accepts already-deserialized Python objects from DB drivers."""
+    def from_db_value(self, value, expression, connection):
+        if value is None:
+            return value
+        # already-deserialized by driver (dict/list) — return as-is
+        if isinstance(value, (dict, list)):
+            return value
+        # bytes -> str
+        if isinstance(value, (bytes, bytearray)):
+            try:
+                value = value.decode()
+            except Exception:
+                return value
+        try:
+            return json.loads(value)
+        except Exception:
+            return value
 
 
 class Event(BaseModel):
@@ -52,8 +72,8 @@ class Event(BaseModel):
     expires_at = models.DateTimeField(null=True, blank=True)
     
     # Visual configuration
-    visual_config = models.JSONField(default=dict)
-    
+    # visual_config = models.JSONField(default=dict)
+    visual_config = SafeJSONField(default=dict)
     # Metadata
     location = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
