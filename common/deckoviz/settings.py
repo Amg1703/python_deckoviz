@@ -62,6 +62,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5174',
     'http://127.0.0.1:3000',
     'http://168.231.112.236',
+    'http://172.20.100.242',
     'https://auth.deckoviz.com', 
     'https://api.deckoviz.com',
     'https://deckoviz.com'
@@ -132,6 +133,18 @@ INSTALLED_APPS = [
     'apps.curations',
     'apps.analytics',
     'apps.social',
+    'apps.ai_montage',
+    'apps.event_scheduler',
+    'apps.collection_with_narration',
+    'apps.iterative_artwork',
+    # 'apps.market_material',
+    'apps.music_generator',
+    'apps.visual_chat',
+    'apps.visual_audiobook',
+    'apps.sequential_artwork',
+    'apps.sculpture',
+    'apps.before_after',
+    'apps.before_after_deckoviz',
     
     # third party apps  
     'rest_framework',
@@ -345,7 +358,10 @@ STORAGES = {
         },
     },
 }
- 
+
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+if not STRIPE_SECRET_KEY:
+    raise ValueError("STRIPE_SECRET_KEY not set in environment")
 
 # Celery Configuration
 CELERY_BROKER_URL = config('REDIS_URL')

@@ -87,7 +87,43 @@ urlpatterns = [
 
     # analytics api
     path('api/analytics/', include('apps.analytics.urls')),
-     
+
+    # ai_montage api
+    path('api/ai-montage/', include('apps.ai_montage.urls')),
+
+    # event_scheduler api
+    path('api/event-scheduler/', include('apps.event_scheduler.urls')),
+
+    # collection_with_narration api
+    path('api/collection-narration/', include('apps.collection_with_narration.urls')),
+
+    # iterative_artwork api
+    path('api/iterative-artwork/', include('apps.iterative_artwork.urls')),
+
+    # market_material api
+    # path('api/market-material/', include('apps.market_material.urls')),
+
+    # music_generator api
+    path('api/music-generator/', include('apps.music_generator.urls')),
+
+    # visual_chat api
+    path('api/visual-chat/', include('apps.visual_chat.urls')),
+
+    # visual_audiobook api
+    path('api/visual-audiobook/', include('apps.visual_audiobook.urls')),
+    
+    # sequential artwork api
+    path('api/sequential-artwork/', include('apps.sequential_artwork.urls')),
+
+    # sculpture api
+    path('api/sculpture/', include('apps.sculpture.urls')),
+
+    # before_after api
+    path('api/before-after/', include('apps.before_after.urls')),
+
+    # before_after_deckoviz api
+    path('api/before-after-deckoviz/', include('apps.before_after_deckoviz.urls')),
+    
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/',
