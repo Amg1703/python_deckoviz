@@ -141,6 +141,10 @@ INSTALLED_APPS = [
     'apps.music_generator',
     'apps.visual_chat',
     'apps.visual_audiobook',
+    'apps.sequential_artwork',
+    'apps.sculpture',
+    'apps.before_after',
+    'apps.before_after_deckoviz',
     
     # third party apps  
     'rest_framework',

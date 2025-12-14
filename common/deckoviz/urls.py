@@ -111,7 +111,19 @@ urlpatterns = [
 
     # visual_audiobook api
     path('api/visual-audiobook/', include('apps.visual_audiobook.urls')),
-     
+    
+    # sequential artwork api
+    path('api/sequential-artwork/', include('apps.sequential_artwork.urls')),
+
+    # sculpture api
+    path('api/sculpture/', include('apps.sculpture.urls')),
+
+    # before_after api
+    path('api/before-after/', include('apps.before_after.urls')),
+
+    # before_after_deckoviz api
+    path('api/before-after-deckoviz/', include('apps.before_after_deckoviz.urls')),
+    
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/',
