@@ -4,6 +4,7 @@ from .models import BeforeAfter
 
 class BeforeAfterSerializer(serializers.ModelSerializer):
     user_id = serializers.SerializerMethodField()
+    username = serializers.SerializerMethodField()
 
     class Meta:
         model = BeforeAfter
@@ -13,6 +14,10 @@ class BeforeAfterSerializer(serializers.ModelSerializer):
     def get_user_id(self, obj):
         """Get user_id from ForeignKey"""
         return obj.user.id if obj.user else None
+    
+    def get_username(self, obj):
+        """Get username from ForeignKey"""
+        return obj.user.username if obj.user else None
 
 
 class BeforeAfterCreateSerializer(serializers.ModelSerializer):
@@ -22,19 +27,31 @@ class BeforeAfterCreateSerializer(serializers.ModelSerializer):
         model = BeforeAfter
         fields = (
             "user_id",
+            "session_id",
             "job_id",
-            "before_filename",
-            "after_filename",
+            "original_filename",
+            "original_image_uuid",
+            "edited_filename",
             "transformation_type",
-            "prompt",
             "edit_instructions",
             "style_hint",
-            "s3_before_url",
-            "s3_before_key",
-            "s3_after_url",
-            "s3_after_key",
+            "placement_instructions",
+            "deckoviz_variant",
+            "size_variant",
+            "halo_color",
+            "frame_material",
+            "preserve_room",
+            "s3_original_url",
+            "s3_original_key",
+            "s3_output_url",
+            "s3_output_key",
             "status",
+            "service",
+            "model",
+            "parsed_changes",
+            "deckoviz_specs",
             "metadata",
+            "share",
         )
 
     def create(self, validated_data):
@@ -53,3 +70,24 @@ class BeforeAfterCreateSerializer(serializers.ModelSerializer):
                 pass
         
         return instance
+
+
+class BeforeAfterUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BeforeAfter
+        fields = (
+            "edited_filename",
+            "s3_output_url",
+            "s3_output_key",
+            "change_log_path",
+            "change_log_s3_url",
+            "change_log_s3_key",
+            "metadata_path",
+            "metadata_s3_url",
+            "metadata_s3_key",
+            "status",
+            "parsed_changes",
+            "deckoviz_specs",
+            "metadata",
+            "share",
+        )

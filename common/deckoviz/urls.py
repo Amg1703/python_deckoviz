@@ -121,8 +121,6 @@ urlpatterns = [
     # before_after api
     path('api/before-after/', include('apps.before_after.urls')),
 
-    # before_after_deckoviz api
-    path('api/before-after-deckoviz/', include('apps.before_after_deckoviz.urls')),
     
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

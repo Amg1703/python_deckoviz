@@ -144,7 +144,7 @@ INSTALLED_APPS = [
     'apps.sequential_artwork',
     'apps.sculpture',
     'apps.before_after',
-    'apps.before_after_deckoviz',
+    
     
     # third party apps  
     'rest_framework',
