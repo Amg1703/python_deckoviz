@@ -6,6 +6,7 @@ from apps.utils.choices import ADDRESS_TYPES
 from .managers import AddressManager
 from django.utils import timezone
 import secrets
+import hashlib
 
 class TimeStampedModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -124,6 +125,10 @@ class PasswordResetToken(models.Model):
     def generate_token():
         return secrets.token_urlsafe(32)
 
+    @staticmethod
+    def hash_token(raw_token: str) -> str:
+        return hashlib.sha256(raw_token.encode('utf-8')).hexdigest()
+
     def is_expired(self):
         # Token valid for 1 hour
         return timezone.now() > self.created_at + timezone.timedelta(hours=1)
@@ -140,6 +145,10 @@ class EmailVerificationToken(models.Model):
     @staticmethod
     def generate_token():
         return secrets.token_urlsafe(32)
+
+    @staticmethod
+    def hash_token(raw_token: str) -> str:
+        return hashlib.sha256(raw_token.encode('utf-8')).hexdigest()
 
     def is_expired(self):
         # Token valid for 24 hours

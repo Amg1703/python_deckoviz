@@ -180,7 +180,10 @@ class RegisterView(APIView):
             # Invalidate old tokens
             EmailVerificationToken.objects.filter(user=user, is_used=False).update(is_used=True)
             token = EmailVerificationToken.generate_token()
-            EmailVerificationToken.objects.create(user=user, token=token)
+            EmailVerificationToken.objects.create(
+                user=user,
+                token=EmailVerificationToken.hash_token(token)
+            )
             send_mail(
                 subject='Verify your email',
                 message=f'Your email verification code is: {token}',
@@ -322,7 +325,10 @@ class ForgotPasswordView(APIView):
         # Invalidate old tokens
         PasswordResetToken.objects.filter(user=user, is_used=False).update(is_used=True)
         token = PasswordResetToken.generate_token()
-        PasswordResetToken.objects.create(user=user, token=token)
+        PasswordResetToken.objects.create(
+            user=user,
+            token=PasswordResetToken.hash_token(token)
+        )
         # Send email
         send_mail(
             subject='Password Reset Request',
@@ -346,8 +352,9 @@ class ResetPasswordView(APIView):
         serializer.is_valid(raise_exception=True)
         token = serializer.validated_data['token']
         password = serializer.validated_data['password']
+        token_hash = PasswordResetToken.hash_token(token)
         try:
-            reset_token = PasswordResetToken.objects.get(token=token, is_used=False)
+            reset_token = PasswordResetToken.objects.get(token=token_hash, is_used=False)
         except PasswordResetToken.DoesNotExist:
             return Response({'detail': 'Invalid or expired token.'}, status=status.HTTP_400_BAD_REQUEST)
         if reset_token.is_expired():
@@ -373,8 +380,9 @@ class VerifyEmailView(APIView):
         serializer = EmailVerificationSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         token = serializer.validated_data['token']
+        token_hash = EmailVerificationToken.hash_token(token)
         try:
-            verification_token = EmailVerificationToken.objects.get(token=token, is_used=False)
+            verification_token = EmailVerificationToken.objects.get(token=token_hash, is_used=False)
         except EmailVerificationToken.DoesNotExist:
             return Response({'detail': 'Invalid or expired token.'}, status=status.HTTP_400_BAD_REQUEST)
         if verification_token.is_expired():
@@ -408,7 +416,10 @@ class ResendVerificationView(APIView):
                 # Invalidate old tokens
                 EmailVerificationToken.objects.filter(user=user, is_used=False).update(is_used=True)
                 token = EmailVerificationToken.generate_token()
-                EmailVerificationToken.objects.create(user=user, token=token)
+                EmailVerificationToken.objects.create(
+                    user=user,
+                    token=EmailVerificationToken.hash_token(token)
+                )
                 send_mail(
                     subject='Verify your email',
                     message=f'Your email verification code is: {token}',
