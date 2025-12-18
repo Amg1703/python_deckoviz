@@ -144,6 +144,7 @@ INSTALLED_APPS = [
     'apps.sequential_artwork',
     'apps.sculpture',
     'apps.before_after',
+    'apps.quote_poster',
     
     
     # third party apps  
