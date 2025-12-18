@@ -23,30 +23,12 @@ from django.core.mail import send_mail
 from drf_spectacular.utils import extend_schema, OpenApiResponse
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-# --- Ensure only one definition and proper CSRF exemption for LogoutDeviceView ---
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from uuid import UUID
+from django.utils import timezone
 
-@method_decorator(csrf_exempt, name='dispatch')
-class LogoutDeviceView(APIView):
-    def post(self, request):
-        serializer = RefreshTokenSerializer(data=request.data)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        refresh_token = serializer.validated_data["refresh_token"]
-        for device in DeviceLink.objects.all():
-            refresh_token_trunc = refresh_token[:72]
-            if hasattr(device, 'refresh_token_hash') and device.refresh_token_hash and \
-               hasattr(device, 'delete'):
-                try:
-                    import bcrypt
-                    if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
-                        device.delete()
-                        return Response({"detail": "Device unlinked successfully"})
-                except Exception:
-                    continue
-        return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 @extend_schema(
     request=DeviceLinkSerializer,
     responses={
@@ -63,33 +45,23 @@ class LogoutDeviceView(APIView):
     tags=["DeviceLink"]
 )
 class DeviceLinkCreateView(APIView):
-    def post(self, request):
-        serializer = DeviceLinkSerializer(data=request.data)
-        if serializer.is_valid():
-            device = serializer.save()
-            return Response(DeviceLinkSerializer(device).data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework_simplejwt.authentication import JWTAuthentication
-from uuid import UUID
-from django.utils import timezone
-
-class DeviceLinkCreateView(APIView):
     authentication_classes = [JWTAuthentication, SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        # Extract and validate payload
         data = request.data
         user_id = data.get("user_id")
         refresh_token_hash = data.get("refresh_token_hash")
         expires_in_days = data.get("expires_in_days", 365)
         device_type = data.get("device_type", "tv")
 
+        if not user_id or not refresh_token_hash:
+            return Response({"detail": "user_id and refresh_token_hash are required."}, status=status.HTTP_400_BAD_REQUEST)
+
         # Validate user_id format
         try:
-            user_uuid = UUID(user_id)
-        except Exception:
+            UUID(str(user_id))
+        except (TypeError, ValueError):
             return Response({"detail": "Invalid user_id format."}, status=status.HTTP_400_BAD_REQUEST)
 
         # Validate JWT user matches payload user_id
@@ -103,12 +75,24 @@ class DeviceLinkCreateView(APIView):
         except User.DoesNotExist:
             return Response({"detail": "User not found."}, status=status.HTTP_404_NOT_FOUND)
 
-        # Create DeviceLink
+        # Determine expiry timestamp
+        expires_at = None
+        if expires_in_days is not None:
+            try:
+                expires_days_int = int(expires_in_days)
+            except (TypeError, ValueError):
+                return Response({"detail": "expires_in_days must be an integer."}, status=status.HTTP_400_BAD_REQUEST)
+
+            if expires_days_int <= 0:
+                return Response({"detail": "expires_in_days must be greater than zero."}, status=status.HTTP_400_BAD_REQUEST)
+
+            expires_at = timezone.now() + timezone.timedelta(days=expires_days_int)
+
         device_link = DeviceLink.objects.create(
             user=user_obj,
             device_type=device_type,
             refresh_token_hash=refresh_token_hash,
-            expires_at=None if not expires_in_days else (user_obj.created_at + timezone.timedelta(days=int(expires_in_days)))
+            expires_at=expires_at
         )
 
         serializer = DeviceLinkSerializer(device_link)
@@ -125,31 +109,39 @@ class RefreshTokenView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         refresh_token = serializer.validated_data["refresh_token"]
         for device in DeviceLink.objects.all():
-            # Truncate to 72 bytes for bcrypt compatibility
             refresh_token_trunc = refresh_token[:72]
-            if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
+            if device.refresh_token_hash and bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
                 if hasattr(device, 'is_expired') and device.is_expired():
                     return Response({"detail": "Refresh token expired"}, status=status.HTTP_401_UNAUTHORIZED)
-                # Return user_id and role for FastAPI to generate new access token
                 return Response({
                     "user_id": str(device.user.id),
                     "role": device.device_type,
                 })
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 
+
 @method_decorator(csrf_exempt, name='dispatch')
 class LogoutDeviceView(APIView):
+    permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = RefreshTokenSerializer(data=request.data)
-        if not serializer.is_valid():
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_valid(raise_exception=True)
 
         refresh_token = serializer.validated_data["refresh_token"]
+        refresh_token_trunc = refresh_token[:72]
+
         for device in DeviceLink.objects.all():
-            refresh_token_trunc = refresh_token[:72]
-            if bcrypt.checkpw(refresh_token_trunc.encode(), device.refresh_token_hash.encode()):
-                device.delete()
-                return Response({"detail": "Device unlinked successfully"})
+            token_hash = getattr(device, "refresh_token_hash", "")
+            if not token_hash:
+                continue
+            try:
+                if bcrypt.checkpw(refresh_token_trunc.encode(), token_hash.encode()):
+                    device.delete()
+                    return Response({"detail": "Device unlinked successfully"}, status=status.HTTP_200_OK)
+            except ValueError:
+                continue
+
         return Response({"detail": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 
 
