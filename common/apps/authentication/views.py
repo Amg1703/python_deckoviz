@@ -161,6 +161,7 @@ def get_google_sheet():
     
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+    throttle_scope = "login"
 
 @extend_schema(
     request=RegisterSerializer,
@@ -170,6 +171,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 class RegisterView(APIView):
     permission_classes = [AllowAny]
     authentication_classes = [] 
+    throttle_scope = "register"
     
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
@@ -307,6 +309,7 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 )
 class ForgotPasswordView(APIView):
     permission_classes = [AllowAny]
+    throttle_scope = "password-reset-request"
     def post(self, request):
         serializer = ForgotPasswordSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -337,6 +340,7 @@ class ForgotPasswordView(APIView):
 )
 class ResetPasswordView(APIView):
     permission_classes = [AllowAny]
+    throttle_scope = "password-reset-confirm"
     def post(self, request):
         serializer = ResetPasswordSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -364,6 +368,7 @@ class ResetPasswordView(APIView):
 )
 class VerifyEmailView(APIView):
     permission_classes = [AllowAny]
+    throttle_scope = "verify-email"
     def post(self, request):
         serializer = EmailVerificationSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -391,6 +396,7 @@ class VerifyEmailView(APIView):
 )
 class ResendVerificationView(APIView):
     permission_classes = [AllowAny]
+    throttle_scope = "resend-verification"
     def post(self, request):
         serializer = ResendVerificationSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
