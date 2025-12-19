@@ -38,7 +38,8 @@ class IterativeArtworkInternalViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
     
-    @action(detail=False, methods=['post'], url_path='link-iterations')
+    # Changed: url_path='link-iterations' → url_path='link_iterations'
+    @action(detail=False, methods=['post'], url_path='link_iterations')
     def link_iterations(self, request):
         """Link unsaved iterations to an artwork"""
         artwork_id = request.data.get('artwork_id')
@@ -92,7 +93,8 @@ class IterativeArtworkIterationInternalViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
     
-    @action(detail=False, methods=['delete'], url_path='clear-unsaved')
+    # Changed: url_path='clear-unsaved' → url_path='clear_unsaved'
+    @action(detail=False, methods=['delete'], url_path='clear_unsaved')
     def clear_unsaved(self, request):
         """Delete all unsaved iterations for a user"""
         user_id = request.query_params.get('user_id')
@@ -113,7 +115,8 @@ class IterativeArtworkIterationInternalViewSet(viewsets.ModelViewSet):
             "deleted_count": deleted_count
         })
     
-    @action(detail=False, methods=['get'], url_path='count-unsaved')
+    # Changed: url_path='count-unsaved' → url_path='count_unsaved'
+    @action(detail=False, methods=['get'], url_path='count_unsaved')
     def count_unsaved(self, request):
         """Count unsaved iterations for a user"""
         user_id = request.query_params.get('user_id')

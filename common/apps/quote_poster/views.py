@@ -5,8 +5,6 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
 import logging
 import secrets
 import uuid
@@ -45,7 +43,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['post'])
     def create_background(self, request):
         """Internal endpoint for FastAPI to create background records"""
@@ -166,7 +164,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 {"success": False, "message": "Background not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['patch'])
     def update_background(self, request):
         """Internal endpoint to update background"""
@@ -205,7 +203,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 {"success": False, "message": "Background not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['delete'])
     def delete_background(self, request):
         """Internal endpoint to delete background"""
@@ -254,7 +252,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
         """Set user on creation"""
         serializer.save(user=self.request.user)
         
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['post'])
     def create_poster(self, request):
         """Internal endpoint for FastAPI to create poster records"""
@@ -349,7 +347,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
         
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['patch'])
     def update_poster(self, request):
         """Internal endpoint to update poster"""
@@ -389,7 +387,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['delete'])
     def delete_poster(self, request):
         """Internal endpoint to delete poster"""
@@ -448,7 +446,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
     
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['patch'])
     def share_poster(self, request):
         """Internal endpoint to mark poster as shared"""
@@ -536,7 +534,7 @@ class PosterFeedbackViewSet(viewsets.ModelViewSet):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    @method_decorator(csrf_exempt)
+    
     @action(detail=False, methods=['post'])
     def submit_feedback(self, request):
         """Internal endpoint to submit feedback"""
