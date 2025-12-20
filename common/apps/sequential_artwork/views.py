@@ -46,6 +46,32 @@ class SequentialArtworkViewSet(viewsets.ModelViewSet):
             SequentialArtworkDetailSerializer(artwork).data,
             status=status.HTTP_201_CREATED
         )
+    @action(detail=True, methods=['post'], permission_classes=[permissions.IsAuthenticated])
+    def link_iterations(self, request, pk=None):
+        """Link all unsaved iterations to this artwork"""
+        artwork = self.get_object()
+        user_id = request.data.get('user_id')
+        
+        if not user_id:
+            return Response(
+                {'error': 'user_id required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # Update all unsaved iterations for this user
+        updated_count = SequentialArtworkIteration.objects.filter(
+            user_id=user_id,
+            is_saved=False
+        ).update(
+            artwork=artwork,
+            is_saved=True
+        )
+        
+        return Response({
+            'message': f'Linked {updated_count} iterations to artwork',
+            'artwork_id': artwork.id,
+            'linked_count': updated_count
+        })
     
     @action(detail=True, methods=['get'], permission_classes=[permissions.IsAuthenticated])
     def images(self, request, pk=None):
@@ -183,14 +209,68 @@ class SequentialArtworkViewSet(viewsets.ModelViewSet):
             'deleted_count': count
         })
 
-class SequentialArtworkIterationViewSet(viewsets.ReadOnlyModelViewSet):
-    """ViewSet for Sequential Artwork Iterations (Read-only)"""
+class SequentialArtworkIterationViewSet(viewsets.ModelViewSet):
+    """ViewSet for Sequential Artwork Iterations"""
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = SequentialArtworkIterationSerializer
     
     def get_queryset(self):
         """Return iterations only for the current user"""
         return SequentialArtworkIteration.objects.filter(user=self.request.user)
+    
+    def create(self, request, *args, **kwargs):
+        """Create a new iteration"""
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        # Set user from request
+        iteration = serializer.save(user=request.user)
+        
+        return Response(
+            self.get_serializer(iteration).data,
+            status=status.HTTP_201_CREATED
+        )
+    
+    @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
+    def count_unsaved(self, request):
+        """Count unsaved iterations"""
+        user_id = request.query_params.get('user_id')
+        sequence_mode = request.query_params.get('sequence_mode') == 'true'
+        
+        if not user_id:
+            return Response(
+                {'error': 'user_id parameter required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        count = SequentialArtworkIteration.objects.filter(
+            user_id=user_id,
+            is_saved=False
+        ).count()
+        
+        return Response({'count': count})
+    
+    @action(detail=False, methods=['delete'], permission_classes=[permissions.IsAuthenticated])
+    def clear_unsaved(self, request):
+        """Clear unsaved iterations"""
+        user_id = request.query_params.get('user_id')
+        sequence_mode = request.query_params.get('sequence_mode') == 'true'
+        
+        if not user_id:
+            return Response(
+                {'error': 'user_id parameter required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        count, _ = SequentialArtworkIteration.objects.filter(
+            user_id=user_id,
+            is_saved=False
+        ).delete()
+        
+        return Response({
+            'message': 'Unsaved iterations cleared',
+            'deleted_count': count
+        })
     
     @action(detail=False, methods=['get'], permission_classes=[permissions.IsAuthenticated])
     def by_artwork(self, request):
