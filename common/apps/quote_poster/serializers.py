@@ -1,6 +1,8 @@
 from rest_framework import serializers
+from django.contrib.auth import get_user_model 
 from .models import Background, QuotePoster, PosterFeedback, PosterShare
-from django.contrib.auth.models import User
+
+User = get_user_model()  
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -131,8 +133,6 @@ class BackgroundCreateSerializer(serializers.Serializer):
     
     def create(self, validated_data):
         """Create background record"""
-        from django.contrib.auth.models import User
-        
         user_id = validated_data.pop('user_id')
         try:
             user = User.objects.get(id=user_id)
@@ -161,13 +161,11 @@ class QuotePosterCreateSerializer(serializers.Serializer):
     
     def create(self, validated_data):
         """Create poster record"""
-        from django.contrib.auth.models import User
-        
         user_id = validated_data.pop('user_id')
         background_uuid = validated_data.pop('background_uuid')
         
         try:
-            user = User.objects.get(id=user_id)
+            user = User.objects.get(id=user_id)  # ✅ Uses get_user_model()
         except User.DoesNotExist:
             raise serializers.ValidationError(f"User {user_id} not found")
         
