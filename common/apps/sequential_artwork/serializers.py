@@ -5,6 +5,28 @@ from .models import SequentialArtwork, SequentialArtworkIteration
 User = get_user_model()
 
 class SequentialArtworkIterationSerializer(serializers.ModelSerializer):
+    # Explicitly override fields to make them optional
+    artwork = serializers.PrimaryKeyRelatedField(
+        queryset=SequentialArtwork.objects.all(),
+        required=False,
+        allow_null=True
+    )
+    generated_image_url = serializers.URLField(
+        required=False,
+        allow_blank=True,
+        allow_null=True
+    )
+    s3_image_url = serializers.URLField(
+        required=False,
+        allow_blank=True,
+        allow_null=True
+    )
+    s3_image_key = serializers.CharField(
+        required=False,
+        allow_blank=True,
+        allow_null=True
+    )
+    
     class Meta:
         model = SequentialArtworkIteration
         fields = [

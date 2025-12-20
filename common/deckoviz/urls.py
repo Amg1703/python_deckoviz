@@ -121,6 +121,7 @@ urlpatterns = [
     # before_after api
     path('api/before-after/', include('apps.before_after.urls')),
 
+    path('api/quote-poster/', include('apps.quote_poster.urls')),
     
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),

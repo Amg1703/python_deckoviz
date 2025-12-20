@@ -32,7 +32,7 @@ class SequentialArtwork(BaseModel):
 
 class SequentialArtworkIteration(BaseModel):
     """Store individual iterations of a sequence"""
-    artwork = models.ForeignKey(SequentialArtwork, on_delete=models.CASCADE, related_name='iterations')
+    artwork = models.ForeignKey(SequentialArtwork, on_delete=models.CASCADE, related_name='iterations', null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='artwork_iterations')
     
     iteration_number = models.IntegerField()
@@ -41,7 +41,7 @@ class SequentialArtworkIteration(BaseModel):
     image_prompt = models.TextField(blank=True, null=True)
     
     reference_image_path = models.CharField(max_length=500, blank=True, null=True)
-    generated_image_url = models.URLField(max_length=1000)
+    generated_image_url = models.URLField(max_length=1000, blank=True, null=True)  # Add null=True
     generated_image_path = models.CharField(max_length=500, blank=True, null=True)
     
     s3_image_url = models.URLField(max_length=1000, blank=True, null=True)
@@ -58,4 +58,6 @@ class SequentialArtworkIteration(BaseModel):
         ]
     
     def __str__(self):
-        return f"{self.artwork.title} - Iteration {self.iteration_number}"
+        if self.artwork:
+            return f"{self.artwork.title} - Iteration {self.iteration_number}"
+        return f"Unsaved Iteration {self.iteration_number}"

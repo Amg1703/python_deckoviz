@@ -3,11 +3,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 from .models import BeforeAfter
 from .serializers import BeforeAfterSerializer, BeforeAfterCreateSerializer, BeforeAfterUpdateSerializer
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class InternalCreateView(APIView):
     """POST /api/before-after/internal/create/"""
     def post(self, request):
