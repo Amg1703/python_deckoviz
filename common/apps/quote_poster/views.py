@@ -1,13 +1,11 @@
 from rest_framework import viewsets, status, filters
-from rest_framework.decorators import action
+from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import get_object_or_404
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model  # ✅ Use get_user_model()
 import logging
 import secrets
-import uuid
 from django.utils import timezone
 from datetime import timedelta
 
@@ -24,11 +22,12 @@ from .serializers import (
 
 logger = logging.getLogger(__name__)
 
+User = get_user_model()  # ✅ Get the active User model
+
 
 class BackgroundViewSet(viewsets.ModelViewSet):
     """ViewSet for Background images"""
     serializer_class = BackgroundSerializer
-    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'service', 'is_public']
     ordering_fields = ['created_at', 'updated_at']
@@ -37,14 +36,15 @@ class BackgroundViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         """Return backgrounds for current user"""
-        return Background.objects.filter(user=self.request.user)
+        if self.request.user.is_authenticated:
+            return Background.objects.filter(user=self.request.user)
+        return Background.objects.none()
     
     def perform_create(self, serializer):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
     def create_background(self, request):
         """Internal endpoint for FastAPI to create background records"""
         serializer = BackgroundCreateSerializer(data=request.data)
@@ -82,15 +82,8 @@ class BackgroundViewSet(viewsets.ModelViewSet):
     def list_backgrounds(self, request):
         """List all backgrounds for current user"""
         queryset = self.get_queryset()
-        skip = request.query_params.get('skip', 0)
-        limit = request.query_params.get('limit', 20)
-        
-        try:
-            skip = int(skip)
-            limit = int(limit)
-        except ValueError:
-            skip = 0
-            limit = 20
+        skip = int(request.query_params.get('skip', 0))
+        limit = int(request.query_params.get('limit', 20))
         
         total = queryset.count()
         backgrounds = queryset[skip:skip+limit]
@@ -109,18 +102,11 @@ class BackgroundViewSet(viewsets.ModelViewSet):
     def backgrounds(self, request):
         """Internal endpoint for FastAPI to list backgrounds"""
         user_id = request.query_params.get('user_id')
-        skip = request.query_params.get('skip', 0)
-        limit = request.query_params.get('limit', 20)
+        skip = int(request.query_params.get('skip', 0))
+        limit = int(request.query_params.get('limit', 20))
         
         try:
-            skip = int(skip)
-            limit = int(limit)
-        except ValueError:
-            skip = 0
-            limit = 20
-        
-        try:
-            user = User.objects.get(id=user_id)
+            user = User.objects.get(id=user_id)  # ✅ Uses get_user_model()
             queryset = Background.objects.filter(user=user)
             total = queryset.count()
             backgrounds = queryset[skip:skip+limit]
@@ -140,7 +126,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
     def get_background(self, request):
         """Internal endpoint to get specific background by session_id"""
         session_id = request.query_params.get('session_id')
@@ -165,7 +151,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['patch'])
+    @action(detail=False, methods=['patch'], permission_classes=[AllowAny])
     def update_background(self, request):
         """Internal endpoint to update background"""
         session_id = request.data.get('session_id')
@@ -204,7 +190,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['delete'])
+    @action(detail=False, methods=['delete'], permission_classes=[AllowAny])
     def delete_background(self, request):
         """Internal endpoint to delete background"""
         session_id = request.query_params.get('session_id')
@@ -231,7 +217,6 @@ class BackgroundViewSet(viewsets.ModelViewSet):
 
 class QuotePosterViewSet(viewsets.ModelViewSet):
     """ViewSet for Quote Posters"""
-    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'is_public']
     ordering_fields = ['created_at', 'updated_at', 'share_count']
@@ -246,14 +231,15 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         """Return posters for current user"""
-        return QuotePoster.objects.filter(user=self.request.user)
+        if self.request.user.is_authenticated:
+            return QuotePoster.objects.filter(user=self.request.user)
+        return QuotePoster.objects.none()
     
     def perform_create(self, serializer):
         """Set user on creation"""
         serializer.save(user=self.request.user)
-        
     
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
     def create_poster(self, request):
         """Internal endpoint for FastAPI to create poster records"""
         serializer = QuotePosterCreateSerializer(data=request.data)
@@ -291,18 +277,11 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
     def list_posters(self, request):
         """Internal endpoint for FastAPI to list posters"""
         user_id = request.query_params.get('user_id')
-        skip = request.query_params.get('skip', 0)
-        limit = request.query_params.get('limit', 20)
+        skip = int(request.query_params.get('skip', 0))
+        limit = int(request.query_params.get('limit', 20))
         
         try:
-            skip = int(skip)
-            limit = int(limit)
-        except ValueError:
-            skip = 0
-            limit = 20
-        
-        try:
-            user = User.objects.get(id=user_id)
+            user = User.objects.get(id=user_id)  # ✅ Uses get_user_model()
             queryset = QuotePoster.objects.filter(user=user)
             total = queryset.count()
             posters = queryset[skip:skip+limit]
@@ -322,7 +301,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
     def get_poster(self, request):
         """Internal endpoint to get specific poster by session_id"""
         session_id = request.query_params.get('session_id')
@@ -346,9 +325,8 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 {"success": False, "message": "Poster not found"},
                 status=status.HTTP_404_NOT_FOUND
             )
-        
     
-    @action(detail=False, methods=['patch'])
+    @action(detail=False, methods=['patch'], permission_classes=[AllowAny])
     def update_poster(self, request):
         """Internal endpoint to update poster"""
         session_id = request.data.get('session_id')
@@ -387,8 +365,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    
-    @action(detail=False, methods=['delete'])
+    @action(detail=False, methods=['delete'], permission_classes=[AllowAny])
     def delete_poster(self, request):
         """Internal endpoint to delete poster"""
         session_id = request.query_params.get('session_id')
@@ -412,42 +389,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=True, methods=['post'])
-    def share(self, request, pk=None):
-        """Share a poster"""
-        poster = self.get_object()
-        
-        if poster.user != request.user:
-            return Response(
-                {"message": "Cannot share poster"},
-                status=status.HTTP_403_FORBIDDEN
-            )
-        
-        try:
-            share_token = secrets.token_urlsafe(32)
-            share = PosterShare.objects.create(
-                poster=poster,
-                shared_by=request.user,
-                share_token=share_token,
-                share_url=f"/api/quote-posters/public/{share_token}/"
-            )
-            
-            return Response(
-                {
-                    "success": True,
-                    "data": PosterShareSerializer(share).data
-                },
-                status=status.HTTP_201_CREATED
-            )
-        except Exception as e:
-            logger.error(f"Error sharing poster: {e}")
-            return Response(
-                {"message": str(e)},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-    
-    
-    @action(detail=False, methods=['patch'])
+    @action(detail=False, methods=['patch'], permission_classes=[AllowAny])
     def share_poster(self, request):
         """Internal endpoint to mark poster as shared"""
         session_id = request.data.get('session_id')
@@ -524,18 +466,18 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
 class PosterFeedbackViewSet(viewsets.ModelViewSet):
     """ViewSet for Poster Feedback"""
     serializer_class = PosterFeedbackSerializer
-    permission_classes = [IsAuthenticated]
     
     def get_queryset(self):
         """Return feedback for posters of current user"""
-        return PosterFeedback.objects.filter(poster__user=self.request.user)
+        if self.request.user.is_authenticated:
+            return PosterFeedback.objects.filter(poster__user=self.request.user)
+        return PosterFeedback.objects.none()
     
     def perform_create(self, serializer):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    
-    @action(detail=False, methods=['post'])
+    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
     def submit_feedback(self, request):
         """Internal endpoint to submit feedback"""
         session_id = request.data.get('session_id')
@@ -553,7 +495,6 @@ class PosterFeedbackViewSet(viewsets.ModelViewSet):
             
             feedback, created = PosterFeedback.objects.update_or_create(
                 poster=poster,
-                user_id=request.user.id if hasattr(request.user, 'id') else None,
                 defaults={'rating': rating, 'comment': comment}
             )
             
