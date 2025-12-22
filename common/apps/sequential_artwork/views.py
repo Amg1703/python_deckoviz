@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
+from django.contrib.auth import get_user_model  
 from .models import SequentialArtwork, SequentialArtworkIteration
 from .serializers import (
     SequentialArtworkListSerializer,
@@ -14,6 +15,8 @@ from .serializers import (
 import logging
 
 logger = logging.getLogger(__name__)
+
+User = get_user_model()
 
 class SequentialArtworkViewSet(viewsets.ModelViewSet):
     """ViewSet for Sequential Artwork"""
@@ -211,20 +214,41 @@ class SequentialArtworkViewSet(viewsets.ModelViewSet):
 
 class SequentialArtworkIterationViewSet(viewsets.ModelViewSet):
     """ViewSet for Sequential Artwork Iterations"""
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]  # ✅ Changed to allow internal FastAPI calls
     serializer_class = SequentialArtworkIterationSerializer
     
     def get_queryset(self):
-        """Return iterations only for the current user"""
-        return SequentialArtworkIteration.objects.filter(user=self.request.user)
+        """Return iterations for the user"""
+        # If authenticated, filter by current user
+        if self.request.user.is_authenticated:
+            return SequentialArtworkIteration.objects.filter(user=self.request.user)
+        # If not authenticated (internal API calls), return all
+        return SequentialArtworkIteration.objects.all()
     
     def create(self, request, *args, **kwargs):
         """Create a new iteration"""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         
-        # Set user from request
-        iteration = serializer.save(user=request.user)
+        # Get user from request data or current user
+        user_id = request.data.get('user_id')
+        
+        if user_id:
+            try:
+                user = User.objects.get(id=user_id)
+                iteration = serializer.save(user=user)
+            except User.DoesNotExist:
+                return Response(
+                    {'error': f'User {user_id} not found'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+        elif request.user.is_authenticated:
+            iteration = serializer.save(user=request.user)
+        else:
+            return Response(
+                {'error': 'user_id required or must be authenticated'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         
         return Response(
             self.get_serializer(iteration).data,

@@ -15,8 +15,9 @@ class SequentialArtwork(BaseModel):
     sequence_images = models.JSONField(default=list, help_text="List of image URLs in sequence order")
     s3_image_keys = models.JSONField(default=list, help_text="List of S3 keys for each image")
     
-    first_image_url = models.URLField(max_length=1000, blank=True, null=True)
-    last_image_url = models.URLField(max_length=1000, blank=True, null=True)
+    # ✅ Change URLField to CharField for better compatibility
+    first_image_url = models.CharField(max_length=2000, blank=True, null=True)
+    last_image_url = models.CharField(max_length=2000, blank=True, null=True)
     
     # Metadata
     conversation_history = models.JSONField(default=dict, help_text="Chat conversation history")
@@ -30,21 +31,31 @@ class SequentialArtwork(BaseModel):
     def __str__(self):
         return f"{self.title} - {self.user.username}"
 
+
 class SequentialArtworkIteration(BaseModel):
     """Store individual iterations of a sequence"""
-    artwork = models.ForeignKey(SequentialArtwork, on_delete=models.CASCADE, related_name='iterations', null=True, blank=True)
+    artwork = models.ForeignKey(
+        SequentialArtwork,
+        on_delete=models.CASCADE,
+        related_name='iterations',
+        null=True,
+        blank=True,
+        default=None  # ✅ Add explicit default
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='artwork_iterations')
     
     iteration_number = models.IntegerField()
     user_prompt = models.TextField()
-    assistant_response = models.TextField()
+    assistant_response = models.TextField(blank=True, null=True)  # ✅ Allow null
     image_prompt = models.TextField(blank=True, null=True)
     
     reference_image_path = models.CharField(max_length=500, blank=True, null=True)
-    generated_image_url = models.URLField(max_length=1000, blank=True, null=True)  # Add null=True
+    # ✅ Change URLField to CharField
+    generated_image_url = models.CharField(max_length=2000, blank=True, null=True)
     generated_image_path = models.CharField(max_length=500, blank=True, null=True)
     
-    s3_image_url = models.URLField(max_length=1000, blank=True, null=True)
+    # ✅ Change URLField to CharField
+    s3_image_url = models.CharField(max_length=2000, blank=True, null=True)
     s3_image_key = models.CharField(max_length=1000, blank=True, null=True)
     
     is_saved = models.BooleanField(default=False)
