@@ -3,7 +3,7 @@ from rest_framework.decorators import action, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django_filters.rest_framework import DjangoFilterBackend
-from django.contrib.auth import get_user_model  # ✅ Use get_user_model()
+from django.contrib.auth import get_user_model
 import logging
 import secrets
 from django.utils import timezone
@@ -22,12 +22,13 @@ from .serializers import (
 
 logger = logging.getLogger(__name__)
 
-User = get_user_model()  # ✅ Get the active User model
+User = get_user_model()
 
 
 class BackgroundViewSet(viewsets.ModelViewSet):
     """ViewSet for Background images"""
     serializer_class = BackgroundSerializer
+    permission_classes = [IsAuthenticated]  # ✅ Add default permission
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'service', 'is_public']
     ordering_fields = ['created_at', 'updated_at']
@@ -78,7 +79,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
     def list_backgrounds(self, request):
         """List all backgrounds for current user"""
         queryset = self.get_queryset()
@@ -98,7 +99,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
             }
         )
     
-    @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
     def backgrounds(self, request):
         """Internal endpoint for FastAPI to list backgrounds"""
         user_id = request.query_params.get('user_id')
@@ -106,7 +107,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
         limit = int(request.query_params.get('limit', 20))
         
         try:
-            user = User.objects.get(id=user_id)  # ✅ Uses get_user_model()
+            user = User.objects.get(id=user_id)
             queryset = Background.objects.filter(user=user)
             total = queryset.count()
             backgrounds = queryset[skip:skip+limit]
@@ -217,6 +218,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
 
 class QuotePosterViewSet(viewsets.ModelViewSet):
     """ViewSet for Quote Posters"""
+    permission_classes = [IsAuthenticated]  # ✅ Add default permission
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'is_public']
     ordering_fields = ['created_at', 'updated_at', 'share_count']
@@ -273,33 +275,25 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    @action(detail=False, methods=['get'])
+    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
     def list_posters(self, request):
-        """Internal endpoint for FastAPI to list posters"""
-        user_id = request.query_params.get('user_id')
+        """List all posters for current user"""
+        queryset = self.get_queryset()
         skip = int(request.query_params.get('skip', 0))
         limit = int(request.query_params.get('limit', 20))
         
-        try:
-            user = User.objects.get(id=user_id)  # ✅ Uses get_user_model()
-            queryset = QuotePoster.objects.filter(user=user)
-            total = queryset.count()
-            posters = queryset[skip:skip+limit]
-            
-            return Response(
-                {
-                    "success": True,
-                    "total": total,
-                    "skip": skip,
-                    "limit": limit,
-                    "data": QuotePosterSerializer(posters, many=True).data
-                }
-            )
-        except User.DoesNotExist:
-            return Response(
-                {"success": False, "message": "User not found"},
-                status=status.HTTP_404_NOT_FOUND
-            )
+        total = queryset.count()
+        posters = queryset[skip:skip+limit]
+        
+        return Response(
+            {
+                "success": True,
+                "total": total,
+                "skip": skip,
+                "limit": limit,
+                "data": QuotePosterSerializer(posters, many=True).data
+            }
+        )
     
     @action(detail=False, methods=['get'], permission_classes=[AllowAny])
     def get_poster(self, request):
@@ -466,6 +460,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
 class PosterFeedbackViewSet(viewsets.ModelViewSet):
     """ViewSet for Poster Feedback"""
     serializer_class = PosterFeedbackSerializer
+    permission_classes = [IsAuthenticated]  # ✅ Add default permission
     
     def get_queryset(self):
         """Return feedback for posters of current user"""
@@ -493,8 +488,10 @@ class PosterFeedbackViewSet(viewsets.ModelViewSet):
         try:
             poster = QuotePoster.objects.get(session_id=session_id)
             
+            # ✅ Fix: Don't try to set user for internal endpoint
             feedback, created = PosterFeedback.objects.update_or_create(
                 poster=poster,
+                user=poster.user,  # Use poster owner as feedback user
                 defaults={'rating': rating, 'comment': comment}
             )
             
@@ -520,4 +517,6 @@ class PosterShareViewSet(viewsets.ReadOnlyModelViewSet):
     
     def get_queryset(self):
         """Return shares created by current user"""
-        return PosterShare.objects.filter(shared_by=self.request.user)
+        if self.request.user.is_authenticated:
+            return PosterShare.objects.filter(shared_by=self.request.user)
+        return PosterShare.objects.none()

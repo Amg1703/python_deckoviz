@@ -5,7 +5,7 @@ from .models import Background, QuotePoster, PosterFeedback, PosterShare
 User = get_user_model()  
 
 
-class UserSerializer(serializers.ModelSerializer):
+class QuoteUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'first_name', 'last_name']
@@ -13,7 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class BackgroundSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = QuoteUserSerializer(read_only=True)
     url = serializers.SerializerMethodField()
     
     class Meta:
@@ -31,7 +31,7 @@ class BackgroundSerializer(serializers.ModelSerializer):
 
 
 class QuotePosterSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = QuoteUserSerializer(read_only=True)
     background = BackgroundSerializer(read_only=True)
     background_id = serializers.PrimaryKeyRelatedField(
         queryset=Background.objects.all(),
@@ -57,7 +57,7 @@ class QuotePosterSerializer(serializers.ModelSerializer):
 
 class QuotePosterDetailSerializer(serializers.ModelSerializer):
     """Detailed serializer with related feedback"""
-    user = UserSerializer(read_only=True)
+    user = QuoteUserSerializer(read_only=True)
     background = BackgroundSerializer(read_only=True)
     url = serializers.SerializerMethodField()
     feedback = serializers.SerializerMethodField()
@@ -81,7 +81,7 @@ class QuotePosterDetailSerializer(serializers.ModelSerializer):
 
 
 class PosterFeedbackSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = QuoteUserSerializer(read_only=True)
     
     class Meta:
         model = PosterFeedback
