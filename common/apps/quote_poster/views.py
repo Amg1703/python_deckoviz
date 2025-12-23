@@ -28,12 +28,19 @@ User = get_user_model()
 class BackgroundViewSet(viewsets.ModelViewSet):
     """ViewSet for Background images"""
     serializer_class = BackgroundSerializer
-    permission_classes = [IsAuthenticated]  # ✅ Add default permission
+    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'service', 'is_public']
     ordering_fields = ['created_at', 'updated_at']
     ordering = ['-created_at']
     search_fields = ['prompt', 'session_id']
+    
+    def get_permissions(self):
+        """Override permissions for internal endpoints"""
+        if self.action in ['create_background', 'get_background', 'update_background', 
+                          'delete_background', 'backgrounds']:
+            return [AllowAny()]
+        return super().get_permissions()
     
     def get_queryset(self):
         """Return backgrounds for current user"""
@@ -45,7 +52,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['post'])
     def create_background(self, request):
         """Internal endpoint for FastAPI to create background records"""
         serializer = BackgroundCreateSerializer(data=request.data)
@@ -79,7 +86,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
+    @action(detail=False, methods=['get'])
     def list_backgrounds(self, request):
         """List all backgrounds for current user"""
         queryset = self.get_queryset()
@@ -99,7 +106,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
             }
         )
     
-    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['get'])
     def backgrounds(self, request):
         """Internal endpoint for FastAPI to list backgrounds"""
         user_id = request.query_params.get('user_id')
@@ -127,7 +134,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['get'])
     def get_background(self, request):
         """Internal endpoint to get specific background by session_id"""
         session_id = request.query_params.get('session_id')
@@ -152,7 +159,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['patch'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['patch'])
     def update_background(self, request):
         """Internal endpoint to update background"""
         session_id = request.data.get('session_id')
@@ -191,7 +198,7 @@ class BackgroundViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['delete'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['delete'])
     def delete_background(self, request):
         """Internal endpoint to delete background"""
         session_id = request.query_params.get('session_id')
@@ -218,12 +225,19 @@ class BackgroundViewSet(viewsets.ModelViewSet):
 
 class QuotePosterViewSet(viewsets.ModelViewSet):
     """ViewSet for Quote Posters"""
-    permission_classes = [IsAuthenticated]  # ✅ Add default permission
+    permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'is_public']
     ordering_fields = ['created_at', 'updated_at', 'share_count']
     ordering = ['-created_at']
     search_fields = ['quote_text', 'session_id']
+    
+    def get_permissions(self):
+        """Override permissions for internal endpoints"""
+        if self.action in ['create_poster', 'get_poster', 'update_poster', 
+                          'delete_poster', 'share_poster', 'public']:
+            return [AllowAny()]
+        return super().get_permissions()
     
     def get_serializer_class(self):
         """Use detail serializer for retrieve"""
@@ -241,7 +255,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['post'])
     def create_poster(self, request):
         """Internal endpoint for FastAPI to create poster records"""
         serializer = QuotePosterCreateSerializer(data=request.data)
@@ -275,7 +289,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
             status=status.HTTP_400_BAD_REQUEST
         )
     
-    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
+    @action(detail=False, methods=['get'])
     def list_posters(self, request):
         """List all posters for current user"""
         queryset = self.get_queryset()
@@ -295,7 +309,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
             }
         )
     
-    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['get'])
     def get_poster(self, request):
         """Internal endpoint to get specific poster by session_id"""
         session_id = request.query_params.get('session_id')
@@ -320,7 +334,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['patch'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['patch'])
     def update_poster(self, request):
         """Internal endpoint to update poster"""
         session_id = request.data.get('session_id')
@@ -359,7 +373,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['delete'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['delete'])
     def delete_poster(self, request):
         """Internal endpoint to delete poster"""
         session_id = request.query_params.get('session_id')
@@ -383,7 +397,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['patch'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['patch'])
     def share_poster(self, request):
         """Internal endpoint to mark poster as shared"""
         session_id = request.data.get('session_id')
@@ -421,7 +435,7 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_404_NOT_FOUND
             )
     
-    @action(detail=False, methods=['get'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['get'])
     def public(self, request):
         """Get publicly shared poster"""
         share_token = request.query_params.get('session_id')
@@ -460,7 +474,13 @@ class QuotePosterViewSet(viewsets.ModelViewSet):
 class PosterFeedbackViewSet(viewsets.ModelViewSet):
     """ViewSet for Poster Feedback"""
     serializer_class = PosterFeedbackSerializer
-    permission_classes = [IsAuthenticated]  # ✅ Add default permission
+    permission_classes = [IsAuthenticated]
+    
+    def get_permissions(self):
+        """Override permissions for internal endpoints"""
+        if self.action in ['submit_feedback']:
+            return [AllowAny()]
+        return super().get_permissions()
     
     def get_queryset(self):
         """Return feedback for posters of current user"""
@@ -472,7 +492,7 @@ class PosterFeedbackViewSet(viewsets.ModelViewSet):
         """Set user on creation"""
         serializer.save(user=self.request.user)
     
-    @action(detail=False, methods=['post'], permission_classes=[AllowAny])
+    @action(detail=False, methods=['post'])
     def submit_feedback(self, request):
         """Internal endpoint to submit feedback"""
         session_id = request.data.get('session_id')
@@ -488,10 +508,10 @@ class PosterFeedbackViewSet(viewsets.ModelViewSet):
         try:
             poster = QuotePoster.objects.get(session_id=session_id)
             
-            # ✅ Fix: Don't try to set user for internal endpoint
+            # Use poster owner as feedback user for internal endpoint
             feedback, created = PosterFeedback.objects.update_or_create(
                 poster=poster,
-                user=poster.user,  # Use poster owner as feedback user
+                user=poster.user,
                 defaults={'rating': rating, 'comment': comment}
             )
             
