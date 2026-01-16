@@ -40,7 +40,7 @@ for host in raw_hosts:
     ALLOWED_HOSTS.append(host)
 
 # Add Docker container names for internal communication
-ALLOWED_HOSTS.extend(['common', 'deckoviz_ai'])
+ALLOWED_HOSTS.extend(['common', 'deckoviz_ai', '168.231.112.236'])
 
 # Add the proper schemes for CSRF_TRUSTED_ORIGINS
 CSRF_TRUSTED_ORIGINS = []
