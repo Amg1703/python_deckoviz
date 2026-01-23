@@ -145,6 +145,7 @@ INSTALLED_APPS = [
     'apps.sculpture',
     'apps.before_after',
     'apps.quote_poster',
+    'apps.vizzy_chat',  # NEW: Vizzy AI Chat application
     
     
     # third party apps  

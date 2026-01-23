@@ -123,6 +123,9 @@ urlpatterns = [
 
     path('api/quote-poster/', include('apps.quote_poster.urls')),
     
+    # vizzy chat api - NEW
+    path('api/vizzy-chat/', include('apps.vizzy_chat.urls')),
+    
     #api documentation view
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/',
