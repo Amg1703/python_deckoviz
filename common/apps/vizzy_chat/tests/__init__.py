@@ -1,0 +1,3 @@
+"""
+Vizzy Chat Tests Package
+"""

@@ -24,7 +24,7 @@ router.register(r'context-data', VizzyContextDataViewSet, basename='context-data
 
 # Nested router for messages within sessions
 sessions_router = routers.NestedDefaultRouter(router, r'sessions', lookup='session')
-sessions_router.register(r'messages', VizzyChatMessageViewSet, basename='session-messages')
+sessions_router.register(r'messages', VizzyChatMessageViewSet, basename='session-message')
 
 urlpatterns = [
     # Session and nested message routes
@@ -32,7 +32,7 @@ urlpatterns = [
     path('', include(sessions_router.urls)),
     
     # User profile endpoints
-    path('profile/', VizzyUserProfileView.as_view(), name='user-profile'),
+    path('profile/', VizzyUserProfileView.as_view(), name='profile-detail'),
     
     # User context endpoint (for FastAPI consumption)
     path('users/context/', VizzyUserContextView.as_view(), name='user-context'),

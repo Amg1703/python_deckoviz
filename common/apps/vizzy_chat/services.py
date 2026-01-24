@@ -9,7 +9,7 @@ Provides reusable, testable service functions for:
 - Mood analysis
 - Performance optimizations
 """
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, TYPE_CHECKING
 from django.db import transaction
 from django.utils import timezone
 from django.core.cache import cache
@@ -22,7 +22,10 @@ from .models import (
     VizzyContextData
 )
 
-User = get_user_model()
+if TYPE_CHECKING:
+    from django.contrib.auth.models import AbstractUser as User
+else:
+    User = get_user_model()
 
 
 class VizzySessionService:
