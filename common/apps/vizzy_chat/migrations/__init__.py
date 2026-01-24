@@ -1,0 +1,3 @@
+"""
+Vizzy Chat Migrations Package
+"""
