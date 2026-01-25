@@ -492,3 +492,17 @@ if TESTING:
         for app in INSTALLED_APPS
         if app.startswith("apps.")
     }
+    
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+        'TEST': {
+            'NAME': 'deckoviz_test_db',
+        },
+    }
+}
