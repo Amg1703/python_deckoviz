@@ -481,3 +481,14 @@ LOGGING = {
         'level': 'INFO',
     },
 }
+
+import sys
+
+TESTING = any(arg.startswith("test") for arg in sys.argv)
+
+if TESTING:
+    MIGRATION_MODULES = {
+        app.split('.')[-1]: None
+        for app in INSTALLED_APPS
+        if app.startswith("apps.")
+    }
