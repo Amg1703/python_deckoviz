@@ -112,28 +112,48 @@ class VizzyChatSessionViewSet(viewsets.ModelViewSet):
     )
     def retrieve(self, request, *args, **kwargs):
         """Get detailed session with messages"""
+        import logging
+        logger = logging.getLogger(__name__)
+        
         session_id = kwargs.get('pk')
-        message_limit = int(request.query_params.get('message_limit', 100))
         
-        session = VizzySessionService.get_session_with_messages(
-            session_id=session_id,
-            message_limit=message_limit
-        )
+        try:
+            message_limit = int(request.query_params.get('message_limit', 100))
+        except (ValueError, TypeError):
+            message_limit = 100
         
-        if not session:
+        try:
+            session = VizzySessionService.get_session_with_messages(
+                session_id=session_id,
+                message_limit=message_limit
+            )
+            
+            if not session:
+                return Response(
+                    {'detail': 'Session not found'},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+            
+            if session.user != request.user:
+                return Response(
+                    {'detail': 'You do not have permission to access this session'},
+                    status=status.HTTP_404_NOT_FOUND  # Return 404 instead of 403 for security
+                )
+            
+            serializer = self.get_serializer(session, context={'message_limit': message_limit})
+            return Response(serializer.data)
+            
+        except VizzyChatSession.DoesNotExist:
             return Response(
                 {'detail': 'Session not found'},
                 status=status.HTTP_404_NOT_FOUND
             )
-        
-        if session.user != request.user:
+        except Exception as e:
+            logger.error(f"Error retrieving session {session_id}: {str(e)}", exc_info=True)
             return Response(
-                {'detail': 'You do not have permission to access this session'},
-                status=status.HTTP_403_FORBIDDEN
+                {'detail': 'Internal server error retrieving session'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
-        
-        serializer = self.get_serializer(session, context={'message_limit': message_limit})
-        return Response(serializer.data)
     
     @extend_schema(
         summary="Create new chat session",
@@ -196,28 +216,27 @@ class VizzyChatSessionViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['post'])
     def close(self, request, pk=None):
         """Close a chat session"""
-        try:
-            session = self.get_object()
-            
-            if session.user != request.user:
-                return Response(
-                    {'detail': 'You do not have permission to close this session'},
-                    status=status.HTTP_403_FORBIDDEN
-                )
-            
-            closed_session = VizzySessionService.close_session(session_id=str(session.id))
-            
-            serializer = VizzyChatSessionDetailSerializer(closed_session)
+        # Fetch session without is_active filter to handle already-closed sessions
+        session = get_object_or_404(VizzyChatSession, id=pk, user=request.user)
+        
+        if not session.is_active:
+            # Session already closed - return success message
+            serializer = VizzyChatSessionDetailSerializer(session)
             return Response({
                 'status': 'success',
-                'message': 'Session closed successfully',
+                'message': 'Session already closed',
                 'session': serializer.data
             })
-        except VizzyChatSession.DoesNotExist:
-            return Response(
-                {'detail': 'Session not found'},
-                status=status.HTTP_404_NOT_FOUND
-            )
+        
+        # Close the active session
+        closed_session = VizzySessionService.close_session(session_id=str(session.id))
+        
+        serializer = VizzyChatSessionDetailSerializer(closed_session)
+        return Response({
+            'status': 'success',
+            'message': 'Session closed successfully',
+            'session': serializer.data
+        })
     
     @extend_schema(
         summary="Delete a chat session",
@@ -248,9 +267,11 @@ class VizzyChatMessageViewSet(viewsets.ModelViewSet):
     ViewSet for managing chat messages
     
     Messages are always associated with a session
+    Messages are immutable once created (audit trail)
     """
     permission_classes = [IsAuthenticated]
     pagination_class = StandardResultPagination
+    http_method_names = ['get', 'post', 'head', 'options']  # No PUT, PATCH, DELETE
     
     def get_serializer_class(self):
         """Return appropriate serializer based on action"""
@@ -525,6 +546,31 @@ class VizzyContextDataViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         """List context data"""
         return super().list(request, *args, **kwargs)
+    
+    @extend_schema(
+        summary="Get specific context entry",
+        responses={
+            200: VizzyContextDataSerializer,
+            404: OpenApiResponse(description='Context not found')
+        }
+    )
+    def retrieve(self, request, *args, **kwargs):
+        """Retrieve context data and increment access count"""
+        from django.db.models import F
+        from django.utils import timezone
+        
+        instance = self.get_object()
+        
+        # Increment access count
+        instance.access_count = F('access_count') + 1
+        instance.accessed_at = timezone.now()
+        instance.save(update_fields=['access_count', 'accessed_at'])
+        
+        # Refresh to get actual value instead of F() expression
+        instance.refresh_from_db()
+        
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
     
     @extend_schema(
         summary="Create new context entry",

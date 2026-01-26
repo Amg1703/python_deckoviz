@@ -81,7 +81,8 @@ class VizzyChatSessionViewSetTestCase(APITestCase):
         self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.user1_token}')
         url = reverse('vizzy-chat:session-list')
         
-        response = self.client.get(url)
+        # Include inactive sessions to see all 2 sessions
+        response = self.client.get(url, {'active_only': 'false'})
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data['results']), 2)  # user1 has 2 sessions
@@ -314,8 +315,10 @@ class VizzyChatSessionViewSetTestCase(APITestCase):
         
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         
-        # Verify session is deleted
-        self.assertFalse(VizzyChatSession.objects.filter(id=self.session1.id).exists())
+        # Verify session is soft deleted (still exists but is_active=False)
+        self.assertTrue(VizzyChatSession.objects.filter(id=self.session1.id).exists())
+        self.session1.refresh_from_db()
+        self.assertFalse(self.session1.is_active)
     
     def test_delete_session_not_owned(self):
         """Test that users cannot delete sessions they don't own"""

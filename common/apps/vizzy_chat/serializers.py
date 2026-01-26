@@ -94,6 +94,26 @@ class VizzyChatMessageCreateSerializer(serializers.ModelSerializer):
         if value not in valid_roles:
             raise serializers.ValidationError(f"Role must be one of: {', '.join(valid_roles)}")
         return value
+    
+    def validate_mood_valence(self, value):
+        """Validate mood valence is within range"""
+        if value is not None and not -1.0 <= value <= 1.0:
+            raise serializers.ValidationError("Mood valence must be between -1.0 and 1.0")
+        return value
+    
+    def validate_mood_arousal(self, value):
+        """Validate mood arousal is within range"""
+        if value is not None and not -1.0 <= value <= 1.0:
+            raise serializers.ValidationError("Mood arousal must be between -1.0 and 1.0")
+        return value
+    
+    def validate(self, data):
+        """Cross-field validation"""
+        if data.get('has_images') and not data.get('image_urls'):
+            raise serializers.ValidationError({
+                'image_urls': 'image_urls must be provided when has_images is True'
+            })
+        return data
 
 
 class VizzyChatSessionListSerializer(serializers.ModelSerializer):
@@ -196,26 +216,26 @@ class VizzyUserProfileSerializer(serializers.ModelSerializer):
     
     def validate_aesthetic_palette(self, value):
         """Validate aesthetic palette structure"""
-        if not isinstance(value, dict):
-            raise serializers.ValidationError("aesthetic_palette must be a dictionary")
+        if value is not None and not isinstance(value, dict):
+            raise serializers.ValidationError("aesthetic_palette must be a JSON object (dictionary)")
         return value
     
     def validate_mood_map(self, value):
         """Validate mood map structure"""
-        if not isinstance(value, dict):
-            raise serializers.ValidationError("mood_map must be a dictionary")
+        if value is not None and not isinstance(value, dict):
+            raise serializers.ValidationError("mood_map must be a JSON object (dictionary)")
         return value
     
     def validate_story_markers(self, value):
         """Validate story markers structure"""
-        if not isinstance(value, list):
-            raise serializers.ValidationError("story_markers must be a list")
+        if value is not None and not isinstance(value, list):
+            raise serializers.ValidationError("story_markers must be a JSON array (list)")
         return value
     
     def validate_device_context(self, value):
         """Validate device context structure"""
-        if not isinstance(value, dict):
-            raise serializers.ValidationError("device_context must be a dictionary")
+        if value is not None and not isinstance(value, dict):
+            raise serializers.ValidationError("device_context must be a JSON object (dictionary)")
         return value
 
 

@@ -307,6 +307,8 @@ class VizzyChatMessage(models.Model):
             self.session.last_message_at = self.created_at
             self.session.message_count = models.F('message_count') + 1
             self.session.save(update_fields=['last_message_at', 'message_count', 'updated_at'])
+            # Refresh to get actual value instead of F() expression
+            self.session.refresh_from_db(fields=['message_count'])
 
 
 class VizzyUserProfile(models.Model):
