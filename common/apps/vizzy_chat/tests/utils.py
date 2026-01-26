@@ -72,13 +72,22 @@ class VizzyChatTestMixin:
         if user is None:
             user = self.user
         
-        self.profile = VizzyUserProfile.objects.create(
+        self.profile, created = VizzyUserProfile.objects.get_or_create(
             user=user,
-            aesthetic_palette={'style': 'modern'},
-            mood_map={'avg_valence': 0.5},
-            total_sessions=0,
-            total_messages=0
+            defaults={
+                'aesthetic_palette': {'style': 'modern'},
+                'mood_map': {'avg_valence': 0.5},
+                'total_sessions': 0,
+                'total_messages': 0
+            }
         )
+        # Update if already existed
+        if not created:
+            self.profile.aesthetic_palette = {'style': 'modern'}
+            self.profile.mood_map = {'avg_valence': 0.5}
+            self.profile.total_sessions = 0
+            self.profile.total_messages = 0
+            self.profile.save()
         return self.profile
     
     def setup_test_mood_history(self, user=None, count=5):
@@ -265,7 +274,11 @@ class TestDataFactory:
             'device_context': {}
         }
         defaults.update(kwargs)
-        return VizzyUserProfile.objects.create(user=user, **defaults)
+        profile, _ = VizzyUserProfile.objects.get_or_create(
+            user=user,
+            defaults=defaults
+        )
+        return profile
     
     @staticmethod
     def create_mood_history(user, session=None, **kwargs):

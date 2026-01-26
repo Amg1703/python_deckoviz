@@ -44,29 +44,53 @@ class VizzyUserProfileViewTestCase(APITestCase):
         # Set up API client
         self.client = APIClient()
         
-        # Create user profile with some data
-        self.profile = VizzyUserProfile.objects.create(
+        # Get or create user profile (signal auto-creates it)
+        self.profile, created = VizzyUserProfile.objects.get_or_create(
             user=self.user,
-            aesthetic_palette={
+            defaults={
+                'aesthetic_palette': {
+                    'primary_colors': ['#FF5733', '#C70039'],
+                    'style': 'modern'
+                },
+                'mood_map': {
+                    'avg_valence': 0.5,
+                    'avg_arousal': 0.3,
+                    'total_records': 10
+                },
+                'story_markers': [
+                    {'event': 'Wedding', 'date': '2024-06-15'},
+                    {'event': 'Birthday', 'date': '2024-12-01'}
+                ],
+                'device_context': {
+                    'room_type': 'living_room',
+                    'display_schedule': 'evening'
+                },
+                'total_sessions': 5,
+                'total_messages': 50
+            }
+        )
+        # Update if it already existed (from signal)
+        if not created:
+            self.profile.aesthetic_palette = {
                 'primary_colors': ['#FF5733', '#C70039'],
                 'style': 'modern'
-            },
-            mood_map={
+            }
+            self.profile.mood_map = {
                 'avg_valence': 0.5,
                 'avg_arousal': 0.3,
                 'total_records': 10
-            },
-            story_markers=[
+            }
+            self.profile.story_markers = [
                 {'event': 'Wedding', 'date': '2024-06-15'},
                 {'event': 'Birthday', 'date': '2024-12-01'}
-            ],
-            device_context={
+            ]
+            self.profile.device_context = {
                 'room_type': 'living_room',
                 'display_schedule': 'evening'
-            },
-            total_sessions=5,
-            total_messages=50
-        )
+            }
+            self.profile.total_sessions = 5
+            self.profile.total_messages = 50
+            self.profile.save()
     
     def test_get_user_profile_authenticated(self):
         """Test retrieving user profile when authenticated"""
@@ -267,14 +291,23 @@ class VizzyUserContextViewTestCase(APITestCase):
         # Set up API client
         self.client = APIClient()
         
-        # Create user profile
-        self.profile = VizzyUserProfile.objects.create(
+        # Get or create user profile (signal auto-creates it)
+        self.profile, created = VizzyUserProfile.objects.get_or_create(
             user=self.user,
-            aesthetic_palette={'style': 'modern'},
-            mood_map={'avg_valence': 0.6},
-            total_sessions=3,
-            total_messages=15
+            defaults={
+                'aesthetic_palette': {'style': 'modern'},
+                'mood_map': {'avg_valence': 0.6},
+                'total_sessions': 3,
+                'total_messages': 15
+            }
         )
+        # Update if it already existed (from signal)
+        if not created:
+            self.profile.aesthetic_palette = {'style': 'modern'}
+            self.profile.mood_map = {'avg_valence': 0.6}
+            self.profile.total_sessions = 3
+            self.profile.total_messages = 15
+            self.profile.save()
         
         # Create sessions and messages
         self.session = VizzyChatSession.objects.create(
@@ -427,7 +460,8 @@ class VizzyUserContextViewTestCase(APITestCase):
             email='minimal@example.com',
             password='testpass123'
         )
-        VizzyUserProfile.objects.create(user=new_user)
+        # Profile auto-created by signal, just get it
+        profile, _ = VizzyUserProfile.objects.get_or_create(user=new_user)
         
         new_token = str(RefreshToken.for_user(new_user).access_token)
         
