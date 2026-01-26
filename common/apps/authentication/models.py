@@ -32,7 +32,9 @@ class User(AbstractUser,BaseModel):
     room = models.UUIDField(default=uuid.uuid4, blank=False, null=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []  # Email is USERNAME_FIELD, so not needed here 
+    REQUIRED_FIELDS = []  # Email is USERNAME_FIELD, so not needed here
+    
+    objects = UserManager()  # Use custom manager for email-based auth
 
     def __str__(self):
         return self.username
