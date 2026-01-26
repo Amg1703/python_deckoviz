@@ -14,7 +14,7 @@ from .views import (
     VizzyContextDataViewSet,
 )
 
-app_name = 'vizzy_chat'
+app_name = 'vizzy-chat'
 
 # Main router for top-level resources
 router = routers.DefaultRouter()
