@@ -478,11 +478,11 @@ LOGGING = {
     },
     'root': {
         'handlers': ['console', 'file'],
-        'level': 'INFO',
+        'level': 'INFO',                           
     },
 }
 
-
+                                
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',

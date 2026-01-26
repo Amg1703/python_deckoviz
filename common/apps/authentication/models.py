@@ -3,7 +3,7 @@ import uuid
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxLengthValidator
 from apps.utils.choices import ADDRESS_TYPES
-from .managers import AddressManager
+from .managers import AddressManager, UserManager
 from django.utils import timezone
 import secrets
 import hashlib
@@ -32,7 +32,7 @@ class User(AbstractUser,BaseModel):
     room = models.UUIDField(default=uuid.uuid4, blank=False, null=False)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username'] 
+    REQUIRED_FIELDS = []  # Email is USERNAME_FIELD, so not needed here 
 
     def __str__(self):
         return self.username
