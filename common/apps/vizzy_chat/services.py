@@ -117,7 +117,10 @@ class VizzySessionService:
         try:
             from django.db.models import Prefetch
             
-            messages_queryset = VizzyChatMessage.objects.order_by('created_at')[:message_limit]
+            # Don't slice queryset in Prefetch - Django doesn't allow it
+            # Just prefetch all messages ordered by created_at
+            # The serializer will handle limiting based on message_limit
+            messages_queryset = VizzyChatMessage.objects.order_by('created_at')
             
             session = VizzyChatSession.objects.select_related('user').prefetch_related(
                 Prefetch('messages', queryset=messages_queryset)

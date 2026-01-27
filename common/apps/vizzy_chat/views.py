@@ -388,16 +388,11 @@ class VizzyUserProfileView(generics.RetrieveUpdateAPIView):
         """Partially update user profile"""
         profile = self.get_object()
         
-        # Use service to update profile (handles cache invalidation)
-        updated_profile = VizzyUserContextService.update_user_profile(
-            user=request.user,
-            aesthetic_palette=request.data.get('aesthetic_palette'),
-            mood_map=request.data.get('mood_map'),
-            story_markers=request.data.get('story_markers'),
-            device_context=request.data.get('device_context')
-        )
+        # Use serializer for validation
+        serializer = self.get_serializer(profile, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
         
-        serializer = self.get_serializer(updated_profile)
         return Response(serializer.data)
 
 
