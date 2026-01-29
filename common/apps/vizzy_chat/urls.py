@@ -9,11 +9,13 @@ from .views import (
     VizzyChatSessionViewSet,
     VizzyChatMessageViewSet,
     VizzyUserProfileView,
+    VizzyUserProfileByIdView,
     VizzyUserContextView,
+    VizzyUserContextByIdView,
     VizzyMoodHistoryViewSet,
     VizzyContextDataViewSet,
 )
-
+ 
 app_name = 'vizzy-chat'
 
 # Main router for top-level resources
@@ -33,7 +35,9 @@ urlpatterns = [
     
     # User profile endpoints
     path('profile/', VizzyUserProfileView.as_view(), name='profile-detail'),
+    path('users/<uuid:user_id>/profile/', VizzyUserProfileByIdView.as_view(), name='user-profile-by-id'),
     
-    # User context endpoint (for FastAPI consumption)
+    # User context endpoints (for FastAPI consumption)
     path('users/context/', VizzyUserContextView.as_view(), name='user-context'),
+    path('users/<uuid:user_id>/context/', VizzyUserContextByIdView.as_view(), name='user-context-by-id'),
 ]

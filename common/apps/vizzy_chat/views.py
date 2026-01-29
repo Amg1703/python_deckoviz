@@ -14,8 +14,11 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
 from django.shortcuts import get_object_or_404
+from django.contrib.auth import get_user_model
 from drf_spectacular.utils import extend_schema, OpenApiResponse, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
+
+User = get_user_model()
 
 from .models import (
     VizzyChatSession,
@@ -416,6 +419,98 @@ class VizzyUserContextView(generics.GenericAPIView):
         
         context = VizzyUserContextService.get_user_context(
             user=request.user,
+            use_cache=use_cache
+        )
+        
+        return Response(context)
+
+
+@extend_schema(tags=['Vizzy Chat - User Profile'])
+class VizzyUserProfileByIdView(generics.RetrieveAPIView):
+    """
+    View for retrieving any user's Vizzy profile by user_id
+    
+    Used by FastAPI service to get user profile data
+    """
+    serializer_class = VizzyUserProfileSerializer
+    permission_classes = [IsAuthenticated]
+    lookup_field = 'user_id'
+    
+    def get_object(self):
+        """Get or create profile for specified user"""
+        user_id = self.kwargs.get('user_id')
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            from rest_framework.exceptions import NotFound
+            raise NotFound(f"User with id {user_id} not found")
+        
+        profile, _ = VizzyUserProfile.objects.get_or_create(user=user)
+        return profile
+    
+    @extend_schema(
+        summary="Get user's Vizzy profile by user_id",
+        responses={
+            200: VizzyUserProfileSerializer,
+            404: OpenApiResponse(description='User not found')
+        },
+        parameters=[
+            OpenApiParameter(
+                name='user_id',
+                type=OpenApiTypes.UUID,
+                location=OpenApiParameter.PATH,
+                description='User UUID'
+            )
+        ]
+    )
+    def get(self, request, *args, **kwargs):
+        """Get user profile by user_id"""
+        return super().get(request, *args, **kwargs)
+
+
+@extend_schema(tags=['Vizzy Chat - User Context'])
+class VizzyUserContextByIdView(generics.GenericAPIView):
+    """
+    View for retrieving comprehensive user context by user_id
+    
+    Used by FastAPI service to get all context for AI processing
+    """
+    permission_classes = [IsAuthenticated]
+    serializer_class = VizzyUserContextSerializer
+    
+    @extend_schema(
+        summary="Get comprehensive user context by user_id",
+        responses={
+            200: VizzyUserContextSerializer,
+            404: OpenApiResponse(description='User not found')
+        },
+        parameters=[
+            OpenApiParameter(
+                name='user_id',
+                type=OpenApiTypes.UUID,
+                location=OpenApiParameter.PATH,
+                description='User UUID'
+            ),
+            OpenApiParameter(
+                name='use_cache',
+                type=OpenApiTypes.BOOL,
+                location=OpenApiParameter.QUERY,
+                description='Whether to use cached data (default: true)'
+            )
+        ]
+    )
+    def get(self, request, user_id):
+        """Get comprehensive user context for specified user"""
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            from rest_framework.exceptions import NotFound
+            raise NotFound(f"User with id {user_id} not found")
+        
+        use_cache = request.query_params.get('use_cache', 'true').lower() == 'true'
+        
+        context = VizzyUserContextService.get_user_context(
+            user=user,
             use_cache=use_cache
         )
         
